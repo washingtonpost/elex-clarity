@@ -1,0 +1,45 @@
+# how to skip Circle builds with a commit message: https://circleci.com/docs/2.0/skip-build/
+version: 2
+jobs:
+  build_and_deploy:
+    working_directory: ~/elex-clarity
+    docker:
+      - image: circleci/python:3.7
+    steps:
+      - checkout
+      - run:
+          name: Build and deploy (python)
+          command: |
+            python3 -m virtualenv elex-clarity
+            source elex-clarity/bin/activate
+            pip install -r requirements.txt
+            pip install twine
+            python setup.py install test sdist bdist_wheel
+            twine upload dist/*
+  test:
+    working_directory: ~/elex-clarity
+    docker:
+      - image: themattrix/tox
+    steps:
+      - checkout
+      - run: mkdir test-reports
+      - run:
+          name: Run tests
+          command: tox -e py37-circleci
+      - store_test_results:
+          path: test-reports
+      - store_artifacts:
+          path: coverage
+workflows:
+  version: 2
+  test:
+    jobs:
+      - test
+  deploy:
+    jobs:
+      - build_and_deploy:
+          filters:
+            tags:
+              only: /[0-9]+(\.[0-9]+(-beta)?)*/
+            branches:
+              ignore: /.*/

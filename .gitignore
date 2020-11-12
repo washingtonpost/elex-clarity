@@ -1,0 +1,25 @@
+*.pyc
+*.out
+*.egg-info
+*.eggs
+
+build/
+dist/
+.idea/
+.vscode
+venv/
+
+.DS_Store
+
+.tox
+
+.cache/v/cache/lastfailed
+
+.coverage
+
+.pytest_cache
+
+.settings/org.eclipse.core.resources.prefs
+
+# Sphinx documentation
+docs/build
