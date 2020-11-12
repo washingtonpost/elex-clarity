@@ -3,6 +3,7 @@ import json
 import click
 
 from elexclarity.client import ElectionsClient
+from elexclarity.convert import ClarityXMLConverter
 
 BASE_URL = os.environ.get('CLARITY_API_BASE_URL', 'https://results.enr.clarityelections.com/')
 
@@ -45,7 +46,11 @@ def cli(electionid, statepostal, filename=None, style="default", outputType="res
     if filename:
         # load races from local file
         with click.open_file(filename) as f:
-            result = json.load(f)
+            if ".json" in filename:
+                result = json.load(f)
+            if ".xml" in filename:
+                with open(filename) as f:
+                    result = f.read()
     else:
         api_client = ElectionsClient(BASE_URL)
         if outputType == "summary":
@@ -55,17 +60,9 @@ def cli(electionid, statepostal, filename=None, style="default", outputType="res
         else:
             result = api_client.get_results(electionid, statepostal, **kwargs)
 
+    result = ClarityXMLConverter().convert(result, statepostal=statepostal)
 
-    '''
-    result = convert(
-        election_results,
-        electionID=electionID,
-        style=style,
-        outputType=outputType,
-        resultsBy=resultsBy,
-        **kwargs)
-    '''
-
-    if outputType in ["summary", "settings"]:
-        result = json.dumps(result, indent=2)
-    print(result)
+    # if outputType in ["summary", "settings"]:
+    #     result = json.dumps(result, indent=2)
+    
+    print(json.dumps(result, indent=2))
