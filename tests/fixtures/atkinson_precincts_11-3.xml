@@ -1,0 +1,1811 @@
+<?xml version="1.0"?>
+<!--Election result snapshot imported from Tabulation System
+-->
+<ElectionResult>
+    <Timestamp>11/6/2020 1:05:50 PM EST</Timestamp>
+    <ElectionName>November 3,2020-General Election</ElectionName>
+    <ElectionDate>11/3/2020</ElectionDate>
+    <Region>Atkinson</Region>
+    <VoterTurnout totalVoters="4799" ballotsCast="3172" voterTurnout="66.10">
+        <Precincts>
+            <Precinct name="Pearson County" totalVoters="1802" ballotsCast="1202" voterTurnout="66.70" percentReporting="4" />
+            <Precinct name="Axson" totalVoters="742" ballotsCast="527" voterTurnout="71.02" percentReporting="4" />
+            <Precinct name="Willacoochee" totalVoters="1311" ballotsCast="873" voterTurnout="66.59" percentReporting="4" />
+            <Precinct name="Pearson City" totalVoters="944" ballotsCast="570" voterTurnout="60.38" percentReporting="4" />
+        </Precincts>
+    </VoterTurnout>
+    <Contest key="1" text="President of the United States" voteFor="1" isQuestion="false" precinctsReporting="4" precinctsReported="4">
+        <VoteType name="Undervotes" votes="15">
+            <Precinct name="Pearson County" votes="4" />
+            <Precinct name="Axson" votes="0" />
+            <Precinct name="Willacoochee" votes="5" />
+            <Precinct name="Pearson City" votes="6" />
+        </VoteType>
+        <VoteType name="Overvotes" votes="0">
+            <Precinct name="Pearson County" votes="0" />
+            <Precinct name="Axson" votes="0" />
+            <Precinct name="Willacoochee" votes="0" />
+            <Precinct name="Pearson City" votes="0" />
+        </VoteType>
+        <Choice key="1" text="Donald J. Trump (I) (Rep)" party="NP" totalVotes="2300">
+            <VoteType name="Election Day Votes" votes="716">
+                <Precinct name="Pearson County" votes="235" />
+                <Precinct name="Axson" votes="194" />
+                <Precinct name="Willacoochee" votes="224" />
+                <Precinct name="Pearson City" votes="63" />
+            </VoteType>
+            <VoteType name="Advanced Voting Votes" votes="1419">
+                <Precinct name="Pearson County" votes="716" />
+                <Precinct name="Axson" votes="257" />
+                <Precinct name="Willacoochee" votes="299" />
+                <Precinct name="Pearson City" votes="147" />
+            </VoteType>
+            <VoteType name="Absentee by Mail Votes" votes="164">
+                <Precinct name="Pearson County" votes="75" />
+                <Precinct name="Axson" votes="27" />
+                <Precinct name="Willacoochee" votes="43" />
+                <Precinct name="Pearson City" votes="19" />
+            </VoteType>
+            <VoteType name="Provisional Votes" votes="1">
+                <Precinct name="Pearson County" votes="0" />
+                <Precinct name="Axson" votes="1" />
+                <Precinct name="Willacoochee" votes="0" />
+                <Precinct name="Pearson City" votes="0" />
+            </VoteType>
+        </Choice>
+        <Choice key="2" text="Joseph R. Biden (Dem)" party="NP" totalVotes="825">
+            <VoteType name="Election Day Votes" votes="250">
+                <Precinct name="Pearson County" votes="32" />
+                <Precinct name="Axson" votes="25" />
+                <Precinct name="Willacoochee" votes="117" />
+                <Precinct name="Pearson City" votes="76" />
+            </VoteType>
+            <VoteType name="Advanced Voting Votes" votes="445">
+                <Precinct name="Pearson County" votes="92" />
+                <Precinct name="Axson" votes="16" />
+                <Precinct name="Willacoochee" votes="136" />
+                <Precinct name="Pearson City" votes="201" />
+            </VoteType>
+            <VoteType name="Absentee by Mail Votes" votes="130">
+                <Precinct name="Pearson County" votes="36" />
+                <Precinct name="Axson" votes="4" />
+                <Precinct name="Willacoochee" votes="38" />
+                <Precinct name="Pearson City" votes="52" />
+            </VoteType>
+            <VoteType name="Provisional Votes" votes="0">
+                <Precinct name="Pearson County" votes="0" />
+                <Precinct name="Axson" votes="0" />
+                <Precinct name="Willacoochee" votes="0" />
+                <Precinct name="Pearson City" votes="0" />
+            </VoteType>
+        </Choice>
+        <Choice key="3" text="Jo Jorgensen (Lib)" party="NP" totalVotes="30">
+            <VoteType name="Election Day Votes" votes="14">
+                <Precinct name="Pearson County" votes="5" />
+                <Precinct name="Axson" votes="1" />
+                <Precinct name="Willacoochee" votes="4" />
+                <Precinct name="Pearson City" votes="4" />
+            </VoteType>
+            <VoteType name="Advanced Voting Votes" votes="13">
+                <Precinct name="Pearson County" votes="4" />
+                <Precinct name="Axson" votes="2" />
+                <Precinct name="Willacoochee" votes="5" />
+                <Precinct name="Pearson City" votes="2" />
+            </VoteType>
+            <VoteType name="Absentee by Mail Votes" votes="3">
+                <Precinct name="Pearson County" votes="2" />
+                <Precinct name="Axson" votes="0" />
+                <Precinct name="Willacoochee" votes="1" />
+                <Precinct name="Pearson City" votes="0" />
+            </VoteType>
+            <VoteType name="Provisional Votes" votes="0">
+                <Precinct name="Pearson County" votes="0" />
+                <Precinct name="Axson" votes="0" />
+                <Precinct name="Willacoochee" votes="0" />
+                <Precinct name="Pearson City" votes="0" />
+            </VoteType>
+        </Choice>
+    </Contest>
+    <Contest key="2" text="US Senate (Perdue)" voteFor="1" isQuestion="false" precinctsReporting="4" precinctsReported="4">
+        <VoteType name="Undervotes" votes="72">
+            <Precinct name="Pearson County" votes="16" />
+            <Precinct name="Axson" votes="10" />
+            <Precinct name="Willacoochee" votes="19" />
+            <Precinct name="Pearson City" votes="27" />
+        </VoteType>
+        <VoteType name="Overvotes" votes="0">
+            <Precinct name="Pearson County" votes="0" />
+            <Precinct name="Axson" votes="0" />
+            <Precinct name="Willacoochee" votes="0" />
+            <Precinct name="Pearson City" votes="0" />
+        </VoteType>
+        <Choice key="4" text="David A. Perdue (I) (Rep)" party="NP" totalVotes="2272">
+            <VoteType name="Election Day Votes" votes="709">
+                <Precinct name="Pearson County" votes="226" />
+                <Precinct name="Axson" votes="189" />
+                <Precinct name="Willacoochee" votes="226" />
+                <Precinct name="Pearson City" votes="68" />
+            </VoteType>
+            <VoteType name="Advanced Voting Votes" votes="1392">
+                <Precinct name="Pearson County" votes="707" />
+                <Precinct name="Axson" votes="245" />
+                <Precinct name="Willacoochee" votes="296" />
+                <Precinct name="Pearson City" votes="144" />
+            </VoteType>
+            <VoteType name="Absentee by Mail Votes" votes="170">
+                <Precinct name="Pearson County" votes="75" />
+                <Precinct name="Axson" votes="26" />
+                <Precinct name="Willacoochee" votes="43" />
+                <Precinct name="Pearson City" votes="26" />
+            </VoteType>
+            <VoteType name="Provisional Votes" votes="1">
+                <Precinct name="Pearson County" votes="0" />
+                <Precinct name="Axson" votes="1" />
+                <Precinct name="Willacoochee" votes="0" />
+                <Precinct name="Pearson City" votes="0" />
+            </VoteType>
+        </Choice>
+        <Choice key="5" text="Jon Ossoff (Dem)" party="NP" totalVotes="773">
+            <VoteType name="Election Day Votes" votes="220">
+                <Precinct name="Pearson County" votes="33" />
+                <Precinct name="Axson" votes="21" />
+                <Precinct name="Willacoochee" votes="102" />
+                <Precinct name="Pearson City" votes="64" />
+            </VoteType>
+            <VoteType name="Advanced Voting Votes" votes="430">
+                <Precinct name="Pearson County" votes="93" />
+                <Precinct name="Axson" votes="22" />
+                <Precinct name="Willacoochee" votes="130" />
+                <Precinct name="Pearson City" votes="185" />
+            </VoteType>
+            <VoteType name="Absentee by Mail Votes" votes="123">
+                <Precinct name="Pearson County" votes="38" />
+                <Precinct name="Axson" votes="3" />
+                <Precinct name="Willacoochee" votes="38" />
+                <Precinct name="Pearson City" votes="44" />
+            </VoteType>
+            <VoteType name="Provisional Votes" votes="0">
+                <Precinct name="Pearson County" votes="0" />
+                <Precinct name="Axson" votes="0" />
+                <Precinct name="Willacoochee" votes="0" />
+                <Precinct name="Pearson City" votes="0" />
+            </VoteType>
+        </Choice>
+        <Choice key="6" text="Shane Hazel (Lib)" party="NP" totalVotes="52">
+            <VoteType name="Election Day Votes" votes="23">
+                <Precinct name="Pearson County" votes="4" />
+                <Precinct name="Axson" votes="6" />
+                <Precinct name="Willacoochee" votes="9" />
+                <Precinct name="Pearson City" votes="4" />
+            </VoteType>
+            <VoteType name="Advanced Voting Votes" votes="26">
+                <Precinct name="Pearson County" votes="7" />
+                <Precinct name="Axson" votes="4" />
+                <Precinct name="Willacoochee" votes="8" />
+                <Precinct name="Pearson City" votes="7" />
+            </VoteType>
+            <VoteType name="Absentee by Mail Votes" votes="3">
+                <Precinct name="Pearson County" votes="2" />
+                <Precinct name="Axson" votes="0" />
+                <Precinct name="Willacoochee" votes="0" />
+                <Precinct name="Pearson City" votes="1" />
+            </VoteType>
+            <VoteType name="Provisional Votes" votes="0">
+                <Precinct name="Pearson County" votes="0" />
+                <Precinct name="Axson" votes="0" />
+                <Precinct name="Willacoochee" votes="0" />
+                <Precinct name="Pearson City" votes="0" />
+            </VoteType>
+        </Choice>
+    </Contest>
+    <Contest key="3" text="US Senate (Loeffler) - Special" voteFor="1" isQuestion="false" precinctsReporting="4" precinctsReported="4">
+        <VoteType name="Undervotes" votes="175">
+            <Precinct name="Pearson County" votes="57" />
+            <Precinct name="Axson" votes="31" />
+            <Precinct name="Willacoochee" votes="43" />
+            <Precinct name="Pearson City" votes="44" />
+        </VoteType>
+        <VoteType name="Overvotes" votes="0">
+            <Precinct name="Pearson County" votes="0" />
+            <Precinct name="Axson" votes="0" />
+            <Precinct name="Willacoochee" votes="0" />
+            <Precinct name="Pearson City" votes="0" />
+        </VoteType>
+        <Choice key="7" text="Al Bartell (Ind)" party="NP" totalVotes="15">
+            <VoteType name="Election Day Votes" votes="6">
+                <Precinct name="Pearson County" votes="3" />
+                <Precinct name="Axson" votes="0" />
+                <Precinct name="Willacoochee" votes="1" />
+                <Precinct name="Pearson City" votes="2" />
+            </VoteType>
+            <VoteType name="Advanced Voting Votes" votes="6">
+                <Precinct name="Pearson County" votes="1" />
+                <Precinct name="Axson" votes="2" />
+                <Precinct name="Willacoochee" votes="0" />
+                <Precinct name="Pearson City" votes="3" />
+            </VoteType>
+            <VoteType name="Absentee by Mail Votes" votes="3">
+                <Precinct name="Pearson County" votes="1" />
+                <Precinct name="Axson" votes="0" />
+                <Precinct name="Willacoochee" votes="2" />
+                <Precinct name="Pearson City" votes="0" />
+            </VoteType>
+            <VoteType name="Provisional Votes" votes="0">
+                <Precinct name="Pearson County" votes="0" />
+                <Precinct name="Axson" votes="0" />
+                <Precinct name="Willacoochee" votes="0" />
+                <Precinct name="Pearson City" votes="0" />
+            </VoteType>
+        </Choice>
+        <Choice key="8" text="Allen Buckley (Ind)" party="NP" totalVotes="22">
+            <VoteType name="Election Day Votes" votes="11">
+                <Precinct name="Pearson County" votes="4" />
+                <Precinct name="Axson" votes="1" />
+                <Precinct name="Willacoochee" votes="3" />
+                <Precinct name="Pearson City" votes="3" />
+            </VoteType>
+            <VoteType name="Advanced Voting Votes" votes="8">
+                <Precinct name="Pearson County" votes="3" />
+                <Precinct name="Axson" votes="2" />
+                <Precinct name="Willacoochee" votes="2" />
+                <Precinct name="Pearson City" votes="1" />
+            </VoteType>
+            <VoteType name="Absentee by Mail Votes" votes="3">
+                <Precinct name="Pearson County" votes="0" />
+                <Precinct name="Axson" votes="0" />
+                <Precinct name="Willacoochee" votes="2" />
+                <Precinct name="Pearson City" votes="1" />
+            </VoteType>
+            <VoteType name="Provisional Votes" votes="0">
+                <Precinct name="Pearson County" votes="0" />
+                <Precinct name="Axson" votes="0" />
+                <Precinct name="Willacoochee" votes="0" />
+                <Precinct name="Pearson City" votes="0" />
+            </VoteType>
+        </Choice>
+        <Choice key="9" text="Doug Collins (Rep)" party="NP" totalVotes="1038">
+            <VoteType name="Election Day Votes" votes="326">
+                <Precinct name="Pearson County" votes="110" />
+                <Precinct name="Axson" votes="94" />
+                <Precinct name="Willacoochee" votes="93" />
+                <Precinct name="Pearson City" votes="29" />
+            </VoteType>
+            <VoteType name="Advanced Voting Votes" votes="637">
+                <Precinct name="Pearson County" votes="304" />
+                <Precinct name="Axson" votes="132" />
+                <Precinct name="Willacoochee" votes="143" />
+                <Precinct name="Pearson City" votes="58" />
+            </VoteType>
+            <VoteType name="Absentee by Mail Votes" votes="74">
+                <Precinct name="Pearson County" votes="36" />
+                <Precinct name="Axson" votes="17" />
+                <Precinct name="Willacoochee" votes="13" />
+                <Precinct name="Pearson City" votes="8" />
+            </VoteType>
+            <VoteType name="Provisional Votes" votes="1">
+                <Precinct name="Pearson County" votes="0" />
+                <Precinct name="Axson" votes="1" />
+                <Precinct name="Willacoochee" votes="0" />
+                <Precinct name="Pearson City" votes="0" />
+            </VoteType>
+        </Choice>
+        <Choice key="10" text="John Fortuin (Grn)" party="NP" totalVotes="5">
+            <VoteType name="Election Day Votes" votes="3">
+                <Precinct name="Pearson County" votes="2" />
+                <Precinct name="Axson" votes="0" />
+                <Precinct name="Willacoochee" votes="1" />
+                <Precinct name="Pearson City" votes="0" />
+            </VoteType>
+            <VoteType name="Advanced Voting Votes" votes="2">
+                <Precinct name="Pearson County" votes="0" />
+                <Precinct name="Axson" votes="1" />
+                <Precinct name="Willacoochee" votes="1" />
+                <Precinct name="Pearson City" votes="0" />
+            </VoteType>
+            <VoteType name="Absentee by Mail Votes" votes="0">
+                <Precinct name="Pearson County" votes="0" />
+                <Precinct name="Axson" votes="0" />
+                <Precinct name="Willacoochee" votes="0" />
+                <Precinct name="Pearson City" votes="0" />
+            </VoteType>
+            <VoteType name="Provisional Votes" votes="0">
+                <Precinct name="Pearson County" votes="0" />
+                <Precinct name="Axson" votes="0" />
+                <Precinct name="Willacoochee" votes="0" />
+                <Precinct name="Pearson City" votes="0" />
+            </VoteType>
+        </Choice>
+        <Choice key="11" text="Derrick E. Grayson (Rep)" party="NP" totalVotes="55">
+            <VoteType name="Election Day Votes" votes="16">
+                <Precinct name="Pearson County" votes="5" />
+                <Precinct name="Axson" votes="3" />
+                <Precinct name="Willacoochee" votes="6" />
+                <Precinct name="Pearson City" votes="2" />
+            </VoteType>
+            <VoteType name="Advanced Voting Votes" votes="35">
+                <Precinct name="Pearson County" votes="15" />
+                <Precinct name="Axson" votes="9" />
+                <Precinct name="Willacoochee" votes="7" />
+                <Precinct name="Pearson City" votes="4" />
+            </VoteType>
+            <VoteType name="Absentee by Mail Votes" votes="4">
+                <Precinct name="Pearson County" votes="0" />
+                <Precinct name="Axson" votes="0" />
+                <Precinct name="Willacoochee" votes="1" />
+                <Precinct name="Pearson City" votes="3" />
+            </VoteType>
+            <VoteType name="Provisional Votes" votes="0">
+                <Precinct name="Pearson County" votes="0" />
+                <Precinct name="Axson" votes="0" />
+                <Precinct name="Willacoochee" votes="0" />
+                <Precinct name="Pearson City" votes="0" />
+            </VoteType>
+        </Choice>
+        <Choice key="12" text="Michael Todd Greene (Ind)" party="NP" totalVotes="9">
+            <VoteType name="Election Day Votes" votes="3">
+                <Precinct name="Pearson County" votes="1" />
+                <Precinct name="Axson" votes="0" />
+                <Precinct name="Willacoochee" votes="1" />
+                <Precinct name="Pearson City" votes="1" />
+            </VoteType>
+            <VoteType name="Advanced Voting Votes" votes="5">
+                <Precinct name="Pearson County" votes="0" />
+                <Precinct name="Axson" votes="3" />
+                <Precinct name="Willacoochee" votes="0" />
+                <Precinct name="Pearson City" votes="2" />
+            </VoteType>
+            <VoteType name="Absentee by Mail Votes" votes="1">
+                <Precinct name="Pearson County" votes="1" />
+                <Precinct name="Axson" votes="0" />
+                <Precinct name="Willacoochee" votes="0" />
+                <Precinct name="Pearson City" votes="0" />
+            </VoteType>
+            <VoteType name="Provisional Votes" votes="0">
+                <Precinct name="Pearson County" votes="0" />
+                <Precinct name="Axson" votes="0" />
+                <Precinct name="Willacoochee" votes="0" />
+                <Precinct name="Pearson City" votes="0" />
+            </VoteType>
+        </Choice>
+        <Choice key="13" text="Annette Davis Jackson (Rep)" party="NP" totalVotes="38">
+            <VoteType name="Election Day Votes" votes="19">
+                <Precinct name="Pearson County" votes="8" />
+                <Precinct name="Axson" votes="1" />
+                <Precinct name="Willacoochee" votes="6" />
+                <Precinct name="Pearson City" votes="4" />
+            </VoteType>
+            <VoteType name="Advanced Voting Votes" votes="17">
+                <Precinct name="Pearson County" votes="6" />
+                <Precinct name="Axson" votes="2" />
+                <Precinct name="Willacoochee" votes="3" />
+                <Precinct name="Pearson City" votes="6" />
+            </VoteType>
+            <VoteType name="Absentee by Mail Votes" votes="2">
+                <Precinct name="Pearson County" votes="1" />
+                <Precinct name="Axson" votes="0" />
+                <Precinct name="Willacoochee" votes="1" />
+                <Precinct name="Pearson City" votes="0" />
+            </VoteType>
+            <VoteType name="Provisional Votes" votes="0">
+                <Precinct name="Pearson County" votes="0" />
+                <Precinct name="Axson" votes="0" />
+                <Precinct name="Willacoochee" votes="0" />
+                <Precinct name="Pearson City" votes="0" />
+            </VoteType>
+        </Choice>
+        <Choice key="14" text="Deborah Jackson (Dem)" party="NP" totalVotes="149">
+            <VoteType name="Election Day Votes" votes="41">
+                <Precinct name="Pearson County" votes="6" />
+                <Precinct name="Axson" votes="5" />
+                <Precinct name="Willacoochee" votes="17" />
+                <Precinct name="Pearson City" votes="13" />
+            </VoteType>
+            <VoteType name="Advanced Voting Votes" votes="85">
+                <Precinct name="Pearson County" votes="19" />
+                <Precinct name="Axson" votes="3" />
+                <Precinct name="Willacoochee" votes="30" />
+                <Precinct name="Pearson City" votes="33" />
+            </VoteType>
+            <VoteType name="Absentee by Mail Votes" votes="23">
+                <Precinct name="Pearson County" votes="8" />
+                <Precinct name="Axson" votes="2" />
+                <Precinct name="Willacoochee" votes="4" />
+                <Precinct name="Pearson City" votes="9" />
+            </VoteType>
+            <VoteType name="Provisional Votes" votes="0">
+                <Precinct name="Pearson County" votes="0" />
+                <Precinct name="Axson" votes="0" />
+                <Precinct name="Willacoochee" votes="0" />
+                <Precinct name="Pearson City" votes="0" />
+            </VoteType>
+        </Choice>
+        <Choice key="15" text="Jamesia James (Dem)" party="NP" totalVotes="42">
+            <VoteType name="Election Day Votes" votes="15">
+                <Precinct name="Pearson County" votes="3" />
+                <Precinct name="Axson" votes="1" />
+                <Precinct name="Willacoochee" votes="4" />
+                <Precinct name="Pearson City" votes="7" />
+            </VoteType>
+            <VoteType name="Advanced Voting Votes" votes="25">
+                <Precinct name="Pearson County" votes="6" />
+                <Precinct name="Axson" votes="0" />
+                <Precinct name="Willacoochee" votes="11" />
+                <Precinct name="Pearson City" votes="8" />
+            </VoteType>
+            <VoteType name="Absentee by Mail Votes" votes="2">
+                <Precinct name="Pearson County" votes="1" />
+                <Precinct name="Axson" votes="0" />
+                <Precinct name="Willacoochee" votes="0" />
+                <Precinct name="Pearson City" votes="1" />
+            </VoteType>
+            <VoteType name="Provisional Votes" votes="0">
+                <Precinct name="Pearson County" votes="0" />
+                <Precinct name="Axson" votes="0" />
+                <Precinct name="Willacoochee" votes="0" />
+                <Precinct name="Pearson City" votes="0" />
+            </VoteType>
+        </Choice>
+        <Choice key="16" text="A. Wayne Johnson (Rep)" party="NP" totalVotes="36">
+            <VoteType name="Election Day Votes" votes="13">
+                <Precinct name="Pearson County" votes="4" />
+                <Precinct name="Axson" votes="1" />
+                <Precinct name="Willacoochee" votes="4" />
+                <Precinct name="Pearson City" votes="4" />
+            </VoteType>
+            <VoteType name="Advanced Voting Votes" votes="22">
+                <Precinct name="Pearson County" votes="7" />
+                <Precinct name="Axson" votes="3" />
+                <Precinct name="Willacoochee" votes="4" />
+                <Precinct name="Pearson City" votes="8" />
+            </VoteType>
+            <VoteType name="Absentee by Mail Votes" votes="1">
+                <Precinct name="Pearson County" votes="0" />
+                <Precinct name="Axson" votes="0" />
+                <Precinct name="Willacoochee" votes="0" />
+                <Precinct name="Pearson City" votes="1" />
+            </VoteType>
+            <VoteType name="Provisional Votes" votes="0">
+                <Precinct name="Pearson County" votes="0" />
+                <Precinct name="Axson" votes="0" />
+                <Precinct name="Willacoochee" votes="0" />
+                <Precinct name="Pearson City" votes="0" />
+            </VoteType>
+        </Choice>
+        <Choice key="17" text="Tamara Johnson-Shealey (Dem)" party="NP" totalVotes="53">
+            <VoteType name="Election Day Votes" votes="14">
+                <Precinct name="Pearson County" votes="0" />
+                <Precinct name="Axson" votes="1" />
+                <Precinct name="Willacoochee" votes="6" />
+                <Precinct name="Pearson City" votes="7" />
+            </VoteType>
+            <VoteType name="Advanced Voting Votes" votes="33">
+                <Precinct name="Pearson County" votes="9" />
+                <Precinct name="Axson" votes="0" />
+                <Precinct name="Willacoochee" votes="9" />
+                <Precinct name="Pearson City" votes="15" />
+            </VoteType>
+            <VoteType name="Absentee by Mail Votes" votes="6">
+                <Precinct name="Pearson County" votes="1" />
+                <Precinct name="Axson" votes="0" />
+                <Precinct name="Willacoochee" votes="1" />
+                <Precinct name="Pearson City" votes="4" />
+            </VoteType>
+            <VoteType name="Provisional Votes" votes="0">
+                <Precinct name="Pearson County" votes="0" />
+                <Precinct name="Axson" votes="0" />
+                <Precinct name="Willacoochee" votes="0" />
+                <Precinct name="Pearson City" votes="0" />
+            </VoteType>
+        </Choice>
+        <Choice key="18" text="Matt Lieberman (Dem)" party="NP" totalVotes="56">
+            <VoteType name="Election Day Votes" votes="22">
+                <Precinct name="Pearson County" votes="6" />
+                <Precinct name="Axson" votes="5" />
+                <Precinct name="Willacoochee" votes="9" />
+                <Precinct name="Pearson City" votes="2" />
+            </VoteType>
+            <VoteType name="Advanced Voting Votes" votes="25">
+                <Precinct name="Pearson County" votes="7" />
+                <Precinct name="Axson" votes="2" />
+                <Precinct name="Willacoochee" votes="7" />
+                <Precinct name="Pearson City" votes="9" />
+            </VoteType>
+            <VoteType name="Absentee by Mail Votes" votes="9">
+                <Precinct name="Pearson County" votes="3" />
+                <Precinct name="Axson" votes="0" />
+                <Precinct name="Willacoochee" votes="6" />
+                <Precinct name="Pearson City" votes="0" />
+            </VoteType>
+            <VoteType name="Provisional Votes" votes="0">
+                <Precinct name="Pearson County" votes="0" />
+                <Precinct name="Axson" votes="0" />
+                <Precinct name="Willacoochee" votes="0" />
+                <Precinct name="Pearson City" votes="0" />
+            </VoteType>
+        </Choice>
+        <Choice key="19" text="Kelly Loeffler (I) (Rep)" party="NP" totalVotes="946">
+            <VoteType name="Election Day Votes" votes="275">
+                <Precinct name="Pearson County" votes="81" />
+                <Precinct name="Axson" votes="75" />
+                <Precinct name="Willacoochee" votes="95" />
+                <Precinct name="Pearson City" votes="24" />
+            </VoteType>
+            <VoteType name="Advanced Voting Votes" votes="582">
+                <Precinct name="Pearson County" votes="323" />
+                <Precinct name="Axson" votes="82" />
+                <Precinct name="Willacoochee" votes="116" />
+                <Precinct name="Pearson City" votes="61" />
+            </VoteType>
+            <VoteType name="Absentee by Mail Votes" votes="89">
+                <Precinct name="Pearson County" votes="38" />
+                <Precinct name="Axson" votes="9" />
+                <Precinct name="Willacoochee" votes="27" />
+                <Precinct name="Pearson City" votes="15" />
+            </VoteType>
+            <VoteType name="Provisional Votes" votes="0">
+                <Precinct name="Pearson County" votes="0" />
+                <Precinct name="Axson" votes="0" />
+                <Precinct name="Willacoochee" votes="0" />
+                <Precinct name="Pearson City" votes="0" />
+            </VoteType>
+        </Choice>
+        <Choice key="20" text="Joy Felicia Slade (Dem)" party="NP" totalVotes="15">
+            <VoteType name="Election Day Votes" votes="8">
+                <Precinct name="Pearson County" votes="3" />
+                <Precinct name="Axson" votes="1" />
+                <Precinct name="Willacoochee" votes="1" />
+                <Precinct name="Pearson City" votes="3" />
+            </VoteType>
+            <VoteType name="Advanced Voting Votes" votes="7">
+                <Precinct name="Pearson County" votes="1" />
+                <Precinct name="Axson" votes="0" />
+                <Precinct name="Willacoochee" votes="1" />
+                <Precinct name="Pearson City" votes="5" />
+            </VoteType>
+            <VoteType name="Absentee by Mail Votes" votes="0">
+                <Precinct name="Pearson County" votes="0" />
+                <Precinct name="Axson" votes="0" />
+                <Precinct name="Willacoochee" votes="0" />
+                <Precinct name="Pearson City" votes="0" />
+            </VoteType>
+            <VoteType name="Provisional Votes" votes="0">
+                <Precinct name="Pearson County" votes="0" />
+                <Precinct name="Axson" votes="0" />
+                <Precinct name="Willacoochee" votes="0" />
+                <Precinct name="Pearson City" votes="0" />
+            </VoteType>
+        </Choice>
+        <Choice key="21" text="Brian Slowinski (Lib)" party="NP" totalVotes="10">
+            <VoteType name="Election Day Votes" votes="7">
+                <Precinct name="Pearson County" votes="3" />
+                <Precinct name="Axson" votes="2" />
+                <Precinct name="Willacoochee" votes="2" />
+                <Precinct name="Pearson City" votes="0" />
+            </VoteType>
+            <VoteType name="Advanced Voting Votes" votes="2">
+                <Precinct name="Pearson County" votes="1" />
+                <Precinct name="Axson" votes="1" />
+                <Precinct name="Willacoochee" votes="0" />
+                <Precinct name="Pearson City" votes="0" />
+            </VoteType>
+            <VoteType name="Absentee by Mail Votes" votes="1">
+                <Precinct name="Pearson County" votes="1" />
+                <Precinct name="Axson" votes="0" />
+                <Precinct name="Willacoochee" votes="0" />
+                <Precinct name="Pearson City" votes="0" />
+            </VoteType>
+            <VoteType name="Provisional Votes" votes="0">
+                <Precinct name="Pearson County" votes="0" />
+                <Precinct name="Axson" votes="0" />
+                <Precinct name="Willacoochee" votes="0" />
+                <Precinct name="Pearson City" votes="0" />
+            </VoteType>
+        </Choice>
+        <Choice key="22" text="Valencia Stovall (Ind)" party="NP" totalVotes="6">
+            <VoteType name="Election Day Votes" votes="1">
+                <Precinct name="Pearson County" votes="0" />
+                <Precinct name="Axson" votes="0" />
+                <Precinct name="Willacoochee" votes="0" />
+                <Precinct name="Pearson City" votes="1" />
+            </VoteType>
+            <VoteType name="Advanced Voting Votes" votes="5">
+                <Precinct name="Pearson County" votes="2" />
+                <Precinct name="Axson" votes="0" />
+                <Precinct name="Willacoochee" votes="1" />
+                <Precinct name="Pearson City" votes="2" />
+            </VoteType>
+            <VoteType name="Absentee by Mail Votes" votes="0">
+                <Precinct name="Pearson County" votes="0" />
+                <Precinct name="Axson" votes="0" />
+                <Precinct name="Willacoochee" votes="0" />
+                <Precinct name="Pearson City" votes="0" />
+            </VoteType>
+            <VoteType name="Provisional Votes" votes="0">
+                <Precinct name="Pearson County" votes="0" />
+                <Precinct name="Axson" votes="0" />
+                <Precinct name="Willacoochee" votes="0" />
+                <Precinct name="Pearson City" votes="0" />
+            </VoteType>
+        </Choice>
+        <Choice key="23" text="Ed Tarver (Dem)" party="NP" totalVotes="8">
+            <VoteType name="Election Day Votes" votes="1">
+                <Precinct name="Pearson County" votes="0" />
+                <Precinct name="Axson" votes="0" />
+                <Precinct name="Willacoochee" votes="1" />
+                <Precinct name="Pearson City" votes="0" />
+            </VoteType>
+            <VoteType name="Advanced Voting Votes" votes="3">
+                <Precinct name="Pearson County" votes="1" />
+                <Precinct name="Axson" votes="0" />
+                <Precinct name="Willacoochee" votes="1" />
+                <Precinct name="Pearson City" votes="1" />
+            </VoteType>
+            <VoteType name="Absentee by Mail Votes" votes="4">
+                <Precinct name="Pearson County" votes="3" />
+                <Precinct name="Axson" votes="1" />
+                <Precinct name="Willacoochee" votes="0" />
+                <Precinct name="Pearson City" votes="0" />
+            </VoteType>
+            <VoteType name="Provisional Votes" votes="0">
+                <Precinct name="Pearson County" votes="0" />
+                <Precinct name="Axson" votes="0" />
+                <Precinct name="Willacoochee" votes="0" />
+                <Precinct name="Pearson City" votes="0" />
+            </VoteType>
+        </Choice>
+        <Choice key="24" text="Kandiss Taylor (Rep)" party="NP" totalVotes="63">
+            <VoteType name="Election Day Votes" votes="21">
+                <Precinct name="Pearson County" votes="5" />
+                <Precinct name="Axson" votes="5" />
+                <Precinct name="Willacoochee" votes="10" />
+                <Precinct name="Pearson City" votes="1" />
+            </VoteType>
+            <VoteType name="Advanced Voting Votes" votes="40">
+                <Precinct name="Pearson County" votes="19" />
+                <Precinct name="Axson" votes="9" />
+                <Precinct name="Willacoochee" votes="9" />
+                <Precinct name="Pearson City" votes="3" />
+            </VoteType>
+            <VoteType name="Absentee by Mail Votes" votes="2">
+                <Precinct name="Pearson County" votes="0" />
+                <Precinct name="Axson" votes="0" />
+                <Precinct name="Willacoochee" votes="1" />
+                <Precinct name="Pearson City" votes="1" />
+            </VoteType>
+            <VoteType name="Provisional Votes" votes="0">
+                <Precinct name="Pearson County" votes="0" />
+                <Precinct name="Axson" votes="0" />
+                <Precinct name="Willacoochee" votes="0" />
+                <Precinct name="Pearson City" votes="0" />
+            </VoteType>
+        </Choice>
+        <Choice key="25" text="Raphael Warnock (Dem)" party="NP" totalVotes="406">
+            <VoteType name="Election Day Votes" votes="111">
+                <Precinct name="Pearson County" votes="15" />
+                <Precinct name="Axson" votes="9" />
+                <Precinct name="Willacoochee" votes="60" />
+                <Precinct name="Pearson City" votes="27" />
+            </VoteType>
+            <VoteType name="Advanced Voting Votes" votes="234">
+                <Precinct name="Pearson County" votes="43" />
+                <Precinct name="Axson" votes="10" />
+                <Precinct name="Willacoochee" votes="77" />
+                <Precinct name="Pearson City" votes="104" />
+            </VoteType>
+            <VoteType name="Absentee by Mail Votes" votes="61">
+                <Precinct name="Pearson County" votes="16" />
+                <Precinct name="Axson" votes="0" />
+                <Precinct name="Willacoochee" votes="19" />
+                <Precinct name="Pearson City" votes="26" />
+            </VoteType>
+            <VoteType name="Provisional Votes" votes="0">
+                <Precinct name="Pearson County" votes="0" />
+                <Precinct name="Axson" votes="0" />
+                <Precinct name="Willacoochee" votes="0" />
+                <Precinct name="Pearson City" votes="0" />
+            </VoteType>
+        </Choice>
+        <Choice key="26" text="Richard Dien Winfield (Dem)" party="NP" totalVotes="23">
+            <VoteType name="Election Day Votes" votes="7">
+                <Precinct name="Pearson County" votes="1" />
+                <Precinct name="Axson" votes="1" />
+                <Precinct name="Willacoochee" votes="3" />
+                <Precinct name="Pearson City" votes="2" />
+            </VoteType>
+            <VoteType name="Advanced Voting Votes" votes="13">
+                <Precinct name="Pearson County" votes="6" />
+                <Precinct name="Axson" votes="0" />
+                <Precinct name="Willacoochee" votes="5" />
+                <Precinct name="Pearson City" votes="2" />
+            </VoteType>
+            <VoteType name="Absentee by Mail Votes" votes="3">
+                <Precinct name="Pearson County" votes="2" />
+                <Precinct name="Axson" votes="0" />
+                <Precinct name="Willacoochee" votes="1" />
+                <Precinct name="Pearson City" votes="0" />
+            </VoteType>
+            <VoteType name="Provisional Votes" votes="0">
+                <Precinct name="Pearson County" votes="0" />
+                <Precinct name="Axson" votes="0" />
+                <Precinct name="Willacoochee" votes="0" />
+                <Precinct name="Pearson City" votes="0" />
+            </VoteType>
+        </Choice>
+    </Contest>
+    <Contest key="4" text="Public Service Commission District 1" voteFor="1" isQuestion="false" precinctsReporting="4" precinctsReported="4">
+        <VoteType name="Undervotes" votes="211">
+            <Precinct name="Pearson County" votes="69" />
+            <Precinct name="Axson" votes="28" />
+            <Precinct name="Willacoochee" votes="49" />
+            <Precinct name="Pearson City" votes="65" />
+        </VoteType>
+        <VoteType name="Overvotes" votes="0">
+            <Precinct name="Pearson County" votes="0" />
+            <Precinct name="Axson" votes="0" />
+            <Precinct name="Willacoochee" votes="0" />
+            <Precinct name="Pearson City" votes="0" />
+        </VoteType>
+        <Choice key="27" text="Jason Shaw (I) (Rep)" party="NP" totalVotes="2232">
+            <VoteType name="Election Day Votes" votes="687">
+                <Precinct name="Pearson County" votes="223" />
+                <Precinct name="Axson" votes="181" />
+                <Precinct name="Willacoochee" votes="216" />
+                <Precinct name="Pearson City" votes="67" />
+            </VoteType>
+            <VoteType name="Advanced Voting Votes" votes="1371">
+                <Precinct name="Pearson County" votes="687" />
+                <Precinct name="Axson" votes="247" />
+                <Precinct name="Willacoochee" votes="292" />
+                <Precinct name="Pearson City" votes="145" />
+            </VoteType>
+            <VoteType name="Absentee by Mail Votes" votes="173">
+                <Precinct name="Pearson County" votes="74" />
+                <Precinct name="Axson" votes="25" />
+                <Precinct name="Willacoochee" votes="43" />
+                <Precinct name="Pearson City" votes="31" />
+            </VoteType>
+            <VoteType name="Provisional Votes" votes="1">
+                <Precinct name="Pearson County" votes="0" />
+                <Precinct name="Axson" votes="1" />
+                <Precinct name="Willacoochee" votes="0" />
+                <Precinct name="Pearson City" votes="0" />
+            </VoteType>
+        </Choice>
+        <Choice key="28" text="Robert G. Bryant (Dem)" party="NP" totalVotes="663">
+            <VoteType name="Election Day Votes" votes="188">
+                <Precinct name="Pearson County" votes="24" />
+                <Precinct name="Axson" votes="20" />
+                <Precinct name="Willacoochee" votes="92" />
+                <Precinct name="Pearson City" votes="52" />
+            </VoteType>
+            <VoteType name="Advanced Voting Votes" votes="363">
+                <Precinct name="Pearson County" votes="74" />
+                <Precinct name="Axson" votes="16" />
+                <Precinct name="Willacoochee" votes="118" />
+                <Precinct name="Pearson City" votes="155" />
+            </VoteType>
+            <VoteType name="Absentee by Mail Votes" votes="112">
+                <Precinct name="Pearson County" votes="33" />
+                <Precinct name="Axson" votes="4" />
+                <Precinct name="Willacoochee" votes="36" />
+                <Precinct name="Pearson City" votes="39" />
+            </VoteType>
+            <VoteType name="Provisional Votes" votes="0">
+                <Precinct name="Pearson County" votes="0" />
+                <Precinct name="Axson" votes="0" />
+                <Precinct name="Willacoochee" votes="0" />
+                <Precinct name="Pearson City" votes="0" />
+            </VoteType>
+        </Choice>
+        <Choice key="29" text="Elizabeth Melton (Lib)" party="NP" totalVotes="64">
+            <VoteType name="Election Day Votes" votes="29">
+                <Precinct name="Pearson County" votes="6" />
+                <Precinct name="Axson" votes="3" />
+                <Precinct name="Willacoochee" votes="14" />
+                <Precinct name="Pearson City" votes="6" />
+            </VoteType>
+            <VoteType name="Advanced Voting Votes" votes="31">
+                <Precinct name="Pearson County" votes="10" />
+                <Precinct name="Axson" votes="2" />
+                <Precinct name="Willacoochee" votes="12" />
+                <Precinct name="Pearson City" votes="7" />
+            </VoteType>
+            <VoteType name="Absentee by Mail Votes" votes="4">
+                <Precinct name="Pearson County" votes="1" />
+                <Precinct name="Axson" votes="0" />
+                <Precinct name="Willacoochee" votes="1" />
+                <Precinct name="Pearson City" votes="2" />
+            </VoteType>
+            <VoteType name="Provisional Votes" votes="0">
+                <Precinct name="Pearson County" votes="0" />
+                <Precinct name="Axson" votes="0" />
+                <Precinct name="Willacoochee" votes="0" />
+                <Precinct name="Pearson City" votes="0" />
+            </VoteType>
+        </Choice>
+    </Contest>
+    <Contest key="5" text="Public Service Commission District 4" voteFor="1" isQuestion="false" precinctsReporting="4" precinctsReported="4">
+        <VoteType name="Undervotes" votes="314">
+            <Precinct name="Pearson County" votes="102" />
+            <Precinct name="Axson" votes="50" />
+            <Precinct name="Willacoochee" votes="78" />
+            <Precinct name="Pearson City" votes="84" />
+        </VoteType>
+        <VoteType name="Overvotes" votes="0">
+            <Precinct name="Pearson County" votes="0" />
+            <Precinct name="Axson" votes="0" />
+            <Precinct name="Willacoochee" votes="0" />
+            <Precinct name="Pearson City" votes="0" />
+        </VoteType>
+        <Choice key="30" text="Lauren Bubba McDonald, Jr. (I) (Rep)" party="NP" totalVotes="2097">
+            <VoteType name="Election Day Votes" votes="656">
+                <Precinct name="Pearson County" votes="218" />
+                <Precinct name="Axson" votes="177" />
+                <Precinct name="Willacoochee" votes="200" />
+                <Precinct name="Pearson City" votes="61" />
+            </VoteType>
+            <VoteType name="Advanced Voting Votes" votes="1284">
+                <Precinct name="Pearson County" votes="654" />
+                <Precinct name="Axson" votes="230" />
+                <Precinct name="Willacoochee" votes="271" />
+                <Precinct name="Pearson City" votes="129" />
+            </VoteType>
+            <VoteType name="Absentee by Mail Votes" votes="156">
+                <Precinct name="Pearson County" votes="71" />
+                <Precinct name="Axson" votes="24" />
+                <Precinct name="Willacoochee" votes="41" />
+                <Precinct name="Pearson City" votes="20" />
+            </VoteType>
+            <VoteType name="Provisional Votes" votes="1">
+                <Precinct name="Pearson County" votes="0" />
+                <Precinct name="Axson" votes="1" />
+                <Precinct name="Willacoochee" votes="0" />
+                <Precinct name="Pearson City" votes="0" />
+            </VoteType>
+        </Choice>
+        <Choice key="31" text="Daniel Blackman (Dem)" party="NP" totalVotes="699">
+            <VoteType name="Election Day Votes" votes="198">
+                <Precinct name="Pearson County" votes="26" />
+                <Precinct name="Axson" votes="21" />
+                <Precinct name="Willacoochee" votes="98" />
+                <Precinct name="Pearson City" votes="53" />
+            </VoteType>
+            <VoteType name="Advanced Voting Votes" votes="375">
+                <Precinct name="Pearson County" votes="78" />
+                <Precinct name="Axson" votes="16" />
+                <Precinct name="Willacoochee" votes="124" />
+                <Precinct name="Pearson City" votes="157" />
+            </VoteType>
+            <VoteType name="Absentee by Mail Votes" votes="126">
+                <Precinct name="Pearson County" votes="35" />
+                <Precinct name="Axson" votes="3" />
+                <Precinct name="Willacoochee" votes="36" />
+                <Precinct name="Pearson City" votes="52" />
+            </VoteType>
+            <VoteType name="Provisional Votes" votes="0">
+                <Precinct name="Pearson County" votes="0" />
+                <Precinct name="Axson" votes="0" />
+                <Precinct name="Willacoochee" votes="0" />
+                <Precinct name="Pearson City" votes="0" />
+            </VoteType>
+        </Choice>
+        <Choice key="32" text="Nathan Wilson (Lib)" party="NP" totalVotes="61">
+            <VoteType name="Election Day Votes" votes="23">
+                <Precinct name="Pearson County" votes="6" />
+                <Precinct name="Axson" votes="1" />
+                <Precinct name="Willacoochee" votes="12" />
+                <Precinct name="Pearson City" votes="4" />
+            </VoteType>
+            <VoteType name="Advanced Voting Votes" votes="37">
+                <Precinct name="Pearson County" votes="11" />
+                <Precinct name="Axson" votes="4" />
+                <Precinct name="Willacoochee" votes="12" />
+                <Precinct name="Pearson City" votes="10" />
+            </VoteType>
+            <VoteType name="Absentee by Mail Votes" votes="1">
+                <Precinct name="Pearson County" votes="0" />
+                <Precinct name="Axson" votes="0" />
+                <Precinct name="Willacoochee" votes="1" />
+                <Precinct name="Pearson City" votes="0" />
+            </VoteType>
+            <VoteType name="Provisional Votes" votes="0">
+                <Precinct name="Pearson County" votes="0" />
+                <Precinct name="Axson" votes="0" />
+                <Precinct name="Willacoochee" votes="0" />
+                <Precinct name="Pearson City" votes="0" />
+            </VoteType>
+        </Choice>
+    </Contest>
+    <Contest key="6" text="US House District 8" voteFor="1" isQuestion="false" precinctsReporting="4" precinctsReported="4">
+        <VoteType name="Undervotes" votes="267">
+            <Precinct name="Pearson County" votes="81" />
+            <Precinct name="Axson" votes="38" />
+            <Precinct name="Willacoochee" votes="67" />
+            <Precinct name="Pearson City" votes="81" />
+        </VoteType>
+        <VoteType name="Overvotes" votes="0">
+            <Precinct name="Pearson County" votes="0" />
+            <Precinct name="Axson" votes="0" />
+            <Precinct name="Willacoochee" votes="0" />
+            <Precinct name="Pearson City" votes="0" />
+        </VoteType>
+        <Choice key="33" text="Austin Scott (I) (Rep)" party="NP" totalVotes="2201">
+            <VoteType name="Election Day Votes" votes="678">
+                <Precinct name="Pearson County" votes="220" />
+                <Precinct name="Axson" votes="179" />
+                <Precinct name="Willacoochee" votes="211" />
+                <Precinct name="Pearson City" votes="68" />
+            </VoteType>
+            <VoteType name="Advanced Voting Votes" votes="1345">
+                <Precinct name="Pearson County" votes="677" />
+                <Precinct name="Axson" votes="244" />
+                <Precinct name="Willacoochee" votes="286" />
+                <Precinct name="Pearson City" votes="138" />
+            </VoteType>
+            <VoteType name="Absentee by Mail Votes" votes="177">
+                <Precinct name="Pearson County" votes="78" />
+                <Precinct name="Axson" votes="26" />
+                <Precinct name="Willacoochee" votes="45" />
+                <Precinct name="Pearson City" votes="28" />
+            </VoteType>
+            <VoteType name="Provisional Votes" votes="1">
+                <Precinct name="Pearson County" votes="0" />
+                <Precinct name="Axson" votes="1" />
+                <Precinct name="Willacoochee" votes="0" />
+                <Precinct name="Pearson City" votes="0" />
+            </VoteType>
+        </Choice>
+        <Choice key="34" text="Lindsay Holliday (Dem)" party="NP" totalVotes="704">
+            <VoteType name="Election Day Votes" votes="206">
+                <Precinct name="Pearson County" votes="31" />
+                <Precinct name="Axson" votes="20" />
+                <Precinct name="Willacoochee" votes="102" />
+                <Precinct name="Pearson City" votes="53" />
+            </VoteType>
+            <VoteType name="Advanced Voting Votes" votes="380">
+                <Precinct name="Pearson County" votes="81" />
+                <Precinct name="Axson" votes="15" />
+                <Precinct name="Willacoochee" votes="126" />
+                <Precinct name="Pearson City" votes="158" />
+            </VoteType>
+            <VoteType name="Absentee by Mail Votes" votes="118">
+                <Precinct name="Pearson County" votes="34" />
+                <Precinct name="Axson" votes="4" />
+                <Precinct name="Willacoochee" votes="36" />
+                <Precinct name="Pearson City" votes="44" />
+            </VoteType>
+            <VoteType name="Provisional Votes" votes="0">
+                <Precinct name="Pearson County" votes="0" />
+                <Precinct name="Axson" votes="0" />
+                <Precinct name="Willacoochee" votes="0" />
+                <Precinct name="Pearson City" votes="0" />
+            </VoteType>
+        </Choice>
+    </Contest>
+    <Contest key="7" text="State Senate District 7" voteFor="1" isQuestion="false" precinctsReporting="4" precinctsReported="4">
+        <VoteType name="Undervotes" votes="631">
+            <Precinct name="Pearson County" votes="160" />
+            <Precinct name="Axson" votes="54" />
+            <Precinct name="Willacoochee" votes="215" />
+            <Precinct name="Pearson City" votes="202" />
+        </VoteType>
+        <VoteType name="Overvotes" votes="0">
+            <Precinct name="Pearson County" votes="0" />
+            <Precinct name="Axson" votes="0" />
+            <Precinct name="Willacoochee" votes="0" />
+            <Precinct name="Pearson City" votes="0" />
+        </VoteType>
+        <Choice key="35" text="Tyler Harper (I) (Rep)" party="NP" totalVotes="2518">
+            <VoteType name="Election Day Votes" votes="795">
+                <Precinct name="Pearson County" votes="239" />
+                <Precinct name="Axson" votes="194" />
+                <Precinct name="Willacoochee" votes="260" />
+                <Precinct name="Pearson City" votes="102" />
+            </VoteType>
+            <VoteType name="Advanced Voting Votes" votes="1505">
+                <Precinct name="Pearson County" votes="713" />
+                <Precinct name="Axson" votes="249" />
+                <Precinct name="Willacoochee" votes="328" />
+                <Precinct name="Pearson City" votes="215" />
+            </VoteType>
+            <VoteType name="Absentee by Mail Votes" votes="217">
+                <Precinct name="Pearson County" votes="83" />
+                <Precinct name="Axson" votes="27" />
+                <Precinct name="Willacoochee" votes="60" />
+                <Precinct name="Pearson City" votes="47" />
+            </VoteType>
+            <VoteType name="Provisional Votes" votes="1">
+                <Precinct name="Pearson County" votes="0" />
+                <Precinct name="Axson" votes="1" />
+                <Precinct name="Willacoochee" votes="0" />
+                <Precinct name="Pearson City" votes="0" />
+            </VoteType>
+        </Choice>
+    </Contest>
+    <Contest key="8" text="State House District 176" voteFor="1" isQuestion="false" precinctsReporting="4" precinctsReported="4">
+        <VoteType name="Undervotes" votes="241">
+            <Precinct name="Pearson County" votes="76" />
+            <Precinct name="Axson" votes="24" />
+            <Precinct name="Willacoochee" votes="58" />
+            <Precinct name="Pearson City" votes="83" />
+        </VoteType>
+        <VoteType name="Overvotes" votes="0">
+            <Precinct name="Pearson County" votes="0" />
+            <Precinct name="Axson" votes="0" />
+            <Precinct name="Willacoochee" votes="0" />
+            <Precinct name="Pearson City" votes="0" />
+        </VoteType>
+        <Choice key="36" text="James Burchett (I) (Rep)" party="NP" totalVotes="2250">
+            <VoteType name="Election Day Votes" votes="707">
+                <Precinct name="Pearson County" votes="232" />
+                <Precinct name="Axson" votes="186" />
+                <Precinct name="Willacoochee" votes="224" />
+                <Precinct name="Pearson City" votes="65" />
+            </VoteType>
+            <VoteType name="Advanced Voting Votes" votes="1370">
+                <Precinct name="Pearson County" votes="690" />
+                <Precinct name="Axson" votes="251" />
+                <Precinct name="Willacoochee" votes="286" />
+                <Precinct name="Pearson City" votes="143" />
+            </VoteType>
+            <VoteType name="Absentee by Mail Votes" votes="172">
+                <Precinct name="Pearson County" votes="75" />
+                <Precinct name="Axson" votes="26" />
+                <Precinct name="Willacoochee" votes="41" />
+                <Precinct name="Pearson City" votes="30" />
+            </VoteType>
+            <VoteType name="Provisional Votes" votes="1">
+                <Precinct name="Pearson County" votes="0" />
+                <Precinct name="Axson" votes="1" />
+                <Precinct name="Willacoochee" votes="0" />
+                <Precinct name="Pearson City" votes="0" />
+            </VoteType>
+        </Choice>
+        <Choice key="37" text="Evans Primus, Jr. (Dem)" party="NP" totalVotes="679">
+            <VoteType name="Election Day Votes" votes="194">
+                <Precinct name="Pearson County" votes="25" />
+                <Precinct name="Axson" votes="19" />
+                <Precinct name="Willacoochee" votes="95" />
+                <Precinct name="Pearson City" votes="55" />
+            </VoteType>
+            <VoteType name="Advanced Voting Votes" votes="369">
+                <Precinct name="Pearson County" votes="69" />
+                <Precinct name="Axson" votes="16" />
+                <Precinct name="Willacoochee" votes="130" />
+                <Precinct name="Pearson City" votes="154" />
+            </VoteType>
+            <VoteType name="Absentee by Mail Votes" votes="116">
+                <Precinct name="Pearson County" votes="34" />
+                <Precinct name="Axson" votes="4" />
+                <Precinct name="Willacoochee" votes="38" />
+                <Precinct name="Pearson City" votes="40" />
+            </VoteType>
+            <VoteType name="Provisional Votes" votes="0">
+                <Precinct name="Pearson County" votes="0" />
+                <Precinct name="Axson" votes="0" />
+                <Precinct name="Willacoochee" votes="0" />
+                <Precinct name="Pearson City" votes="0" />
+            </VoteType>
+        </Choice>
+    </Contest>
+    <Contest key="9" text="District Attorney - Alapaha" voteFor="1" isQuestion="false" precinctsReporting="4" precinctsReported="4">
+        <VoteType name="Undervotes" votes="646">
+            <Precinct name="Pearson County" votes="185" />
+            <Precinct name="Axson" votes="56" />
+            <Precinct name="Willacoochee" votes="207" />
+            <Precinct name="Pearson City" votes="198" />
+        </VoteType>
+        <VoteType name="Overvotes" votes="0">
+            <Precinct name="Pearson County" votes="0" />
+            <Precinct name="Axson" votes="0" />
+            <Precinct name="Willacoochee" votes="0" />
+            <Precinct name="Pearson City" votes="0" />
+        </VoteType>
+        <Choice key="38" text="Dick Perryman (I) (Rep)" party="NP" totalVotes="2509">
+            <VoteType name="Election Day Votes" votes="789">
+                <Precinct name="Pearson County" votes="237" />
+                <Precinct name="Axson" votes="193" />
+                <Precinct name="Willacoochee" votes="257" />
+                <Precinct name="Pearson City" votes="102" />
+            </VoteType>
+            <VoteType name="Advanced Voting Votes" votes="1495">
+                <Precinct name="Pearson County" votes="689" />
+                <Precinct name="Axson" votes="247" />
+                <Precinct name="Willacoochee" votes="340" />
+                <Precinct name="Pearson City" votes="219" />
+            </VoteType>
+            <VoteType name="Absentee by Mail Votes" votes="224">
+                <Precinct name="Pearson County" votes="84" />
+                <Precinct name="Axson" votes="28" />
+                <Precinct name="Willacoochee" votes="65" />
+                <Precinct name="Pearson City" votes="47" />
+            </VoteType>
+            <VoteType name="Provisional Votes" votes="1">
+                <Precinct name="Pearson County" votes="0" />
+                <Precinct name="Axson" votes="1" />
+                <Precinct name="Willacoochee" votes="0" />
+                <Precinct name="Pearson City" votes="0" />
+            </VoteType>
+        </Choice>
+    </Contest>
+    <Contest key="25" text="Probate Judge" voteFor="1" isQuestion="false" precinctsReporting="4" precinctsReported="4">
+        <VoteType name="Undervotes" votes="570">
+            <Precinct name="Pearson County" votes="167" />
+            <Precinct name="Axson" votes="58" />
+            <Precinct name="Willacoochee" votes="189" />
+            <Precinct name="Pearson City" votes="156" />
+        </VoteType>
+        <VoteType name="Overvotes" votes="0">
+            <Precinct name="Pearson County" votes="0" />
+            <Precinct name="Axson" votes="0" />
+            <Precinct name="Willacoochee" votes="0" />
+            <Precinct name="Pearson City" votes="0" />
+        </VoteType>
+        <Choice key="80" text="Carol Geiger Durrance (I)" party="NP" totalVotes="2588">
+            <VoteType name="Election Day Votes" votes="811">
+                <Precinct name="Pearson County" votes="242" />
+                <Precinct name="Axson" votes="202" />
+                <Precinct name="Willacoochee" votes="258" />
+                <Precinct name="Pearson City" votes="109" />
+            </VoteType>
+            <VoteType name="Advanced Voting Votes" votes="1525">
+                <Precinct name="Pearson County" votes="695" />
+                <Precinct name="Axson" votes="238" />
+                <Precinct name="Willacoochee" votes="350" />
+                <Precinct name="Pearson City" votes="242" />
+            </VoteType>
+            <VoteType name="Absentee by Mail Votes" votes="251">
+                <Precinct name="Pearson County" votes="92" />
+                <Precinct name="Axson" votes="27" />
+                <Precinct name="Willacoochee" votes="73" />
+                <Precinct name="Pearson City" votes="59" />
+            </VoteType>
+            <VoteType name="Provisional Votes" votes="1">
+                <Precinct name="Pearson County" votes="0" />
+                <Precinct name="Axson" votes="1" />
+                <Precinct name="Willacoochee" votes="0" />
+                <Precinct name="Pearson City" votes="0" />
+            </VoteType>
+        </Choice>
+    </Contest>
+    <Contest key="10" text="Clerk of Superior Court" voteFor="1" isQuestion="false" precinctsReporting="4" precinctsReported="4">
+        <VoteType name="Undervotes" votes="498">
+            <Precinct name="Pearson County" votes="144" />
+            <Precinct name="Axson" votes="43" />
+            <Precinct name="Willacoochee" votes="159" />
+            <Precinct name="Pearson City" votes="152" />
+        </VoteType>
+        <VoteType name="Overvotes" votes="0">
+            <Precinct name="Pearson County" votes="0" />
+            <Precinct name="Axson" votes="0" />
+            <Precinct name="Willacoochee" votes="0" />
+            <Precinct name="Pearson City" votes="0" />
+        </VoteType>
+        <Choice key="39" text="Cynthia G. Dillingham (I) (Rep)" party="NP" totalVotes="2661">
+            <VoteType name="Election Day Votes" votes="839">
+                <Precinct name="Pearson County" votes="248" />
+                <Precinct name="Axson" votes="203" />
+                <Precinct name="Willacoochee" votes="275" />
+                <Precinct name="Pearson City" votes="113" />
+            </VoteType>
+            <VoteType name="Advanced Voting Votes" votes="1579">
+                <Precinct name="Pearson County" votes="716" />
+                <Precinct name="Axson" votes="252" />
+                <Precinct name="Willacoochee" votes="366" />
+                <Precinct name="Pearson City" votes="245" />
+            </VoteType>
+            <VoteType name="Absentee by Mail Votes" votes="242">
+                <Precinct name="Pearson County" votes="89" />
+                <Precinct name="Axson" votes="27" />
+                <Precinct name="Willacoochee" votes="69" />
+                <Precinct name="Pearson City" votes="57" />
+            </VoteType>
+            <VoteType name="Provisional Votes" votes="1">
+                <Precinct name="Pearson County" votes="0" />
+                <Precinct name="Axson" votes="1" />
+                <Precinct name="Willacoochee" votes="0" />
+                <Precinct name="Pearson City" votes="0" />
+            </VoteType>
+        </Choice>
+    </Contest>
+    <Contest key="11" text="Sheriff" voteFor="1" isQuestion="false" precinctsReporting="4" precinctsReported="4">
+        <VoteType name="Undervotes" votes="82">
+            <Precinct name="Pearson County" votes="14" />
+            <Precinct name="Axson" votes="6" />
+            <Precinct name="Willacoochee" votes="39" />
+            <Precinct name="Pearson City" votes="23" />
+        </VoteType>
+        <VoteType name="Overvotes" votes="0">
+            <Precinct name="Pearson County" votes="0" />
+            <Precinct name="Axson" votes="0" />
+            <Precinct name="Willacoochee" votes="0" />
+            <Precinct name="Pearson City" votes="0" />
+        </VoteType>
+        <Choice key="40" text="Gregory Soles (Rep)" party="NP" totalVotes="1317">
+            <VoteType name="Election Day Votes" votes="377">
+                <Precinct name="Pearson County" votes="91" />
+                <Precinct name="Axson" votes="98" />
+                <Precinct name="Willacoochee" votes="146" />
+                <Precinct name="Pearson City" votes="42" />
+            </VoteType>
+            <VoteType name="Advanced Voting Votes" votes="827">
+                <Precinct name="Pearson County" votes="384" />
+                <Precinct name="Axson" votes="158" />
+                <Precinct name="Willacoochee" votes="188" />
+                <Precinct name="Pearson City" votes="97" />
+            </VoteType>
+            <VoteType name="Absentee by Mail Votes" votes="112">
+                <Precinct name="Pearson County" votes="48" />
+                <Precinct name="Axson" votes="16" />
+                <Precinct name="Willacoochee" votes="26" />
+                <Precinct name="Pearson City" votes="22" />
+            </VoteType>
+            <VoteType name="Provisional Votes" votes="1">
+                <Precinct name="Pearson County" votes="0" />
+                <Precinct name="Axson" votes="1" />
+                <Precinct name="Willacoochee" votes="0" />
+                <Precinct name="Pearson City" votes="0" />
+            </VoteType>
+        </Choice>
+        <Choice key="41" text="David Moore (I) (Ind)" party="NP" totalVotes="1758">
+            <VoteType name="Election Day Votes" votes="578">
+                <Precinct name="Pearson County" votes="179" />
+                <Precinct name="Axson" votes="119" />
+                <Precinct name="Willacoochee" votes="184" />
+                <Precinct name="Pearson City" votes="96" />
+            </VoteType>
+            <VoteType name="Advanced Voting Votes" votes="1009">
+                <Precinct name="Pearson County" votes="413" />
+                <Precinct name="Axson" votes="117" />
+                <Precinct name="Willacoochee" votes="238" />
+                <Precinct name="Pearson City" votes="241" />
+            </VoteType>
+            <VoteType name="Absentee by Mail Votes" votes="171">
+                <Precinct name="Pearson County" votes="62" />
+                <Precinct name="Axson" votes="12" />
+                <Precinct name="Willacoochee" votes="49" />
+                <Precinct name="Pearson City" votes="48" />
+            </VoteType>
+            <VoteType name="Provisional Votes" votes="0">
+                <Precinct name="Pearson County" votes="0" />
+                <Precinct name="Axson" votes="0" />
+                <Precinct name="Willacoochee" votes="0" />
+                <Precinct name="Pearson City" votes="0" />
+            </VoteType>
+        </Choice>
+    </Contest>
+    <Contest key="12" text="Tax Commissioner" voteFor="1" isQuestion="false" precinctsReporting="4" precinctsReported="4">
+        <VoteType name="Undervotes" votes="448">
+            <Precinct name="Pearson County" votes="130" />
+            <Precinct name="Axson" votes="42" />
+            <Precinct name="Willacoochee" votes="154" />
+            <Precinct name="Pearson City" votes="122" />
+        </VoteType>
+        <VoteType name="Overvotes" votes="0">
+            <Precinct name="Pearson County" votes="0" />
+            <Precinct name="Axson" votes="0" />
+            <Precinct name="Willacoochee" votes="0" />
+            <Precinct name="Pearson City" votes="0" />
+        </VoteType>
+        <Choice key="42" text="Fonda H. Lee (I) (Rep)" party="NP" totalVotes="2714">
+            <VoteType name="Election Day Votes" votes="850">
+                <Precinct name="Pearson County" votes="248" />
+                <Precinct name="Axson" votes="204" />
+                <Precinct name="Willacoochee" votes="280" />
+                <Precinct name="Pearson City" votes="118" />
+            </VoteType>
+            <VoteType name="Advanced Voting Votes" votes="1618">
+                <Precinct name="Pearson County" votes="734" />
+                <Precinct name="Axson" votes="252" />
+                <Precinct name="Willacoochee" votes="364" />
+                <Precinct name="Pearson City" votes="268" />
+            </VoteType>
+            <VoteType name="Absentee by Mail Votes" votes="245">
+                <Precinct name="Pearson County" votes="86" />
+                <Precinct name="Axson" votes="28" />
+                <Precinct name="Willacoochee" votes="74" />
+                <Precinct name="Pearson City" votes="57" />
+            </VoteType>
+            <VoteType name="Provisional Votes" votes="1">
+                <Precinct name="Pearson County" votes="0" />
+                <Precinct name="Axson" votes="1" />
+                <Precinct name="Willacoochee" votes="0" />
+                <Precinct name="Pearson City" votes="0" />
+            </VoteType>
+        </Choice>
+    </Contest>
+    <Contest key="13" text="Surveyor" voteFor="1" isQuestion="false" precinctsReporting="4" precinctsReported="4">
+        <VoteType name="Undervotes" votes="568">
+            <Precinct name="Pearson County" votes="163" />
+            <Precinct name="Axson" votes="75" />
+            <Precinct name="Willacoochee" votes="205" />
+            <Precinct name="Pearson City" votes="125" />
+        </VoteType>
+        <VoteType name="Overvotes" votes="0">
+            <Precinct name="Pearson County" votes="0" />
+            <Precinct name="Axson" votes="0" />
+            <Precinct name="Willacoochee" votes="0" />
+            <Precinct name="Pearson City" votes="0" />
+        </VoteType>
+        <Choice key="43" text="Claude “Doodle” White, Jr. (I) (Dem)" party="NP" totalVotes="2585">
+            <VoteType name="Election Day Votes" votes="797">
+                <Precinct name="Pearson County" votes="240" />
+                <Precinct name="Axson" votes="189" />
+                <Precinct name="Willacoochee" votes="259" />
+                <Precinct name="Pearson City" votes="109" />
+            </VoteType>
+            <VoteType name="Advanced Voting Votes" votes="1532">
+                <Precinct name="Pearson County" votes="695" />
+                <Precinct name="Axson" votes="228" />
+                <Precinct name="Willacoochee" votes="340" />
+                <Precinct name="Pearson City" votes="269" />
+            </VoteType>
+            <VoteType name="Absentee by Mail Votes" votes="255">
+                <Precinct name="Pearson County" votes="99" />
+                <Precinct name="Axson" votes="27" />
+                <Precinct name="Willacoochee" votes="65" />
+                <Precinct name="Pearson City" votes="64" />
+            </VoteType>
+            <VoteType name="Provisional Votes" votes="1">
+                <Precinct name="Pearson County" votes="0" />
+                <Precinct name="Axson" votes="1" />
+                <Precinct name="Willacoochee" votes="0" />
+                <Precinct name="Pearson City" votes="0" />
+            </VoteType>
+        </Choice>
+    </Contest>
+    <Contest key="14" text="Coroner" voteFor="1" isQuestion="false" precinctsReporting="4" precinctsReported="4">
+        <VoteType name="Undervotes" votes="445">
+            <Precinct name="Pearson County" votes="119" />
+            <Precinct name="Axson" votes="43" />
+            <Precinct name="Willacoochee" votes="160" />
+            <Precinct name="Pearson City" votes="123" />
+        </VoteType>
+        <VoteType name="Overvotes" votes="0">
+            <Precinct name="Pearson County" votes="0" />
+            <Precinct name="Axson" votes="0" />
+            <Precinct name="Willacoochee" votes="0" />
+            <Precinct name="Pearson City" votes="0" />
+        </VoteType>
+        <Choice key="44" text="Jake Relihan (I) (Rep)" party="NP" totalVotes="2720">
+            <VoteType name="Election Day Votes" votes="851">
+                <Precinct name="Pearson County" votes="252" />
+                <Precinct name="Axson" votes="202" />
+                <Precinct name="Willacoochee" votes="280" />
+                <Precinct name="Pearson City" votes="117" />
+            </VoteType>
+            <VoteType name="Advanced Voting Votes" votes="1616">
+                <Precinct name="Pearson County" votes="738" />
+                <Precinct name="Axson" votes="253" />
+                <Precinct name="Willacoochee" votes="358" />
+                <Precinct name="Pearson City" votes="267" />
+            </VoteType>
+            <VoteType name="Absentee by Mail Votes" votes="252">
+                <Precinct name="Pearson County" votes="91" />
+                <Precinct name="Axson" votes="27" />
+                <Precinct name="Willacoochee" votes="74" />
+                <Precinct name="Pearson City" votes="60" />
+            </VoteType>
+            <VoteType name="Provisional Votes" votes="1">
+                <Precinct name="Pearson County" votes="0" />
+                <Precinct name="Axson" votes="1" />
+                <Precinct name="Willacoochee" votes="0" />
+                <Precinct name="Pearson City" votes="0" />
+            </VoteType>
+        </Choice>
+    </Contest>
+    <Contest key="15" text="County Commission District 1" voteFor="1" isQuestion="false" precinctsReporting="1" precinctsReported="1">
+        <VoteType name="Undervotes" votes="27">
+            <Precinct name="Willacoochee" votes="27" />
+        </VoteType>
+        <VoteType name="Overvotes" votes="0">
+            <Precinct name="Willacoochee" votes="0" />
+        </VoteType>
+        <Choice key="45" text="Buddy Willis (I) (Rep)" party="NP" totalVotes="318">
+            <VoteType name="Election Day Votes" votes="140">
+                <Precinct name="Willacoochee" votes="140" />
+            </VoteType>
+            <VoteType name="Advanced Voting Votes" votes="152">
+                <Precinct name="Willacoochee" votes="152" />
+            </VoteType>
+            <VoteType name="Absentee by Mail Votes" votes="26">
+                <Precinct name="Willacoochee" votes="26" />
+            </VoteType>
+            <VoteType name="Provisional Votes" votes="0">
+                <Precinct name="Willacoochee" votes="0" />
+            </VoteType>
+        </Choice>
+        <Choice key="46" text="Harvey Williams, Jr. (Dem)" party="NP" totalVotes="272">
+            <VoteType name="Election Day Votes" votes="98">
+                <Precinct name="Willacoochee" votes="98" />
+            </VoteType>
+            <VoteType name="Advanced Voting Votes" votes="141">
+                <Precinct name="Willacoochee" votes="141" />
+            </VoteType>
+            <VoteType name="Absentee by Mail Votes" votes="33">
+                <Precinct name="Willacoochee" votes="33" />
+            </VoteType>
+            <VoteType name="Provisional Votes" votes="0">
+                <Precinct name="Willacoochee" votes="0" />
+            </VoteType>
+        </Choice>
+    </Contest>
+    <Contest key="16" text="County Commission District 3" voteFor="1" isQuestion="false" precinctsReporting="2" precinctsReported="2">
+        <VoteType name="Undervotes" votes="113">
+            <Precinct name="Pearson County" votes="79" />
+            <Precinct name="Willacoochee" votes="34" />
+        </VoteType>
+        <VoteType name="Overvotes" votes="0">
+            <Precinct name="Pearson County" votes="0" />
+            <Precinct name="Willacoochee" votes="0" />
+        </VoteType>
+        <Choice key="47" text="Charlton Gillis (I) (Rep)" party="NP" totalVotes="648">
+            <VoteType name="Election Day Votes" votes="188">
+                <Precinct name="Pearson County" votes="107" />
+                <Precinct name="Willacoochee" votes="81" />
+            </VoteType>
+            <VoteType name="Advanced Voting Votes" votes="405">
+                <Precinct name="Pearson County" votes="282" />
+                <Precinct name="Willacoochee" votes="123" />
+            </VoteType>
+            <VoteType name="Absentee by Mail Votes" votes="55">
+                <Precinct name="Pearson County" votes="39" />
+                <Precinct name="Willacoochee" votes="16" />
+            </VoteType>
+            <VoteType name="Provisional Votes" votes="0">
+                <Precinct name="Pearson County" votes="0" />
+                <Precinct name="Willacoochee" votes="0" />
+            </VoteType>
+        </Choice>
+    </Contest>
+    <Contest key="17" text="County Commission District 5" voteFor="1" isQuestion="false" precinctsReporting="2" precinctsReported="2">
+        <VoteType name="Undervotes" votes="74">
+            <Precinct name="Pearson County" votes="24" />
+            <Precinct name="Axson" votes="50" />
+        </VoteType>
+        <VoteType name="Overvotes" votes="0">
+            <Precinct name="Pearson County" votes="0" />
+            <Precinct name="Axson" votes="0" />
+        </VoteType>
+        <Choice key="48" text="Tom Morris (Rep)" party="NP" totalVotes="643">
+            <VoteType name="Election Day Votes" votes="242">
+                <Precinct name="Pearson County" votes="43" />
+                <Precinct name="Axson" votes="199" />
+            </VoteType>
+            <VoteType name="Advanced Voting Votes" votes="364">
+                <Precinct name="Pearson County" votes="114" />
+                <Precinct name="Axson" votes="250" />
+            </VoteType>
+            <VoteType name="Absentee by Mail Votes" votes="36">
+                <Precinct name="Pearson County" votes="9" />
+                <Precinct name="Axson" votes="27" />
+            </VoteType>
+            <VoteType name="Provisional Votes" votes="1">
+                <Precinct name="Pearson County" votes="0" />
+                <Precinct name="Axson" votes="1" />
+            </VoteType>
+        </Choice>
+    </Contest>
+    <Contest key="18" text="Board of Education District 2" voteFor="1" isQuestion="false" precinctsReporting="2" precinctsReported="2">
+        <VoteType name="Undervotes" votes="134">
+            <Precinct name="Pearson County" votes="19" />
+            <Precinct name="Pearson City" votes="115" />
+        </VoteType>
+        <VoteType name="Overvotes" votes="0">
+            <Precinct name="Pearson County" votes="0" />
+            <Precinct name="Pearson City" votes="0" />
+        </VoteType>
+        <Choice key="49" text="Shirley Frazier Cooper (I) (Dem)" party="NP" totalVotes="370">
+            <VoteType name="Election Day Votes" votes="94">
+                <Precinct name="Pearson County" votes="9" />
+                <Precinct name="Pearson City" votes="85" />
+            </VoteType>
+            <VoteType name="Advanced Voting Votes" votes="225">
+                <Precinct name="Pearson County" votes="33" />
+                <Precinct name="Pearson City" votes="192" />
+            </VoteType>
+            <VoteType name="Absentee by Mail Votes" votes="51">
+                <Precinct name="Pearson County" votes="1" />
+                <Precinct name="Pearson City" votes="50" />
+            </VoteType>
+            <VoteType name="Provisional Votes" votes="0">
+                <Precinct name="Pearson County" votes="0" />
+                <Precinct name="Pearson City" votes="0" />
+            </VoteType>
+        </Choice>
+    </Contest>
+    <Contest key="19" text="Board of Education District 4" voteFor="1" isQuestion="false" precinctsReporting="2" precinctsReported="2">
+        <VoteType name="Undervotes" votes="66">
+            <Precinct name="Pearson County" votes="45" />
+            <Precinct name="Pearson City" votes="21" />
+        </VoteType>
+        <VoteType name="Overvotes" votes="0">
+            <Precinct name="Pearson County" votes="0" />
+            <Precinct name="Pearson City" votes="0" />
+        </VoteType>
+        <Choice key="50" text="Danny Ray Smith (I) (Rep)" party="NP" totalVotes="496">
+            <VoteType name="Election Day Votes" votes="112">
+                <Precinct name="Pearson County" votes="87" />
+                <Precinct name="Pearson City" votes="25" />
+            </VoteType>
+            <VoteType name="Advanced Voting Votes" votes="339">
+                <Precinct name="Pearson County" votes="273" />
+                <Precinct name="Pearson City" votes="66" />
+            </VoteType>
+            <VoteType name="Absentee by Mail Votes" votes="45">
+                <Precinct name="Pearson County" votes="32" />
+                <Precinct name="Pearson City" votes="13" />
+            </VoteType>
+            <VoteType name="Provisional Votes" votes="0">
+                <Precinct name="Pearson County" votes="0" />
+                <Precinct name="Pearson City" votes="0" />
+            </VoteType>
+        </Choice>
+    </Contest>
+    <Contest key="20" text="Board of Education District 5" voteFor="1" isQuestion="false" precinctsReporting="2" precinctsReported="2">
+        <VoteType name="Undervotes" votes="80">
+            <Precinct name="Pearson County" votes="27" />
+            <Precinct name="Axson" votes="53" />
+        </VoteType>
+        <VoteType name="Overvotes" votes="0">
+            <Precinct name="Pearson County" votes="0" />
+            <Precinct name="Axson" votes="0" />
+        </VoteType>
+        <Choice key="51" text="Landon Meeks (I) (Rep)" party="NP" totalVotes="637">
+            <VoteType name="Election Day Votes" votes="242">
+                <Precinct name="Pearson County" votes="44" />
+                <Precinct name="Axson" votes="198" />
+            </VoteType>
+            <VoteType name="Advanced Voting Votes" votes="359">
+                <Precinct name="Pearson County" votes="112" />
+                <Precinct name="Axson" votes="247" />
+            </VoteType>
+            <VoteType name="Absentee by Mail Votes" votes="35">
+                <Precinct name="Pearson County" votes="7" />
+                <Precinct name="Axson" votes="28" />
+            </VoteType>
+            <VoteType name="Provisional Votes" votes="1">
+                <Precinct name="Pearson County" votes="0" />
+                <Precinct name="Axson" votes="1" />
+            </VoteType>
+        </Choice>
+    </Contest>
+    <Contest key="21" text="Soil and Water - Satilla River" voteFor="1" isQuestion="false" precinctsReporting="4" precinctsReported="4">
+        <VoteType name="Undervotes" votes="621">
+            <Precinct name="Pearson County" votes="186" />
+            <Precinct name="Axson" votes="75" />
+            <Precinct name="Willacoochee" votes="195" />
+            <Precinct name="Pearson City" votes="165" />
+        </VoteType>
+        <VoteType name="Overvotes" votes="0">
+            <Precinct name="Pearson County" votes="0" />
+            <Precinct name="Axson" votes="0" />
+            <Precinct name="Willacoochee" votes="0" />
+            <Precinct name="Pearson City" votes="0" />
+        </VoteType>
+        <Choice key="52" text="Marvin H. Giddens, Jr. (I)" party="NP" totalVotes="2543">
+            <VoteType name="Election Day Votes" votes="792">
+                <Precinct name="Pearson County" votes="238" />
+                <Precinct name="Axson" votes="190" />
+                <Precinct name="Willacoochee" votes="260" />
+                <Precinct name="Pearson City" votes="104" />
+            </VoteType>
+            <VoteType name="Advanced Voting Votes" votes="1500">
+                <Precinct name="Pearson County" votes="681" />
+                <Precinct name="Axson" votes="234" />
+                <Precinct name="Willacoochee" votes="342" />
+                <Precinct name="Pearson City" votes="243" />
+            </VoteType>
+            <VoteType name="Absentee by Mail Votes" votes="250">
+                <Precinct name="Pearson County" votes="91" />
+                <Precinct name="Axson" votes="27" />
+                <Precinct name="Willacoochee" votes="75" />
+                <Precinct name="Pearson City" votes="57" />
+            </VoteType>
+            <VoteType name="Provisional Votes" votes="1">
+                <Precinct name="Pearson County" votes="0" />
+                <Precinct name="Axson" votes="1" />
+                <Precinct name="Willacoochee" votes="0" />
+                <Precinct name="Pearson City" votes="0" />
+            </VoteType>
+        </Choice>
+    </Contest>
+    <Contest key="22" text="Constitutional Amendment #1" voteFor="1" isQuestion="false" precinctsReporting="4" precinctsReported="4">
+        <VoteType name="Undervotes" votes="369">
+            <Precinct name="Pearson County" votes="131" />
+            <Precinct name="Axson" votes="63" />
+            <Precinct name="Willacoochee" votes="83" />
+            <Precinct name="Pearson City" votes="92" />
+        </VoteType>
+        <VoteType name="Overvotes" votes="0">
+            <Precinct name="Pearson County" votes="0" />
+            <Precinct name="Axson" votes="0" />
+            <Precinct name="Willacoochee" votes="0" />
+            <Precinct name="Pearson City" votes="0" />
+        </VoteType>
+        <Choice key="53" text="YES" party="NP" totalVotes="2043">
+            <VoteType name="Election Day Votes" votes="655">
+                <Precinct name="Pearson County" votes="177" />
+                <Precinct name="Axson" votes="150" />
+                <Precinct name="Willacoochee" votes="237" />
+                <Precinct name="Pearson City" votes="91" />
+            </VoteType>
+            <VoteType name="Advanced Voting Votes" votes="1178">
+                <Precinct name="Pearson County" votes="511" />
+                <Precinct name="Axson" votes="170" />
+                <Precinct name="Willacoochee" votes="286" />
+                <Precinct name="Pearson City" votes="211" />
+            </VoteType>
+            <VoteType name="Absentee by Mail Votes" votes="210">
+                <Precinct name="Pearson County" votes="81" />
+                <Precinct name="Axson" votes="19" />
+                <Precinct name="Willacoochee" votes="63" />
+                <Precinct name="Pearson City" votes="47" />
+            </VoteType>
+            <VoteType name="Provisional Votes" votes="0">
+                <Precinct name="Pearson County" votes="0" />
+                <Precinct name="Axson" votes="0" />
+                <Precinct name="Willacoochee" votes="0" />
+                <Precinct name="Pearson City" votes="0" />
+            </VoteType>
+        </Choice>
+        <Choice key="54" text="NO" party="NP" totalVotes="759">
+            <VoteType name="Election Day Votes" votes="227">
+                <Precinct name="Pearson County" votes="69" />
+                <Precinct name="Axson" votes="48" />
+                <Precinct name="Willacoochee" votes="83" />
+                <Precinct name="Pearson City" votes="27" />
+            </VoteType>
+            <VoteType name="Advanced Voting Votes" votes="480">
+                <Precinct name="Pearson County" votes="216" />
+                <Precinct name="Axson" votes="71" />
+                <Precinct name="Willacoochee" votes="105" />
+                <Precinct name="Pearson City" votes="88" />
+            </VoteType>
+            <VoteType name="Absentee by Mail Votes" votes="51">
+                <Precinct name="Pearson County" votes="16" />
+                <Precinct name="Axson" votes="5" />
+                <Precinct name="Willacoochee" votes="16" />
+                <Precinct name="Pearson City" votes="14" />
+            </VoteType>
+            <VoteType name="Provisional Votes" votes="1">
+                <Precinct name="Pearson County" votes="0" />
+                <Precinct name="Axson" votes="1" />
+                <Precinct name="Willacoochee" votes="0" />
+                <Precinct name="Pearson City" votes="0" />
+            </VoteType>
+        </Choice>
+    </Contest>
+    <Contest key="23" text="Constitutional Amendment #2" voteFor="1" isQuestion="false" precinctsReporting="4" precinctsReported="4">
+        <VoteType name="Undervotes" votes="415">
+            <Precinct name="Pearson County" votes="147" />
+            <Precinct name="Axson" votes="65" />
+            <Precinct name="Willacoochee" votes="106" />
+            <Precinct name="Pearson City" votes="97" />
+        </VoteType>
+        <VoteType name="Overvotes" votes="0">
+            <Precinct name="Pearson County" votes="0" />
+            <Precinct name="Axson" votes="0" />
+            <Precinct name="Willacoochee" votes="0" />
+            <Precinct name="Pearson City" votes="0" />
+        </VoteType>
+        <Choice key="55" text="YES" party="NP" totalVotes="1744">
+            <VoteType name="Election Day Votes" votes="586">
+                <Precinct name="Pearson County" votes="170" />
+                <Precinct name="Axson" votes="127" />
+                <Precinct name="Willacoochee" votes="202" />
+                <Precinct name="Pearson City" votes="87" />
+            </VoteType>
+            <VoteType name="Advanced Voting Votes" votes="1001">
+                <Precinct name="Pearson County" votes="415" />
+                <Precinct name="Axson" votes="142" />
+                <Precinct name="Willacoochee" votes="247" />
+                <Precinct name="Pearson City" votes="197" />
+            </VoteType>
+            <VoteType name="Absentee by Mail Votes" votes="156">
+                <Precinct name="Pearson County" votes="65" />
+                <Precinct name="Axson" votes="15" />
+                <Precinct name="Willacoochee" votes="41" />
+                <Precinct name="Pearson City" votes="35" />
+            </VoteType>
+            <VoteType name="Provisional Votes" votes="1">
+                <Precinct name="Pearson County" votes="0" />
+                <Precinct name="Axson" votes="1" />
+                <Precinct name="Willacoochee" votes="0" />
+                <Precinct name="Pearson City" votes="0" />
+            </VoteType>
+        </Choice>
+        <Choice key="56" text="NO" party="NP" totalVotes="1012">
+            <VoteType name="Election Day Votes" votes="283">
+                <Precinct name="Pearson County" votes="75" />
+                <Precinct name="Axson" votes="72" />
+                <Precinct name="Willacoochee" votes="108" />
+                <Precinct name="Pearson City" votes="28" />
+            </VoteType>
+            <VoteType name="Advanced Voting Votes" votes="625">
+                <Precinct name="Pearson County" votes="298" />
+                <Precinct name="Axson" votes="96" />
+                <Precinct name="Willacoochee" votes="130" />
+                <Precinct name="Pearson City" votes="101" />
+            </VoteType>
+            <VoteType name="Absentee by Mail Votes" votes="104">
+                <Precinct name="Pearson County" votes="31" />
+                <Precinct name="Axson" votes="9" />
+                <Precinct name="Willacoochee" votes="39" />
+                <Precinct name="Pearson City" votes="25" />
+            </VoteType>
+            <VoteType name="Provisional Votes" votes="0">
+                <Precinct name="Pearson County" votes="0" />
+                <Precinct name="Axson" votes="0" />
+                <Precinct name="Willacoochee" votes="0" />
+                <Precinct name="Pearson City" votes="0" />
+            </VoteType>
+        </Choice>
+    </Contest>
+    <Contest key="24" text="Statewide Referendum A" voteFor="1" isQuestion="false" precinctsReporting="4" precinctsReported="4">
+        <VoteType name="Undervotes" votes="345">
+            <Precinct name="Pearson County" votes="120" />
+            <Precinct name="Axson" votes="57" />
+            <Precinct name="Willacoochee" votes="92" />
+            <Precinct name="Pearson City" votes="76" />
+        </VoteType>
+        <VoteType name="Overvotes" votes="0">
+            <Precinct name="Pearson County" votes="0" />
+            <Precinct name="Axson" votes="0" />
+            <Precinct name="Willacoochee" votes="0" />
+            <Precinct name="Pearson City" votes="0" />
+        </VoteType>
+        <Choice key="57" text="YES" party="NP" totalVotes="1836">
+            <VoteType name="Election Day Votes" votes="617">
+                <Precinct name="Pearson County" votes="163" />
+                <Precinct name="Axson" votes="142" />
+                <Precinct name="Willacoochee" votes="211" />
+                <Precinct name="Pearson City" votes="101" />
+            </VoteType>
+            <VoteType name="Advanced Voting Votes" votes="1053">
+                <Precinct name="Pearson County" votes="433" />
+                <Precinct name="Axson" votes="148" />
+                <Precinct name="Willacoochee" votes="256" />
+                <Precinct name="Pearson City" votes="216" />
+            </VoteType>
+            <VoteType name="Absentee by Mail Votes" votes="165">
+                <Precinct name="Pearson County" votes="59" />
+                <Precinct name="Axson" votes="13" />
+                <Precinct name="Willacoochee" votes="49" />
+                <Precinct name="Pearson City" votes="44" />
+            </VoteType>
+            <VoteType name="Provisional Votes" votes="1">
+                <Precinct name="Pearson County" votes="0" />
+                <Precinct name="Axson" votes="1" />
+                <Precinct name="Willacoochee" votes="0" />
+                <Precinct name="Pearson City" votes="0" />
+            </VoteType>
+        </Choice>
+        <Choice key="58" text="NO" party="NP" totalVotes="990">
+            <VoteType name="Election Day Votes" votes="272">
+                <Precinct name="Pearson County" votes="84" />
+                <Precinct name="Axson" votes="59" />
+                <Precinct name="Willacoochee" votes="105" />
+                <Precinct name="Pearson City" votes="24" />
+            </VoteType>
+            <VoteType name="Advanced Voting Votes" votes="617">
+                <Precinct name="Pearson County" votes="301" />
+                <Precinct name="Axson" votes="96" />
+                <Precinct name="Willacoochee" votes="129" />
+                <Precinct name="Pearson City" votes="91" />
+            </VoteType>
+            <VoteType name="Absentee by Mail Votes" votes="101">
+                <Precinct name="Pearson County" votes="41" />
+                <Precinct name="Axson" votes="11" />
+                <Precinct name="Willacoochee" votes="31" />
+                <Precinct name="Pearson City" votes="18" />
+            </VoteType>
+            <VoteType name="Provisional Votes" votes="0">
+                <Precinct name="Pearson County" votes="0" />
+                <Precinct name="Axson" votes="0" />
+                <Precinct name="Willacoochee" votes="0" />
+                <Precinct name="Pearson City" votes="0" />
+            </VoteType>
+        </Choice>
+    </Contest>
+</ElectionResult>
