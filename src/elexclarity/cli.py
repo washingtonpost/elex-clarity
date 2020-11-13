@@ -3,7 +3,7 @@ import json
 import click
 
 from elexclarity.client import ElectionsClient
-from elexclarity.convert import ClarityXMLConverter
+from elexclarity.convert import convert
 
 BASE_URL = os.environ.get('CLARITY_API_BASE_URL', 'https://results.enr.clarityelections.com/')
 
@@ -30,7 +30,7 @@ BASE_URL = os.environ.get('CLARITY_API_BASE_URL', 'https://results.enr.clarityel
     'default',
     'raw'
 ]))
-def cli(electionid, statepostal, filename=None, style="default", outputType="results", resultsBy='candidate', **kwargs):
+def cli(electionid, statepostal, filename=None, style="default", outputType="results", resultsBy='candidate', level="precinct", **kwargs):
     """
     This tool accepts an election ID (e.g. 105369) and a state postal code (e.g. GA)
     and the options below and outputs formatted elections data. If a filename is provided,
@@ -60,9 +60,8 @@ def cli(electionid, statepostal, filename=None, style="default", outputType="res
         else:
             result = api_client.get_results(electionid, statepostal, **kwargs)
 
-    result = ClarityXMLConverter().convert(result, statepostal=statepostal)
+    if style == "raw":
+        return result
 
-    # if outputType in ["summary", "settings"]:
-    #     result = json.dumps(result, indent=2)
-    
+    result = convert(result, statepostal=statepostal, level=level)
     print(json.dumps(result, indent=2))
