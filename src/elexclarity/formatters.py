@@ -111,7 +111,7 @@ class ClarityXMLPrecinctConverter:
         return {
             "source": "clarity",
             "name": contest.get("text"),
-            "precinctsReportingPct": precincts_reported/precincts_reporting,
+            "precinctsReportingPct": (precincts_reported/precincts_reporting)*100,
             "subunits": self.aggregate_subunits_from_choices(choices, fips=fips),
             "counts": self.get_total_votes_from_choices(choices)
         }
