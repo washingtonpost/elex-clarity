@@ -34,6 +34,7 @@ def test_format_atkinson_preconcts(atkinson_precincts):
 
     assert len(results.keys()) == 25
     assert "President of the United States" in results.keys()
+    assert results["President of the United States"]["precinctsReportingPct"] == 100
 
     # Top level counts for this county
     counts = results["President of the United States"]["counts"]
@@ -55,6 +56,7 @@ def test_format_bacon_preconcts(bacon_precincts):
 
     assert len(results.keys()) == 20
     assert "President of the United States" in results.keys()
+    assert results["President of the United States"]["precinctsReportingPct"] == 100
 
     # Top level counts for this county
     counts = results["President of the United States"]["counts"]
@@ -75,6 +77,7 @@ def test_format_fulton_preconcts(fulton_precincts):
 
     assert len(results.keys()) == 60
     assert "President of the United States" in results.keys()
+    assert results["President of the United States"]["precinctsReportingPct"] == 100
 
     # Top level counts for this county
     counts = results["President of the United States"]["counts"]
