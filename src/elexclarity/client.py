@@ -11,6 +11,7 @@ LOG = logging.getLogger(__name__)
 
 CountyIdentifier = namedtuple('CountyIdentifier', ['id', 'name', 'version', 'last_updated'])
 
+
 class ElectionsClient(object):
     """
     Client for retrieving elections data from systems using Clarity.
@@ -125,7 +126,7 @@ class ElectionsClient(object):
             for county in self.get_counties(electionid, statepostal):
                 results.append(self.get_county_results(statepostal, county, **kwargs))
             return results
-        elif level == "state":
+        elif level == "state" or 'county':
             current_ver = self.get_current_version(electionid, statepostal, **kwargs)
             return self.get_state_results(electionid, statepostal, current_ver, **kwargs)
         return None
