@@ -17,6 +17,8 @@ BASE_URL = os.environ.get('CLARITY_API_BASE_URL', 'https://results.enr.clarityel
     'state'
 ]))
 @click.option('--outputType', 'outputType', default='results', type=click.Choice([
+    'summary',
+    'settings',
     'results'
 ]))
 @click.option('--resultsBy', 'resultsBy', default='candidate', type=click.Choice([
@@ -34,15 +36,25 @@ def cli(electionid, statepostal, filename=None, style="default", outputType="res
     that file's data will be used as input. If not, Clarity will be queried
     for elections data.
 
-    Right now, a command like `elexclarity 105369 GA` will return a JSON summary.
+    Sample commands:
+    > elexclarity 105369 GA --outputType=summary
+    > elexclarity 105369 GA --outputType=settings
+    > elexclarity 105369 GA --level=precinct
+    > elexclarity 105369 GA --level=state
     """
     if filename:
         # load races from local file
         with click.open_file(filename) as f:
-            election_results = json.load(f)
+            result = json.load(f)
     else:
         api_client = ElectionsClient(BASE_URL)
-        election_results = api_client.get_summary(electionid, statepostal)
+        if outputType == "summary":
+            result = api_client.get_summary(electionid, statepostal, **kwargs)
+        elif outputType == "settings":
+            result = api_client.get_settings(electionid, statepostal, **kwargs)
+        else:
+            result = api_client.get_results(electionid, statepostal, **kwargs)
+
 
     '''
     result = convert(
@@ -54,4 +66,6 @@ def cli(electionid, statepostal, filename=None, style="default", outputType="res
         **kwargs)
     '''
 
-    print(json.dumps(election_results, indent=2))
+    if outputType in ["summary", "settings"]:
+        result = json.dumps(result, indent=2)
+    print(result)
