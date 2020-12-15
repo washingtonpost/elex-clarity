@@ -4,7 +4,7 @@ import xmltodict
 from slugify import slugify
 
 
-class ClarityXMLPrecinctConverter:
+class ClarityXMLConverter:
     """
     A class to convert Clarity XML into our expected data format.
     """
@@ -18,16 +18,17 @@ class ClarityXMLPrecinctConverter:
         """
         return slugify(name)
 
-    def get_id_for_precinct(self, fips, name):
+    def get_subunit_id(self, subunit_name, fips=None):
         """
-        Create an ID from the clarity key and candidate name. Unclear
-        if these precinct names are unique across counties (assume
-        they are not), so prepent the county fips.
+        Create an ID for a precinct or county.
+        Fips codes are present when level == precinct.
         """
-        name = slugify(name)
+        name = slugify(subunit_name)
+        if fips is None:
+            fips = self.county_lookup.get(subunit_name)
         return f"{fips}_{name}"
 
-    def get_subunit_totals_from_choice(self, choice):
+    def get_subunit_totals_from_choice(self, choice, level):
         """
         Takes a Clarity `Choice` object and aggregates all the different
         kinds of votes into one total per subunit.
@@ -36,34 +37,40 @@ class ClarityXMLPrecinctConverter:
         key = choice.get("key")
         slug = self.get_id_for_choice(name)
 
-        subunits = defaultdict(lambda: 0)
+        subunit_objs = defaultdict(lambda: 0)
 
         for i in choice["VoteType"]:
             # more validation, for one precinct races
-            precincts = i["Precinct"]
-            if type(precincts) != list:
-                precincts = [precincts]
-
-            for subunit in precincts:
-                subunits[subunit["name"]] += int(subunit["votes"])
+            subunit_level = level.capitalize()
+            subunits = i[subunit_level]
+            if type(subunits) != list:
+                subunits = [subunits]
+            for subunit in subunits:
+                subunit_objs[subunit["name"]] += int(subunit["votes"])
 
         return {
             "key": key,
             "name": name,
             "id": slug,
-            "subunits": subunits,
+            "subunits": subunit_objs,
         }
 
-    def aggregate_subunits_from_choices(self, choices, fips):
+    def aggregate_subunits_from_choices(self, choices, level, fips):
         """
         Takes a list of `Choice` objects from Clarity and aggregates/transforms
         them into a the format our data importer expects.
         """
-        processed_choices = [self.get_subunit_totals_from_choice(i) for i in choices]
+        processed_choices = [self.get_subunit_totals_from_choice(i, level) for i in choices]
 
         # Get a flat, unique, list of our subunit names
         subunits = [i["subunits"].keys() for i in processed_choices]
-        subunits = set([self.get_id_for_precinct(fips, i) for l in subunits for i in l])
+        if level == "county":
+            processed_subunits = []
+            for county in list(subunits[0]):
+                fips = self.county_lookup.get(county)
+                processed_subunits.append(self.get_subunit_id(county))
+        elif level == "precinct":
+            processed_subunits = set([self.get_subunit_id(i, fips) for l in subunits for i in l])
 
         # Get a list of our candidates
         candidates = [i['id'] for i in processed_choices]
@@ -71,12 +78,15 @@ class ClarityXMLPrecinctConverter:
         agg = {i: {
             "id": i,
             "counts": defaultdict(lambda: 0)
-        } for i in subunits}
+        } for i in processed_subunits}
 
         for choice in processed_choices:
             candidate = choice["id"]
             for subunit_name, vote_count in choice["subunits"].items():
-                key = self.get_id_for_precinct(fips, subunit_name)
+                if level == 'precinct':
+                    key = self.get_subunit_id(subunit_name, fips)
+                else:
+                    key = self.get_subunit_id(subunit_name)
                 agg[key]["counts"][candidate] += vote_count
 
         return agg
@@ -96,12 +106,17 @@ class ClarityXMLPrecinctConverter:
 
         return agg
 
-    def transform_contest(self, contest, fips=""):
+    def transform_contest(self, contest, level, fips):
         """
         Transforms a Clarity `Contest` object into our expected format.
         """
-        precincts_reported = int(contest.get("precinctsReported"))
-        precincts_reporting = int(contest.get("precinctsReporting"))
+        # Available fields vary in Clarity data
+        if "precinctsReportingPercent" in contest:
+            precincts_reporting_pct = float(contest.get("precinctsReportingPercent"))
+        else:
+            precincts_reported = int(contest.get("precinctsReported"))
+            precincts_reporting = int(contest.get("precinctsReporting"))
+            precincts_reporting_pct = (precincts_reported/precincts_reporting)*100
 
         # some light validation on the choices to make sure we get a list
         choices = contest["Choice"]
@@ -111,16 +126,26 @@ class ClarityXMLPrecinctConverter:
         return {
             "source": "clarity",
             "name": contest.get("text"),
-            "precinctsReportingPct": (precincts_reported/precincts_reporting)*100,
-            "subunits": self.aggregate_subunits_from_choices(choices, fips=fips),
+            "precinctsReportingPct": precincts_reporting_pct,
+            "subunits": self.aggregate_subunits_from_choices(choices, level, fips=fips),
             "counts": self.get_total_votes_from_choices(choices)
         }
 
-    def transform_result_object(self, result):
+    def transform_result_object(self, result, level):
         """
         Transforms a Clarity `Result` object into our expected format.
         """
-        county = result["Region"]
-        fips = self.county_lookup.get(county)
-        contests = [self.transform_contest(i, fips=fips) for i in result["Contest"]]
+        fips = None
+        # Need to pass down county fips if level = precinct
+        if level == 'precinct':
+            county = result["Region"]
+            fips = self.county_lookup.get(county)
+
+        # Multiple contests
+        if type(result["Contest"]) == list:
+            contests = [self.transform_contest(i, level, fips=fips) for i in result["Contest"]]
+        else:
+            contest_obj = [result["Contest"]]
+            contests = [self.transform_contest(i, level, fips=fips) for i in contest_obj]
+
         return {i["name"]: i for i in contests}
