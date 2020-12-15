@@ -126,7 +126,7 @@ class ElectionsClient(object):
             for county in self.get_counties(electionid, statepostal):
                 results.append(self.get_county_results(statepostal, county, **kwargs))
             return results
-        elif level == "state" or 'county':
+        elif level == "state" or level == "county":
             current_ver = self.get_current_version(electionid, statepostal, **kwargs)
             return self.get_state_results(electionid, statepostal, current_ver, **kwargs)
         return None
