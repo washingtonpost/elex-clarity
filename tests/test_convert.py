@@ -77,6 +77,8 @@ def test_format_atkinson_precincts(atkinson_precincts):
     # Subunit
     assert len(results["President of the United States"]["subunits"].keys()) == 4
 
+    print(results["President of the United States"]["subunits"])
+
     pearson = results["President of the United States"]["subunits"]["13003_pearson-city"]
     assert pearson["counts"]["donald-j-trump-i-rep"] == 229
     assert pearson["counts"]["joseph-r-biden-dem"] == 329
@@ -100,6 +102,7 @@ def test_format_bacon_precincts(bacon_precincts):
     assert len(results["President of the United States"]["subunits"].keys()) == 1
 
     douglas = results["President of the United States"]["subunits"]["13005_douglas"]
+    print(results["President of the United States"]["subunits"])
     assert douglas["counts"]["donald-j-trump-i-rep"] == 4018
     assert douglas["counts"]["joseph-r-biden-dem"] == 625
     assert douglas["counts"]["jo-jorgensen-lib"] == 25
