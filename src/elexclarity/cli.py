@@ -63,5 +63,5 @@ def cli(electionid, statepostal, filename=None, style="default", outputType="res
     if style == "raw":
         return result
 
-    result = convert(result, statepostal=statepostal, **kwargs)
+    result = convert(result, statepostal=statepostal, outputType=outputType, **kwargs)
     print(json.dumps(result, indent=2))

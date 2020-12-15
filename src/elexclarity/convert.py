@@ -11,6 +11,11 @@ def convert(data, statepostal=None, level=None, outputType="results", style="def
     """
     The entry point for formatting Clarity results data.
     """
+    # TODO: Data formatting/conversion logic for settings and summary
+    if outputType == "summary" or outputType == "settings":
+        # Returns raw data for now
+        return data
+
     if type(data) == list:
         data = [xmltodict.parse(i, attr_prefix="")["ElectionResult"] for i in data]
     else:

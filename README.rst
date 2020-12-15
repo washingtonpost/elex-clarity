@@ -10,10 +10,13 @@ Usage
 Examples:
 ^^^^^^^^^
 
-Pulling data from Clarity:
+Pulling raw data from Clarity (still needs formatting work):
 
 * ``elexclarity 105369 GA --outputType=summary``
-* ``eelexclarity 105369 GA --outputType=settings``
+* ``elexclarity 105369 GA --outputType=settings``
+
+Pulling formatted data from Clarity:
+
 * ``elexclarity 105369 GA --level=precinct``
 * ``elexclarity 105369 GA --level=county``
 
