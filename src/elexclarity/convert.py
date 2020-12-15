@@ -1,17 +1,18 @@
 from collections import defaultdict
 
 import xmltodict
-from elexstatic import STATE_COUNTIES
+from elexclarity.utils import get_json_from_file, get_fips_mapping, fips_mapping_exists
 from slugify import slugify
 
 from elexclarity.formatters import ClarityXMLConverter
 
 
-def convert(data, statepostal=None, level=None, outputType="results", style="default", resultsBy=None, **kwargs):
+def convert(data, statepostal=None, level=None, outputType="results", style="default", resultsBy=None, countymapping=None, **kwargs):
     """
     The entry point for formatting Clarity results data.
     """
     # TODO: Data formatting/conversion logic for settings and summary
+
     if outputType == "summary" or outputType == "settings":
         # Returns raw data for now
         return data
@@ -22,7 +23,17 @@ def convert(data, statepostal=None, level=None, outputType="results", style="def
         data = [xmltodict.parse(data, attr_prefix="")["ElectionResult"]]
 
     if level == "precinct" or level == "county":
-        county_fips_lookup = {v["name"]: k for k, v in STATE_COUNTIES[statepostal].items()}
+        # If specific county mapping is provided
+        if countymapping:
+            fips_mapping = countymapping[statepostal]
+            county_fips_lookup = {v["name"]: k for k, v in fips_mapping.items()}
+        elif fips_mapping_exists(statepostal):
+            fips_mapping = get_fips_mapping(statepostal)
+            county_fips_lookup = {v["name"]: k for k, v in fips_mapping.items()}
+        # Slugify county name as backup
+        else:
+            county_fips_lookup = None
+
         converter = ClarityXMLConverter(county_lookup=county_fips_lookup)
         results = [converter.transform_result_object(i, level=level) for i in data]
 

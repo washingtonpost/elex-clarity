@@ -24,7 +24,9 @@ class ClarityXMLConverter:
         Fips codes are present when level == precinct.
         """
         name = slugify(subunit_name)
-        if fips is None:
+        if fips is None:  # County
+            if self.county_lookup is None:
+                return name
             fips = self.county_lookup.get(subunit_name)
         return f"{fips}_{name}"
 
@@ -39,7 +41,13 @@ class ClarityXMLConverter:
 
         subunit_objs = defaultdict(lambda: 0)
 
-        for i in choice["VoteType"]:
+        # For one VoteType list
+        if type(choice["VoteType"]) != list:
+            votetype_obj = [choice["VoteType"]]
+        else:  # Multiple VoteTypes
+            votetype_obj = choice["VoteType"]
+
+        for i in votetype_obj:
             # more validation, for one precinct races
             subunit_level = level.capitalize()
             subunits = i[subunit_level]
@@ -67,7 +75,10 @@ class ClarityXMLConverter:
         if level == "county":
             processed_subunits = []
             for county in list(subunits[0]):
-                fips = self.county_lookup.get(county)
+                if self.county_lookup:
+                    fips = self.county_lookup.get(county)
+                else:
+                    fips = slugify(county)
                 processed_subunits.append(self.get_subunit_id(county))
         elif level == "precinct":
             processed_subunits = set([self.get_subunit_id(i, fips) for l in subunits for i in l])
@@ -139,7 +150,10 @@ class ClarityXMLConverter:
         # Need to pass down county fips if level = precinct
         if level == 'precinct':
             county = result["Region"]
-            fips = self.county_lookup.get(county)
+            if self.county_lookup:
+                fips = self.county_lookup.get(county)
+            else:
+                fips = slugify(county)
 
         # Multiple contests
         if type(result["Contest"]) == list:

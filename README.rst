@@ -19,6 +19,8 @@ Pulling formatted data from Clarity:
 
 * ``elexclarity 105369 GA --level=precinct``
 * ``elexclarity 105369 GA --level=county``
+* ``elexclarity 106210 WV --level=county``
+* ``elexclarity 105369 GA --level=county --countymapping="tests/fixtures/alternate_GA_county_mapping.json"``
 
 Using a local file:
 

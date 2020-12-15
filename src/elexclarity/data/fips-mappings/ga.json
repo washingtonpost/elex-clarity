@@ -1,0 +1,640 @@
+{
+    "GA": {
+        "13001": {
+            "name": "Appling",
+            "edisonId": 1
+        },
+        "13003": {
+            "name": "Atkinson",
+            "edisonId": 2
+        },
+        "13005": {
+            "name": "Bacon",
+            "edisonId": 3
+        },
+        "13007": {
+            "name": "Baker",
+            "edisonId": 4
+        },
+        "13009": {
+            "name": "Baldwin",
+            "edisonId": 5
+        },
+        "13011": {
+            "name": "Banks",
+            "edisonId": 6
+        },
+        "13013": {
+            "name": "Barrow",
+            "edisonId": 7
+        },
+        "13015": {
+            "name": "Bartow",
+            "edisonId": 8
+        },
+        "13017": {
+            "name": "Ben Hill",
+            "edisonId": 9
+        },
+        "13019": {
+            "name": "Berrien",
+            "edisonId": 10
+        },
+        "13021": {
+            "name": "Bibb",
+            "edisonId": 11
+        },
+        "13023": {
+            "name": "Bleckley",
+            "edisonId": 12
+        },
+        "13025": {
+            "name": "Brantley",
+            "edisonId": 13
+        },
+        "13027": {
+            "name": "Brooks",
+            "edisonId": 14
+        },
+        "13029": {
+            "name": "Bryan",
+            "edisonId": 15
+        },
+        "13031": {
+            "name": "Bulloch",
+            "edisonId": 16
+        },
+        "13033": {
+            "name": "Burke",
+            "edisonId": 17
+        },
+        "13035": {
+            "name": "Butts",
+            "edisonId": 18
+        },
+        "13037": {
+            "name": "Calhoun",
+            "edisonId": 19
+        },
+        "13039": {
+            "name": "Camden",
+            "edisonId": 20
+        },
+        "13043": {
+            "name": "Candler",
+            "edisonId": 21
+        },
+        "13045": {
+            "name": "Carroll",
+            "edisonId": 22
+        },
+        "13047": {
+            "name": "Catoosa",
+            "edisonId": 23
+        },
+        "13049": {
+            "name": "Charlton",
+            "edisonId": 24
+        },
+        "13051": {
+            "name": "Chatham",
+            "edisonId": 25
+        },
+        "13053": {
+            "name": "Chattahoochee",
+            "edisonId": 26
+        },
+        "13055": {
+            "name": "Chattooga",
+            "edisonId": 27
+        },
+        "13057": {
+            "name": "Cherokee",
+            "edisonId": 28
+        },
+        "13059": {
+            "name": "Clarke",
+            "edisonId": 29
+        },
+        "13061": {
+            "name": "Clay",
+            "edisonId": 30
+        },
+        "13063": {
+            "name": "Clayton",
+            "edisonId": 31
+        },
+        "13065": {
+            "name": "Clinch",
+            "edisonId": 32
+        },
+        "13067": {
+            "name": "Cobb",
+            "edisonId": 33
+        },
+        "13069": {
+            "name": "Coffee",
+            "edisonId": 34
+        },
+        "13071": {
+            "name": "Colquitt",
+            "edisonId": 35
+        },
+        "13073": {
+            "name": "Columbia",
+            "edisonId": 36
+        },
+        "13075": {
+            "name": "Cook",
+            "edisonId": 37
+        },
+        "13077": {
+            "name": "Coweta",
+            "edisonId": 38
+        },
+        "13079": {
+            "name": "Crawford",
+            "edisonId": 39
+        },
+        "13081": {
+            "name": "Crisp",
+            "edisonId": 40
+        },
+        "13083": {
+            "name": "Dade",
+            "edisonId": 41
+        },
+        "13085": {
+            "name": "Dawson",
+            "edisonId": 42
+        },
+        "13087": {
+            "name": "Decatur",
+            "edisonId": 43
+        },
+        "13089": {
+            "name": "De Kalb",
+            "edisonId": 44
+        },
+        "13091": {
+            "name": "Dodge",
+            "edisonId": 45
+        },
+        "13093": {
+            "name": "Dooly",
+            "edisonId": 46
+        },
+        "13095": {
+            "name": "Dougherty",
+            "edisonId": 47
+        },
+        "13097": {
+            "name": "Douglas",
+            "edisonId": 48
+        },
+        "13099": {
+            "name": "Early",
+            "edisonId": 49
+        },
+        "13101": {
+            "name": "Echols",
+            "edisonId": 50
+        },
+        "13103": {
+            "name": "Effingham",
+            "edisonId": 51
+        },
+        "13105": {
+            "name": "Elbert",
+            "edisonId": 52
+        },
+        "13107": {
+            "name": "Emanuel",
+            "edisonId": 53
+        },
+        "13109": {
+            "name": "Evans",
+            "edisonId": 54
+        },
+        "13111": {
+            "name": "Fannin",
+            "edisonId": 55
+        },
+        "13113": {
+            "name": "Fayette",
+            "edisonId": 56
+        },
+        "13115": {
+            "name": "Floyd",
+            "edisonId": 57
+        },
+        "13117": {
+            "name": "Forsyth",
+            "edisonId": 58
+        },
+        "13119": {
+            "name": "Franklin",
+            "edisonId": 59
+        },
+        "13121": {
+            "name": "Fulton",
+            "edisonId": 60
+        },
+        "13123": {
+            "name": "Gilmer",
+            "edisonId": 61
+        },
+        "13125": {
+            "name": "Glascock",
+            "edisonId": 62
+        },
+        "13127": {
+            "name": "Glynn",
+            "edisonId": 63
+        },
+        "13129": {
+            "name": "Gordon",
+            "edisonId": 64
+        },
+        "13131": {
+            "name": "Grady",
+            "edisonId": 65
+        },
+        "13133": {
+            "name": "Greene",
+            "edisonId": 66
+        },
+        "13135": {
+            "name": "Gwinnett",
+            "edisonId": 67
+        },
+        "13137": {
+            "name": "Habersham",
+            "edisonId": 68
+        },
+        "13139": {
+            "name": "Hall",
+            "edisonId": 69
+        },
+        "13141": {
+            "name": "Hancock",
+            "edisonId": 70
+        },
+        "13143": {
+            "name": "Haralson",
+            "edisonId": 71
+        },
+        "13145": {
+            "name": "Harris",
+            "edisonId": 72
+        },
+        "13147": {
+            "name": "Hart",
+            "edisonId": 73
+        },
+        "13149": {
+            "name": "Heard",
+            "edisonId": 74
+        },
+        "13151": {
+            "name": "Henry",
+            "edisonId": 75
+        },
+        "13153": {
+            "name": "Houston",
+            "edisonId": 76
+        },
+        "13155": {
+            "name": "Irwin",
+            "edisonId": 77
+        },
+        "13157": {
+            "name": "Jackson",
+            "edisonId": 78
+        },
+        "13159": {
+            "name": "Jasper",
+            "edisonId": 79
+        },
+        "13161": {
+            "name": "Jeff Davis",
+            "edisonId": 80
+        },
+        "13163": {
+            "name": "Jefferson",
+            "edisonId": 81
+        },
+        "13165": {
+            "name": "Jenkins",
+            "edisonId": 82
+        },
+        "13167": {
+            "name": "Johnson",
+            "edisonId": 83
+        },
+        "13169": {
+            "name": "Jones",
+            "edisonId": 84
+        },
+        "13171": {
+            "name": "Lamar",
+            "edisonId": 85
+        },
+        "13173": {
+            "name": "Lanier",
+            "edisonId": 86
+        },
+        "13175": {
+            "name": "Laurens",
+            "edisonId": 87
+        },
+        "13177": {
+            "name": "Lee",
+            "edisonId": 88
+        },
+        "13179": {
+            "name": "Liberty",
+            "edisonId": 89
+        },
+        "13181": {
+            "name": "Lincoln",
+            "edisonId": 90
+        },
+        "13183": {
+            "name": "Long",
+            "edisonId": 91
+        },
+        "13185": {
+            "name": "Lowndes",
+            "edisonId": 92
+        },
+        "13187": {
+            "name": "Lumpkin",
+            "edisonId": 93
+        },
+        "13189": {
+            "name": "McDuffie",
+            "edisonId": 94
+        },
+        "13191": {
+            "name": "McIntosh",
+            "edisonId": 95
+        },
+        "13193": {
+            "name": "Macon",
+            "edisonId": 96
+        },
+        "13195": {
+            "name": "Madison",
+            "edisonId": 97
+        },
+        "13197": {
+            "name": "Marion",
+            "edisonId": 98
+        },
+        "13199": {
+            "name": "Meriwether",
+            "edisonId": 99
+        },
+        "13201": {
+            "name": "Miller",
+            "edisonId": 100
+        },
+        "13205": {
+            "name": "Mitchell",
+            "edisonId": 101
+        },
+        "13207": {
+            "name": "Monroe",
+            "edisonId": 102
+        },
+        "13209": {
+            "name": "Montgomery",
+            "edisonId": 103
+        },
+        "13211": {
+            "name": "Morgan",
+            "edisonId": 104
+        },
+        "13213": {
+            "name": "Murray",
+            "edisonId": 105
+        },
+        "13215": {
+            "name": "Muscogee",
+            "edisonId": 106
+        },
+        "13217": {
+            "name": "Newton",
+            "edisonId": 107
+        },
+        "13219": {
+            "name": "Oconee",
+            "edisonId": 108
+        },
+        "13221": {
+            "name": "Oglethorpe",
+            "edisonId": 109
+        },
+        "13223": {
+            "name": "Paulding",
+            "edisonId": 110
+        },
+        "13225": {
+            "name": "Peach",
+            "edisonId": 111
+        },
+        "13227": {
+            "name": "Pickens",
+            "edisonId": 112
+        },
+        "13229": {
+            "name": "Pierce",
+            "edisonId": 113
+        },
+        "13231": {
+            "name": "Pike",
+            "edisonId": 114
+        },
+        "13233": {
+            "name": "Polk",
+            "edisonId": 115
+        },
+        "13235": {
+            "name": "Pulaski",
+            "edisonId": 116
+        },
+        "13237": {
+            "name": "Putnam",
+            "edisonId": 117
+        },
+        "13239": {
+            "name": "Quitman",
+            "edisonId": 118
+        },
+        "13241": {
+            "name": "Rabun",
+            "edisonId": 119
+        },
+        "13243": {
+            "name": "Randolph",
+            "edisonId": 120
+        },
+        "13245": {
+            "name": "Richmond",
+            "edisonId": 121
+        },
+        "13247": {
+            "name": "Rockdale",
+            "edisonId": 122
+        },
+        "13249": {
+            "name": "Schley",
+            "edisonId": 123
+        },
+        "13251": {
+            "name": "Screven",
+            "edisonId": 124
+        },
+        "13253": {
+            "name": "Seminole",
+            "edisonId": 125
+        },
+        "13255": {
+            "name": "Spalding",
+            "edisonId": 126
+        },
+        "13257": {
+            "name": "Stephens",
+            "edisonId": 127
+        },
+        "13259": {
+            "name": "Stewart",
+            "edisonId": 128
+        },
+        "13261": {
+            "name": "Sumter",
+            "edisonId": 129
+        },
+        "13263": {
+            "name": "Talbot",
+            "edisonId": 130
+        },
+        "13265": {
+            "name": "Taliaferro",
+            "edisonId": 131
+        },
+        "13267": {
+            "name": "Tattnall",
+            "edisonId": 132
+        },
+        "13269": {
+            "name": "Taylor",
+            "edisonId": 133
+        },
+        "13271": {
+            "name": "Telfair",
+            "edisonId": 134
+        },
+        "13273": {
+            "name": "Terrell",
+            "edisonId": 135
+        },
+        "13275": {
+            "name": "Thomas",
+            "edisonId": 136
+        },
+        "13277": {
+            "name": "Tift",
+            "edisonId": 137
+        },
+        "13279": {
+            "name": "Toombs",
+            "edisonId": 138
+        },
+        "13281": {
+            "name": "Towns",
+            "edisonId": 139
+        },
+        "13283": {
+            "name": "Treutlen",
+            "edisonId": 140
+        },
+        "13285": {
+            "name": "Troup",
+            "edisonId": 141
+        },
+        "13287": {
+            "name": "Turner",
+            "edisonId": 142
+        },
+        "13289": {
+            "name": "Twiggs",
+            "edisonId": 143
+        },
+        "13291": {
+            "name": "Union",
+            "edisonId": 144
+        },
+        "13293": {
+            "name": "Upson",
+            "edisonId": 145
+        },
+        "13295": {
+            "name": "Walker",
+            "edisonId": 146
+        },
+        "13297": {
+            "name": "Walton",
+            "edisonId": 147
+        },
+        "13299": {
+            "name": "Ware",
+            "edisonId": 148
+        },
+        "13301": {
+            "name": "Warren",
+            "edisonId": 149
+        },
+        "13303": {
+            "name": "Washington",
+            "edisonId": 150
+        },
+        "13305": {
+            "name": "Wayne",
+            "edisonId": 151
+        },
+        "13307": {
+            "name": "Webster",
+            "edisonId": 152
+        },
+        "13309": {
+            "name": "Wheeler",
+            "edisonId": 153
+        },
+        "13311": {
+            "name": "White",
+            "edisonId": 154
+        },
+        "13313": {
+            "name": "Whitfield",
+            "edisonId": 155
+        },
+        "13315": {
+            "name": "Wilcox",
+            "edisonId": 156
+        },
+        "13317": {
+            "name": "Wilkes",
+            "edisonId": 157
+        },
+        "13319": {
+            "name": "Wilkinson",
+            "edisonId": 158
+        },
+        "13321": {
+            "name": "Worth",
+            "edisonId": 159
+        }
+    }
+}
