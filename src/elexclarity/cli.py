@@ -13,7 +13,7 @@ BASE_URL = os.environ.get('CLARITY_API_BASE_URL', 'https://results.enr.clarityel
 @click.argument('electionID', type=click.INT)
 @click.argument('statePostal', type=click.STRING)
 @click.option('--filename', type=click.Path(exists=True), help='Specify data file instead of making HTTP request')
-@click.option('--countymapping', type=click.Path(exists=True), help='Specify county mapping file instead of using fips codes')
+@click.option('--countyMapping', 'countyMapping', default={}, help='Specify county mapping')
 @click.option('--level', help='Specify the subunit type/reporting level for results', default='county', type=click.Choice([
     'county',
     'precinct',
@@ -32,7 +32,7 @@ BASE_URL = os.environ.get('CLARITY_API_BASE_URL', 'https://results.enr.clarityel
     'default',
     'raw'
 ]))
-def cli(electionid, statepostal, filename=None, countymapping=None, style="default", outputType="results", resultsBy='candidate', **kwargs):
+def cli(electionid, statepostal, filename=None, countyMapping={}, style="default", outputType="results", resultsBy='candidate', **kwargs):
     """
     This tool accepts an election ID (e.g. 105369) and a state postal code (e.g. GA)
     and the options below and outputs formatted elections data. If a filename is provided,
@@ -65,8 +65,8 @@ def cli(electionid, statepostal, filename=None, countymapping=None, style="defau
     if style == "raw":
         return result
 
-    if countymapping:
-        countymapping = get_json_from_file(countymapping)
+    if countyMapping:
+        countyMapping = json.loads(countyMapping)
 
-    result = convert(result, statepostal=statepostal, outputType=outputType, countymapping=countymapping, **kwargs)
+    result = convert(result, statepostal=statepostal, outputType=outputType, countyMapping=countyMapping, **kwargs)
     print(json.dumps(result, indent=2))

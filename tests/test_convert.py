@@ -48,8 +48,14 @@ def georgia_counties(get_fixture):
 
 
 @pytest.fixture
-def alternate_ga_county_mapping(get_fixture):
-    path = os.path.join(FIXTURE_DIR, "alternate_GA_county_mapping.json")
+def ga_county_mapping_fips(get_fixture):
+    path = os.path.join(FIXTURE_DIR, "GA_county_mapping_fips.json")
+    return get_json_from_file(path)
+
+
+@pytest.fixture
+def ga_county_mapping_alternate(get_fixture):
+    path = os.path.join(FIXTURE_DIR, "GA_county_mapping_alternate.json")
     return get_json_from_file(path)
 
 
@@ -61,8 +67,8 @@ def wv_counties(get_fixture):
     return fixture
 
 
-def test_format_atkinson_precincts(atkinson_precincts):
-    results = convert(atkinson_precincts, statepostal="GA", level="precinct")
+def test_format_atkinson_precincts(atkinson_precincts, ga_county_mapping_fips):
+    results = convert(atkinson_precincts, statepostal="GA", level="precinct", countyMapping=ga_county_mapping_fips)
 
     assert len(results.keys()) == 25
     assert "President of the United States" in results.keys()
@@ -82,8 +88,8 @@ def test_format_atkinson_precincts(atkinson_precincts):
     assert pearson["counts"]["jo-jorgensen-lib"] == 6
 
 
-def test_format_bacon_precincts(bacon_precincts):
-    results = convert(bacon_precincts, statepostal="GA", level="precinct")
+def test_format_bacon_precincts(bacon_precincts, ga_county_mapping_fips):
+    results = convert(bacon_precincts, statepostal="GA", level="precinct", countyMapping=ga_county_mapping_fips)
 
     assert len(results.keys()) == 20
     assert "President of the United States" in results.keys()
@@ -104,8 +110,8 @@ def test_format_bacon_precincts(bacon_precincts):
     assert douglas["counts"]["jo-jorgensen-lib"] == 25
 
 
-def test_format_fulton_precincts(fulton_precincts):
-    results = convert(fulton_precincts, statepostal="GA", level="precinct")
+def test_format_fulton_precincts(fulton_precincts, ga_county_mapping_fips):
+    results = convert(fulton_precincts, statepostal="GA", level="precinct", countyMapping=ga_county_mapping_fips)
 
     assert len(results.keys()) == 60
     assert "President of the United States" in results.keys()
@@ -126,8 +132,8 @@ def test_format_fulton_precincts(fulton_precincts):
     assert precinct["counts"]["jo-jorgensen-lib"] == 19
 
 
-def test_format_single_contest(atkinson_presidential_contest):
-    results = convert(atkinson_presidential_contest, statepostal="GA", level="precinct")
+def test_format_single_contest(atkinson_presidential_contest, ga_county_mapping_fips):
+    results = convert(atkinson_presidential_contest, statepostal="GA", level="precinct", countyMapping=ga_county_mapping_fips)
 
     assert len(results.keys()) == 1
     assert "President of the United States" in results.keys()
@@ -140,8 +146,8 @@ def test_format_single_contest(atkinson_presidential_contest):
     assert counts["jo-jorgensen-lib"] == 30
 
 
-def test_format_georgia_counties(georgia_counties):
-    results = convert(georgia_counties, statepostal="GA", level="county")
+def test_format_georgia_counties(georgia_counties, ga_county_mapping_fips):
+    results = convert(georgia_counties, statepostal="GA", level="county", countyMapping=ga_county_mapping_fips)
 
     assert len(results.keys()) == 2
     assert "President of the United States" in results.keys()
@@ -162,8 +168,8 @@ def test_format_georgia_counties(georgia_counties):
     assert counts["jo-jorgensen-lib"] == 62138
 
 
-def test_alternate_county_mapping(georgia_counties, alternate_ga_county_mapping):
-    results = convert(georgia_counties, statepostal="GA", level="county", countymapping=alternate_ga_county_mapping)
+def test_alternate_county_mapping(georgia_counties, ga_county_mapping_alternate):
+    results = convert(georgia_counties, statepostal="GA", level="county", countyMapping=ga_county_mapping_alternate)
 
     assert len(results.keys()) == 2
     catoosa_county = results["President of the United States"]["subunits"]["22"]

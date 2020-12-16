@@ -17,15 +17,17 @@ Pulling raw data from Clarity (still needs formatting work):
 
 Pulling formatted data from Clarity:
 
-* ``elexclarity 105369 GA --level=precinct``
-* ``elexclarity 105369 GA --level=county``
-* ``elexclarity 106210 WV --level=county``
-* ``elexclarity 105369 GA --level=county --countymapping="tests/fixtures/alternate_GA_county_mapping.json"``
+Pass in county mapping as a JSON object. Sample formats can be found in the ``tests/fixtures folder`` [here](https://github.com/washingtonpost/elex-clarity/tree/develop/tests/fixtures).
+
+* ``elexclarity 105369 GA --level=precinct --countyMapping='{"Worth": "13321"}``
+* ``elexclarity 105369 GA --level=precinct --countyMapping=='<mapping json>'``
+* ``elexclarity 105369 GA --level=county --countyMapping=='<mapping json>'``
+* ``elexclarity 106210 WV --level=county --countyMapping=='<mapping json>'``
 
 Using a local file:
 
-* ``elexclarity 105369 GA --level=precinct --filename="tests/fixtures/atkinson_precincts_11-3.xml"``
-* ``elexclarity 105369 GA --level=county --filename="tests/fixtures/2020-11-03_GA.xml"``
+* ``elexclarity 105369 GA --level=precinct --filename="tests/fixtures/atkinson_precincts_11-3.xml" ----countyMapping=='<mapping json>'``
+* ``elexclarity 105369 GA --level=county --filename="tests/fixtures/2020-11-03_GA.xml" --countyMapping=='<mapping json>'``
 
 State-level formatting has not been implemented yet.
 
