@@ -1,13 +1,11 @@
 elex-clarity
 ============
 
-A CLI tool for pulling in election results from sites using Clarity.
-
-This package is hosted on pypi.
+A CLI tool for pulling in election results from sites using Clarity. This package is hosted on pypi.
 
 Please use the `Github issue tracker <https://github.com/washingtonpost/elex-clarity/issues>`_ to submit bugs or request features.
 
-.. contents:: Table of Contents
+.. contents:: **Table of Contents**
     :depth: 1
 
 Installation
@@ -21,7 +19,8 @@ Usage
 ---------
 
 Pass in a Clarity election ID and state postal code (and optionally, other parameters) to the cli, e.g.:
- ``elexclarity 105369 GA``
+
+``elexclarity 105369 GA``
 
 Pulling raw data from Clarity (still needs formatting work):
 
@@ -45,7 +44,7 @@ Development
 
 * Clone this repository
 * ``pip install -r requirements.txt``
-* Run ``tox``
+* ``tox``
     * You should see some code coverage info and test results
 * If the above was successful, you are ready for development
 
