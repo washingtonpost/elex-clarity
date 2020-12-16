@@ -1,7 +1,6 @@
-from collections import defaultdict
-
-import xmltodict
 from slugify import slugify
+from dateutil import parser, tz
+from collections import defaultdict
 
 
 class ClarityXMLConverter:
@@ -106,7 +105,7 @@ class ClarityXMLConverter:
 
         return agg
 
-    def transform_contest(self, contest, level, fips):
+    def transform_contest(self, contest, level, fips, timestamp):
         """
         Transforms a Clarity `Contest` object into our expected format.
         """
@@ -125,6 +124,7 @@ class ClarityXMLConverter:
 
         return {
             "source": "clarity",
+            "timestamp": timestamp,
             "name": contest.get("text"),
             "precinctsReportingPct": precincts_reporting_pct,
             "subunits": self.aggregate_subunits_from_choices(choices, level, fips=fips),
@@ -136,6 +136,9 @@ class ClarityXMLConverter:
         Transforms a Clarity `Result` object into our expected format.
         """
         fips = None
+        tzinfos = {"EST": tz.gettz("America/New_York")}
+        timestamp = str(parser.parse(result["Timestamp"], tzinfos=tzinfos))
+
         # Need to pass down county fips if level = precinct
         if level == 'precinct':
             county = result["Region"]
@@ -143,9 +146,9 @@ class ClarityXMLConverter:
 
         # Multiple contests
         if type(result["Contest"]) == list:
-            contests = [self.transform_contest(i, level, fips=fips) for i in result["Contest"]]
+            contests = [self.transform_contest(i, level, fips=fips, timestamp=timestamp) for i in result["Contest"]]
         else:
             contest_obj = [result["Contest"]]
-            contests = [self.transform_contest(i, level, fips=fips) for i in contest_obj]
+            contests = [self.transform_contest(i, level, fips=fips, timestamp=timestamp) for i in contest_obj]
 
         return {i["name"]: i for i in contests}
