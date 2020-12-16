@@ -1,7 +1,8 @@
 from collections import defaultdict
-
 import xmltodict
 from slugify import slugify
+
+from elexclarity.utils import get_list
 
 
 class ClarityXMLConverter:
@@ -41,19 +42,10 @@ class ClarityXMLConverter:
 
         subunit_objs = defaultdict(lambda: 0)
 
-        # For one VoteType list
-        if type(choice["VoteType"]) != list:
-            votetype_obj = [choice["VoteType"]]
-        else:  # Multiple VoteTypes
-            votetype_obj = choice["VoteType"]
-
-        for i in votetype_obj:
-            # more validation, for one precinct races
+        for i in get_list(choice["VoteType"]):
             subunit_level = level.capitalize()
             subunits = i[subunit_level]
-            if type(subunits) != list:
-                subunits = [subunits]
-            for subunit in subunits:
+            for subunit in get_list(subunits):
                 subunit_objs[subunit["name"]] += int(subunit["votes"])
 
         return {
@@ -129,10 +121,7 @@ class ClarityXMLConverter:
             precincts_reporting = int(contest.get("precinctsReporting"))
             precincts_reporting_pct = (precincts_reported/precincts_reporting)*100
 
-        # some light validation on the choices to make sure we get a list
-        choices = contest["Choice"]
-        if type(choices) != list:
-            choices = [choices]
+        choices = get_list(contest["Choice"])
 
         return {
             "source": "clarity",
@@ -155,11 +144,5 @@ class ClarityXMLConverter:
             else:
                 fips = slugify(county)
 
-        # Multiple contests
-        if type(result["Contest"]) == list:
-            contests = [self.transform_contest(i, level, fips=fips) for i in result["Contest"]]
-        else:
-            contest_obj = [result["Contest"]]
-            contests = [self.transform_contest(i, level, fips=fips) for i in contest_obj]
-
+        contests = [self.transform_contest(i, level, fips=fips) for i in get_list(result["Contest"])]
         return {i["name"]: i for i in contests}
