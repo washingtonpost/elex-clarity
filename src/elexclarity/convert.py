@@ -27,10 +27,11 @@ def convert(data, statepostal=None, level=None, outputType="results", style="def
         if countymapping:
             fips_mapping = countymapping[statepostal]
             county_fips_lookup = {v["name"]: k for k, v in fips_mapping.items()}
+        # Else if fips mapping static data is available
         elif fips_mapping_exists(statepostal):
             fips_mapping = get_fips_mapping(statepostal)
             county_fips_lookup = {v["name"]: k for k, v in fips_mapping.items()}
-        # Slugify county name as backup
+        # Else slugify county name as backup
         else:
             county_fips_lookup = None
 

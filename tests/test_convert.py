@@ -101,8 +101,9 @@ def test_format_bacon_precincts(bacon_precincts):
     # Subunit
     assert len(results["President of the United States"]["subunits"].keys()) == 1
 
-    douglas = results["President of the United States"]["subunits"]["13005_douglas"]
     print(results["President of the United States"]["subunits"])
+    douglas = results["President of the United States"]["subunits"]["13005_douglas"]
+
     assert douglas["counts"]["donald-j-trump-i-rep"] == 4018
     assert douglas["counts"]["joseph-r-biden-dem"] == 625
     assert douglas["counts"]["jo-jorgensen-lib"] == 25
