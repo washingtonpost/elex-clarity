@@ -45,7 +45,7 @@ Development
 * Clone this repository
 * ``pip install -r requirements.txt``
 * ``tox``
-    * You should see some code coverage info and test results
+* You should see some code coverage info and test results
 * If the above was successful, you are ready for development
 
 Releasing a New Version
