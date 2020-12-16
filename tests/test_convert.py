@@ -154,8 +154,8 @@ def test_format_georgia_counties(georgia_counties):
     assert results["President of the United States"]["precinctsReportingPct"] == 100
 
     # County-level counts
-    wilcox_county = results["President of the United States"]["subunits"]["13315_wilcox"]
-    assert wilcox_county["id"] == "13315_wilcox"
+    wilcox_county = results["President of the United States"]["subunits"]["13315"]
+    assert wilcox_county["id"] == "13315"
     assert wilcox_county["counts"]["donald-j-trump-i-rep"] == 2403
     assert wilcox_county["counts"]["joseph-r-biden-dem"] == 862
     assert wilcox_county["counts"]["jo-jorgensen-lib"] == 16
@@ -171,8 +171,8 @@ def test_alternate_county_mapping(georgia_counties, alternate_ga_county_mapping)
     results = convert(georgia_counties, statepostal="GA", level="county", countymapping=alternate_ga_county_mapping)
 
     assert len(results.keys()) == 2
-    catoosa_county = results["President of the United States"]["subunits"]["22_catoosa"]
-    assert catoosa_county["id"] == "22_catoosa"
+    catoosa_county = results["President of the United States"]["subunits"]["22"]
+    assert catoosa_county["id"] == "22"
     assert len(catoosa_county["counts"].keys()) == 3
     assert catoosa_county["counts"]["donald-j-trump-i-rep"] == 25167
     assert catoosa_county["counts"]["joseph-r-biden-dem"] == 6932

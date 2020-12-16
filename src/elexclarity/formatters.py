@@ -19,17 +19,27 @@ class ClarityXMLConverter:
         """
         return slugify(name)
 
+    def get_county_mapping(self, name):
+        """
+        Returns special mapping, fips code, or slugified county name
+        based on specified county mapping.
+        """
+        if self.county_lookup is None:  # No mapping provided
+            return slugify(name)
+        return self.county_lookup.get(name)
+
     def get_subunit_id(self, subunit_name, fips=None):
         """
         Create an ID for a precinct or county.
         Fips codes are present when level == precinct.
         """
         name = slugify(subunit_name)
-        if fips is None:  # County
-            if self.county_lookup is None:
-                return name
-            fips = self.county_lookup.get(subunit_name)
-        return f"{fips}_{name}"
+        # Subunit is a county
+        if fips is None:
+            return self.get_county_mapping(subunit_name)
+        # Subunit is a precinct
+        precinct_name = slugify(subunit_name)
+        return f"{fips}_{precinct_name}"
 
     def get_subunit_totals_from_choice(self, choice, level):
         """
@@ -67,10 +77,6 @@ class ClarityXMLConverter:
         if level == "county":
             processed_subunits = []
             for county in list(subunits[0]):
-                if self.county_lookup:
-                    fips = self.county_lookup.get(county)
-                else:
-                    fips = slugify(county)
                 processed_subunits.append(self.get_subunit_id(county))
         elif level == "precinct":
             processed_subunits = set([self.get_subunit_id(i, fips) for l in subunits for i in l])
