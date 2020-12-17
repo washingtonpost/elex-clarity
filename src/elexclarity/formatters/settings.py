@@ -1,17 +1,17 @@
 from elexclarity.formatters.base import ClarityConverter
 
+
 class ClaritySettingsConverter(ClarityConverter):
     """
     A class to convert Clarity JSON settings.
     """
 
     def convert(self, data, level="county", officeID=(), **kwargs):
-        print(officeID)
         if level == "county":
             raw_counties = data.get("settings", {}).get("electiondetails", {}).get("participatingcounties")
             raw_date = data.get("settings", {}).get("electiondetails", {}).get("electiondate")
             raw_type = data.get("settings", {}).get("electiondetails", {}).get("internalname")
-            
+
             election_date = self.format_date(raw_date)
             race_id_settings_mapping = {}
             for raw_county in raw_counties:

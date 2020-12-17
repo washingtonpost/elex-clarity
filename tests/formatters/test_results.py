@@ -37,28 +37,31 @@ def test_georgia_precinct_formatting_race_name_mapping(gwinnett_precincts, ga_co
     assert "2020-11-03_GA_G_S_13135" in results
 
 
-'''
-def test_georgia_county_formatting_basic(ga_counties, ga_county_mapping_fips):
-    results = ClarityDetailXMLConverter("GA", county_lookup=ga_county_mapping_fips).convert(ga_counties, level="county")
+def test_georgia_state_formatting_basic(ga_counties, ga_county_mapping_fips):
+    results = ClarityDetailXMLConverter("GA", county_lookup=ga_county_mapping_fips).convert(ga_counties, level="state")
 
     assert len(results) == 2
-    assert "2020-11-03_GA_G_P_13315" in results
+    assert "2020-11-03_GA_G_P" in results
     assert "2020-11-03_GA_G_state_senate_district_1" in results
-    assert results["2020-11-03_GA_G_P_13315"]["precinctsReportingPct"] == 100
-    assert results["2020-11-03_GA_G_P_13315"]["lastUpdated"] == "2020-11-20T15:37:06Z"
-
-    # County-level counts
-    wilcox_county = results["2020-11-03_GA_G_P_13315"]
-    assert wilcox_county["id"] == "13315"
-    assert wilcox_county["counts"]["donald_j_trump_i_rep"] == 2403
-    assert wilcox_county["counts"]["joseph_r_biden_dem"] == 862
-    assert wilcox_county["counts"]["jo_jorgensen_lib"] == 16
-
-    # Top level counts for this state
+    assert not results["2020-11-03_GA_G_P"].get("subunits")
+    assert results["2020-11-03_GA_G_P"]["precinctsReportingPct"] == 100
+    assert results["2020-11-03_GA_G_P"]["lastUpdated"] == "2020-11-20T15:37:06Z"
     counts = results["2020-11-03_GA_G_P"]["counts"]
     assert counts["donald_j_trump_i_rep"] == 2461837
     assert counts["joseph_r_biden_dem"] == 2474507
     assert counts["jo_jorgensen_lib"] == 62138
+
+
+def test_georgia_county_formatting_basic(ga_counties, ga_county_mapping_fips):
+    results = ClarityDetailXMLConverter("GA", county_lookup=ga_county_mapping_fips).convert(ga_counties, level="county")
+
+    assert len(results["2020-11-03_GA_G_P"]["subunits"]) == 159
+    # County-level counts
+    wilcox_county = results["2020-11-03_GA_G_P"]["subunits"]["13315"]
+    assert wilcox_county["id"] == "13315"
+    assert wilcox_county["counts"]["donald_j_trump_i_rep"] == 2403
+    assert wilcox_county["counts"]["joseph_r_biden_dem"] == 862
+    assert wilcox_county["counts"]["jo_jorgensen_lib"] == 16
 
 
 def test_georgia_county_formatting_alternate_county_mapping(ga_counties, ga_county_mapping_alternate):
@@ -84,5 +87,3 @@ def test_county_formatting_no_county_mapping(wv_counties):
     assert marshall_county["counts"]["joseph_r_biden"] == 3455
     assert marshall_county["counts"]["jo_jorgensen"] == 143
     assert marshall_county["counts"]["howie_hawkins"] == 47
-
-'''

@@ -5,7 +5,6 @@ import click
 from elexclarity.client import ElectionsClient
 from elexclarity.convert import convert
 
-BASE_URL = os.environ.get('CLARITY_API_BASE_URL', 'https://results.enr.clarityelections.com/')
 
 class StringListParamType(click.ParamType):
     name = "stringlist"
@@ -13,6 +12,8 @@ class StringListParamType(click.ParamType):
     def convert(self, value, param, ctx):
         return value.split(",")
 
+
+BASE_URL = os.environ.get('CLARITY_API_BASE_URL', 'https://results.enr.clarityelections.com/')
 STRING_LIST = StringListParamType()
 
 

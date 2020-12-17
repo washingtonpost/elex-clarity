@@ -82,7 +82,7 @@ class ClarityDetailXMLConverter(ClarityConverter):
         for choice in filter(lambda choice: choice.get("text"), choices):
             choice_votes_by_subunit = self.aggregate_choice_vote_types(choice, level)
             for subunit_id, subunit_choice_votes in choice_votes_by_subunit.items():
-                subunit_results.setdefault(subunit_id, { "id": subunit_id, "counts": defaultdict(lambda: 0) })
+                subunit_results.setdefault(subunit_id, {"id": subunit_id, "counts": defaultdict(lambda: 0)})
                 choice_id = self.get_choice_id(choice.get("text"))
                 subunit_results[subunit_id]["counts"][choice_id] += subunit_choice_votes
 
@@ -130,13 +130,14 @@ class ClarityDetailXMLConverter(ClarityConverter):
             "id": race_id,
             "source": "clarity",
             "precinctsReportingPct": precincts_reporting_pct,
-            "subunits": self.format_subunits(choices, level),
             "counts": self.format_top_level_counts(choices)
         }
         if timestamp:
             result["lastUpdated"] = timestamp
-        return result
+        if level in ["precinct", "county"]:
+            result["subunits"] = self.format_subunits(choices, level)
 
+        return result
 
     def convert(self, data, level="precinct", **kwargs):
         """
