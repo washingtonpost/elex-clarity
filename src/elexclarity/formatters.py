@@ -140,7 +140,7 @@ class ClarityXMLConverter:
         # convert the timestamp and make sure we're in EST
         est = tz.gettz("America/New_York")
         timestamp = parser.parse(result["Timestamp"], tzinfos={"EST": est}).astimezone(est)
-        timestamp = timestamp.strftime("%Y-%m-%dT%H:%H:%SZ")
+        timestamp = timestamp.strftime("%Y-%m-%dT%H:%M:%SZ")
 
         # Need to pass down county fips if level = precinct
         if level == 'precinct':
