@@ -30,7 +30,7 @@ BASE_URL = os.environ.get('CLARITY_API_BASE_URL', 'https://results.enr.clarityel
     'default',
     'raw'
 ]))
-def cli(electionid, statepostal, filename=None, style="default", outputType="results", resultsBy='candidate', **kwargs):
+def cli(electionid, statepostal, filename=None, style="default", outputType="results", resultsBy="candidate", **kwargs):
     """
     This tool accepts an election ID (e.g. 105369) and a state postal code (e.g. GA)
     and the options below and outputs formatted elections data. If a filename is provided,
@@ -59,9 +59,6 @@ def cli(electionid, statepostal, filename=None, style="default", outputType="res
             result = api_client.get_settings(electionid, statepostal, **kwargs)
         else:
             result = api_client.get_results(electionid, statepostal, **kwargs)
-
-    if style == "raw":
-        return result
 
     result = convert(result, statepostal=statepostal, outputType=outputType, **kwargs)
     print(json.dumps(result, indent=2))

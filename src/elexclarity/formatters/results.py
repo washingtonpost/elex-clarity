@@ -1,6 +1,4 @@
 from collections import defaultdict
-
-import xmltodict
 from slugify import slugify
 
 
@@ -72,9 +70,6 @@ class ClarityXMLConverter:
         elif level == "precinct":
             processed_subunits = set([self.get_subunit_id(i, fips) for l in subunits for i in l])
 
-        # Get a list of our candidates
-        candidates = [i['id'] for i in processed_choices]
-
         agg = {i: {
             "id": i,
             "counts": defaultdict(lambda: 0)
@@ -100,7 +95,6 @@ class ClarityXMLConverter:
 
         for choice in choices:
             name = choice.get("text")
-            key = choice.get("key")
             slug = self.get_id_for_choice(name)
             agg[slug] = int(choice["totalVotes"])
 
@@ -131,7 +125,7 @@ class ClarityXMLConverter:
             "counts": self.get_total_votes_from_choices(choices)
         }
 
-    def transform_result_object(self, result, level):
+    def convert(self, result, level):
         """
         Transforms a Clarity `Result` object into our expected format.
         """

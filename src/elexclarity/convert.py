@@ -2,33 +2,35 @@ from collections import defaultdict
 
 import xmltodict
 from elexstatic import STATE_COUNTIES
-from slugify import slugify
 
-from elexclarity.formatters import ClarityXMLConverter
+from elexclarity.formatters.results import ClarityXMLConverter
+from elexclarity.formatters.settings import ClaritySettingsConverter
 
 
-def convert(data, statepostal=None, level=None, outputType="results", style="default", resultsBy=None, **kwargs):
+def convert(data, statepostal=None, level=None, outputType="results", style="default", **kwargs):
     """
     The entry point for formatting Clarity results data.
     """
-    # TODO: Data formatting/conversion logic for settings and summary
-    if outputType == "summary" or outputType == "settings":
-        # Returns raw data for now
+    if style == "raw" or outputType == "summary":
         return data
 
-    if type(data) == list:
-        data = [xmltodict.parse(i, attr_prefix="")["ElectionResult"] for i in data]
-    else:
-        data = [xmltodict.parse(data, attr_prefix="")["ElectionResult"]]
+    if outputType == "settings":
+        return ClaritySettingsConverter().convert(data, level=level, statepostal=statepostal, **kwargs)
 
-    if level == "precinct" or level == "county":
-        county_fips_lookup = {v["name"]: k for k, v in STATE_COUNTIES[statepostal].items()}
-        converter = ClarityXMLConverter(county_lookup=county_fips_lookup)
-        results = [converter.transform_result_object(i, level=level) for i in data]
+    elif outputType == "results":
+        if isinstance(data, list):
+            data = [xmltodict.parse(i, attr_prefix="")["ElectionResult"] for i in data]
+        else:
+            data = [xmltodict.parse(data, attr_prefix="")["ElectionResult"]]
 
-        if len(results) > 1:
-            return results
+        if level == "precinct" or level == "county":
+            county_fips_lookup = {v["name"]: k for k, v in STATE_COUNTIES[statepostal].items()}
+            converter = ClarityXMLConverter(county_lookup=county_fips_lookup)
+            results = [converter.convert(i, level=level) for i in data]
 
-        return results[0]
+            if len(results) > 1:
+                return results
+
+            return results[0]
 
     raise Exception(f"The {level} Clarity formatter is not implemented yet")
