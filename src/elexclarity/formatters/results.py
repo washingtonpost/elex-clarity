@@ -1,13 +1,7 @@
-<<<<<<< HEAD:src/elexclarity/formatters/results.py
-=======
 from collections import defaultdict
-import xmltodict
->>>>>>> fips-lookups:src/elexclarity/formatters.py
 from slugify import slugify
-from dateutil import parser, tz
-from collections import defaultdict
 
-from elexclarity.utils import get_list
+from elexclarity.utils import get_list, format_timestamp
 
 
 class ClarityXMLConverter:
@@ -84,7 +78,7 @@ class ClarityXMLConverter:
             for county in list(subunits[0]):
                 processed_subunits.append(self.get_subunit_id(county))
         elif level == "precinct":
-            processed_subunits = set([self.get_subunit_id(i, fips) for l in subunits for i in l])
+            processed_subunits = set([self.get_subunit_id(precinct, fips) for subunit in subunits for precinct in subunit])
 
         agg = {i: {
             "id": i,
@@ -128,14 +122,7 @@ class ClarityXMLConverter:
             precincts_reporting = int(contest.get("precinctsReporting"))
             precincts_reporting_pct = (precincts_reported/precincts_reporting)*100
 
-<<<<<<< HEAD:src/elexclarity/formatters/results.py
-        # some light validation on the choices to make sure we get a list
-        choices = contest["Choice"]
-        if not isinstance(choices, list):
-            choices = [choices]
-=======
         choices = get_list(contest["Choice"])
->>>>>>> fips-lookups:src/elexclarity/formatters.py
 
         return {
             "source": "clarity",
@@ -152,29 +139,13 @@ class ClarityXMLConverter:
         """
         fips = None
 
-        # convert the timestamp and make sure we're in EST
-        est = tz.gettz("America/New_York")
-        timestamp = parser.parse(result["Timestamp"], tzinfos={"EST": est}).astimezone(est)
-        timestamp = timestamp.strftime("%Y-%m-%dT%H:%H:%SZ")
-
         # Need to pass down county fips if level = precinct
         if level == 'precinct':
             county = result["Region"]
-<<<<<<< HEAD:src/elexclarity/formatters/results.py
-            fips = self.county_lookup.get(county)
-
-        # Multiple contests
-        if not isinstance(result["Contest"], list):
-            contests = [self.transform_contest(i, level, fips=fips, timestamp=timestamp) for i in result["Contest"]]
-        else:
-            contest_obj = [result["Contest"]]
-            contests = [self.transform_contest(i, level, fips=fips, timestamp=timestamp) for i in contest_obj]
-=======
             if self.county_lookup:
                 fips = self.county_lookup.get(county)
             else:
                 fips = slugify(county)
->>>>>>> fips-lookups:src/elexclarity/formatters.py
 
-        contests = [self.transform_contest(i, level, fips=fips) for i in get_list(result["Contest"])]
+        contests = [self.transform_contest(i, level, fips, format_timestamp(result["Timestamp"])) for i in get_list(result["Contest"])]
         return {i["name"]: i for i in contests}

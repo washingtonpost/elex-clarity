@@ -43,7 +43,7 @@ def cli(electionid, statepostal, filename=None, countyMapping={}, outputType="re
     > elexclarity 105369 GA --outputType=summary
     > elexclarity 105369 GA --outputType=settings
     > elexclarity 105369 GA --level=precinct
-    > elexclarity 105369 GA --level=state
+    > elexclarity 105369 GA --level=county
     """
     if filename:
         # load races from local file
