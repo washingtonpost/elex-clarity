@@ -124,7 +124,7 @@ class ClarityXMLConverter:
 
         return {
             "source": "clarity",
-            "timestamp": timestamp,
+            "lastUpdated": timestamp,
             "name": contest.get("text"),
             "precinctsReportingPct": precincts_reporting_pct,
             "subunits": self.aggregate_subunits_from_choices(choices, level, fips=fips),
@@ -136,8 +136,11 @@ class ClarityXMLConverter:
         Transforms a Clarity `Result` object into our expected format.
         """
         fips = None
-        tzinfos = {"EST": tz.gettz("America/New_York")}
-        timestamp = str(parser.parse(result["Timestamp"], tzinfos=tzinfos))
+
+        # convert the timestamp and make sure we're in EST
+        est = tz.gettz("America/New_York")
+        timestamp = parser.parse(result["Timestamp"], tzinfos={"EST": est}).astimezone(est)
+        timestamp = timestamp.strftime("%Y-%m-%dT%H:%H:%SZ")
 
         # Need to pass down county fips if level = precinct
         if level == 'precinct':
