@@ -1,6 +1,13 @@
+<<<<<<< HEAD:src/elexclarity/formatters/results.py
+=======
+from collections import defaultdict
+import xmltodict
+>>>>>>> fips-lookups:src/elexclarity/formatters.py
 from slugify import slugify
 from dateutil import parser, tz
 from collections import defaultdict
+
+from elexclarity.utils import get_list
 
 
 class ClarityXMLConverter:
@@ -17,15 +24,27 @@ class ClarityXMLConverter:
         """
         return slugify(name)
 
+    def get_county_mapping(self, name):
+        """
+        Returns special mapping, fips code, or slugified county name
+        based on specified county mapping.
+        """
+        if self.county_lookup is None:  # No mapping provided
+            return slugify(name)
+        return self.county_lookup.get(name)
+
     def get_subunit_id(self, subunit_name, fips=None):
         """
         Create an ID for a precinct or county.
         Fips codes are present when level == precinct.
         """
         name = slugify(subunit_name)
+        # Subunit is a county
         if fips is None:
-            fips = self.county_lookup.get(subunit_name)
-        return f"{fips}_{name}"
+            return self.get_county_mapping(subunit_name)
+        # Subunit is a precinct
+        precinct_name = slugify(subunit_name)
+        return f"{fips}_{precinct_name}"
 
     def get_subunit_totals_from_choice(self, choice, level):
         """
@@ -38,13 +57,10 @@ class ClarityXMLConverter:
 
         subunit_objs = defaultdict(lambda: 0)
 
-        for i in choice["VoteType"]:
-            # more validation, for one precinct races
+        for i in get_list(choice["VoteType"]):
             subunit_level = level.capitalize()
             subunits = i[subunit_level]
-            if type(subunits) != list:
-                subunits = [subunits]
-            for subunit in subunits:
+            for subunit in get_list(subunits):
                 subunit_objs[subunit["name"]] += int(subunit["votes"])
 
         return {
@@ -66,7 +82,6 @@ class ClarityXMLConverter:
         if level == "county":
             processed_subunits = []
             for county in list(subunits[0]):
-                fips = self.county_lookup.get(county)
                 processed_subunits.append(self.get_subunit_id(county))
         elif level == "precinct":
             processed_subunits = set([self.get_subunit_id(i, fips) for l in subunits for i in l])
@@ -113,10 +128,14 @@ class ClarityXMLConverter:
             precincts_reporting = int(contest.get("precinctsReporting"))
             precincts_reporting_pct = (precincts_reported/precincts_reporting)*100
 
+<<<<<<< HEAD:src/elexclarity/formatters/results.py
         # some light validation on the choices to make sure we get a list
         choices = contest["Choice"]
         if not isinstance(choices, list):
             choices = [choices]
+=======
+        choices = get_list(contest["Choice"])
+>>>>>>> fips-lookups:src/elexclarity/formatters.py
 
         return {
             "source": "clarity",
@@ -141,6 +160,7 @@ class ClarityXMLConverter:
         # Need to pass down county fips if level = precinct
         if level == 'precinct':
             county = result["Region"]
+<<<<<<< HEAD:src/elexclarity/formatters/results.py
             fips = self.county_lookup.get(county)
 
         # Multiple contests
@@ -149,5 +169,12 @@ class ClarityXMLConverter:
         else:
             contest_obj = [result["Contest"]]
             contests = [self.transform_contest(i, level, fips=fips, timestamp=timestamp) for i in contest_obj]
+=======
+            if self.county_lookup:
+                fips = self.county_lookup.get(county)
+            else:
+                fips = slugify(county)
+>>>>>>> fips-lookups:src/elexclarity/formatters.py
 
+        contests = [self.transform_contest(i, level, fips=fips) for i in get_list(result["Contest"])]
         return {i["name"]: i for i in contests}
