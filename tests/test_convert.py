@@ -15,7 +15,7 @@ def test_precinct_level_results(bacon_precincts, ga_county_mapping_fips):
     results = convert([bacon_precincts], statepostal="GA", level="precinct", countyMapping=ga_county_mapping_fips)
 
     assert len(results) == 20
-    assert "2020-11-03_GA_G_P" in results
+    assert "2020-11-03_GA_G_P_13005" in results
 
 
 def test_county_level_results(ga_counties, ga_county_mapping_fips):

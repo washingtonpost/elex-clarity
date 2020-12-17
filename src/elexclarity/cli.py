@@ -62,7 +62,7 @@ def cli(electionid, statepostal, filename=None, countyMapping={}, outputType="re
         else:
             result = api_client.get_results(electionid, statepostal, **kwargs)
 
-    if countyMapping:
+    if isinstance(countyMapping, str):
         countyMapping = json.loads(countyMapping)
 
     result = convert(result, statepostal, outputType=outputType, countyMapping=countyMapping, **kwargs)

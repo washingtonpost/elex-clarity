@@ -1,7 +1,7 @@
 {
   "http_interactions": [
     {
-      "recorded_at": "2020-12-17T20:21:09",
+      "recorded_at": "2020-12-17T22:47:29",
       "request": {
         "body": {
           "encoding": "utf-8",
@@ -50,13 +50,13 @@
             "text/plain; charset=utf-8"
           ],
           "Date": [
-            "Thu, 17 Dec 2020 20:23:57 GMT"
+            "Thu, 17 Dec 2020 22:50:18 GMT"
           ],
           "ETag": [
             "\"5fb8291d-6\""
           ],
           "Expires": [
-            "Thu, 17 Dec 2020 20:23:57 GMT"
+            "Thu, 17 Dec 2020 22:50:18 GMT"
           ],
           "Last-Modified": [
             "Fri, 20 Nov 2020 20:37:49 GMT"
@@ -65,16 +65,16 @@
             "nginx"
           ],
           "Via": [
-            "1.1 f92491812e422470607f365e923929b5.cloudfront.net (CloudFront)"
+            "1.1 6ba47df044361b708e00c6d6274556cc.cloudfront.net (CloudFront)"
           ],
           "X-Amz-Cf-Id": [
-            "Hk130a-p3ZcSyKEYKJLcKOrWjCpGZKOst3wn37iiEQX3qDe4PIkb-g=="
+            "i2Qa7FlqwU11rbikrORCsXXX98yCK8d-58ofw9cM2nqp7W0nilL51A=="
           ],
           "X-Amz-Cf-Pop": [
             "IAD79-C1"
           ],
           "X-Cache": [
-            "RefreshHit from cloudfront"
+            "Miss from cloudfront"
           ],
           "X-Content-Type-Options": [
             "nosniff"
@@ -94,7 +94,7 @@
       }
     },
     {
-      "recorded_at": "2020-12-17T20:21:09",
+      "recorded_at": "2020-12-17T22:47:29",
       "request": {
         "body": {
           "encoding": "utf-8",
@@ -127,7 +127,7 @@
             "*"
           ],
           "Age": [
-            "26649"
+            "35430"
           ],
           "Cache-Control": [
             "max-age=86400"
@@ -157,10 +157,10 @@
             "nginx"
           ],
           "Via": [
-            "1.1 f92491812e422470607f365e923929b5.cloudfront.net (CloudFront)"
+            "1.1 6ba47df044361b708e00c6d6274556cc.cloudfront.net (CloudFront)"
           ],
           "X-Amz-Cf-Id": [
-            "doZSpCKAFPXFLeWY9ge4htk28Uao7j0UhdfRkaNtEkEOF_opx_NB8Q=="
+            "40mucDmf_N37Nitk12fDVdL-yYjLmiCI6xhEWNxD9JqznoZsDj9kPw=="
           ],
           "X-Amz-Cf-Pop": [
             "IAD79-C1"
