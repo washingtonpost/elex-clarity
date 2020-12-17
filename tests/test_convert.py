@@ -1,7 +1,7 @@
 import os
 import pytest
 from elexclarity.convert import convert
-from elexclarity.utils import get_json_from_file, get_fips_mapping
+from elexclarity.utils import get_json_from_file
 
 _TEST_FOLDER = os.path.dirname(__file__)
 FIXTURE_DIR = os.path.join(_TEST_FOLDER, 'fixtures')

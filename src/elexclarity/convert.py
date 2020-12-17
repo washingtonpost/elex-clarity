@@ -1,6 +1,6 @@
 from collections import defaultdict
 import xmltodict
-from elexclarity.utils import get_json_from_file, get_fips_mapping, fips_mapping_exists
+from elexclarity.utils import get_json_from_file
 from slugify import slugify
 
 from elexclarity.formatters import ClarityXMLConverter
