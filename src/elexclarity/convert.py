@@ -1,5 +1,5 @@
 import xmltodict
-from elexclarity.formatters.results import ClarityXMLConverter
+from elexclarity.formatters.results import ClarityDetailXMLConverter
 from elexclarity.formatters.settings import ClaritySettingsConverter
 
 
@@ -19,11 +19,10 @@ def convert(data, statepostal=None, level=None, outputType="results", style="def
         )
 
     if outputType == "results":
-        data = [xmltodict.parse(data, attr_prefix="")["ElectionResult"]]
-        converter = ClarityXMLConverter(county_lookup=countyMapping)
-        results = [converter.convert(i, level=level) for i in data]
-        if len(results) > 1:
-            return results
-        return results[0]
+        converter = ClarityDetailXMLConverter(county_lookup=countyMapping)
+        results = {}
+        for sub_result in data:
+            results.update(converter.convert(xmltodict.parse(sub_result, attr_prefix="")["ElectionResult"], level=level))
+        return results
 
     raise Exception(f"The {level} Clarity formatter is not implemented yet")

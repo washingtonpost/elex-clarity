@@ -20,7 +20,7 @@ Pulling formatted data from Clarity:
 Pass in county mapping as a JSON object.
 Sample formats can be found in the ``tests/fixtures`` folder `here <https://github.com/washingtonpost/elex-clarity/tree/develop/tests/fixtures>`_.
 
-* ``elexclarity 105369 GA --level=precinct --countyMapping='{"Worth": "13321"}``
+* ``elexclarity 105369 GA --level=precinct --countyMapping='{"Worth": "13321"}'``
 * ``elexclarity 105369 GA --level=precinct --countyMapping='<mapping json>'``
 * ``elexclarity 105369 GA --level=county --countyMapping='<mapping json>'``
 * ``elexclarity 106210 WV --level=county --countyMapping='<mapping json>'``

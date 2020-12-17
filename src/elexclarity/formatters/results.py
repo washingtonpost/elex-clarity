@@ -4,7 +4,7 @@ from slugify import slugify
 from elexclarity.utils import get_list, format_timestamp
 
 
-class ClarityXMLConverter:
+class ClarityDetailXMLConverter:
     """
     A class to convert Clarity XML into our expected data format.
     """
@@ -12,13 +12,10 @@ class ClarityXMLConverter:
     def __init__(self, county_lookup=None, **kwargs):
         self.county_lookup = county_lookup
 
-    def get_id_for_choice(self, name):
-        """
-        Create an ID from the clarity key and candidate name.
-        """
+    def get_race_id(self, name):
         return slugify(name)
 
-    def get_county_mapping(self, name):
+    def get_county_id(self, name):
         """
         Returns special mapping, fips code, or slugified county name
         based on specified county mapping.
@@ -32,10 +29,9 @@ class ClarityXMLConverter:
         Create an ID for a precinct or county.
         Fips codes are present when level == precinct.
         """
-        name = slugify(subunit_name)
         # Subunit is a county
         if fips is None:
-            return self.get_county_mapping(subunit_name)
+            return self.get_county_id(subunit_name)
         # Subunit is a precinct
         precinct_name = slugify(subunit_name)
         return f"{fips}_{precinct_name}"
@@ -47,7 +43,7 @@ class ClarityXMLConverter:
         """
         name = choice.get("text")
         key = choice.get("key")
-        slug = self.get_id_for_choice(name)
+        slug = slugify(name)
 
         subunit_objs = defaultdict(lambda: 0)
 
@@ -69,7 +65,7 @@ class ClarityXMLConverter:
         Takes a list of `Choice` objects from Clarity and aggregates/transforms
         them into a the format our data importer expects.
         """
-        processed_choices = [self.get_subunit_totals_from_choice(i, level) for i in choices]
+        processed_choices = [self.get_subunit_totals_from_choice(i, level) for i in filter(lambda choice: choice.get("text"), choices)]
 
         # Get a flat, unique, list of our subunit names
         subunits = [i["subunits"].keys() for i in processed_choices]
@@ -105,7 +101,7 @@ class ClarityXMLConverter:
 
         for choice in choices:
             name = choice.get("text")
-            slug = self.get_id_for_choice(name)
+            slug = slugify(name)
             agg[slug] = int(choice["totalVotes"])
 
         return agg
@@ -115,8 +111,9 @@ class ClarityXMLConverter:
         Transforms a Clarity `Contest` object into our expected format.
         """
         # Available fields vary in Clarity data
-        if "precinctsReportingPercent" in contest:
-            precincts_reporting_pct = float(contest.get("precinctsReportingPercent"))
+        precincts_reporting_pct = contest.get("precinctsReportingPercent")
+        if precincts_reporting_pct:
+            precincts_reporting_pct = float(precincts_reporting_pct)
         else:
             precincts_reported = int(contest.get("precinctsReported"))
             precincts_reporting = int(contest.get("precinctsReporting"))
@@ -125,11 +122,11 @@ class ClarityXMLConverter:
         choices = get_list(contest["Choice"])
 
         return {
+            "id": self.get_race_id(contest["text"]),
             "source": "clarity",
             "lastUpdated": timestamp,
-            "name": contest.get("text"),
             "precinctsReportingPct": precincts_reporting_pct,
-            "subunits": self.aggregate_subunits_from_choices(choices, level, fips=fips),
+            "subunits": self.aggregate_subunits_from_choices(choices, level, fips),
             "counts": self.get_total_votes_from_choices(choices)
         }
 
@@ -148,4 +145,4 @@ class ClarityXMLConverter:
                 fips = slugify(county)
 
         contests = [self.transform_contest(i, level, fips, format_timestamp(result["Timestamp"])) for i in get_list(result["Contest"])]
-        return {i["name"]: i for i in contests}
+        return {i["id"]: i for i in contests}

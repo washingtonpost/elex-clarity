@@ -89,8 +89,8 @@ class ElectionsClient(object):
         return resp.json()
 
     # https://results.enr.clarityelections.com//GA//105369/270988/reports/detailxml.zip
-    def get_county_results(self, statepostal, county, **kwargs):
-        return self.get_detail_xml(f"{statepostal}/{county.name}/{county.id}/{county.version}")
+    def get_county_results(self, statepostal, county_name, county_id, county_version, **kwargs):
+        return self.get_detail_xml(f"{statepostal}/{county_name}/{county_id}/{county_version}")
 
     def get_state_results(self, electionid, statepostal, version, **kwargs):
         return self.get_detail_xml(f"{statepostal}/{electionid}/{version}")
@@ -99,8 +99,11 @@ class ElectionsClient(object):
         if level == "precinct":
             results = []
             # Bad bad bad; do not use in production! This will request _many_ files
-            for county in self.get_counties(electionid, statepostal):
-                results.append(self.get_county_results(statepostal, county, **kwargs))
+            election_settings = self.get_settings(electionid, statepostal)
+            raw_counties = election_settings.get("settings", {}).get("electiondetails", {}).get("participatingcounties")
+            for raw_county in raw_counties:
+                name, clarity_id, version, _ = raw_county.split("|")[0:4]
+                results.append(self.get_county_results(statepostal, name, clarity_id, version, **kwargs))
             return results
         elif level == "state" or level == "county":
             current_ver = self.get_current_version(electionid, statepostal, **kwargs)
