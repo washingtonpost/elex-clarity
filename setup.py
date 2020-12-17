@@ -6,9 +6,9 @@ from setuptools import find_packages, setup
 INSTALL_REQUIRES = (
     'click<8',
     'requests<3',
+    'python-dateutil',
     'python-slugify',
-    'xmltodict',
-    'elex-static-data'
+    'xmltodict'
 )
 NEEDS_DOCS = 'build_sphinx' in sys.argv
 NEEDS_PYTEST = {'pytest', 'test', 'ptr'}.intersection(sys.argv)
