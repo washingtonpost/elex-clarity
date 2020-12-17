@@ -65,5 +65,5 @@ def cli(electionid, statepostal, filename=None, countyMapping={}, outputType="re
     if countyMapping:
         countyMapping = json.loads(countyMapping)
 
-    result = convert(result, statepostal=statepostal, outputType=outputType, countyMapping=countyMapping, **kwargs)
+    result = convert(result, statepostal, outputType=outputType, countyMapping=countyMapping, **kwargs)
     print(json.dumps(result, indent=2))

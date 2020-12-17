@@ -1,6 +1,8 @@
 from collections import defaultdict
 from slugify import slugify
+import xmltodict
 
+from elexclarity.formatters.const import STATE_OFFICE_ID_MAPS
 from elexclarity.utils import get_list, format_timestamp
 
 
@@ -9,11 +11,17 @@ class ClarityDetailXMLConverter:
     A class to convert Clarity XML into our expected data format.
     """
 
-    def __init__(self, county_lookup=None, **kwargs):
+    def __init__(self, statepostal, county_lookup=None, **kwargs):
+        self.state_postal = statepostal
         self.county_lookup = county_lookup
 
-    def get_race_id(self, name):
-        return slugify(name)
+    def get_race_type(self, election_name):
+        if "General" in election_name:
+            return "G"
+        raise Exception("Unknown election type")
+
+    def get_race_office(self, contest_name):
+        return STATE_OFFICE_ID_MAPS[self.state_postal].get(contest_name, slugify(contest_name, separator="_"))
 
     def get_county_id(self, name):
         """
@@ -21,7 +29,7 @@ class ClarityDetailXMLConverter:
         based on specified county mapping.
         """
         if self.county_lookup is None:  # No mapping provided
-            return slugify(name)
+            return slugify(name, separator="_")
         return self.county_lookup.get(name)
 
     def get_subunit_id(self, subunit_name, fips=None):
@@ -33,7 +41,7 @@ class ClarityDetailXMLConverter:
         if fips is None:
             return self.get_county_id(subunit_name)
         # Subunit is a precinct
-        precinct_name = slugify(subunit_name)
+        precinct_name = slugify(subunit_name, separator="_")
         return f"{fips}_{precinct_name}"
 
     def get_subunit_totals_from_choice(self, choice, level):
@@ -43,7 +51,7 @@ class ClarityDetailXMLConverter:
         """
         name = choice.get("text")
         key = choice.get("key")
-        slug = slugify(name)
+        slug = slugify(name, separator="_")
 
         subunit_objs = defaultdict(lambda: 0)
 
@@ -101,12 +109,12 @@ class ClarityDetailXMLConverter:
 
         for choice in choices:
             name = choice.get("text")
-            slug = slugify(name)
+            slug = slugify(name, separator="_")
             agg[slug] = int(choice["totalVotes"])
 
         return agg
 
-    def transform_contest(self, contest, level, fips, timestamp):
+    def transform_contest(self, contest, election_date, election_type, timestamp=None, fips=None, level=None, **kwargs):
         """
         Transforms a Clarity `Contest` object into our expected format.
         """
@@ -120,29 +128,42 @@ class ClarityDetailXMLConverter:
             precincts_reporting_pct = (precincts_reported/precincts_reporting)*100
 
         choices = get_list(contest["Choice"])
+        contest_name = contest["text"]
+        race_id = "_".join([
+            election_date,
+            self.state_postal,
+            election_type,
+            self.get_race_office(contest_name)
+        ])
 
-        return {
-            "id": self.get_race_id(contest["text"]),
+        result = {
+            "id": race_id,
             "source": "clarity",
-            "lastUpdated": timestamp,
             "precinctsReportingPct": precincts_reporting_pct,
             "subunits": self.aggregate_subunits_from_choices(choices, level, fips),
             "counts": self.get_total_votes_from_choices(choices)
         }
+        if timestamp:
+            result["lastUpdated"] = timestamp
+        return result
 
-    def convert(self, result, level):
+
+    def convert(self, data, **kwargs):
         """
-        Transforms a Clarity `Result` object into our expected format.
+        Transforms a Clarity `ElectionResult` object into our expected format.
         """
-        fips = None
+        result = {}
+        dictified_data = xmltodict.parse(data, attr_prefix="").get("ElectionResult", {})
+        county = dictified_data["Region"]
+        if self.county_lookup:
+            fips = self.county_lookup.get(county)
+        else:
+            fips = slugify(county, separator="_")
+        election_date = format_timestamp(dictified_data["ElectionDate"]).split("T")[0]
+        election_type = self.get_race_type(dictified_data["ElectionName"])
+        timestamp = format_timestamp(dictified_data["Timestamp"])
 
-        # Need to pass down county fips if level = precinct
-        if level == 'precinct':
-            county = result["Region"]
-            if self.county_lookup:
-                fips = self.county_lookup.get(county)
-            else:
-                fips = slugify(county)
-
-        contests = [self.transform_contest(i, level, fips, format_timestamp(result["Timestamp"])) for i in get_list(result["Contest"])]
-        return {i["id"]: i for i in contests}
+        for contest in get_list(dictified_data.get("Contest")):
+            race_result = self.transform_contest(contest, election_date, election_type, timestamp=timestamp, fips=fips, **kwargs)
+            result[race_result["id"]] = race_result
+        return result

@@ -6,7 +6,8 @@ class ClaritySettingsConverter:
     A class to convert Clarity JSON settings.
     """
 
-    def __init__(self, county_lookup=None, **kwargs):
+    def __init__(self, statepostal=None, county_lookup=None, **kwargs):
+        self.state_postal = statepostal
         self.county_lookup = county_lookup
 
     def convert(self, data, level="county", **kwargs):
