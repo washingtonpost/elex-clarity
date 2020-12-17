@@ -4,9 +4,16 @@ import click
 
 from elexclarity.client import ElectionsClient
 from elexclarity.convert import convert
-from elexclarity.utils import get_json_from_file
 
 BASE_URL = os.environ.get('CLARITY_API_BASE_URL', 'https://results.enr.clarityelections.com/')
+
+class StringListParamType(click.ParamType):
+    name = "stringlist"
+
+    def convert(self, value, param, ctx):
+        return value.split(",")
+
+STRING_LIST = StringListParamType()
 
 
 @click.command()
@@ -14,6 +21,7 @@ BASE_URL = os.environ.get('CLARITY_API_BASE_URL', 'https://results.enr.clarityel
 @click.argument('statePostal', type=click.STRING)
 @click.option('--filename', type=click.Path(exists=True), help='Specify data file instead of making HTTP request')
 @click.option('--countyMapping', 'countyMapping', default={}, help='Specify county mapping')
+@click.option('--officeID', 'officeID', help='The office ID(s) to process', type=STRING_LIST)
 @click.option('--level', help='Specify the subunit type/reporting level for results', default='county', type=click.Choice([
     'county',
     'precinct',

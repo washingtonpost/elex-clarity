@@ -30,7 +30,7 @@ class ClarityConverter(object):
         based on specified county mapping.
         """
         slug = slugify(name, separator="_")
-        if self.county_lookup is None:  # No mapping provided
+        if not self.county_lookup:  # No mapping provided
             return slug
         return self.county_lookup[name]
 

@@ -6,6 +6,7 @@ class ClaritySettingsConverter(ClarityConverter):
     """
 
     def convert(self, data, level="county", officeID=(), **kwargs):
+        print(officeID)
         if level == "county":
             raw_counties = data.get("settings", {}).get("electiondetails", {}).get("participatingcounties")
             raw_date = data.get("settings", {}).get("electiondetails", {}).get("electiondate")

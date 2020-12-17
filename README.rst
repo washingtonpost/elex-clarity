@@ -13,7 +13,7 @@ Examples:
 Pulling raw data from Clarity (still needs formatting work):
 
 * ``elexclarity 105369 GA --outputType=summary``
-* ``elexclarity 105369 GA --outputType=settings``
+* ``elexclarity 105369 GA --outputType=settings --officeID=P``
 
 Pulling formatted data from Clarity:
 
