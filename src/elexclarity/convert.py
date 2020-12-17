@@ -4,6 +4,7 @@ from elexclarity.utils import get_json_from_file
 from slugify import slugify
 
 from elexclarity.formatters import ClarityXMLConverter
+from elexclarity.race_name_maps import RACE_NAME_MAPS
 
 
 def convert(data, statepostal=None, level=None, outputType="results", style="default", resultsBy=None, countyMapping={}, **kwargs):
@@ -23,7 +24,10 @@ def convert(data, statepostal=None, level=None, outputType="results", style="def
 
     if level == "precinct" or level == "county":
         county_lookup = countyMapping if countyMapping else None
-        converter = ClarityXMLConverter(county_lookup=county_lookup)
+        converter = ClarityXMLConverter(
+            county_lookup=county_lookup,
+            race_name_lookup=RACE_NAME_MAPS.get(statepostal, {})
+        )
         results = [converter.transform_result_object(i, level=level) for i in data]
 
         if len(results) > 1:

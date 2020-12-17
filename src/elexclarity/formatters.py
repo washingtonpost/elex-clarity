@@ -1,8 +1,7 @@
 from collections import defaultdict
-import xmltodict
-from slugify import slugify
+
 from dateutil import parser, tz
-from collections import defaultdict
+from slugify import slugify
 
 from elexclarity.utils import get_list
 
@@ -12,8 +11,12 @@ class ClarityXMLConverter:
     A class to convert Clarity XML into our expected data format.
     """
 
-    def __init__(self, county_lookup=None, **kwargs):
+    def __init__(self, county_lookup=None, race_name_lookup={}, **kwargs):
         self.county_lookup = county_lookup
+        self.race_name_lookup = race_name_lookup
+    
+    def clean_race_name(self, race_name):
+        return self.race_name_lookup.get(race_name, race_name)
 
     def get_id_for_choice(self, name):
         """
@@ -134,7 +137,7 @@ class ClarityXMLConverter:
         return {
             "source": "clarity",
             "lastUpdated": timestamp,
-            "name": contest.get("text"),
+            "name": self.clean_race_name(contest.get("text")),
             "precinctsReportingPct": precincts_reporting_pct,
             "subunits": self.aggregate_subunits_from_choices(choices, level, fips=fips),
             "counts": self.get_total_votes_from_choices(choices)

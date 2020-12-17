@@ -30,6 +30,12 @@ def fulton_precincts(get_fixture):
         fixture = f.read()
     return fixture
 
+@pytest.fixture
+def gwinnett_precincts(get_fixture):
+    path = os.path.join(FIXTURE_DIR, "gwinnett_precincts_11-3.xml")
+    with open(path) as f:
+        fixture = f.read()
+    return fixture
 
 @pytest.fixture
 def atkinson_presidential_contest(get_fixture):
@@ -172,6 +178,20 @@ def test_format_georgia_counties(georgia_counties, ga_county_mapping_fips):
     assert counts["joseph-r-biden-dem"] == 2474507
     assert counts["jo-jorgensen-lib"] == 62138
 
+def test_gwinnett_precinct_race_names(gwinnett_precincts):
+    results = convert(gwinnett_precincts, statepostal="GA", level="precinct")
+
+    # President
+    assert "President of the United States" in results.keys()
+    assert "President of the United States/Presidentede los Estados Unidos" not in results.keys()
+    
+    # Loeffler
+    assert "US Senate (Loeffler) - Special Election" in results.keys()
+    assert "US Senate (Loeffler) - Special/Senado de los EE.UU. (Loeffler) - Especial" not in results.keys()
+
+    # Perdue
+    assert "US Senate (Perdue)" in results.keys()
+    assert "US Senate (Perdue)/Senado de los EE.UU. (Perdue)" not in results.keys()
 
 def test_alternate_county_mapping(georgia_counties, ga_county_mapping_alternate):
     results = convert(georgia_counties, statepostal="GA", level="county", countyMapping=ga_county_mapping_alternate)
