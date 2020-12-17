@@ -51,6 +51,7 @@ def test_format_atkinson_precincts(atkinson_precincts):
     assert len(results.keys()) == 25
     assert "President of the United States" in results.keys()
     assert results["President of the United States"]["precinctsReportingPct"] == 100
+    assert results["President of the United States"]["lastUpdated"] == "2020-11-06T13:13:50Z"
 
     # Top level counts for this county
     counts = results["President of the United States"]["counts"]
@@ -73,6 +74,7 @@ def test_format_bacon_precincts(bacon_precincts):
     assert len(results.keys()) == 20
     assert "President of the United States" in results.keys()
     assert results["President of the United States"]["precinctsReportingPct"] == 100
+    assert results["President of the United States"]["lastUpdated"] == "2020-11-05T11:11:44Z"
 
     # Top level counts for this county
     counts = results["President of the United States"]["counts"]
@@ -94,6 +96,7 @@ def test_format_fulton_precincts(fulton_precincts):
     assert len(results.keys()) == 60
     assert "President of the United States" in results.keys()
     assert results["President of the United States"]["precinctsReportingPct"] == 100
+    assert results["President of the United States"]["lastUpdated"] == "2020-11-10T17:17:39Z"
 
     # Top level counts for this county
     counts = results["President of the United States"]["counts"]
@@ -115,6 +118,7 @@ def test_format_single_contest(atkinson_presidential_contest):
     assert len(results.keys()) == 1
     assert "President of the United States" in results.keys()
     assert results["President of the United States"]["precinctsReportingPct"] == 100
+    assert results["President of the United States"]["lastUpdated"] == "2020-11-06T13:13:50Z"
 
     # Top level counts for this county
     counts = results["President of the United States"]["counts"]
@@ -129,6 +133,7 @@ def test_format_georgia_counties(georgia_counties):
     assert "President of the United States" in results.keys()
     assert "State Senate District 1" in results.keys()
     assert results["President of the United States"]["precinctsReportingPct"] == 100
+    assert results["President of the United States"]["lastUpdated"] == "2020-11-20T15:15:06Z"
 
     # County-level counts
     wilcox_county = results["President of the United States"]["subunits"]["13315_wilcox"]

@@ -6,6 +6,7 @@ from setuptools import find_packages, setup
 INSTALL_REQUIRES = (
     'click<8',
     'requests<3',
+    'python-dateutil',
     'python-slugify',
     'xmltodict',
     'elex-static-data'
