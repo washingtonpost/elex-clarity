@@ -1,6 +1,8 @@
 from collections import defaultdict
 import xmltodict
 from slugify import slugify
+from dateutil import parser, tz
+from collections import defaultdict
 
 from elexclarity.utils import get_list
 
@@ -115,7 +117,7 @@ class ClarityXMLConverter:
 
         return agg
 
-    def transform_contest(self, contest, level, fips):
+    def transform_contest(self, contest, level, fips, timestamp):
         """
         Transforms a Clarity `Contest` object into our expected format.
         """
@@ -131,6 +133,7 @@ class ClarityXMLConverter:
 
         return {
             "source": "clarity",
+            "lastUpdated": timestamp,
             "name": contest.get("text"),
             "precinctsReportingPct": precincts_reporting_pct,
             "subunits": self.aggregate_subunits_from_choices(choices, level, fips=fips),
@@ -142,6 +145,12 @@ class ClarityXMLConverter:
         Transforms a Clarity `Result` object into our expected format.
         """
         fips = None
+
+        # convert the timestamp and make sure we're in EST
+        est = tz.gettz("America/New_York")
+        timestamp = parser.parse(result["Timestamp"], tzinfos={"EST": est}).astimezone(est)
+        timestamp = timestamp.strftime("%Y-%m-%dT%H:%M:%SZ")
+
         # Need to pass down county fips if level = precinct
         if level == 'precinct':
             county = result["Region"]
@@ -150,5 +159,5 @@ class ClarityXMLConverter:
             else:
                 fips = slugify(county)
 
-        contests = [self.transform_contest(i, level, fips=fips) for i in get_list(result["Contest"])]
+        contests = [self.transform_contest(i, level, fips=fips, timestamp=timestamp) for i in get_list(result["Contest"])]
         return {i["name"]: i for i in contests}
