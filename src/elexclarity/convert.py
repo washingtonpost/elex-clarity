@@ -1,38 +1,36 @@
-from collections import defaultdict
-import xmltodict
-from elexclarity.utils import get_json_from_file
-from slugify import slugify
-
-from elexclarity.formatters import ClarityXMLConverter
-from elexclarity.race_name_maps import RACE_NAME_MAPS
+from elexclarity.formatters.results import ClarityDetailXMLConverter
+from elexclarity.formatters.settings import ClaritySettingsConverter
 
 
-def convert(data, statepostal=None, level=None, outputType="results", style="default", resultsBy=None, countyMapping={}, **kwargs):
+def convert(data, statepostal, outputType="results", style="default", countyMapping=None, **kwargs):
     """
     The entry point for formatting Clarity results data.
     """
-    # TODO: Data formatting/conversion logic for settings and summary
 
-    if outputType == "summary" or outputType == "settings":
-        # Returns raw data for now
+    if kwargs.get("officeID") and type(kwargs.get("officeID")) == str:
+        kwargs["officeID"] = kwargs["officeID"].split(",")
+
+    if style == "raw" or outputType == "summary":
         return data
 
-    if type(data) == list:
-        data = [xmltodict.parse(i, attr_prefix="")["ElectionResult"] for i in data]
-    else:
-        data = [xmltodict.parse(data, attr_prefix="")["ElectionResult"]]
-
-    if level == "precinct" or level == "county":
-        county_lookup = countyMapping if countyMapping else None
-        converter = ClarityXMLConverter(
-            county_lookup=county_lookup,
-            race_name_lookup=RACE_NAME_MAPS.get(statepostal, {})
+    if outputType == "settings":
+        return ClaritySettingsConverter(statepostal, county_lookup=countyMapping).convert(
+            data,
+            **kwargs
         )
-        results = [converter.transform_result_object(i, level=level) for i in data]
 
-        if len(results) > 1:
+    if outputType == "results":
+        converter = ClarityDetailXMLConverter(
+            statepostal,
+            county_lookup=countyMapping
+        )
+
+        if type(data) == list:
+            results = {}
+            for sub_result in data:
+                results.update(converter.convert(sub_result, **kwargs))
             return results
+        else:
+            return converter.convert(data, **kwargs)
 
-        return results[0]
-
-    raise Exception(f"The {level} Clarity formatter is not implemented yet")
+    raise Exception(f"The {outputType} Clarity formatter is not implemented yet")
