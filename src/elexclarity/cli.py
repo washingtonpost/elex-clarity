@@ -57,11 +57,11 @@ def cli(electionid, statepostal, filename=None, countyMapping={}, outputType="re
     if filename:
         # load races from local file
         with click.open_file(filename) as results_file:
+            # load these into a list as that's what convert expects
             if ".json" in filename:
-                result = json.load(results_file)
+                result = [json.load(results_file)]
             if ".xml" in filename:
-                with open(filename) as results_file:
-                    result = results_file.read()
+                result = [results_file.read()]
     else:
         api_client = ElectionsClient(BASE_URL)
         if outputType == "summary":
