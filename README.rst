@@ -10,27 +10,30 @@ Usage
 Examples:
 ^^^^^^^^^
 
-Pulling raw data from Clarity (still needs formatting work):
+Pulling raw data:
 
-* ``elexclarity 105369 GA --outputType=summary``
-* ``elexclarity 105369 GA --outputType=settings``
+* ``elexclarity 105369 GA --outputType=summary --style=raw``
+* ``elexclarity 105369 GA --outputType=settings --style=raw``
+* ``elexclarity 105369 GA --level=precinct --style=raw``
 
-Pulling formatted data from Clarity:
+Getting formatted settings:
 
-Pass in county mapping as a JSON object.
-Sample formats can be found in the ``tests/fixtures`` folder `here <https://github.com/washingtonpost/elex-clarity/tree/develop/tests/fixtures>`_.
+* ``elexclarity 105369 GA --outputType=settings --officeID=P``
 
-* ``elexclarity 105369 GA --level=precinct --countyMapping='{"Worth": "13321"}``
-* ``elexclarity 105369 GA --level=precinct --countyMapping='<mapping json>'``
-* ``elexclarity 105369 GA --level=county --countyMapping='<mapping json>'``
+Pulling formatted results:
+
+Note: these require that you pass in county mapping as a JSON object. Sample formats can be found in the ``tests/fixtures`` folder `here <https://github.com/washingtonpost/elex-clarity/tree/develop/tests/fixtures/mappings>`_.
+
+* ``elexclarity 105369 GA --level=precinct --countyMapping='{"Worth": "13321"}'``
+* ``elexclarity 105369 GA --level=precinct``
+* ``elexclarity 105369 GA --level=county``
 * ``elexclarity 106210 WV --level=county --countyMapping='<mapping json>'``
+* ``elexclarity 105369 WV --level=state``
 
 Using a local file:
 
-* ``elexclarity 105369 GA --level=precinct --filename="tests/fixtures/atkinson_precincts_11-3.xml" --countyMapping='<mapping json>'``
-* ``elexclarity 105369 GA --level=county --filename="tests/fixtures/2020-11-03_GA.xml" --countyMapping='<mapping json>'``
-
-State-level formatting has not been implemented yet.
+* ``elexclarity 105369 GA --level=precinct --filename="tests/fixtures/results/ga_atkinson_precincts_11-3.xml" --countyMapping='<mapping json>'``
+* ``elexclarity 105369 GA --level=county --filename="tests/fixtures/ga_counties_11-3.xml" --countyMapping='<mapping json>'``
 
 Installation
 ~~~~~~~~~~~~

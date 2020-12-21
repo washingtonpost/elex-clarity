@@ -1,0 +1,2302 @@
+<?xml version="1.0"?>
+<!--Election result snapshot imported from Tabulation System
+-->
+<ElectionResult>
+    <Timestamp>11/20/2020 3:37:06 PM EST</Timestamp>
+    <ElectionName>November 3,2020-General Election</ElectionName>
+    <ElectionDate>11/3/2020</ElectionDate>
+    <Region>GA</Region>
+    <ElectionVoterTurnout>
+        <Counties>
+            <County name="Appling" precinctsParticipating="9" precinctsReported="9" precinctsReportingPercent="100.00" />
+            <County name="Atkinson" precinctsParticipating="4" precinctsReported="4" precinctsReportingPercent="100.00" />
+            <County name="Bacon" precinctsParticipating="1" precinctsReported="1" precinctsReportingPercent="100.00" />
+            <County name="Baker" precinctsParticipating="5" precinctsReported="5" precinctsReportingPercent="100.00" />
+            <County name="Baldwin" precinctsParticipating="14" precinctsReported="14" precinctsReportingPercent="100.00" />
+            <County name="Banks" precinctsParticipating="13" precinctsReported="13" precinctsReportingPercent="100.00" />
+            <County name="Barrow" precinctsParticipating="8" precinctsReported="8" precinctsReportingPercent="100.00" />
+            <County name="Bartow" precinctsParticipating="17" precinctsReported="17" precinctsReportingPercent="100.00" />
+            <County name="Ben Hill" precinctsParticipating="2" precinctsReported="2" precinctsReportingPercent="100.00" />
+            <County name="Berrien" precinctsParticipating="5" precinctsReported="5" precinctsReportingPercent="100.00" />
+            <County name="Bibb" precinctsParticipating="31" precinctsReported="31" precinctsReportingPercent="100.00" />
+            <County name="Bleckley" precinctsParticipating="1" precinctsReported="1" precinctsReportingPercent="100.00" />
+            <County name="Brantley" precinctsParticipating="3" precinctsReported="3" precinctsReportingPercent="100.00" />
+            <County name="Brooks" precinctsParticipating="7" precinctsReported="7" precinctsReportingPercent="100.00" />
+            <County name="Bryan" precinctsParticipating="10" precinctsReported="10" precinctsReportingPercent="100.00" />
+            <County name="Bulloch" precinctsParticipating="16" precinctsReported="16" precinctsReportingPercent="100.00" />
+            <County name="Burke" precinctsParticipating="16" precinctsReported="16" precinctsReportingPercent="100.00" />
+            <County name="Butts" precinctsParticipating="1" precinctsReported="1" precinctsReportingPercent="100.00" />
+            <County name="Calhoun" precinctsParticipating="5" precinctsReported="5" precinctsReportingPercent="100.00" />
+            <County name="Camden" precinctsParticipating="14" precinctsReported="14" precinctsReportingPercent="100.00" />
+            <County name="Candler" precinctsParticipating="1" precinctsReported="1" precinctsReportingPercent="100.00" />
+            <County name="Carroll" precinctsParticipating="28" precinctsReported="28" precinctsReportingPercent="100.00" />
+            <County name="Catoosa" precinctsParticipating="11" precinctsReported="11" precinctsReportingPercent="100.00" />
+            <County name="Charlton" precinctsParticipating="8" precinctsReported="8" precinctsReportingPercent="100.00" />
+            <County name="Chatham" precinctsParticipating="92" precinctsReported="92" precinctsReportingPercent="100.00" />
+            <County name="Chattahoochee" precinctsParticipating="1" precinctsReported="1" precinctsReportingPercent="100.00" />
+            <County name="Chattooga" precinctsParticipating="13" precinctsReported="13" precinctsReportingPercent="100.00" />
+            <County name="Cherokee" precinctsParticipating="42" precinctsReported="42" precinctsReportingPercent="100.00" />
+            <County name="Clarke" precinctsParticipating="24" precinctsReported="24" precinctsReportingPercent="100.00" />
+            <County name="Clay" precinctsParticipating="5" precinctsReported="5" precinctsReportingPercent="100.00" />
+            <County name="Clayton" precinctsParticipating="65" precinctsReported="65" precinctsReportingPercent="100.00" />
+            <County name="Clinch" precinctsParticipating="5" precinctsReported="5" precinctsReportingPercent="100.00" />
+            <County name="Cobb" precinctsParticipating="145" precinctsReported="145" precinctsReportingPercent="100.00" />
+            <County name="Coffee" precinctsParticipating="6" precinctsReported="6" precinctsReportingPercent="100.00" />
+            <County name="Colquitt" precinctsParticipating="19" precinctsReported="19" precinctsReportingPercent="100.00" />
+            <County name="Columbia" precinctsParticipating="47" precinctsReported="47" precinctsReportingPercent="100.00" />
+            <County name="Cook" precinctsParticipating="8" precinctsReported="8" precinctsReportingPercent="100.00" />
+            <County name="Coweta" precinctsParticipating="26" precinctsReported="26" precinctsReportingPercent="100.00" />
+            <County name="Crawford" precinctsParticipating="6" precinctsReported="6" precinctsReportingPercent="100.00" />
+            <County name="Crisp" precinctsParticipating="5" precinctsReported="5" precinctsReportingPercent="100.00" />
+            <County name="Dade" precinctsParticipating="7" precinctsReported="7" precinctsReportingPercent="100.00" />
+            <County name="Dawson" precinctsParticipating="3" precinctsReported="3" precinctsReportingPercent="100.00" />
+            <County name="Decatur" precinctsParticipating="9" precinctsReported="9" precinctsReportingPercent="100.00" />
+            <County name="DeKalb" precinctsParticipating="191" precinctsReported="191" precinctsReportingPercent="100.00" />
+            <County name="Dodge" precinctsParticipating="16" precinctsReported="16" precinctsReportingPercent="100.00" />
+            <County name="Dooly" precinctsParticipating="5" precinctsReported="5" precinctsReportingPercent="100.00" />
+            <County name="Dougherty" precinctsParticipating="28" precinctsReported="28" precinctsReportingPercent="100.00" />
+            <County name="Douglas" precinctsParticipating="25" precinctsReported="25" precinctsReportingPercent="100.00" />
+            <County name="Early" precinctsParticipating="5" precinctsReported="5" precinctsReportingPercent="100.00" />
+            <County name="Echols" precinctsParticipating="1" precinctsReported="1" precinctsReportingPercent="100.00" />
+            <County name="Effingham" precinctsParticipating="17" precinctsReported="17" precinctsReportingPercent="100.00" />
+            <County name="Elbert" precinctsParticipating="11" precinctsReported="11" precinctsReportingPercent="100.00" />
+            <County name="Emanuel" precinctsParticipating="11" precinctsReported="11" precinctsReportingPercent="100.00" />
+            <County name="Evans" precinctsParticipating="1" precinctsReported="1" precinctsReportingPercent="100.00" />
+            <County name="Fannin" precinctsParticipating="12" precinctsReported="12" precinctsReportingPercent="100.00" />
+            <County name="Fayette" precinctsParticipating="36" precinctsReported="36" precinctsReportingPercent="100.00" />
+            <County name="Floyd" precinctsParticipating="25" precinctsReported="25" precinctsReportingPercent="100.00" />
+            <County name="Forsyth" precinctsParticipating="20" precinctsReported="20" precinctsReportingPercent="100.00" />
+            <County name="Franklin" precinctsParticipating="7" precinctsReported="7" precinctsReportingPercent="100.00" />
+            <County name="Fulton" precinctsParticipating="384" precinctsReported="384" precinctsReportingPercent="100.00" />
+            <County name="Gilmer" precinctsParticipating="13" precinctsReported="13" precinctsReportingPercent="100.00" />
+            <County name="Glascock" precinctsParticipating="4" precinctsReported="4" precinctsReportingPercent="100.00" />
+            <County name="Glynn" precinctsParticipating="20" precinctsReported="20" precinctsReportingPercent="100.00" />
+            <County name="Gordon" precinctsParticipating="12" precinctsReported="12" precinctsReportingPercent="100.00" />
+            <County name="Grady" precinctsParticipating="13" precinctsReported="13" precinctsReportingPercent="100.00" />
+            <County name="Greene" precinctsParticipating="5" precinctsReported="5" precinctsReportingPercent="100.00" />
+            <County name="Gwinnett" precinctsParticipating="156" precinctsReported="156" precinctsReportingPercent="100.00" />
+            <County name="Habersham" precinctsParticipating="7" precinctsReported="7" precinctsReportingPercent="100.00" />
+            <County name="Hall" precinctsParticipating="31" precinctsReported="31" precinctsReportingPercent="100.00" />
+            <County name="Hancock" precinctsParticipating="10" precinctsReported="10" precinctsReportingPercent="100.00" />
+            <County name="Haralson" precinctsParticipating="12" precinctsReported="12" precinctsReportingPercent="100.00" />
+            <County name="Harris" precinctsParticipating="12" precinctsReported="12" precinctsReportingPercent="100.00" />
+            <County name="Hart" precinctsParticipating="7" precinctsReported="7" precinctsReportingPercent="100.00" />
+            <County name="Heard" precinctsParticipating="6" precinctsReported="6" precinctsReportingPercent="100.00" />
+            <County name="Henry" precinctsParticipating="37" precinctsReported="37" precinctsReportingPercent="100.00" />
+            <County name="Houston" precinctsParticipating="16" precinctsReported="16" precinctsReportingPercent="100.00" />
+            <County name="Irwin" precinctsParticipating="3" precinctsReported="3" precinctsReportingPercent="100.00" />
+            <County name="Jackson" precinctsParticipating="4" precinctsReported="4" precinctsReportingPercent="100.00" />
+            <County name="Jasper" precinctsParticipating="3" precinctsReported="3" precinctsReportingPercent="100.00" />
+            <County name="Jeff Davis" precinctsParticipating="9" precinctsReported="9" precinctsReportingPercent="100.00" />
+            <County name="Jefferson" precinctsParticipating="8" precinctsReported="8" precinctsReportingPercent="100.00" />
+            <County name="Jenkins" precinctsParticipating="5" precinctsReported="5" precinctsReportingPercent="100.00" />
+            <County name="Johnson" precinctsParticipating="4" precinctsReported="4" precinctsReportingPercent="100.00" />
+            <County name="Jones" precinctsParticipating="10" precinctsReported="10" precinctsReportingPercent="100.00" />
+            <County name="Lamar" precinctsParticipating="6" precinctsReported="6" precinctsReportingPercent="100.00" />
+            <County name="Lanier" precinctsParticipating="1" precinctsReported="1" precinctsReportingPercent="100.00" />
+            <County name="Laurens" precinctsParticipating="16" precinctsReported="16" precinctsReportingPercent="100.00" />
+            <County name="Lee" precinctsParticipating="10" precinctsReported="10" precinctsReportingPercent="100.00" />
+            <County name="Liberty" precinctsParticipating="13" precinctsReported="13" precinctsReportingPercent="100.00" />
+            <County name="Lincoln" precinctsParticipating="7" precinctsReported="7" precinctsReportingPercent="100.00" />
+            <County name="Long" precinctsParticipating="7" precinctsReported="7" precinctsReportingPercent="100.00" />
+            <County name="Lowndes" precinctsParticipating="13" precinctsReported="13" precinctsReportingPercent="100.00" />
+            <County name="Lumpkin" precinctsParticipating="1" precinctsReported="1" precinctsReportingPercent="100.00" />
+            <County name="Macon" precinctsParticipating="5" precinctsReported="5" precinctsReportingPercent="100.00" />
+            <County name="Madison" precinctsParticipating="12" precinctsReported="12" precinctsReportingPercent="100.00" />
+            <County name="Marion" precinctsParticipating="5" precinctsReported="5" precinctsReportingPercent="100.00" />
+            <County name="McDuffie" precinctsParticipating="9" precinctsReported="9" precinctsReportingPercent="100.00" />
+            <County name="McIntosh" precinctsParticipating="6" precinctsReported="6" precinctsReportingPercent="100.00" />
+            <County name="Meriwether" precinctsParticipating="14" precinctsReported="14" precinctsReportingPercent="100.00" />
+            <County name="Miller" precinctsParticipating="1" precinctsReported="1" precinctsReportingPercent="100.00" />
+            <County name="Mitchell" precinctsParticipating="11" precinctsReported="11" precinctsReportingPercent="100.00" />
+            <County name="Monroe" precinctsParticipating="14" precinctsReported="14" precinctsReportingPercent="100.00" />
+            <County name="Montgomery" precinctsParticipating="7" precinctsReported="7" precinctsReportingPercent="100.00" />
+            <County name="Morgan" precinctsParticipating="7" precinctsReported="7" precinctsReportingPercent="100.00" />
+            <County name="Murray" precinctsParticipating="7" precinctsReported="7" precinctsReportingPercent="100.00" />
+            <County name="Muscogee" precinctsParticipating="25" precinctsReported="25" precinctsReportingPercent="100.00" />
+            <County name="Newton" precinctsParticipating="22" precinctsReported="22" precinctsReportingPercent="100.00" />
+            <County name="Oconee" precinctsParticipating="12" precinctsReported="12" precinctsReportingPercent="100.00" />
+            <County name="Oglethorpe" precinctsParticipating="3" precinctsReported="3" precinctsReportingPercent="100.00" />
+            <County name="Paulding" precinctsParticipating="19" precinctsReported="19" precinctsReportingPercent="100.00" />
+            <County name="Peach" precinctsParticipating="7" precinctsReported="7" precinctsReportingPercent="100.00" />
+            <County name="Pickens" precinctsParticipating="12" precinctsReported="12" precinctsReportingPercent="100.00" />
+            <County name="Pierce" precinctsParticipating="8" precinctsReported="8" precinctsReportingPercent="100.00" />
+            <County name="Pike" precinctsParticipating="8" precinctsReported="8" precinctsReportingPercent="100.00" />
+            <County name="Polk" precinctsParticipating="7" precinctsReported="7" precinctsReportingPercent="100.00" />
+            <County name="Pulaski" precinctsParticipating="1" precinctsReported="1" precinctsReportingPercent="100.00" />
+            <County name="Putnam" precinctsParticipating="5" precinctsReported="5" precinctsReportingPercent="100.00" />
+            <County name="Quitman" precinctsParticipating="2" precinctsReported="2" precinctsReportingPercent="100.00" />
+            <County name="Rabun" precinctsParticipating="1" precinctsReported="1" precinctsReportingPercent="100.00" />
+            <County name="Randolph" precinctsParticipating="6" precinctsReported="6" precinctsReportingPercent="100.00" />
+            <County name="Richmond" precinctsParticipating="68" precinctsReported="68" precinctsReportingPercent="100.00" />
+            <County name="Rockdale" precinctsParticipating="16" precinctsReported="16" precinctsReportingPercent="100.00" />
+            <County name="Schley" precinctsParticipating="1" precinctsReported="1" precinctsReportingPercent="100.00" />
+            <County name="Screven" precinctsParticipating="12" precinctsReported="12" precinctsReportingPercent="100.00" />
+            <County name="Seminole" precinctsParticipating="5" precinctsReported="5" precinctsReportingPercent="100.00" />
+            <County name="Spalding" precinctsParticipating="18" precinctsReported="18" precinctsReportingPercent="100.00" />
+            <County name="Stephens" precinctsParticipating="1" precinctsReported="1" precinctsReportingPercent="100.00" />
+            <County name="Stewart" precinctsParticipating="4" precinctsReported="4" precinctsReportingPercent="100.00" />
+            <County name="Sumter" precinctsParticipating="11" precinctsReported="11" precinctsReportingPercent="100.00" />
+            <County name="Talbot" precinctsParticipating="7" precinctsReported="7" precinctsReportingPercent="100.00" />
+            <County name="Taliaferro" precinctsParticipating="2" precinctsReported="2" precinctsReportingPercent="100.00" />
+            <County name="Tattnall" precinctsParticipating="8" precinctsReported="8" precinctsReportingPercent="100.00" />
+            <County name="Taylor" precinctsParticipating="3" precinctsReported="3" precinctsReportingPercent="100.00" />
+            <County name="Telfair" precinctsParticipating="6" precinctsReported="6" precinctsReportingPercent="100.00" />
+            <County name="Terrell" precinctsParticipating="6" precinctsReported="6" precinctsReportingPercent="100.00" />
+            <County name="Thomas" precinctsParticipating="20" precinctsReported="20" precinctsReportingPercent="100.00" />
+            <County name="Tift" precinctsParticipating="12" precinctsReported="12" precinctsReportingPercent="100.00" />
+            <County name="Toombs" precinctsParticipating="5" precinctsReported="5" precinctsReportingPercent="100.00" />
+            <County name="Towns" precinctsParticipating="3" precinctsReported="3" precinctsReportingPercent="100.00" />
+            <County name="Treutlen" precinctsParticipating="2" precinctsReported="2" precinctsReportingPercent="100.00" />
+            <County name="Troup" precinctsParticipating="14" precinctsReported="14" precinctsReportingPercent="100.00" />
+            <County name="Turner" precinctsParticipating="3" precinctsReported="3" precinctsReportingPercent="100.00" />
+            <County name="Twiggs" precinctsParticipating="5" precinctsReported="5" precinctsReportingPercent="100.00" />
+            <County name="Union" precinctsParticipating="11" precinctsReported="11" precinctsReportingPercent="100.00" />
+            <County name="Upson" precinctsParticipating="4" precinctsReported="4" precinctsReportingPercent="100.00" />
+            <County name="Walker" precinctsParticipating="11" precinctsReported="11" precinctsReportingPercent="100.00" />
+            <County name="Walton" precinctsParticipating="21" precinctsReported="21" precinctsReportingPercent="100.00" />
+            <County name="Ware" precinctsParticipating="12" precinctsReported="12" precinctsReportingPercent="100.00" />
+            <County name="Warren" precinctsParticipating="1" precinctsReported="1" precinctsReportingPercent="100.00" />
+            <County name="Washington" precinctsParticipating="8" precinctsReported="8" precinctsReportingPercent="100.00" />
+            <County name="Wayne" precinctsParticipating="12" precinctsReported="12" precinctsReportingPercent="100.00" />
+            <County name="Webster" precinctsParticipating="1" precinctsReported="1" precinctsReportingPercent="100.00" />
+            <County name="Wheeler" precinctsParticipating="2" precinctsReported="2" precinctsReportingPercent="100.00" />
+            <County name="White" precinctsParticipating="11" precinctsReported="11" precinctsReportingPercent="100.00" />
+            <County name="Whitfield" precinctsParticipating="23" precinctsReported="23" precinctsReportingPercent="100.00" />
+            <County name="Wilcox" precinctsParticipating="6" precinctsReported="6" precinctsReportingPercent="100.00" />
+            <County name="Wilkes" precinctsParticipating="7" precinctsReported="7" precinctsReportingPercent="100.00" />
+            <County name="Wilkinson" precinctsParticipating="9" precinctsReported="9" precinctsReportingPercent="100.00" />
+            <County name="Worth" precinctsParticipating="15" precinctsReported="15" precinctsReportingPercent="100.00" />
+        </Counties>
+    </ElectionVoterTurnout>
+    <Contest key="5000" text="President of the United States" voteFor="1" isQuestion="false" countiesParticipating="159" countiesReported="159" precinctsParticipating="2656" precinctsReported="2656" precinctsReportingPercent="100.00">
+        <ParticipatingCounties>
+            <County name="Appling" precinctsParticipating="9" precinctsReported="9" precinctsReportingPercent="100.00" />
+            <County name="Atkinson" precinctsParticipating="4" precinctsReported="4" precinctsReportingPercent="100.00" />
+            <County name="Bacon" precinctsParticipating="1" precinctsReported="1" precinctsReportingPercent="100.00" />
+            <County name="Baker" precinctsParticipating="5" precinctsReported="5" precinctsReportingPercent="100.00" />
+            <County name="Baldwin" precinctsParticipating="14" precinctsReported="14" precinctsReportingPercent="100.00" />
+            <County name="Banks" precinctsParticipating="13" precinctsReported="13" precinctsReportingPercent="100.00" />
+            <County name="Barrow" precinctsParticipating="8" precinctsReported="8" precinctsReportingPercent="100.00" />
+            <County name="Bartow" precinctsParticipating="17" precinctsReported="17" precinctsReportingPercent="100.00" />
+            <County name="Ben Hill" precinctsParticipating="2" precinctsReported="2" precinctsReportingPercent="100.00" />
+            <County name="Berrien" precinctsParticipating="5" precinctsReported="5" precinctsReportingPercent="100.00" />
+            <County name="Bibb" precinctsParticipating="31" precinctsReported="31" precinctsReportingPercent="100.00" />
+            <County name="Bleckley" precinctsParticipating="1" precinctsReported="1" precinctsReportingPercent="100.00" />
+            <County name="Brantley" precinctsParticipating="3" precinctsReported="3" precinctsReportingPercent="100.00" />
+            <County name="Brooks" precinctsParticipating="7" precinctsReported="7" precinctsReportingPercent="100.00" />
+            <County name="Bryan" precinctsParticipating="10" precinctsReported="10" precinctsReportingPercent="100.00" />
+            <County name="Bulloch" precinctsParticipating="16" precinctsReported="16" precinctsReportingPercent="100.00" />
+            <County name="Burke" precinctsParticipating="16" precinctsReported="16" precinctsReportingPercent="100.00" />
+            <County name="Butts" precinctsParticipating="1" precinctsReported="1" precinctsReportingPercent="100.00" />
+            <County name="Calhoun" precinctsParticipating="5" precinctsReported="5" precinctsReportingPercent="100.00" />
+            <County name="Camden" precinctsParticipating="14" precinctsReported="14" precinctsReportingPercent="100.00" />
+            <County name="Candler" precinctsParticipating="1" precinctsReported="1" precinctsReportingPercent="100.00" />
+            <County name="Carroll" precinctsParticipating="28" precinctsReported="28" precinctsReportingPercent="100.00" />
+            <County name="Catoosa" precinctsParticipating="11" precinctsReported="11" precinctsReportingPercent="100.00" />
+            <County name="Charlton" precinctsParticipating="8" precinctsReported="8" precinctsReportingPercent="100.00" />
+            <County name="Chatham" precinctsParticipating="92" precinctsReported="92" precinctsReportingPercent="100.00" />
+            <County name="Chattahoochee" precinctsParticipating="1" precinctsReported="1" precinctsReportingPercent="100.00" />
+            <County name="Chattooga" precinctsParticipating="13" precinctsReported="13" precinctsReportingPercent="100.00" />
+            <County name="Cherokee" precinctsParticipating="42" precinctsReported="42" precinctsReportingPercent="100.00" />
+            <County name="Clarke" precinctsParticipating="24" precinctsReported="24" precinctsReportingPercent="100.00" />
+            <County name="Clay" precinctsParticipating="5" precinctsReported="5" precinctsReportingPercent="100.00" />
+            <County name="Clayton" precinctsParticipating="65" precinctsReported="65" precinctsReportingPercent="100.00" />
+            <County name="Clinch" precinctsParticipating="5" precinctsReported="5" precinctsReportingPercent="100.00" />
+            <County name="Cobb" precinctsParticipating="145" precinctsReported="145" precinctsReportingPercent="100.00" />
+            <County name="Coffee" precinctsParticipating="6" precinctsReported="6" precinctsReportingPercent="100.00" />
+            <County name="Colquitt" precinctsParticipating="19" precinctsReported="19" precinctsReportingPercent="100.00" />
+            <County name="Columbia" precinctsParticipating="47" precinctsReported="47" precinctsReportingPercent="100.00" />
+            <County name="Cook" precinctsParticipating="8" precinctsReported="8" precinctsReportingPercent="100.00" />
+            <County name="Coweta" precinctsParticipating="26" precinctsReported="26" precinctsReportingPercent="100.00" />
+            <County name="Crawford" precinctsParticipating="6" precinctsReported="6" precinctsReportingPercent="100.00" />
+            <County name="Crisp" precinctsParticipating="5" precinctsReported="5" precinctsReportingPercent="100.00" />
+            <County name="Dade" precinctsParticipating="7" precinctsReported="7" precinctsReportingPercent="100.00" />
+            <County name="Dawson" precinctsParticipating="3" precinctsReported="3" precinctsReportingPercent="100.00" />
+            <County name="Decatur" precinctsParticipating="9" precinctsReported="9" precinctsReportingPercent="100.00" />
+            <County name="DeKalb" precinctsParticipating="191" precinctsReported="191" precinctsReportingPercent="100.00" />
+            <County name="Dodge" precinctsParticipating="16" precinctsReported="16" precinctsReportingPercent="100.00" />
+            <County name="Dooly" precinctsParticipating="5" precinctsReported="5" precinctsReportingPercent="100.00" />
+            <County name="Dougherty" precinctsParticipating="28" precinctsReported="28" precinctsReportingPercent="100.00" />
+            <County name="Douglas" precinctsParticipating="25" precinctsReported="25" precinctsReportingPercent="100.00" />
+            <County name="Early" precinctsParticipating="5" precinctsReported="5" precinctsReportingPercent="100.00" />
+            <County name="Echols" precinctsParticipating="1" precinctsReported="1" precinctsReportingPercent="100.00" />
+            <County name="Effingham" precinctsParticipating="17" precinctsReported="17" precinctsReportingPercent="100.00" />
+            <County name="Elbert" precinctsParticipating="11" precinctsReported="11" precinctsReportingPercent="100.00" />
+            <County name="Emanuel" precinctsParticipating="11" precinctsReported="11" precinctsReportingPercent="100.00" />
+            <County name="Evans" precinctsParticipating="1" precinctsReported="1" precinctsReportingPercent="100.00" />
+            <County name="Fannin" precinctsParticipating="12" precinctsReported="12" precinctsReportingPercent="100.00" />
+            <County name="Fayette" precinctsParticipating="36" precinctsReported="36" precinctsReportingPercent="100.00" />
+            <County name="Floyd" precinctsParticipating="25" precinctsReported="25" precinctsReportingPercent="100.00" />
+            <County name="Forsyth" precinctsParticipating="20" precinctsReported="20" precinctsReportingPercent="100.00" />
+            <County name="Franklin" precinctsParticipating="7" precinctsReported="7" precinctsReportingPercent="100.00" />
+            <County name="Fulton" precinctsParticipating="384" precinctsReported="384" precinctsReportingPercent="100.00" />
+            <County name="Gilmer" precinctsParticipating="13" precinctsReported="13" precinctsReportingPercent="100.00" />
+            <County name="Glascock" precinctsParticipating="4" precinctsReported="4" precinctsReportingPercent="100.00" />
+            <County name="Glynn" precinctsParticipating="20" precinctsReported="20" precinctsReportingPercent="100.00" />
+            <County name="Gordon" precinctsParticipating="12" precinctsReported="12" precinctsReportingPercent="100.00" />
+            <County name="Grady" precinctsParticipating="13" precinctsReported="13" precinctsReportingPercent="100.00" />
+            <County name="Greene" precinctsParticipating="5" precinctsReported="5" precinctsReportingPercent="100.00" />
+            <County name="Gwinnett" precinctsParticipating="156" precinctsReported="156" precinctsReportingPercent="100.00" />
+            <County name="Habersham" precinctsParticipating="7" precinctsReported="7" precinctsReportingPercent="100.00" />
+            <County name="Hall" precinctsParticipating="31" precinctsReported="31" precinctsReportingPercent="100.00" />
+            <County name="Hancock" precinctsParticipating="10" precinctsReported="10" precinctsReportingPercent="100.00" />
+            <County name="Haralson" precinctsParticipating="12" precinctsReported="12" precinctsReportingPercent="100.00" />
+            <County name="Harris" precinctsParticipating="12" precinctsReported="12" precinctsReportingPercent="100.00" />
+            <County name="Hart" precinctsParticipating="7" precinctsReported="7" precinctsReportingPercent="100.00" />
+            <County name="Heard" precinctsParticipating="6" precinctsReported="6" precinctsReportingPercent="100.00" />
+            <County name="Henry" precinctsParticipating="37" precinctsReported="37" precinctsReportingPercent="100.00" />
+            <County name="Houston" precinctsParticipating="16" precinctsReported="16" precinctsReportingPercent="100.00" />
+            <County name="Irwin" precinctsParticipating="3" precinctsReported="3" precinctsReportingPercent="100.00" />
+            <County name="Jackson" precinctsParticipating="4" precinctsReported="4" precinctsReportingPercent="100.00" />
+            <County name="Jasper" precinctsParticipating="3" precinctsReported="3" precinctsReportingPercent="100.00" />
+            <County name="Jeff Davis" precinctsParticipating="9" precinctsReported="9" precinctsReportingPercent="100.00" />
+            <County name="Jefferson" precinctsParticipating="8" precinctsReported="8" precinctsReportingPercent="100.00" />
+            <County name="Jenkins" precinctsParticipating="5" precinctsReported="5" precinctsReportingPercent="100.00" />
+            <County name="Johnson" precinctsParticipating="4" precinctsReported="4" precinctsReportingPercent="100.00" />
+            <County name="Jones" precinctsParticipating="10" precinctsReported="10" precinctsReportingPercent="100.00" />
+            <County name="Lamar" precinctsParticipating="6" precinctsReported="6" precinctsReportingPercent="100.00" />
+            <County name="Lanier" precinctsParticipating="1" precinctsReported="1" precinctsReportingPercent="100.00" />
+            <County name="Laurens" precinctsParticipating="16" precinctsReported="16" precinctsReportingPercent="100.00" />
+            <County name="Lee" precinctsParticipating="10" precinctsReported="10" precinctsReportingPercent="100.00" />
+            <County name="Liberty" precinctsParticipating="13" precinctsReported="13" precinctsReportingPercent="100.00" />
+            <County name="Lincoln" precinctsParticipating="7" precinctsReported="7" precinctsReportingPercent="100.00" />
+            <County name="Long" precinctsParticipating="7" precinctsReported="7" precinctsReportingPercent="100.00" />
+            <County name="Lowndes" precinctsParticipating="13" precinctsReported="13" precinctsReportingPercent="100.00" />
+            <County name="Lumpkin" precinctsParticipating="1" precinctsReported="1" precinctsReportingPercent="100.00" />
+            <County name="Macon" precinctsParticipating="5" precinctsReported="5" precinctsReportingPercent="100.00" />
+            <County name="Madison" precinctsParticipating="12" precinctsReported="12" precinctsReportingPercent="100.00" />
+            <County name="Marion" precinctsParticipating="5" precinctsReported="5" precinctsReportingPercent="100.00" />
+            <County name="McDuffie" precinctsParticipating="9" precinctsReported="9" precinctsReportingPercent="100.00" />
+            <County name="McIntosh" precinctsParticipating="6" precinctsReported="6" precinctsReportingPercent="100.00" />
+            <County name="Meriwether" precinctsParticipating="14" precinctsReported="14" precinctsReportingPercent="100.00" />
+            <County name="Miller" precinctsParticipating="1" precinctsReported="1" precinctsReportingPercent="100.00" />
+            <County name="Mitchell" precinctsParticipating="11" precinctsReported="11" precinctsReportingPercent="100.00" />
+            <County name="Monroe" precinctsParticipating="14" precinctsReported="14" precinctsReportingPercent="100.00" />
+            <County name="Montgomery" precinctsParticipating="7" precinctsReported="7" precinctsReportingPercent="100.00" />
+            <County name="Morgan" precinctsParticipating="7" precinctsReported="7" precinctsReportingPercent="100.00" />
+            <County name="Murray" precinctsParticipating="7" precinctsReported="7" precinctsReportingPercent="100.00" />
+            <County name="Muscogee" precinctsParticipating="25" precinctsReported="25" precinctsReportingPercent="100.00" />
+            <County name="Newton" precinctsParticipating="22" precinctsReported="22" precinctsReportingPercent="100.00" />
+            <County name="Oconee" precinctsParticipating="12" precinctsReported="12" precinctsReportingPercent="100.00" />
+            <County name="Oglethorpe" precinctsParticipating="3" precinctsReported="3" precinctsReportingPercent="100.00" />
+            <County name="Paulding" precinctsParticipating="19" precinctsReported="19" precinctsReportingPercent="100.00" />
+            <County name="Peach" precinctsParticipating="7" precinctsReported="7" precinctsReportingPercent="100.00" />
+            <County name="Pickens" precinctsParticipating="12" precinctsReported="12" precinctsReportingPercent="100.00" />
+            <County name="Pierce" precinctsParticipating="8" precinctsReported="8" precinctsReportingPercent="100.00" />
+            <County name="Pike" precinctsParticipating="8" precinctsReported="8" precinctsReportingPercent="100.00" />
+            <County name="Polk" precinctsParticipating="7" precinctsReported="7" precinctsReportingPercent="100.00" />
+            <County name="Pulaski" precinctsParticipating="1" precinctsReported="1" precinctsReportingPercent="100.00" />
+            <County name="Putnam" precinctsParticipating="5" precinctsReported="5" precinctsReportingPercent="100.00" />
+            <County name="Quitman" precinctsParticipating="2" precinctsReported="2" precinctsReportingPercent="100.00" />
+            <County name="Rabun" precinctsParticipating="1" precinctsReported="1" precinctsReportingPercent="100.00" />
+            <County name="Randolph" precinctsParticipating="6" precinctsReported="6" precinctsReportingPercent="100.00" />
+            <County name="Richmond" precinctsParticipating="68" precinctsReported="68" precinctsReportingPercent="100.00" />
+            <County name="Rockdale" precinctsParticipating="16" precinctsReported="16" precinctsReportingPercent="100.00" />
+            <County name="Schley" precinctsParticipating="1" precinctsReported="1" precinctsReportingPercent="100.00" />
+            <County name="Screven" precinctsParticipating="12" precinctsReported="12" precinctsReportingPercent="100.00" />
+            <County name="Seminole" precinctsParticipating="5" precinctsReported="5" precinctsReportingPercent="100.00" />
+            <County name="Spalding" precinctsParticipating="18" precinctsReported="18" precinctsReportingPercent="100.00" />
+            <County name="Stephens" precinctsParticipating="1" precinctsReported="1" precinctsReportingPercent="100.00" />
+            <County name="Stewart" precinctsParticipating="4" precinctsReported="4" precinctsReportingPercent="100.00" />
+            <County name="Sumter" precinctsParticipating="11" precinctsReported="11" precinctsReportingPercent="100.00" />
+            <County name="Talbot" precinctsParticipating="7" precinctsReported="7" precinctsReportingPercent="100.00" />
+            <County name="Taliaferro" precinctsParticipating="2" precinctsReported="2" precinctsReportingPercent="100.00" />
+            <County name="Tattnall" precinctsParticipating="8" precinctsReported="8" precinctsReportingPercent="100.00" />
+            <County name="Taylor" precinctsParticipating="3" precinctsReported="3" precinctsReportingPercent="100.00" />
+            <County name="Telfair" precinctsParticipating="6" precinctsReported="6" precinctsReportingPercent="100.00" />
+            <County name="Terrell" precinctsParticipating="6" precinctsReported="6" precinctsReportingPercent="100.00" />
+            <County name="Thomas" precinctsParticipating="20" precinctsReported="20" precinctsReportingPercent="100.00" />
+            <County name="Tift" precinctsParticipating="12" precinctsReported="12" precinctsReportingPercent="100.00" />
+            <County name="Toombs" precinctsParticipating="5" precinctsReported="5" precinctsReportingPercent="100.00" />
+            <County name="Towns" precinctsParticipating="3" precinctsReported="3" precinctsReportingPercent="100.00" />
+            <County name="Treutlen" precinctsParticipating="2" precinctsReported="2" precinctsReportingPercent="100.00" />
+            <County name="Troup" precinctsParticipating="14" precinctsReported="14" precinctsReportingPercent="100.00" />
+            <County name="Turner" precinctsParticipating="3" precinctsReported="3" precinctsReportingPercent="100.00" />
+            <County name="Twiggs" precinctsParticipating="5" precinctsReported="5" precinctsReportingPercent="100.00" />
+            <County name="Union" precinctsParticipating="11" precinctsReported="11" precinctsReportingPercent="100.00" />
+            <County name="Upson" precinctsParticipating="4" precinctsReported="4" precinctsReportingPercent="100.00" />
+            <County name="Walker" precinctsParticipating="11" precinctsReported="11" precinctsReportingPercent="100.00" />
+            <County name="Walton" precinctsParticipating="21" precinctsReported="21" precinctsReportingPercent="100.00" />
+            <County name="Ware" precinctsParticipating="12" precinctsReported="12" precinctsReportingPercent="100.00" />
+            <County name="Warren" precinctsParticipating="1" precinctsReported="1" precinctsReportingPercent="100.00" />
+            <County name="Washington" precinctsParticipating="8" precinctsReported="8" precinctsReportingPercent="100.00" />
+            <County name="Wayne" precinctsParticipating="12" precinctsReported="12" precinctsReportingPercent="100.00" />
+            <County name="Webster" precinctsParticipating="1" precinctsReported="1" precinctsReportingPercent="100.00" />
+            <County name="Wheeler" precinctsParticipating="2" precinctsReported="2" precinctsReportingPercent="100.00" />
+            <County name="White" precinctsParticipating="11" precinctsReported="11" precinctsReportingPercent="100.00" />
+            <County name="Whitfield" precinctsParticipating="23" precinctsReported="23" precinctsReportingPercent="100.00" />
+            <County name="Wilcox" precinctsParticipating="6" precinctsReported="6" precinctsReportingPercent="100.00" />
+            <County name="Wilkes" precinctsParticipating="7" precinctsReported="7" precinctsReportingPercent="100.00" />
+            <County name="Wilkinson" precinctsParticipating="9" precinctsReported="9" precinctsReportingPercent="100.00" />
+            <County name="Worth" precinctsParticipating="15" precinctsReported="15" precinctsReportingPercent="100.00" />
+        </ParticipatingCounties>
+        <Choice key="1" text="Donald J. Trump (I) (Rep)" party="NP" totalVotes="2461837">
+            <VoteType name="Election Day Votes" votes="587697">
+                <County name="Appling" votes="1753" />
+                <County name="Atkinson" votes="716" />
+                <County name="Bacon" votes="431" />
+                <County name="Baker" votes="291" />
+                <County name="Baldwin" votes="1873" />
+                <County name="Banks" votes="1644" />
+                <County name="Barrow" votes="5885" />
+                <County name="Bartow" votes="10179" />
+                <County name="Ben Hill" votes="441" />
+                <County name="Berrien" votes="1835" />
+                <County name="Bibb" votes="7922" />
+                <County name="Bleckley" votes="942" />
+                <County name="Brantley" votes="1992" />
+                <County name="Brooks" votes="1423" />
+                <County name="Bryan" votes="2579" />
+                <County name="Bulloch" votes="6653" />
+                <County name="Burke" votes="1949" />
+                <County name="Butts" votes="824" />
+                <County name="Calhoun" votes="279" />
+                <County name="Camden" votes="3621" />
+                <County name="Candler" votes="431" />
+                <County name="Carroll" votes="11071" />
+                <County name="Catoosa" votes="5170" />
+                <County name="Charlton" votes="1124" />
+                <County name="Chatham" votes="18346" />
+                <County name="Chattahoochee" votes="291" />
+                <County name="Chattooga" votes="2464" />
+                <County name="Cherokee" votes="23758" />
+                <County name="Clarke" votes="3409" />
+                <County name="Clay" votes="131" />
+                <County name="Clayton" votes="3403" />
+                <County name="Clinch" votes="618" />
+                <County name="Cobb" votes="37609" />
+                <County name="Coffee" votes="2587" />
+                <County name="Colquitt" votes="4270" />
+                <County name="Columbia" votes="13300" />
+                <County name="Cook" votes="1113" />
+                <County name="Coweta" votes="18273" />
+                <County name="Crawford" votes="1152" />
+                <County name="Crisp" votes="977" />
+                <County name="Dade" votes="2010" />
+                <County name="Dawson" votes="2336" />
+                <County name="Decatur" votes="1469" />
+                <County name="DeKalb" votes="12126" />
+                <County name="Dodge" votes="2335" />
+                <County name="Dooly" votes="466" />
+                <County name="Dougherty" votes="4259" />
+                <County name="Douglas" votes="4863" />
+                <County name="Early" votes="799" />
+                <County name="Echols" votes="226" />
+                <County name="Effingham" votes="7350" />
+                <County name="Elbert" votes="1837" />
+                <County name="Emanuel" votes="2528" />
+                <County name="Evans" votes="471" />
+                <County name="Fannin" votes="4163" />
+                <County name="Fayette" votes="6352" />
+                <County name="Floyd" votes="7897" />
+                <County name="Forsyth" votes="9740" />
+                <County name="Franklin" votes="2299" />
+                <County name="Fulton" votes="19552" />
+                <County name="Gilmer" votes="4371" />
+                <County name="Glascock" votes="403" />
+                <County name="Glynn" votes="4701" />
+                <County name="Gordon" votes="6986" />
+                <County name="Grady" votes="2028" />
+                <County name="Greene" votes="844" />
+                <County name="Gwinnett" votes="35271" />
+                <County name="Habersham" votes="2628" />
+                <County name="Hall" votes="11111" />
+                <County name="Hancock" votes="274" />
+                <County name="Haralson" votes="4317" />
+                <County name="Harris" votes="5592" />
+                <County name="Hart" votes="2338" />
+                <County name="Heard" votes="1641" />
+                <County name="Henry" votes="8143" />
+                <County name="Houston" votes="11644" />
+                <County name="Irwin" votes="655" />
+                <County name="Jackson" votes="4961" />
+                <County name="Jasper" votes="1547" />
+                <County name="Jeff Davis" votes="1418" />
+                <County name="Jefferson" votes="1096" />
+                <County name="Jenkins" votes="579" />
+                <County name="Johnson" votes="771" />
+                <County name="Jones" votes="3023" />
+                <County name="Lamar" votes="1743" />
+                <County name="Lanier" votes="481" />
+                <County name="Laurens" votes="5660" />
+                <County name="Lee" votes="3054" />
+                <County name="Liberty" votes="1704" />
+                <County name="Lincoln" votes="904" />
+                <County name="Long" votes="1126" />
+                <County name="Lowndes" votes="5351" />
+                <County name="Lumpkin" votes="2002" />
+                <County name="Macon" votes="348" />
+                <County name="Madison" votes="3502" />
+                <County name="Marion" votes="759" />
+                <County name="McDuffie" votes="826" />
+                <County name="McIntosh" votes="810" />
+                <County name="Meriwether" votes="2230" />
+                <County name="Miller" votes="530" />
+                <County name="Mitchell" votes="1551" />
+                <County name="Monroe" votes="3102" />
+                <County name="Montgomery" votes="1109" />
+                <County name="Morgan" votes="1865" />
+                <County name="Murray" votes="3893" />
+                <County name="Muscogee" votes="6527" />
+                <County name="Newton" votes="10888" />
+                <County name="Oconee" votes="2680" />
+                <County name="Oglethorpe" votes="1061" />
+                <County name="Paulding" votes="9710" />
+                <County name="Peach" votes="954" />
+                <County name="Pickens" votes="5994" />
+                <County name="Pierce" votes="1208" />
+                <County name="Pike" votes="2341" />
+                <County name="Polk" votes="2849" />
+                <County name="Pulaski" votes="336" />
+                <County name="Putnam" votes="1547" />
+                <County name="Quitman" votes="163" />
+                <County name="Rabun" votes="1207" />
+                <County name="Randolph" votes="321" />
+                <County name="Richmond" votes="8584" />
+                <County name="Rockdale" votes="2526" />
+                <County name="Schley" votes="304" />
+                <County name="Screven" votes="1260" />
+                <County name="Seminole" votes="944" />
+                <County name="Spalding" votes="5234" />
+                <County name="Stephens" votes="1234" />
+                <County name="Stewart" votes="229" />
+                <County name="Sumter" votes="1524" />
+                <County name="Talbot" votes="464" />
+                <County name="Taliaferro" votes="96" />
+                <County name="Tattnall" votes="1536" />
+                <County name="Taylor" votes="349" />
+                <County name="Telfair" votes="958" />
+                <County name="Terrell" votes="665" />
+                <County name="Thomas" votes="2718" />
+                <County name="Tift" votes="2721" />
+                <County name="Toombs" votes="1797" />
+                <County name="Towns" votes="984" />
+                <County name="Treutlen" votes="418" />
+                <County name="Troup" votes="4673" />
+                <County name="Turner" votes="377" />
+                <County name="Twiggs" votes="841" />
+                <County name="Union" votes="3400" />
+                <County name="Upson" votes="1364" />
+                <County name="Walker" votes="5560" />
+                <County name="Walton" votes="9202" />
+                <County name="Ware" votes="2577" />
+                <County name="Warren" votes="190" />
+                <County name="Washington" votes="1481" />
+                <County name="Wayne" votes="2495" />
+                <County name="Webster" votes="139" />
+                <County name="Wheeler" votes="438" />
+                <County name="White" votes="3448" />
+                <County name="Whitfield" votes="8963" />
+                <County name="Wilcox" votes="743" />
+                <County name="Wilkes" votes="704" />
+                <County name="Wilkinson" votes="1293" />
+                <County name="Worth" votes="2779" />
+            </VoteType>
+            <VoteType name="Absentee by Mail Votes" votes="451157">
+                <County name="Appling" votes="890" />
+                <County name="Atkinson" votes="164" />
+                <County name="Bacon" votes="487" />
+                <County name="Baker" votes="138" />
+                <County name="Baldwin" votes="1290" />
+                <County name="Banks" votes="1025" />
+                <County name="Barrow" votes="4134" />
+                <County name="Bartow" votes="5976" />
+                <County name="Ben Hill" votes="528" />
+                <County name="Berrien" votes="749" />
+                <County name="Bibb" votes="5375" />
+                <County name="Bleckley" votes="614" />
+                <County name="Brantley" votes="685" />
+                <County name="Brooks" votes="519" />
+                <County name="Bryan" votes="1588" />
+                <County name="Bulloch" votes="2800" />
+                <County name="Burke" votes="649" />
+                <County name="Butts" votes="1137" />
+                <County name="Calhoun" votes="150" />
+                <County name="Camden" votes="2161" />
+                <County name="Candler" votes="375" />
+                <County name="Carroll" votes="4699" />
+                <County name="Catoosa" votes="2952" />
+                <County name="Charlton" votes="397" />
+                <County name="Chatham" votes="11781" />
+                <County name="Chattahoochee" votes="132" />
+                <County name="Chattooga" votes="1102" />
+                <County name="Cherokee" votes="19639" />
+                <County name="Clarke" votes="4048" />
+                <County name="Clay" votes="105" />
+                <County name="Clayton" votes="4366" />
+                <County name="Clinch" votes="209" />
+                <County name="Cobb" votes="50764" />
+                <County name="Coffee" votes="917" />
+                <County name="Colquitt" votes="1365" />
+                <County name="Columbia" votes="7023" />
+                <County name="Cook" votes="486" />
+                <County name="Coweta" votes="9400" />
+                <County name="Crawford" votes="562" />
+                <County name="Crisp" votes="780" />
+                <County name="Dade" votes="635" />
+                <County name="Dawson" votes="1964" />
+                <County name="Decatur" votes="832" />
+                <County name="DeKalb" votes="16078" />
+                <County name="Dodge" votes="711" />
+                <County name="Dooly" votes="259" />
+                <County name="Dougherty" votes="2355" />
+                <County name="Douglas" votes="5434" />
+                <County name="Early" votes="416" />
+                <County name="Echols" votes="121" />
+                <County name="Effingham" votes="2520" />
+                <County name="Elbert" votes="981" />
+                <County name="Emanuel" votes="896" />
+                <County name="Evans" votes="491" />
+                <County name="Fannin" votes="2253" />
+                <County name="Fayette" votes="7382" />
+                <County name="Floyd" votes="4436" />
+                <County name="Forsyth" votes="14612" />
+                <County name="Franklin" votes="1404" />
+                <County name="Fulton" votes="29479" />
+                <County name="Gilmer" votes="2183" />
+                <County name="Glascock" votes="205" />
+                <County name="Glynn" votes="4388" />
+                <County name="Gordon" votes="2538" />
+                <County name="Grady" votes="1103" />
+                <County name="Greene" votes="1275" />
+                <County name="Gwinnett" votes="40396" />
+                <County name="Habersham" votes="2905" />
+                <County name="Hall" votes="12005" />
+                <County name="Hancock" votes="244" />
+                <County name="Haralson" votes="1786" />
+                <County name="Harris" votes="2087" />
+                <County name="Hart" votes="1437" />
+                <County name="Heard" votes="677" />
+                <County name="Henry" votes="8134" />
+                <County name="Houston" votes="8163" />
+                <County name="Irwin" votes="369" />
+                <County name="Jackson" votes="4395" />
+                <County name="Jasper" votes="808" />
+                <County name="Jeff Davis" votes="528" />
+                <County name="Jefferson" votes="446" />
+                <County name="Jenkins" votes="335" />
+                <County name="Johnson" votes="331" />
+                <County name="Jones" votes="1272" />
+                <County name="Lamar" votes="807" />
+                <County name="Lanier" votes="250" />
+                <County name="Laurens" votes="2351" />
+                <County name="Lee" votes="1221" />
+                <County name="Liberty" votes="1311" />
+                <County name="Lincoln" votes="442" />
+                <County name="Long" votes="290" />
+                <County name="Lowndes" votes="3379" />
+                <County name="Lumpkin" votes="2022" />
+                <County name="Macon" votes="139" />
+                <County name="Madison" votes="1718" />
+                <County name="Marion" votes="295" />
+                <County name="McDuffie" votes="898" />
+                <County name="McIntosh" votes="834" />
+                <County name="Meriwether" votes="980" />
+                <County name="Miller" votes="264" />
+                <County name="Mitchell" votes="681" />
+                <County name="Monroe" votes="1062" />
+                <County name="Montgomery" votes="356" />
+                <County name="Morgan" votes="938" />
+                <County name="Murray" votes="1361" />
+                <County name="Muscogee" votes="6399" />
+                <County name="Newton" votes="4860" />
+                <County name="Oconee" votes="2696" />
+                <County name="Oglethorpe" votes="946" />
+                <County name="Paulding" votes="9582" />
+                <County name="Peach" votes="810" />
+                <County name="Pickens" votes="1786" />
+                <County name="Pierce" votes="923" />
+                <County name="Pike" votes="919" />
+                <County name="Polk" votes="1707" />
+                <County name="Pulaski" votes="313" />
+                <County name="Putnam" votes="1760" />
+                <County name="Quitman" votes="88" />
+                <County name="Rabun" votes="1663" />
+                <County name="Randolph" votes="214" />
+                <County name="Richmond" votes="6233" />
+                <County name="Rockdale" votes="3005" />
+                <County name="Schley" votes="154" />
+                <County name="Screven" votes="505" />
+                <County name="Seminole" votes="277" />
+                <County name="Spalding" votes="3490" />
+                <County name="Stephens" votes="1365" />
+                <County name="Stewart" votes="105" />
+                <County name="Sumter" votes="837" />
+                <County name="Talbot" votes="241" />
+                <County name="Taliaferro" votes="64" />
+                <County name="Tattnall" votes="818" />
+                <County name="Taylor" votes="292" />
+                <County name="Telfair" votes="358" />
+                <County name="Terrell" votes="270" />
+                <County name="Thomas" votes="1670" />
+                <County name="Tift" votes="1221" />
+                <County name="Toombs" votes="1217" />
+                <County name="Towns" votes="1227" />
+                <County name="Treutlen" votes="274" />
+                <County name="Troup" votes="2905" />
+                <County name="Turner" votes="233" />
+                <County name="Twiggs" votes="310" />
+                <County name="Union" votes="2232" />
+                <County name="Upson" votes="1175" />
+                <County name="Walker" votes="3517" />
+                <County name="Walton" votes="6031" />
+                <County name="Ware" votes="1368" />
+                <County name="Warren" votes="205" />
+                <County name="Washington" votes="719" />
+                <County name="Wayne" votes="1354" />
+                <County name="Webster" votes="121" />
+                <County name="Wheeler" votes="202" />
+                <County name="White" votes="2088" />
+                <County name="Whitfield" votes="3544" />
+                <County name="Wilcox" votes="343" />
+                <County name="Wilkes" votes="467" />
+                <County name="Wilkinson" votes="259" />
+                <County name="Worth" votes="766" />
+            </VoteType>
+            <VoteType name="Advanced Voting Votes" votes="1419161">
+                <County name="Appling" votes="3874" />
+                <County name="Atkinson" votes="1419" />
+                <County name="Bacon" votes="3099" />
+                <County name="Baker" votes="466" />
+                <County name="Baldwin" votes="5736" />
+                <County name="Banks" votes="5116" />
+                <County name="Barrow" votes="16782" />
+                <County name="Bartow" votes="21499" />
+                <County name="Ben Hill" votes="3140" />
+                <County name="Berrien" votes="3825" />
+                <County name="Bibb" votes="13234" />
+                <County name="Bleckley" votes="2770" />
+                <County name="Brantley" votes="4307" />
+                <County name="Brooks" votes="2312" />
+                <County name="Bryan" votes="10072" />
+                <County name="Bulloch" votes="8910" />
+                <County name="Burke" votes="2802" />
+                <County name="Butts" votes="6443" />
+                <County name="Calhoun" votes="494" />
+                <County name="Camden" votes="9465" />
+                <County name="Candler" votes="2327" />
+                <County name="Carroll" votes="21676" />
+                <County name="Catoosa" votes="17025" />
+                <County name="Charlton" votes="1896" />
+                <County name="Chatham" votes="23014" />
+                <County name="Chattahoochee" votes="455" />
+                <County name="Chattooga" votes="4492" />
+                <County name="Cherokee" votes="56171" />
+                <County name="Clarke" votes="6974" />
+                <County name="Clay" votes="401" />
+                <County name="Clayton" votes="7988" />
+                <County name="Clinch" votes="1277" />
+                <County name="Cobb" votes="76907" />
+                <County name="Coffee" votes="7066" />
+                <County name="Colquitt" votes="6132" />
+                <County name="Columbia" votes="29643" />
+                <County name="Cook" votes="3301" />
+                <County name="Coweta" votes="23824" />
+                <County name="Crawford" votes="2713" />
+                <County name="Crisp" votes="3227" />
+                <County name="Dade" votes="3414" />
+                <County name="Dawson" votes="9095" />
+                <County name="Decatur" votes="4451" />
+                <County name="DeKalb" votes="29966" />
+                <County name="Dodge" votes="2793" />
+                <County name="Dooly" votes="1431" />
+                <County name="Dougherty" votes="3818" />
+                <County name="Douglas" votes="15139" />
+                <County name="Early" votes="1504" />
+                <County name="Echols" votes="909" />
+                <County name="Effingham" votes="13471" />
+                <County name="Elbert" votes="3408" />
+                <County name="Emanuel" votes="3126" />
+                <County name="Evans" votes="1926" />
+                <County name="Fannin" votes="5730" />
+                <County name="Fayette" votes="24162" />
+                <County name="Floyd" votes="16678" />
+                <County name="Forsyth" votes="60739" />
+                <County name="Franklin" votes="5364" />
+                <County name="Fulton" votes="87293" />
+                <County name="Gilmer" votes="6863" />
+                <County name="Glascock" votes="795" />
+                <County name="Glynn" votes="16492" />
+                <County name="Gordon" votes="9866" />
+                <County name="Grady" votes="3896" />
+                <County name="Greene" votes="4947" />
+                <County name="Gwinnett" votes="90472" />
+                <County name="Habersham" votes="11083" />
+                <County name="Hall" votes="40999" />
+                <County name="Hancock" votes="641" />
+                <County name="Haralson" votes="6224" />
+                <County name="Harris" votes="6627" />
+                <County name="Hart" votes="5687" />
+                <County name="Heard" votes="2197" />
+                <County name="Henry" votes="31879" />
+                <County name="Houston" votes="21677" />
+                <County name="Irwin" votes="2106" />
+                <County name="Jackson" votes="20135" />
+                <County name="Jasper" votes="3455" />
+                <County name="Jeff Davis" votes="2749" />
+                <County name="Jefferson" votes="1992" />
+                <County name="Jenkins" votes="1244" />
+                <County name="Johnson" votes="1748" />
+                <County name="Jones" votes="5666" />
+                <County name="Lamar" votes="3772" />
+                <County name="Lanier" votes="1778" />
+                <County name="Laurens" votes="6479" />
+                <County name="Lee" votes="7728" />
+                <County name="Liberty" votes="4941" />
+                <County name="Lincoln" votes="1832" />
+                <County name="Long" votes="2102" />
+                <County name="Lowndes" votes="16795" />
+                <County name="Lumpkin" votes="8138" />
+                <County name="Macon" votes="1296" />
+                <County name="Madison" votes="6103" />
+                <County name="Marion" votes="1221" />
+                <County name="McDuffie" votes="4445" />
+                <County name="McIntosh" votes="2371" />
+                <County name="Meriwether" votes="3312" />
+                <County name="Miller" votes="1269" />
+                <County name="Mitchell" votes="2701" />
+                <County name="Monroe" votes="6890" />
+                <County name="Montgomery" votes="1495" />
+                <County name="Morgan" votes="5424" />
+                <County name="Murray" votes="7689" />
+                <County name="Muscogee" votes="17106" />
+                <County name="Newton" votes="8103" />
+                <County name="Oconee" votes="11216" />
+                <County name="Oglethorpe" votes="3584" />
+                <County name="Paulding" votes="35174" />
+                <County name="Peach" votes="4728" />
+                <County name="Pickens" votes="6287" />
+                <County name="Pierce" votes="5768" />
+                <County name="Pike" votes="5864" />
+                <County name="Polk" votes="9021" />
+                <County name="Pulaski" votes="2155" />
+                <County name="Putnam" votes="4983" />
+                <County name="Quitman" votes="353" />
+                <County name="Rabun" votes="4604" />
+                <County name="Randolph" votes="856" />
+                <County name="Richmond" votes="11931" />
+                <County name="Rockdale" votes="7466" />
+                <County name="Schley" votes="1341" />
+                <County name="Screven" votes="2140" />
+                <County name="Seminole" votes="1390" />
+                <County name="Spalding" votes="8801" />
+                <County name="Stephens" votes="6765" />
+                <County name="Stewart" votes="462" />
+                <County name="Sumter" votes="3358" />
+                <County name="Talbot" votes="686" />
+                <County name="Taliaferro" votes="200" />
+                <County name="Tattnall" votes="3699" />
+                <County name="Taylor" votes="1764" />
+                <County name="Telfair" votes="1506" />
+                <County name="Terrell" votes="1069" />
+                <County name="Thomas" votes="8565" />
+                <County name="Tift" votes="6833" />
+                <County name="Toombs" votes="4852" />
+                <County name="Towns" votes="4165" />
+                <County name="Treutlen" votes="1409" />
+                <County name="Troup" votes="10519" />
+                <County name="Turner" votes="1738" />
+                <County name="Twiggs" votes="1219" />
+                <County name="Union" votes="7008" />
+                <County name="Upson" votes="6063" />
+                <County name="Walker" votes="14089" />
+                <County name="Walton" votes="22594" />
+                <County name="Ware" votes="5900" />
+                <County name="Warren" votes="771" />
+                <County name="Washington" votes="2458" />
+                <County name="Wayne" votes="6131" />
+                <County name="Webster" votes="488" />
+                <County name="Wheeler" votes="943" />
+                <County name="White" votes="6680" />
+                <County name="Whitfield" votes="13084" />
+                <County name="Wilcox" votes="1317" />
+                <County name="Wilkes" votes="1649" />
+                <County name="Wilkinson" votes="1109" />
+                <County name="Worth" votes="3285" />
+            </VoteType>
+            <VoteType name="Provisional Votes" votes="3822">
+                <County name="Appling" votes="9" />
+                <County name="Atkinson" votes="1" />
+                <County name="Bacon" votes="1" />
+                <County name="Baker" votes="2" />
+                <County name="Baldwin" votes="4" />
+                <County name="Banks" votes="10" />
+                <County name="Barrow" votes="3" />
+                <County name="Bartow" votes="20" />
+                <County name="Ben Hill" votes="1" />
+                <County name="Berrien" votes="10" />
+                <County name="Bibb" votes="54" />
+                <County name="Bleckley" votes="2" />
+                <County name="Brantley" votes="7" />
+                <County name="Brooks" votes="6" />
+                <County name="Bryan" votes="5" />
+                <County name="Bulloch" votes="23" />
+                <County name="Burke" votes="0" />
+                <County name="Butts" votes="2" />
+                <County name="Calhoun" votes="0" />
+                <County name="Camden" votes="4" />
+                <County name="Candler" votes="0" />
+                <County name="Carroll" votes="30" />
+                <County name="Catoosa" votes="20" />
+                <County name="Charlton" votes="2" />
+                <County name="Chatham" votes="96" />
+                <County name="Chattahoochee" votes="2" />
+                <County name="Chattooga" votes="6" />
+                <County name="Cherokee" votes="19" />
+                <County name="Clarke" votes="15" />
+                <County name="Clay" votes="0" />
+                <County name="Clayton" votes="56" />
+                <County name="Clinch" votes="1" />
+                <County name="Cobb" votes="179" />
+                <County name="Coffee" votes="8" />
+                <County name="Colquitt" votes="10" />
+                <County name="Columbia" votes="47" />
+                <County name="Cook" votes="0" />
+                <County name="Coweta" votes="4" />
+                <County name="Crawford" votes="1" />
+                <County name="Crisp" votes="3" />
+                <County name="Dade" votes="7" />
+                <County name="Dawson" votes="3" />
+                <County name="Decatur" votes="6" />
+                <County name="DeKalb" votes="203" />
+                <County name="Dodge" votes="4" />
+                <County name="Dooly" votes="3" />
+                <County name="Dougherty" votes="22" />
+                <County name="Douglas" votes="15" />
+                <County name="Early" votes="3" />
+                <County name="Echols" votes="0" />
+                <County name="Effingham" votes="17" />
+                <County name="Elbert" votes="0" />
+                <County name="Emanuel" votes="1" />
+                <County name="Evans" votes="0" />
+                <County name="Fannin" votes="23" />
+                <County name="Fayette" votes="56" />
+                <County name="Floyd" votes="112" />
+                <County name="Forsyth" votes="31" />
+                <County name="Franklin" votes="2" />
+                <County name="Fulton" votes="916" />
+                <County name="Gilmer" votes="12" />
+                <County name="Glascock" votes="0" />
+                <County name="Glynn" votes="35" />
+                <County name="Gordon" votes="15" />
+                <County name="Grady" votes="7" />
+                <County name="Greene" votes="2" />
+                <County name="Gwinnett" votes="274" />
+                <County name="Habersham" votes="21" />
+                <County name="Hall" votes="55" />
+                <County name="Hancock" votes="0" />
+                <County name="Haralson" votes="4" />
+                <County name="Harris" votes="13" />
+                <County name="Hart" votes="2" />
+                <County name="Heard" votes="1" />
+                <County name="Henry" votes="31" />
+                <County name="Houston" votes="50" />
+                <County name="Irwin" votes="4" />
+                <County name="Jackson" votes="6" />
+                <County name="Jasper" votes="12" />
+                <County name="Jeff Davis" votes="0" />
+                <County name="Jefferson" votes="3" />
+                <County name="Jenkins" votes="3" />
+                <County name="Johnson" votes="0" />
+                <County name="Jones" votes="4" />
+                <County name="Lamar" votes="8" />
+                <County name="Lanier" votes="0" />
+                <County name="Laurens" votes="3" />
+                <County name="Lee" votes="4" />
+                <County name="Liberty" votes="3" />
+                <County name="Lincoln" votes="1" />
+                <County name="Long" votes="10" />
+                <County name="Lowndes" votes="166" />
+                <County name="Lumpkin" votes="1" />
+                <County name="Macon" votes="0" />
+                <County name="Madison" votes="3" />
+                <County name="Marion" votes="0" />
+                <County name="McDuffie" votes="0" />
+                <County name="McIntosh" votes="1" />
+                <County name="Meriwether" votes="2" />
+                <County name="Miller" votes="3" />
+                <County name="Mitchell" votes="2" />
+                <County name="Monroe" votes="6" />
+                <County name="Montgomery" votes="0" />
+                <County name="Morgan" votes="3" />
+                <County name="Murray" votes="0" />
+                <County name="Muscogee" votes="17" />
+                <County name="Newton" votes="18" />
+                <County name="Oconee" votes="3" />
+                <County name="Oglethorpe" votes="2" />
+                <County name="Paulding" votes="59" />
+                <County name="Peach" votes="10" />
+                <County name="Pickens" votes="8" />
+                <County name="Pierce" votes="0" />
+                <County name="Pike" votes="3" />
+                <County name="Polk" votes="12" />
+                <County name="Pulaski" votes="1" />
+                <County name="Putnam" votes="1" />
+                <County name="Quitman" votes="0" />
+                <County name="Rabun" votes="0" />
+                <County name="Randolph" votes="0" />
+                <County name="Richmond" votes="33" />
+                <County name="Rockdale" votes="15" />
+                <County name="Schley" votes="1" />
+                <County name="Screven" votes="11" />
+                <County name="Seminole" votes="0" />
+                <County name="Spalding" votes="532" />
+                <County name="Stephens" votes="4" />
+                <County name="Stewart" votes="5" />
+                <County name="Sumter" votes="13" />
+                <County name="Talbot" votes="1" />
+                <County name="Taliaferro" votes="0" />
+                <County name="Tattnall" votes="0" />
+                <County name="Taylor" votes="13" />
+                <County name="Telfair" votes="3" />
+                <County name="Terrell" votes="0" />
+                <County name="Thomas" votes="1" />
+                <County name="Tift" votes="9" />
+                <County name="Toombs" votes="6" />
+                <County name="Towns" votes="8" />
+                <County name="Treutlen" votes="0" />
+                <County name="Troup" votes="46" />
+                <County name="Turner" votes="1" />
+                <County name="Twiggs" votes="0" />
+                <County name="Union" votes="11" />
+                <County name="Upson" votes="6" />
+                <County name="Walker" votes="8" />
+                <County name="Walton" votes="15" />
+                <County name="Ware" votes="20" />
+                <County name="Warren" votes="0" />
+                <County name="Washington" votes="5" />
+                <County name="Wayne" votes="7" />
+                <County name="Webster" votes="0" />
+                <County name="Wheeler" votes="0" />
+                <County name="White" votes="6" />
+                <County name="Whitfield" votes="45" />
+                <County name="Wilcox" votes="0" />
+                <County name="Wilkes" votes="3" />
+                <County name="Wilkinson" votes="3" />
+                <County name="Worth" votes="0" />
+            </VoteType>
+        </Choice>
+        <Choice key="2" text="Joseph R. Biden (Dem)" party="NP" totalVotes="2474507">
+            <VoteType name="Election Day Votes" votes="367205">
+                <County name="Appling" votes="334" />
+                <County name="Atkinson" votes="250" />
+                <County name="Bacon" votes="140" />
+                <County name="Baker" votes="149" />
+                <County name="Baldwin" votes="1527" />
+                <County name="Banks" votes="150" />
+                <County name="Barrow" votes="1717" />
+                <County name="Bartow" votes="2175" />
+                <County name="Ben Hill" votes="336" />
+                <County name="Berrien" votes="333" />
+                <County name="Bibb" votes="8704" />
+                <County name="Bleckley" votes="295" />
+                <County name="Brantley" votes="145" />
+                <County name="Brooks" votes="522" />
+                <County name="Bryan" votes="838" />
+                <County name="Bulloch" votes="2415" />
+                <County name="Burke" votes="1490" />
+                <County name="Butts" votes="376" />
+                <County name="Calhoun" votes="361" />
+                <County name="Camden" votes="1166" />
+                <County name="Candler" votes="193" />
+                <County name="Carroll" votes="3007" />
+                <County name="Catoosa" votes="976" />
+                <County name="Charlton" votes="233" />
+                <County name="Chatham" votes="17952" />
+                <County name="Chattahoochee" votes="150" />
+                <County name="Chattooga" votes="366" />
+                <County name="Cherokee" votes="6598" />
+                <County name="Clarke" votes="5323" />
+                <County name="Clay" votes="165" />
+                <County name="Clayton" votes="16580" />
+                <County name="Clinch" votes="235" />
+                <County name="Cobb" votes="30599" />
+                <County name="Coffee" votes="1100" />
+                <County name="Colquitt" votes="1108" />
+                <County name="Columbia" votes="5009" />
+                <County name="Cook" votes="538" />
+                <County name="Coweta" votes="5330" />
+                <County name="Crawford" votes="263" />
+                <County name="Crisp" votes="571" />
+                <County name="Dade" votes="243" />
+                <County name="Dawson" votes="254" />
+                <County name="Decatur" votes="788" />
+                <County name="DeKalb" votes="33634" />
+                <County name="Dodge" votes="550" />
+                <County name="Dooly" votes="482" />
+                <County name="Dougherty" votes="7317" />
+                <County name="Douglas" votes="5963" />
+                <County name="Early" votes="646" />
+                <County name="Echols" votes="33" />
+                <County name="Effingham" votes="1752" />
+                <County name="Elbert" votes="529" />
+                <County name="Emanuel" votes="842" />
+                <County name="Evans" votes="236" />
+                <County name="Fannin" votes="384" />
+                <County name="Fayette" votes="3400" />
+                <County name="Floyd" votes="2154" />
+                <County name="Forsyth" votes="3375" />
+                <County name="Franklin" votes="348" />
+                <County name="Fulton" votes="38143" />
+                <County name="Gilmer" votes="453" />
+                <County name="Glascock" votes="40" />
+                <County name="Glynn" votes="2153" />
+                <County name="Gordon" votes="1003" />
+                <County name="Grady" votes="635" />
+                <County name="Greene" votes="583" />
+                <County name="Gwinnett" votes="35793" />
+                <County name="Habersham" votes="511" />
+                <County name="Hall" votes="3847" />
+                <County name="Hancock" votes="624" />
+                <County name="Haralson" votes="375" />
+                <County name="Harris" votes="1278" />
+                <County name="Hart" votes="560" />
+                <County name="Heard" votes="184" />
+                <County name="Henry" votes="8191" />
+                <County name="Houston" votes="6349" />
+                <County name="Irwin" votes="227" />
+                <County name="Jackson" votes="1053" />
+                <County name="Jasper" votes="294" />
+                <County name="Jeff Davis" votes="248" />
+                <County name="Jefferson" votes="1056" />
+                <County name="Jenkins" votes="292" />
+                <County name="Johnson" votes="209" />
+                <County name="Jones" votes="841" />
+                <County name="Lamar" votes="472" />
+                <County name="Lanier" votes="204" />
+                <County name="Laurens" votes="1884" />
+                <County name="Lee" votes="895" />
+                <County name="Liberty" votes="1666" />
+                <County name="Lincoln" votes="265" />
+                <County name="Long" votes="379" />
+                <County name="Lowndes" votes="2892" />
+                <County name="Lumpkin" votes="332" />
+                <County name="Macon" votes="692" />
+                <County name="Madison" votes="740" />
+                <County name="Marion" votes="220" />
+                <County name="McDuffie" votes="600" />
+                <County name="McIntosh" votes="442" />
+                <County name="Meriwether" votes="1189" />
+                <County name="Miller" votes="174" />
+                <County name="Mitchell" votes="818" />
+                <County name="Monroe" votes="690" />
+                <County name="Montgomery" votes="250" />
+                <County name="Morgan" votes="496" />
+                <County name="Murray" votes="530" />
+                <County name="Muscogee" votes="6579" />
+                <County name="Newton" votes="6745" />
+                <County name="Oconee" votes="723" />
+                <County name="Oglethorpe" votes="417" />
+                <County name="Paulding" votes="3763" />
+                <County name="Peach" votes="809" />
+                <County name="Pickens" votes="645" />
+                <County name="Pierce" votes="122" />
+                <County name="Pike" votes="285" />
+                <County name="Polk" votes="607" />
+                <County name="Pulaski" votes="165" />
+                <County name="Putnam" votes="470" />
+                <County name="Quitman" votes="163" />
+                <County name="Rabun" votes="199" />
+                <County name="Randolph" votes="402" />
+                <County name="Richmond" votes="11843" />
+                <County name="Rockdale" votes="3543" />
+                <County name="Schley" votes="65" />
+                <County name="Screven" votes="601" />
+                <County name="Seminole" votes="294" />
+                <County name="Spalding" votes="2554" />
+                <County name="Stephens" votes="291" />
+                <County name="Stewart" votes="292" />
+                <County name="Sumter" votes="1139" />
+                <County name="Talbot" votes="541" />
+                <County name="Taliaferro" votes="100" />
+                <County name="Tattnall" votes="412" />
+                <County name="Taylor" votes="272" />
+                <County name="Telfair" votes="317" />
+                <County name="Terrell" votes="567" />
+                <County name="Thomas" votes="1473" />
+                <County name="Tift" votes="1110" />
+                <County name="Toombs" votes="569" />
+                <County name="Towns" votes="118" />
+                <County name="Treutlen" votes="123" />
+                <County name="Troup" votes="2809" />
+                <County name="Turner" votes="332" />
+                <County name="Twiggs" votes="426" />
+                <County name="Union" votes="300" />
+                <County name="Upson" votes="646" />
+                <County name="Walker" votes="994" />
+                <County name="Walton" votes="2145" />
+                <County name="Ware" votes="563" />
+                <County name="Warren" votes="297" />
+                <County name="Washington" votes="1071" />
+                <County name="Wayne" votes="460" />
+                <County name="Webster" votes="142" />
+                <County name="Wheeler" votes="197" />
+                <County name="White" votes="372" />
+                <County name="Whitfield" votes="2814" />
+                <County name="Wilcox" votes="285" />
+                <County name="Wilkes" votes="504" />
+                <County name="Wilkinson" votes="528" />
+                <County name="Worth" votes="581" />
+            </VoteType>
+            <VoteType name="Absentee by Mail Votes" votes="849729">
+                <County name="Appling" votes="587" />
+                <County name="Atkinson" votes="130" />
+                <County name="Bacon" votes="196" />
+                <County name="Baker" votes="234" />
+                <County name="Baldwin" votes="3000" />
+                <County name="Banks" votes="344" />
+                <County name="Barrow" votes="3583" />
+                <County name="Bartow" votes="4486" />
+                <County name="Ben Hill" votes="714" />
+                <County name="Berrien" votes="367" />
+                <County name="Bibb" votes="14264" />
+                <County name="Bleckley" votes="428" />
+                <County name="Brantley" votes="204" />
+                <County name="Brooks" votes="1115" />
+                <County name="Bryan" votes="2105" />
+                <County name="Bulloch" votes="3530" />
+                <County name="Burke" votes="1867" />
+                <County name="Butts" votes="973" />
+                <County name="Calhoun" votes="436" />
+                <County name="Camden" votes="2777" />
+                <County name="Candler" votes="376" />
+                <County name="Carroll" votes="4634" />
+                <County name="Catoosa" votes="2130" />
+                <County name="Charlton" votes="294" />
+                <County name="Chatham" votes="29037" />
+                <County name="Chattahoochee" votes="166" />
+                <County name="Chattooga" votes="649" />
+                <County name="Cherokee" votes="17261" />
+                <County name="Clarke" votes="14329" />
+                <County name="Clay" votes="296" />
+                <County name="Clayton" votes="27109" />
+                <County name="Clinch" votes="156" />
+                <County name="Cobb" votes="95513" />
+                <County name="Coffee" votes="995" />
+                <County name="Colquitt" votes="1199" />
+                <County name="Columbia" votes="9546" />
+                <County name="Cook" votes="512" />
+                <County name="Coweta" votes="9288" />
+                <County name="Crawford" votes="524" />
+                <County name="Crisp" votes="886" />
+                <County name="Dade" votes="377" />
+                <County name="Dawson" votes="1051" />
+                <County name="Decatur" votes="1472" />
+                <County name="DeKalb" votes="110666" />
+                <County name="Dodge" votes="580" />
+                <County name="Dooly" votes="476" />
+                <County name="Dougherty" votes="8052" />
+                <County name="Douglas" votes="13998" />
+                <County name="Early" votes="684" />
+                <County name="Echols" votes="32" />
+                <County name="Effingham" votes="2333" />
+                <County name="Elbert" votes="1082" />
+                <County name="Emanuel" votes="808" />
+                <County name="Evans" votes="347" />
+                <County name="Fannin" votes="1159" />
+                <County name="Fayette" votes="11152" />
+                <County name="Floyd" votes="3976" />
+                <County name="Forsyth" votes="15682" />
+                <County name="Franklin" votes="598" />
+                <County name="Fulton" votes="115788" />
+                <County name="Gilmer" votes="1270" />
+                <County name="Glascock" votes="53" />
+                <County name="Glynn" votes="5735" />
+                <County name="Gordon" votes="1464" />
+                <County name="Grady" votes="1112" />
+                <County name="Greene" votes="1532" />
+                <County name="Gwinnett" votes="81502" />
+                <County name="Habersham" votes="1315" />
+                <County name="Hall" votes="9215" />
+                <County name="Hancock" votes="1223" />
+                <County name="Haralson" votes="671" />
+                <County name="Harris" votes="2067" />
+                <County name="Hart" votes="1128" />
+                <County name="Heard" votes="296" />
+                <County name="Henry" votes="20858" />
+                <County name="Houston" votes="11867" />
+                <County name="Irwin" votes="257" />
+                <County name="Jackson" votes="2797" />
+                <County name="Jasper" votes="680" />
+                <County name="Jeff Davis" votes="273" />
+                <County name="Jefferson" votes="1274" />
+                <County name="Jenkins" votes="416" />
+                <County name="Johnson" votes="420" />
+                <County name="Jones" votes="1689" />
+                <County name="Lamar" votes="936" />
+                <County name="Lanier" votes="298" />
+                <County name="Laurens" votes="2735" />
+                <County name="Lee" votes="1243" />
+                <County name="Liberty" votes="4301" />
+                <County name="Lincoln" votes="628" />
+                <County name="Long" votes="500" />
+                <County name="Lowndes" votes="5929" />
+                <County name="Lumpkin" votes="1245" />
+                <County name="Macon" votes="706" />
+                <County name="Madison" votes="1192" />
+                <County name="Marion" votes="471" />
+                <County name="McDuffie" votes="1522" />
+                <County name="McIntosh" votes="853" />
+                <County name="Meriwether" votes="1489" />
+                <County name="Miller" votes="221" />
+                <County name="Mitchell" votes="1499" />
+                <County name="Monroe" votes="1372" />
+                <County name="Montgomery" votes="310" />
+                <County name="Morgan" votes="1042" />
+                <County name="Murray" votes="679" />
+                <County name="Muscogee" votes="17690" />
+                <County name="Newton" votes="10471" />
+                <County name="Oconee" votes="2993" />
+                <County name="Oglethorpe" votes="868" />
+                <County name="Paulding" votes="10525" />
+                <County name="Peach" votes="1741" />
+                <County name="Pickens" votes="1119" />
+                <County name="Pierce" votes="368" />
+                <County name="Pike" votes="523" />
+                <County name="Polk" votes="1088" />
+                <County name="Pulaski" votes="337" />
+                <County name="Putnam" votes="1478" />
+                <County name="Quitman" votes="137" />
+                <County name="Rabun" votes="888" />
+                <County name="Randolph" votes="464" />
+                <County name="Richmond" votes="21348" />
+                <County name="Rockdale" votes="9429" />
+                <County name="Schley" votes="157" />
+                <County name="Screven" votes="789" />
+                <County name="Seminole" votes="269" />
+                <County name="Spalding" votes="4264" />
+                <County name="Stephens" votes="806" />
+                <County name="Stewart" votes="378" />
+                <County name="Sumter" votes="2023" />
+                <County name="Talbot" votes="955" />
+                <County name="Taliaferro" votes="237" />
+                <County name="Tattnall" votes="546" />
+                <County name="Taylor" votes="489" />
+                <County name="Telfair" votes="618" />
+                <County name="Terrell" votes="839" />
+                <County name="Thomas" votes="2412" />
+                <County name="Tift" votes="1464" />
+                <County name="Toombs" votes="1078" />
+                <County name="Towns" votes="711" />
+                <County name="Treutlen" votes="303" />
+                <County name="Troup" votes="3459" />
+                <County name="Turner" votes="289" />
+                <County name="Twiggs" votes="736" />
+                <County name="Union" votes="1303" />
+                <County name="Upson" votes="1572" />
+                <County name="Walker" votes="2206" />
+                <County name="Walton" votes="4254" />
+                <County name="Ware" votes="1556" />
+                <County name="Warren" votes="540" />
+                <County name="Washington" votes="1811" />
+                <County name="Wayne" votes="736" />
+                <County name="Webster" votes="227" />
+                <County name="Wheeler" votes="195" />
+                <County name="White" votes="973" />
+                <County name="Whitfield" votes="2840" />
+                <County name="Wilcox" votes="212" />
+                <County name="Wilkes" votes="755" />
+                <County name="Wilkinson" votes="602" />
+                <County name="Worth" votes="820" />
+            </VoteType>
+            <VoteType name="Advanced Voting Votes" votes="1250509">
+                <County name="Appling" votes="855" />
+                <County name="Atkinson" votes="445" />
+                <County name="Bacon" votes="288" />
+                <County name="Baker" votes="269" />
+                <County name="Baldwin" votes="4612" />
+                <County name="Banks" votes="435" />
+                <County name="Barrow" votes="5150" />
+                <County name="Bartow" votes="5423" />
+                <County name="Ben Hill" votes="1342" />
+                <County name="Berrien" votes="568" />
+                <County name="Bibb" votes="20384" />
+                <County name="Bleckley" votes="588" />
+                <County name="Brantley" votes="349" />
+                <County name="Brooks" votes="1149" />
+                <County name="Bryan" votes="3794" />
+                <County name="Bulloch" votes="5263" />
+                <County name="Burke" votes="1852" />
+                <County name="Butts" votes="1924" />
+                <County name="Calhoun" votes="463" />
+                <County name="Camden" votes="4021" />
+                <County name="Candler" votes="699" />
+                <County name="Carroll" votes="8582" />
+                <County name="Catoosa" votes="3823" />
+                <County name="Charlton" votes="576" />
+                <County name="Chatham" votes="31085" />
+                <County name="Chattahoochee" votes="350" />
+                <County name="Chattooga" votes="837" />
+                <County name="Cherokee" votes="18929" />
+                <County name="Clarke" votes="16357" />
+                <County name="Clay" votes="329" />
+                <County name="Clayton" votes="51347" />
+                <County name="Clinch" votes="356" />
+                <County name="Cobb" votes="95387" />
+                <County name="Coffee" votes="2411" />
+                <County name="Colquitt" votes="1877" />
+                <County name="Columbia" votes="14648" />
+                <County name="Cook" votes="1008" />
+                <County name="Coweta" votes="9578" />
+                <County name="Crawford" votes="827" />
+                <County name="Crisp" votes="1527" />
+                <County name="Dade" votes="640" />
+                <County name="Dawson" votes="1181" />
+                <County name="Decatur" votes="2512" />
+                <County name="DeKalb" votes="162718" />
+                <County name="Dodge" votes="1040" />
+                <County name="Dooly" votes="951" />
+                <County name="Dougherty" votes="9124" />
+                <County name="Douglas" votes="22804" />
+                <County name="Early" votes="1107" />
+                <County name="Echols" votes="102" />
+                <County name="Effingham" votes="3623" />
+                <County name="Elbert" votes="1268" />
+                <County name="Emanuel" votes="1234" />
+                <County name="Evans" votes="741" />
+                <County name="Fannin" votes="1028" />
+                <County name="Fayette" votes="18443" />
+                <County name="Floyd" votes="5820" />
+                <County name="Forsyth" votes="23125" />
+                <County name="Franklin" votes="647" />
+                <County name="Fulton" votes="224688" />
+                <County name="Gilmer" votes="1209" />
+                <County name="Glascock" votes="62" />
+                <County name="Glynn" votes="7969" />
+                <County name="Gordon" votes="1916" />
+                <County name="Grady" votes="1861" />
+                <County name="Greene" votes="1965" />
+                <County name="Gwinnett" votes="124125" />
+                <County name="Habersham" votes="1733" />
+                <County name="Hall" votes="11951" />
+                <County name="Hancock" votes="1135" />
+                <County name="Haralson" votes="746" />
+                <County name="Harris" votes="2106" />
+                <County name="Hart" votes="1467" />
+                <County name="Heard" votes="343" />
+                <County name="Henry" votes="44156" />
+                <County name="Houston" votes="13970" />
+                <County name="Irwin" votes="523" />
+                <County name="Jackson" votes="3791" />
+                <County name="Jasper" votes="785" />
+                <County name="Jeff Davis" votes="507" />
+                <County name="Jefferson" votes="1723" />
+                <County name="Jenkins" votes="557" />
+                <County name="Johnson" votes="593" />
+                <County name="Jones" votes="2356" />
+                <County name="Lamar" votes="1204" />
+                <County name="Lanier" votes="517" />
+                <County name="Laurens" votes="3451" />
+                <County name="Lee" votes="2418" />
+                <County name="Liberty" votes="7129" />
+                <County name="Lincoln" votes="540" />
+                <County name="Long" votes="1148" />
+                <County name="Lowndes" votes="11017" />
+                <County name="Lumpkin" votes="1549" />
+                <County name="Macon" votes="1459" />
+                <County name="Madison" votes="1478" />
+                <County name="Marion" votes="620" />
+                <County name="McDuffie" votes="2046" />
+                <County name="McIntosh" votes="1317" />
+                <County name="Meriwether" votes="1604" />
+                <County name="Miller" votes="354" />
+                <County name="Mitchell" votes="1673" />
+                <County name="Monroe" votes="2320" />
+                <County name="Montgomery" votes="419" />
+                <County name="Morgan" votes="1815" />
+                <County name="Murray" votes="1093" />
+                <County name="Muscogee" votes="25227" />
+                <County name="Newton" votes="12556" />
+                <County name="Oconee" votes="4444" />
+                <County name="Oglethorpe" votes="1150" />
+                <County name="Paulding" votes="15376" />
+                <County name="Peach" votes="3364" />
+                <County name="Pickens" votes="1044" />
+                <County name="Pierce" votes="610" />
+                <County name="Pike" votes="695" />
+                <County name="Polk" votes="1957" />
+                <County name="Pulaski" votes="715" />
+                <County name="Putnam" votes="1500" />
+                <County name="Quitman" votes="196" />
+                <County name="Rabun" votes="897" />
+                <County name="Randolph" votes="802" />
+                <County name="Richmond" votes="25780" />
+                <County name="Rockdale" votes="18248" />
+                <County name="Schley" votes="240" />
+                <County name="Screven" votes="1264" />
+                <County name="Seminole" votes="691" />
+                <County name="Spalding" votes="4600" />
+                <County name="Stephens" votes="1288" />
+                <County name="Stewart" votes="505" />
+                <County name="Sumter" votes="3150" />
+                <County name="Talbot" votes="618" />
+                <County name="Taliaferro" votes="223" />
+                <County name="Tattnall" votes="1103" />
+                <County name="Taylor" votes="624" />
+                <County name="Telfair" votes="545" />
+                <County name="Terrell" votes="969" />
+                <County name="Thomas" votes="4819" />
+                <County name="Tift" votes="2732" />
+                <County name="Toombs" votes="1288" />
+                <County name="Towns" votes="720" />
+                <County name="Treutlen" votes="526" />
+                <County name="Troup" votes="5276" />
+                <County name="Turner" votes="788" />
+                <County name="Twiggs" votes="878" />
+                <County name="Union" votes="1198" />
+                <County name="Upson" votes="1983" />
+                <County name="Walker" votes="2567" />
+                <County name="Walton" votes="6272" />
+                <County name="Ware" votes="2066" />
+                <County name="Warren" votes="632" />
+                <County name="Washington" votes="1843" />
+                <County name="Wayne" votes="1489" />
+                <County name="Webster" votes="270" />
+                <County name="Wheeler" votes="297" />
+                <County name="White" votes="1066" />
+                <County name="Whitfield" votes="4997" />
+                <County name="Wilcox" votes="365" />
+                <County name="Wilkes" votes="897" />
+                <County name="Wilkinson" votes="942" />
+                <County name="Worth" votes="994" />
+            </VoteType>
+            <VoteType name="Provisional Votes" votes="7064">
+                <County name="Appling" votes="3" />
+                <County name="Atkinson" votes="0" />
+                <County name="Bacon" votes="1" />
+                <County name="Baker" votes="0" />
+                <County name="Baldwin" votes="1" />
+                <County name="Banks" votes="3" />
+                <County name="Barrow" votes="3" />
+                <County name="Bartow" votes="8" />
+                <County name="Ben Hill" votes="0" />
+                <County name="Berrien" votes="1" />
+                <County name="Bibb" votes="116" />
+                <County name="Bleckley" votes="0" />
+                <County name="Brantley" votes="1" />
+                <County name="Brooks" votes="4" />
+                <County name="Bryan" votes="2" />
+                <County name="Bulloch" votes="35" />
+                <County name="Burke" votes="0" />
+                <County name="Butts" votes="1" />
+                <County name="Calhoun" votes="0" />
+                <County name="Camden" votes="3" />
+                <County name="Candler" votes="1" />
+                <County name="Carroll" votes="15" />
+                <County name="Catoosa" votes="3" />
+                <County name="Charlton" votes="0" />
+                <County name="Chatham" votes="180" />
+                <County name="Chattahoochee" votes="1" />
+                <County name="Chattooga" votes="2" />
+                <County name="Cherokee" votes="6" />
+                <County name="Clarke" votes="39" />
+                <County name="Clay" votes="0" />
+                <County name="Clayton" votes="440" />
+                <County name="Clinch" votes="0" />
+                <County name="Cobb" votes="347" />
+                <County name="Coffee" votes="5" />
+                <County name="Colquitt" votes="3" />
+                <County name="Columbia" votes="33" />
+                <County name="Cook" votes="1" />
+                <County name="Coweta" votes="14" />
+                <County name="Crawford" votes="1" />
+                <County name="Crisp" votes="2" />
+                <County name="Dade" votes="1" />
+                <County name="Dawson" votes="0" />
+                <County name="Decatur" votes="8" />
+                <County name="DeKalb" votes="1209" />
+                <County name="Dodge" votes="1" />
+                <County name="Dooly" votes="2" />
+                <County name="Dougherty" votes="84" />
+                <County name="Douglas" votes="44" />
+                <County name="Early" votes="0" />
+                <County name="Echols" votes="0" />
+                <County name="Effingham" votes="12" />
+                <County name="Elbert" votes="0" />
+                <County name="Emanuel" votes="0" />
+                <County name="Evans" votes="0" />
+                <County name="Fannin" votes="0" />
+                <County name="Fayette" votes="70" />
+                <County name="Floyd" votes="58" />
+                <County name="Forsyth" votes="21" />
+                <County name="Franklin" votes="0" />
+                <County name="Fulton" votes="2525" />
+                <County name="Gilmer" votes="0" />
+                <County name="Glascock" votes="0" />
+                <County name="Glynn" votes="22" />
+                <County name="Gordon" votes="1" />
+                <County name="Grady" votes="11" />
+                <County name="Greene" votes="8" />
+                <County name="Gwinnett" votes="407" />
+                <County name="Habersham" votes="4" />
+                <County name="Hall" votes="18" />
+                <County name="Hancock" votes="3" />
+                <County name="Haralson" votes="0" />
+                <County name="Harris" votes="6" />
+                <County name="Hart" votes="2" />
+                <County name="Heard" votes="1" />
+                <County name="Henry" votes="71" />
+                <County name="Houston" votes="46" />
+                <County name="Irwin" votes="1" />
+                <County name="Jackson" votes="1" />
+                <County name="Jasper" votes="2" />
+                <County name="Jeff Davis" votes="0" />
+                <County name="Jefferson" votes="8" />
+                <County name="Jenkins" votes="1" />
+                <County name="Johnson" votes="0" />
+                <County name="Jones" votes="2" />
+                <County name="Lamar" votes="3" />
+                <County name="Lanier" votes="0" />
+                <County name="Laurens" votes="3" />
+                <County name="Lee" votes="2" />
+                <County name="Liberty" votes="3" />
+                <County name="Lincoln" votes="2" />
+                <County name="Long" votes="6" />
+                <County name="Lowndes" votes="279" />
+                <County name="Lumpkin" votes="0" />
+                <County name="Macon" votes="0" />
+                <County name="Madison" votes="1" />
+                <County name="Marion" votes="0" />
+                <County name="McDuffie" votes="0" />
+                <County name="McIntosh" votes="0" />
+                <County name="Meriwether" votes="5" />
+                <County name="Miller" votes="0" />
+                <County name="Mitchell" votes="5" />
+                <County name="Monroe" votes="2" />
+                <County name="Montgomery" votes="0" />
+                <County name="Morgan" votes="2" />
+                <County name="Murray" votes="0" />
+                <County name="Muscogee" votes="33" />
+                <County name="Newton" votes="22" />
+                <County name="Oconee" votes="2" />
+                <County name="Oglethorpe" votes="1" />
+                <County name="Paulding" votes="40" />
+                <County name="Peach" votes="6" />
+                <County name="Pickens" votes="0" />
+                <County name="Pierce" votes="0" />
+                <County name="Pike" votes="2" />
+                <County name="Polk" votes="6" />
+                <County name="Pulaski" votes="0" />
+                <County name="Putnam" votes="0" />
+                <County name="Quitman" votes="1" />
+                <County name="Rabun" votes="0" />
+                <County name="Randolph" votes="3" />
+                <County name="Richmond" votes="153" />
+                <County name="Rockdale" votes="24" />
+                <County name="Schley" votes="0" />
+                <County name="Screven" votes="7" />
+                <County name="Seminole" votes="0" />
+                <County name="Spalding" votes="366" />
+                <County name="Stephens" votes="0" />
+                <County name="Stewart" votes="7" />
+                <County name="Sumter" votes="6" />
+                <County name="Talbot" votes="0" />
+                <County name="Taliaferro" votes="1" />
+                <County name="Tattnall" votes="0" />
+                <County name="Taylor" votes="2" />
+                <County name="Telfair" votes="7" />
+                <County name="Terrell" votes="1" />
+                <County name="Thomas" votes="4" />
+                <County name="Tift" votes="16" />
+                <County name="Toombs" votes="4" />
+                <County name="Towns" votes="1" />
+                <County name="Treutlen" votes="0" />
+                <County name="Troup" votes="34" />
+                <County name="Turner" votes="1" />
+                <County name="Twiggs" votes="4" />
+                <County name="Union" votes="0" />
+                <County name="Upson" votes="0" />
+                <County name="Walker" votes="2" />
+                <County name="Walton" votes="11" />
+                <County name="Ware" votes="26" />
+                <County name="Warren" votes="0" />
+                <County name="Washington" votes="5" />
+                <County name="Wayne" votes="2" />
+                <County name="Webster" votes="0" />
+                <County name="Wheeler" votes="0" />
+                <County name="White" votes="0" />
+                <County name="Whitfield" votes="19" />
+                <County name="Wilcox" votes="0" />
+                <County name="Wilkes" votes="4" />
+                <County name="Wilkinson" votes="3" />
+                <County name="Worth" votes="0" />
+            </VoteType>
+        </Choice>
+        <Choice key="3" text="Jo Jorgensen (Lib)" party="NP" totalVotes="62138">
+            <VoteType name="Election Day Votes" votes="20638">
+                <County name="Appling" votes="5" />
+                <County name="Atkinson" votes="14" />
+                <County name="Bacon" votes="8" />
+                <County name="Baker" votes="2" />
+                <County name="Baldwin" votes="63" />
+                <County name="Banks" votes="20" />
+                <County name="Barrow" votes="226" />
+                <County name="Bartow" votes="276" />
+                <County name="Ben Hill" votes="18" />
+                <County name="Berrien" votes="21" />
+                <County name="Bibb" votes="299" />
+                <County name="Bleckley" votes="20" />
+                <County name="Brantley" votes="24" />
+                <County name="Brooks" votes="16" />
+                <County name="Bryan" votes="108" />
+                <County name="Bulloch" votes="192" />
+                <County name="Burke" votes="25" />
+                <County name="Butts" votes="22" />
+                <County name="Calhoun" votes="6" />
+                <County name="Camden" votes="170" />
+                <County name="Candler" votes="14" />
+                <County name="Carroll" votes="278" />
+                <County name="Catoosa" votes="178" />
+                <County name="Charlton" votes="17" />
+                <County name="Chatham" votes="889" />
+                <County name="Chattahoochee" votes="17" />
+                <County name="Chattooga" votes="50" />
+                <County name="Cherokee" votes="921" />
+                <County name="Clarke" votes="268" />
+                <County name="Clay" votes="5" />
+                <County name="Clayton" votes="343" />
+                <County name="Clinch" votes="2" />
+                <County name="Cobb" votes="2157" />
+                <County name="Coffee" votes="41" />
+                <County name="Colquitt" votes="50" />
+                <County name="Columbia" votes="514" />
+                <County name="Cook" votes="26" />
+                <County name="Coweta" votes="498" />
+                <County name="Crawford" votes="21" />
+                <County name="Crisp" votes="23" />
+                <County name="Dade" votes="51" />
+                <County name="Dawson" votes="62" />
+                <County name="Decatur" votes="20" />
+                <County name="DeKalb" votes="1122" />
+                <County name="Dodge" votes="34" />
+                <County name="Dooly" votes="10" />
+                <County name="Dougherty" votes="133" />
+                <County name="Douglas" votes="259" />
+                <County name="Early" votes="7" />
+                <County name="Echols" votes="4" />
+                <County name="Effingham" votes="233" />
+                <County name="Elbert" votes="30" />
+                <County name="Emanuel" votes="36" />
+                <County name="Evans" votes="12" />
+                <County name="Fannin" votes="43" />
+                <County name="Fayette" votes="279" />
+                <County name="Floyd" votes="199" />
+                <County name="Forsyth" votes="415" />
+                <County name="Franklin" votes="31" />
+                <County name="Fulton" votes="1448" />
+                <County name="Gilmer" votes="64" />
+                <County name="Glascock" votes="3" />
+                <County name="Glynn" votes="149" />
+                <County name="Gordon" votes="107" />
+                <County name="Grady" votes="25" />
+                <County name="Greene" votes="21" />
+                <County name="Gwinnett" votes="1742" />
+                <County name="Habersham" votes="64" />
+                <County name="Hall" votes="402" />
+                <County name="Hancock" votes="10" />
+                <County name="Haralson" votes="55" />
+                <County name="Harris" votes="103" />
+                <County name="Hart" votes="43" />
+                <County name="Heard" votes="21" />
+                <County name="Henry" votes="322" />
+                <County name="Houston" votes="422" />
+                <County name="Irwin" votes="8" />
+                <County name="Jackson" votes="157" />
+                <County name="Jasper" votes="22" />
+                <County name="Jeff Davis" votes="18" />
+                <County name="Jefferson" votes="18" />
+                <County name="Jenkins" votes="15" />
+                <County name="Johnson" votes="9" />
+                <County name="Jones" votes="47" />
+                <County name="Lamar" votes="40" />
+                <County name="Lanier" votes="13" />
+                <County name="Laurens" votes="62" />
+                <County name="Lee" votes="62" />
+                <County name="Liberty" votes="102" />
+                <County name="Lincoln" votes="13" />
+                <County name="Long" votes="33" />
+                <County name="Lowndes" votes="168" />
+                <County name="Lumpkin" votes="63" />
+                <County name="Macon" votes="10" />
+                <County name="Madison" votes="83" />
+                <County name="Marion" votes="12" />
+                <County name="McDuffie" votes="40" />
+                <County name="McIntosh" votes="34" />
+                <County name="Meriwether" votes="25" />
+                <County name="Miller" votes="7" />
+                <County name="Mitchell" votes="17" />
+                <County name="Monroe" votes="52" />
+                <County name="Montgomery" votes="12" />
+                <County name="Morgan" votes="50" />
+                <County name="Murray" votes="50" />
+                <County name="Muscogee" votes="305" />
+                <County name="Newton" votes="289" />
+                <County name="Oconee" votes="113" />
+                <County name="Oglethorpe" votes="26" />
+                <County name="Paulding" votes="327" />
+                <County name="Peach" votes="44" />
+                <County name="Pickens" votes="135" />
+                <County name="Pierce" votes="14" />
+                <County name="Pike" votes="27" />
+                <County name="Polk" votes="58" />
+                <County name="Pulaski" votes="10" />
+                <County name="Putnam" votes="35" />
+                <County name="Quitman" votes="3" />
+                <County name="Rabun" votes="28" />
+                <County name="Randolph" votes="6" />
+                <County name="Richmond" votes="428" />
+                <County name="Rockdale" votes="126" />
+                <County name="Schley" votes="4" />
+                <County name="Screven" votes="24" />
+                <County name="Seminole" votes="15" />
+                <County name="Spalding" votes="132" />
+                <County name="Stephens" votes="33" />
+                <County name="Stewart" votes="2" />
+                <County name="Sumter" votes="26" />
+                <County name="Talbot" votes="9" />
+                <County name="Taliaferro" votes="4" />
+                <County name="Tattnall" votes="34" />
+                <County name="Taylor" votes="13" />
+                <County name="Telfair" votes="10" />
+                <County name="Terrell" votes="15" />
+                <County name="Thomas" votes="65" />
+                <County name="Tift" votes="54" />
+                <County name="Toombs" votes="49" />
+                <County name="Towns" votes="17" />
+                <County name="Treutlen" votes="10" />
+                <County name="Troup" votes="139" />
+                <County name="Turner" votes="6" />
+                <County name="Twiggs" votes="15" />
+                <County name="Union" votes="49" />
+                <County name="Upson" votes="28" />
+                <County name="Walker" votes="162" />
+                <County name="Walton" votes="225" />
+                <County name="Ware" votes="46" />
+                <County name="Warren" votes="6" />
+                <County name="Washington" votes="25" />
+                <County name="Wayne" votes="35" />
+                <County name="Webster" votes="0" />
+                <County name="Wheeler" votes="5" />
+                <County name="White" votes="80" />
+                <County name="Whitfield" votes="194" />
+                <County name="Wilcox" votes="8" />
+                <County name="Wilkes" votes="16" />
+                <County name="Wilkinson" votes="17" />
+                <County name="Worth" votes="22" />
+            </VoteType>
+            <VoteType name="Absentee by Mail Votes" votes="16057">
+                <County name="Appling" votes="5" />
+                <County name="Atkinson" votes="3" />
+                <County name="Bacon" votes="4" />
+                <County name="Baker" votes="2" />
+                <County name="Baldwin" votes="38" />
+                <County name="Banks" votes="9" />
+                <County name="Barrow" votes="131" />
+                <County name="Bartow" votes="148" />
+                <County name="Ben Hill" votes="8" />
+                <County name="Berrien" votes="9" />
+                <County name="Bibb" votes="174" />
+                <County name="Bleckley" votes="10" />
+                <County name="Brantley" votes="11" />
+                <County name="Brooks" votes="9" />
+                <County name="Bryan" votes="72" />
+                <County name="Bulloch" votes="87" />
+                <County name="Burke" votes="14" />
+                <County name="Butts" votes="20" />
+                <County name="Calhoun" votes="3" />
+                <County name="Camden" votes="95" />
+                <County name="Candler" votes="4" />
+                <County name="Carroll" votes="125" />
+                <County name="Catoosa" votes="78" />
+                <County name="Charlton" votes="7" />
+                <County name="Chatham" votes="506" />
+                <County name="Chattahoochee" votes="9" />
+                <County name="Chattooga" votes="25" />
+                <County name="Cherokee" votes="628" />
+                <County name="Clarke" votes="243" />
+                <County name="Clay" votes="2" />
+                <County name="Clayton" votes="312" />
+                <County name="Clinch" votes="2" />
+                <County name="Cobb" votes="2320" />
+                <County name="Coffee" votes="17" />
+                <County name="Colquitt" votes="20" />
+                <County name="Columbia" votes="241" />
+                <County name="Cook" votes="14" />
+                <County name="Coweta" votes="304" />
+                <County name="Crawford" votes="10" />
+                <County name="Crisp" votes="10" />
+                <County name="Dade" votes="12" />
+                <County name="Dawson" votes="44" />
+                <County name="Decatur" votes="23" />
+                <County name="DeKalb" votes="1356" />
+                <County name="Dodge" votes="10" />
+                <County name="Dooly" votes="7" />
+                <County name="Dougherty" votes="70" />
+                <County name="Douglas" votes="227" />
+                <County name="Early" votes="6" />
+                <County name="Echols" votes="3" />
+                <County name="Effingham" votes="92" />
+                <County name="Elbert" votes="13" />
+                <County name="Emanuel" votes="7" />
+                <County name="Evans" votes="12" />
+                <County name="Fannin" votes="32" />
+                <County name="Fayette" votes="232" />
+                <County name="Floyd" votes="98" />
+                <County name="Forsyth" votes="477" />
+                <County name="Franklin" votes="25" />
+                <County name="Fulton" votes="1727" />
+                <County name="Gilmer" votes="35" />
+                <County name="Glascock" votes="1" />
+                <County name="Glynn" votes="105" />
+                <County name="Gordon" votes="51" />
+                <County name="Grady" votes="11" />
+                <County name="Greene" votes="19" />
+                <County name="Gwinnett" votes="1679" />
+                <County name="Habersham" votes="42" />
+                <County name="Hall" votes="305" />
+                <County name="Hancock" votes="7" />
+                <County name="Haralson" votes="30" />
+                <County name="Harris" votes="62" />
+                <County name="Hart" votes="20" />
+                <County name="Heard" votes="11" />
+                <County name="Henry" votes="310" />
+                <County name="Houston" votes="294" />
+                <County name="Irwin" votes="1" />
+                <County name="Jackson" votes="116" />
+                <County name="Jasper" votes="18" />
+                <County name="Jeff Davis" votes="13" />
+                <County name="Jefferson" votes="6" />
+                <County name="Jenkins" votes="5" />
+                <County name="Johnson" votes="6" />
+                <County name="Jones" votes="18" />
+                <County name="Lamar" votes="14" />
+                <County name="Lanier" votes="10" />
+                <County name="Laurens" votes="38" />
+                <County name="Lee" votes="19" />
+                <County name="Liberty" votes="93" />
+                <County name="Lincoln" votes="10" />
+                <County name="Long" votes="14" />
+                <County name="Lowndes" votes="122" />
+                <County name="Lumpkin" votes="48" />
+                <County name="Macon" votes="2" />
+                <County name="Madison" votes="40" />
+                <County name="Marion" votes="6" />
+                <County name="McDuffie" votes="23" />
+                <County name="McIntosh" votes="15" />
+                <County name="Meriwether" votes="17" />
+                <County name="Miller" votes="2" />
+                <County name="Mitchell" votes="9" />
+                <County name="Monroe" votes="27" />
+                <County name="Montgomery" votes="3" />
+                <County name="Morgan" votes="19" />
+                <County name="Murray" votes="22" />
+                <County name="Muscogee" votes="261" />
+                <County name="Newton" votes="158" />
+                <County name="Oconee" votes="76" />
+                <County name="Oglethorpe" votes="28" />
+                <County name="Paulding" votes="278" />
+                <County name="Peach" votes="12" />
+                <County name="Pickens" votes="34" />
+                <County name="Pierce" votes="6" />
+                <County name="Pike" votes="20" />
+                <County name="Polk" votes="24" />
+                <County name="Pulaski" votes="9" />
+                <County name="Putnam" votes="34" />
+                <County name="Quitman" votes="1" />
+                <County name="Rabun" votes="33" />
+                <County name="Randolph" votes="2" />
+                <County name="Richmond" votes="322" />
+                <County name="Rockdale" votes="115" />
+                <County name="Schley" votes="3" />
+                <County name="Screven" votes="5" />
+                <County name="Seminole" votes="1" />
+                <County name="Spalding" votes="53" />
+                <County name="Stephens" votes="24" />
+                <County name="Stewart" votes="2" />
+                <County name="Sumter" votes="18" />
+                <County name="Talbot" votes="2" />
+                <County name="Taliaferro" votes="1" />
+                <County name="Tattnall" votes="10" />
+                <County name="Taylor" votes="3" />
+                <County name="Telfair" votes="2" />
+                <County name="Terrell" votes="12" />
+                <County name="Thomas" votes="35" />
+                <County name="Tift" votes="33" />
+                <County name="Toombs" votes="16" />
+                <County name="Towns" votes="10" />
+                <County name="Treutlen" votes="4" />
+                <County name="Troup" votes="60" />
+                <County name="Turner" votes="5" />
+                <County name="Twiggs" votes="7" />
+                <County name="Union" votes="23" />
+                <County name="Upson" votes="20" />
+                <County name="Walker" votes="76" />
+                <County name="Walton" votes="111" />
+                <County name="Ware" votes="17" />
+                <County name="Warren" votes="1" />
+                <County name="Washington" votes="14" />
+                <County name="Wayne" votes="16" />
+                <County name="Webster" votes="2" />
+                <County name="Wheeler" votes="1" />
+                <County name="White" votes="27" />
+                <County name="Whitfield" votes="84" />
+                <County name="Wilcox" votes="2" />
+                <County name="Wilkes" votes="10" />
+                <County name="Wilkinson" votes="4" />
+                <County name="Worth" votes="10" />
+            </VoteType>
+            <VoteType name="Advanced Voting Votes" votes="25209">
+                <County name="Appling" votes="26" />
+                <County name="Atkinson" votes="13" />
+                <County name="Bacon" votes="13" />
+                <County name="Baker" votes="2" />
+                <County name="Baldwin" votes="107" />
+                <County name="Banks" votes="45" />
+                <County name="Barrow" votes="307" />
+                <County name="Bartow" votes="275" />
+                <County name="Ben Hill" votes="32" />
+                <County name="Berrien" votes="25" />
+                <County name="Bibb" votes="273" />
+                <County name="Bleckley" votes="37" />
+                <County name="Brantley" votes="21" />
+                <County name="Brooks" votes="25" />
+                <County name="Bryan" votes="177" />
+                <County name="Bulloch" votes="175" />
+                <County name="Burke" votes="36" />
+                <County name="Butts" votes="49" />
+                <County name="Calhoun" votes="2" />
+                <County name="Camden" votes="205" />
+                <County name="Candler" votes="11" />
+                <County name="Carroll" votes="357" />
+                <County name="Catoosa" votes="236" />
+                <County name="Charlton" votes="20" />
+                <County name="Chatham" votes="519" />
+                <County name="Chattahoochee" votes="8" />
+                <County name="Chattooga" votes="57" />
+                <County name="Cherokee" votes="899" />
+                <County name="Clarke" votes="325" />
+                <County name="Clay" votes="0" />
+                <County name="Clayton" votes="397" />
+                <County name="Clinch" votes="8" />
+                <County name="Cobb" votes="1952" />
+                <County name="Coffee" votes="67" />
+                <County name="Colquitt" votes="49" />
+                <County name="Columbia" votes="575" />
+                <County name="Cook" votes="36" />
+                <County name="Coweta" votes="283" />
+                <County name="Crawford" votes="28" />
+                <County name="Crisp" votes="33" />
+                <County name="Dade" votes="44" />
+                <County name="Dawson" votes="90" />
+                <County name="Decatur" votes="46" />
+                <County name="DeKalb" votes="1707" />
+                <County name="Dodge" votes="11" />
+                <County name="Dooly" votes="18" />
+                <County name="Dougherty" votes="74" />
+                <County name="Douglas" votes="349" />
+                <County name="Early" votes="15" />
+                <County name="Echols" votes="11" />
+                <County name="Effingham" votes="167" />
+                <County name="Elbert" votes="23" />
+                <County name="Emanuel" votes="22" />
+                <County name="Evans" votes="11" />
+                <County name="Fannin" votes="35" />
+                <County name="Fayette" votes="463" />
+                <County name="Floyd" votes="220" />
+                <County name="Forsyth" votes="1087" />
+                <County name="Franklin" votes="47" />
+                <County name="Fulton" votes="3004" />
+                <County name="Gilmer" votes="64" />
+                <County name="Glascock" votes="4" />
+                <County name="Glynn" votes="234" />
+                <County name="Gordon" votes="86" />
+                <County name="Grady" votes="18" />
+                <County name="Greene" votes="51" />
+                <County name="Gwinnett" votes="2186" />
+                <County name="Habersham" votes="126" />
+                <County name="Hall" votes="611" />
+                <County name="Hancock" votes="4" />
+                <County name="Haralson" votes="40" />
+                <County name="Harris" votes="50" />
+                <County name="Hart" votes="43" />
+                <County name="Heard" votes="19" />
+                <County name="Henry" votes="645" />
+                <County name="Houston" votes="339" />
+                <County name="Irwin" votes="17" />
+                <County name="Jackson" votes="258" />
+                <County name="Jasper" votes="21" />
+                <County name="Jeff Davis" votes="17" />
+                <County name="Jefferson" votes="20" />
+                <County name="Jenkins" votes="8" />
+                <County name="Johnson" votes="13" />
+                <County name="Jones" votes="47" />
+                <County name="Lamar" votes="40" />
+                <County name="Lanier" votes="25" />
+                <County name="Laurens" votes="63" />
+                <County name="Lee" votes="68" />
+                <County name="Liberty" votes="136" />
+                <County name="Lincoln" votes="13" />
+                <County name="Long" votes="48" />
+                <County name="Lowndes" votes="249" />
+                <County name="Lumpkin" votes="131" />
+                <County name="Macon" votes="10" />
+                <County name="Madison" votes="77" />
+                <County name="Marion" votes="20" />
+                <County name="McDuffie" votes="55" />
+                <County name="McIntosh" votes="19" />
+                <County name="Meriwether" votes="24" />
+                <County name="Miller" votes="11" />
+                <County name="Mitchell" votes="7" />
+                <County name="Monroe" votes="69" />
+                <County name="Montgomery" votes="12" />
+                <County name="Morgan" votes="53" />
+                <County name="Murray" votes="72" />
+                <County name="Muscogee" votes="397" />
+                <County name="Newton" votes="129" />
+                <County name="Oconee" votes="222" />
+                <County name="Oglethorpe" votes="47" />
+                <County name="Paulding" votes="550" />
+                <County name="Peach" votes="66" />
+                <County name="Pickens" votes="64" />
+                <County name="Pierce" votes="29" />
+                <County name="Pike" votes="41" />
+                <County name="Polk" votes="67" />
+                <County name="Pulaski" votes="18" />
+                <County name="Putnam" votes="47" />
+                <County name="Quitman" votes="1" />
+                <County name="Rabun" votes="49" />
+                <County name="Randolph" votes="4" />
+                <County name="Richmond" votes="359" />
+                <County name="Rockdale" votes="189" />
+                <County name="Schley" votes="6" />
+                <County name="Screven" votes="22" />
+                <County name="Seminole" votes="3" />
+                <County name="Spalding" votes="78" />
+                <County name="Stephens" votes="75" />
+                <County name="Stewart" votes="3" />
+                <County name="Sumter" votes="56" />
+                <County name="Talbot" votes="5" />
+                <County name="Taliaferro" votes="2" />
+                <County name="Tattnall" votes="25" />
+                <County name="Taylor" votes="18" />
+                <County name="Telfair" votes="9" />
+                <County name="Terrell" votes="9" />
+                <County name="Thomas" votes="91" />
+                <County name="Tift" votes="88" />
+                <County name="Toombs" votes="38" />
+                <County name="Towns" votes="18" />
+                <County name="Treutlen" votes="10" />
+                <County name="Troup" votes="129" />
+                <County name="Turner" votes="22" />
+                <County name="Twiggs" votes="8" />
+                <County name="Union" votes="36" />
+                <County name="Upson" votes="48" />
+                <County name="Walker" votes="173" />
+                <County name="Walton" votes="235" />
+                <County name="Ware" votes="52" />
+                <County name="Warren" votes="9" />
+                <County name="Washington" votes="27" />
+                <County name="Wayne" votes="53" />
+                <County name="Webster" votes="1" />
+                <County name="Wheeler" votes="7" />
+                <County name="White" votes="76" />
+                <County name="Whitfield" votes="162" />
+                <County name="Wilcox" votes="6" />
+                <County name="Wilkes" votes="20" />
+                <County name="Wilkinson" votes="10" />
+                <County name="Worth" votes="28" />
+            </VoteType>
+            <VoteType name="Provisional Votes" votes="234">
+                <County name="Appling" votes="0" />
+                <County name="Atkinson" votes="0" />
+                <County name="Bacon" votes="0" />
+                <County name="Baker" votes="0" />
+                <County name="Baldwin" votes="0" />
+                <County name="Banks" votes="0" />
+                <County name="Barrow" votes="0" />
+                <County name="Bartow" votes="2" />
+                <County name="Ben Hill" votes="0" />
+                <County name="Berrien" votes="0" />
+                <County name="Bibb" votes="3" />
+                <County name="Bleckley" votes="0" />
+                <County name="Brantley" votes="0" />
+                <County name="Brooks" votes="0" />
+                <County name="Bryan" votes="0" />
+                <County name="Bulloch" votes="1" />
+                <County name="Burke" votes="0" />
+                <County name="Butts" votes="0" />
+                <County name="Calhoun" votes="0" />
+                <County name="Camden" votes="0" />
+                <County name="Candler" votes="0" />
+                <County name="Carroll" votes="0" />
+                <County name="Catoosa" votes="2" />
+                <County name="Charlton" votes="0" />
+                <County name="Chatham" votes="15" />
+                <County name="Chattahoochee" votes="1" />
+                <County name="Chattooga" votes="0" />
+                <County name="Cherokee" votes="1" />
+                <County name="Clarke" votes="3" />
+                <County name="Clay" votes="0" />
+                <County name="Clayton" votes="3" />
+                <County name="Clinch" votes="0" />
+                <County name="Cobb" votes="12" />
+                <County name="Coffee" votes="0" />
+                <County name="Colquitt" votes="0" />
+                <County name="Columbia" votes="0" />
+                <County name="Cook" votes="0" />
+                <County name="Coweta" votes="3" />
+                <County name="Crawford" votes="0" />
+                <County name="Crisp" votes="0" />
+                <County name="Dade" votes="0" />
+                <County name="Dawson" votes="1" />
+                <County name="Decatur" votes="0" />
+                <County name="DeKalb" votes="19" />
+                <County name="Dodge" votes="1" />
+                <County name="Dooly" votes="0" />
+                <County name="Dougherty" votes="3" />
+                <County name="Douglas" votes="2" />
+                <County name="Early" votes="0" />
+                <County name="Echols" votes="0" />
+                <County name="Effingham" votes="0" />
+                <County name="Elbert" votes="0" />
+                <County name="Emanuel" votes="1" />
+                <County name="Evans" votes="0" />
+                <County name="Fannin" votes="0" />
+                <County name="Fayette" votes="2" />
+                <County name="Floyd" votes="0" />
+                <County name="Forsyth" votes="1" />
+                <County name="Franklin" votes="0" />
+                <County name="Fulton" votes="96" />
+                <County name="Gilmer" votes="1" />
+                <County name="Glascock" votes="0" />
+                <County name="Glynn" votes="1" />
+                <County name="Gordon" votes="0" />
+                <County name="Grady" votes="0" />
+                <County name="Greene" votes="0" />
+                <County name="Gwinnett" votes="18" />
+                <County name="Habersham" votes="0" />
+                <County name="Hall" votes="4" />
+                <County name="Hancock" votes="0" />
+                <County name="Haralson" votes="0" />
+                <County name="Harris" votes="0" />
+                <County name="Hart" votes="0" />
+                <County name="Heard" votes="0" />
+                <County name="Henry" votes="2" />
+                <County name="Houston" votes="2" />
+                <County name="Irwin" votes="0" />
+                <County name="Jackson" votes="0" />
+                <County name="Jasper" votes="0" />
+                <County name="Jeff Davis" votes="0" />
+                <County name="Jefferson" votes="0" />
+                <County name="Jenkins" votes="0" />
+                <County name="Johnson" votes="0" />
+                <County name="Jones" votes="1" />
+                <County name="Lamar" votes="0" />
+                <County name="Lanier" votes="0" />
+                <County name="Laurens" votes="0" />
+                <County name="Lee" votes="0" />
+                <County name="Liberty" votes="0" />
+                <County name="Lincoln" votes="0" />
+                <County name="Long" votes="0" />
+                <County name="Lowndes" votes="8" />
+                <County name="Lumpkin" votes="0" />
+                <County name="Macon" votes="0" />
+                <County name="Madison" votes="0" />
+                <County name="Marion" votes="0" />
+                <County name="McDuffie" votes="0" />
+                <County name="McIntosh" votes="0" />
+                <County name="Meriwether" votes="0" />
+                <County name="Miller" votes="0" />
+                <County name="Mitchell" votes="0" />
+                <County name="Monroe" votes="0" />
+                <County name="Montgomery" votes="0" />
+                <County name="Morgan" votes="0" />
+                <County name="Murray" votes="0" />
+                <County name="Muscogee" votes="2" />
+                <County name="Newton" votes="0" />
+                <County name="Oconee" votes="0" />
+                <County name="Oglethorpe" votes="1" />
+                <County name="Paulding" votes="1" />
+                <County name="Peach" votes="1" />
+                <County name="Pickens" votes="0" />
+                <County name="Pierce" votes="0" />
+                <County name="Pike" votes="0" />
+                <County name="Polk" votes="3" />
+                <County name="Pulaski" votes="0" />
+                <County name="Putnam" votes="0" />
+                <County name="Quitman" votes="0" />
+                <County name="Rabun" votes="0" />
+                <County name="Randolph" votes="0" />
+                <County name="Richmond" votes="2" />
+                <County name="Rockdale" votes="0" />
+                <County name="Schley" votes="0" />
+                <County name="Screven" votes="0" />
+                <County name="Seminole" votes="0" />
+                <County name="Spalding" votes="12" />
+                <County name="Stephens" votes="0" />
+                <County name="Stewart" votes="0" />
+                <County name="Sumter" votes="0" />
+                <County name="Talbot" votes="0" />
+                <County name="Taliaferro" votes="0" />
+                <County name="Tattnall" votes="0" />
+                <County name="Taylor" votes="0" />
+                <County name="Telfair" votes="0" />
+                <County name="Terrell" votes="0" />
+                <County name="Thomas" votes="0" />
+                <County name="Tift" votes="2" />
+                <County name="Toombs" votes="0" />
+                <County name="Towns" votes="0" />
+                <County name="Treutlen" votes="0" />
+                <County name="Troup" votes="0" />
+                <County name="Turner" votes="0" />
+                <County name="Twiggs" votes="0" />
+                <County name="Union" votes="0" />
+                <County name="Upson" votes="0" />
+                <County name="Walker" votes="0" />
+                <County name="Walton" votes="0" />
+                <County name="Ware" votes="1" />
+                <County name="Warren" votes="0" />
+                <County name="Washington" votes="0" />
+                <County name="Wayne" votes="0" />
+                <County name="Webster" votes="0" />
+                <County name="Wheeler" votes="0" />
+                <County name="White" votes="0" />
+                <County name="Whitfield" votes="0" />
+                <County name="Wilcox" votes="0" />
+                <County name="Wilkes" votes="0" />
+                <County name="Wilkinson" votes="0" />
+                <County name="Worth" votes="0" />
+            </VoteType>
+        </Choice>
+    </Contest>
+    <Contest key="40100" text="State Senate District 1" voteFor="1" isQuestion="false" countiesParticipating="3" countiesReported="3" precinctsParticipating="51" precinctsReported="51" precinctsReportingPercent="100.00">
+        <ParticipatingCounties>
+            <County name="Bryan" precinctsParticipating="10" precinctsReported="10" precinctsReportingPercent="100.00" />
+            <County name="Chatham" precinctsParticipating="30" precinctsReported="30" precinctsReportingPercent="100.00" />
+            <County name="Liberty" precinctsParticipating="11" precinctsReported="11" precinctsReportingPercent="100.00" />
+        </ParticipatingCounties>
+        <Choice key="35" text="Ben Watson (I) (Rep)" party="NP" totalVotes="72192">
+            <VoteType name="Election Day Votes" votes="18343">
+                <County name="Bryan" votes="3072" />
+                <County name="Chatham" votes="13248" />
+                <County name="Liberty" votes="2023" />
+            </VoteType>
+            <VoteType name="Absentee by Mail Votes" votes="16443">
+                <County name="Bryan" votes="2380" />
+                <County name="Chatham" votes="11782" />
+                <County name="Liberty" votes="2281" />
+            </VoteType>
+            <VoteType name="Advanced Voting Votes" votes="37329">
+                <County name="Bryan" votes="11830" />
+                <County name="Chatham" votes="18972" />
+                <County name="Liberty" votes="6527" />
+            </VoteType>
+            <VoteType name="Provisional Votes" votes="77">
+                <County name="Bryan" votes="5" />
+                <County name="Chatham" votes="68" />
+                <County name="Liberty" votes="4" />
+            </VoteType>
+        </Choice>
+    </Contest>
+</ElectionResult>
