@@ -6,7 +6,7 @@ def test_georgia_precinct_formatting_basic(atkinson_precincts, ga_county_mapping
 
     assert len(results) == 25
     assert results["2020-11-03_GA_G_P_13003"]["precinctsReportingPct"] == 100
-    assert results["2020-11-03_GA_G_P_13003"]["lastUpdated"] == "2020-11-06T13:05:50Z"
+    assert results["2020-11-03_GA_G_P_13003"]["lastUpdated"] == "2020-11-06T18:05:50Z"
 
     # Top level counts for this county
     counts = results["2020-11-03_GA_G_P_13003"]["counts"]
@@ -45,7 +45,7 @@ def test_georgia_state_formatting_basic(ga_counties, ga_county_mapping_fips):
     assert "2020-11-03_GA_G_state_senate_district_1" in results
     assert not results["2020-11-03_GA_G_P"].get("subunits")
     assert results["2020-11-03_GA_G_P"]["precinctsReportingPct"] == 100
-    assert results["2020-11-03_GA_G_P"]["lastUpdated"] == "2020-11-20T15:37:06Z"
+    assert results["2020-11-03_GA_G_P"]["lastUpdated"] == "2020-11-20T20:37:06Z"
     counts = results["2020-11-03_GA_G_P"]["counts"]
     assert counts["donald_j_trump_i_rep"] == 2461837
     assert counts["joseph_r_biden_dem"] == 2474507

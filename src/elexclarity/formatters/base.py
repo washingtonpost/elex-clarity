@@ -38,7 +38,7 @@ class ClarityConverter(object):
     def get_timestamp(cls, input_timestamp):
         # convert the timestamp and make sure we're in EST
         est = tz.gettz("America/New_York")
-        return parser.parse(input_timestamp, tzinfos={"EST": est}).astimezone(est)
+        return parser.parse(input_timestamp, tzinfos={"EST": est}).astimezone(tz.gettz("UTC"))
 
     @classmethod
     def format_last_updated(cls, input_timestamp):
