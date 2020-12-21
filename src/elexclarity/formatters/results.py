@@ -116,11 +116,12 @@ class ClarityDetailXMLConverter(ClarityConverter):
 
         choices = get_list(contest["Choice"])
         contest_name = contest["text"]
+        office = self.get_race_office(contest_name)
         id_parts = [
             election_date,
             self.state_postal,
             election_type,
-            self.get_race_office(contest_name)
+            office
         ]
         if level == "precinct":
             id_parts.append(county_id)
@@ -130,7 +131,8 @@ class ClarityDetailXMLConverter(ClarityConverter):
             "id": race_id,
             "source": "clarity",
             "precinctsReportingPct": precincts_reporting_pct,
-            "counts": self.format_top_level_counts(choices)
+            "counts": self.format_top_level_counts(choices),
+            "office": office
         }
         if timestamp:
             result["lastUpdated"] = timestamp
@@ -154,6 +156,9 @@ class ClarityDetailXMLConverter(ClarityConverter):
         election_type = self.get_race_type(dictified_data["ElectionName"])
         timestamp = self.format_last_updated(dictified_data["Timestamp"])
 
+
+        officeID = kwargs.get("officeID", ())
+
         for contest in get_list(dictified_data.get("Contest")):
             race_result = self.format_race(
                 contest,
@@ -164,5 +169,9 @@ class ClarityDetailXMLConverter(ClarityConverter):
                 timestamp=timestamp,
                 **kwargs
             )
-            result[race_result["id"]] = race_result
+
+            office = race_result.get('office')
+            if not officeID or office in officeID:
+                result[race_result["id"]] = race_result
+
         return result

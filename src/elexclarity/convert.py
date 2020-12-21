@@ -6,6 +6,10 @@ def convert(data, statepostal, outputType="results", style="default", countyMapp
     """
     The entry point for formatting Clarity results data.
     """
+
+    if kwargs.get("officeID") and type(kwargs.get("officeID")) == str:
+        kwargs["officeID"] = kwargs["officeID"].split(",")
+
     if style == "raw" or outputType == "summary":
         return data
 
@@ -20,9 +24,13 @@ def convert(data, statepostal, outputType="results", style="default", countyMapp
             statepostal,
             county_lookup=countyMapping
         )
-        results = {}
-        for sub_result in data:
-            results.update(converter.convert(sub_result, **kwargs))
-        return results
+
+        if type(data) == list:
+            results = {}
+            for sub_result in data:
+                results.update(converter.convert(sub_result, **kwargs))
+            return results
+        else:
+            return converter.convert(data, **kwargs)
 
     raise Exception(f"The {outputType} Clarity formatter is not implemented yet")
