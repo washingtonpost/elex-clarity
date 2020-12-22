@@ -27,6 +27,7 @@ class ClaritySettingsConverter(ClarityConverter):
                     ])
                     race_id_settings_mapping[race_id] = {
                         "id": race_id,
+                        "name": name,
                         "version": version,
                         "lastUpdated": last_updated,
                         "clarityId": clarity_id
