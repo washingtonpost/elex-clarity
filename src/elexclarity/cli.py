@@ -33,10 +33,6 @@ STRING_LIST = StringListParamType()
     'settings',
     'results'
 ]))
-@click.option('--resultsBy', 'resultsBy', default='candidate', type=click.Choice([
-    'candidate',
-    'party',
-]))
 @click.option('--style', default='default', type=click.Choice([
     'default',
     'raw'
