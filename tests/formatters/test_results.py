@@ -2,11 +2,15 @@ from elexclarity.formatters.results import ClarityDetailXMLConverter
 
 
 def test_georgia_precinct_formatting_basic(atkinson_precincts, ga_county_mapping_fips):
-    results = ClarityDetailXMLConverter("GA", county_lookup=ga_county_mapping_fips).convert(atkinson_precincts, level="precinct")
+    results = ClarityDetailXMLConverter("GA", county_lookup=ga_county_mapping_fips).convert(
+        atkinson_precincts,
+        level="precinct"
+    )
 
     assert len(results) == 25
     assert results["2020-11-03_GA_G_P_13003"]["precinctsReportingPct"] == 100
     assert results["2020-11-03_GA_G_P_13003"]["lastUpdated"] == "2020-11-06T18:05:50Z"
+    assert len(results["2020-11-03_GA_G_P_13003"]["subunits"]) == 4
 
     # Top level counts for this county
     counts = results["2020-11-03_GA_G_P_13003"]["counts"]
@@ -14,12 +18,40 @@ def test_georgia_precinct_formatting_basic(atkinson_precincts, ga_county_mapping
     assert counts["joseph_r_biden_dem"] == 825
     assert counts["jo_jorgensen_lib"] == 30
 
-    # Subunit
-    assert len(results["2020-11-03_GA_G_P_13003"]["subunits"]) == 4
+    # Pearson City precinct
     pearson = results["2020-11-03_GA_G_P_13003"]["subunits"]["pearson_city"]
+    assert pearson["precinctsReportingPct"] == 100
+    assert pearson["expectedVotes"] == 564
     assert pearson["counts"]["donald_j_trump_i_rep"] == 229
     assert pearson["counts"]["joseph_r_biden_dem"] == 329
     assert pearson["counts"]["jo_jorgensen_lib"] == 6
+
+    # Willacoochee precinct
+    willacoochee = results["2020-11-03_GA_G_P_13003"]["subunits"]["willacoochee"]
+    assert willacoochee["precinctsReportingPct"] == 100
+    assert willacoochee["expectedVotes"] == 522
+    assert willacoochee["counts"]["donald_j_trump_i_rep"] == 342
+    assert willacoochee["counts"]["joseph_r_biden_dem"] == 174
+    assert willacoochee["counts"]["jo_jorgensen_lib"] == 6
+
+
+def test_georgia_precinct_formatting_vote_types_completion_mode(atkinson_precincts, ga_county_mapping_fips):
+    results = ClarityDetailXMLConverter("GA", county_lookup=ga_county_mapping_fips).convert(
+        atkinson_precincts,
+        level="precinct",
+        office_id="P",
+        vote_completion_mode="voteTypes"
+    )
+
+    # Pearson City precinct
+    pearson = results["2020-11-03_GA_G_P_13003"]["subunits"]["pearson_city"]
+    assert pearson["precinctsReportingPct"] == 100
+    assert pearson["expectedVotes"] == 564
+
+    # Willacoochee precinct
+    willacoochee = results["2020-11-03_GA_G_P_13003"]["subunits"]["willacoochee"]
+    assert willacoochee["precinctsReportingPct"] == 0
+    assert willacoochee["expectedVotes"] == 0
 
 
 def test_georgia_precinct_formatting_race_name_mapping(gwinnett_precincts, ga_county_mapping_fips):
@@ -27,7 +59,10 @@ def test_georgia_precinct_formatting_race_name_mapping(gwinnett_precincts, ga_co
     Gwinnett has some special contest names so this test makes sure that those get mapped
     to the right office IDs
     '''
-    results = ClarityDetailXMLConverter("GA", county_lookup=ga_county_mapping_fips).convert(gwinnett_precincts, level="precinct")
+    results = ClarityDetailXMLConverter("GA", county_lookup=ga_county_mapping_fips).convert(
+        gwinnett_precincts,
+        level="precinct"
+    )
 
     # President
     assert "2020-11-03_GA_G_P_13135" in results
@@ -38,7 +73,10 @@ def test_georgia_precinct_formatting_race_name_mapping(gwinnett_precincts, ga_co
 
 
 def test_georgia_state_formatting_basic(ga_counties, ga_county_mapping_fips):
-    results = ClarityDetailXMLConverter("GA", county_lookup=ga_county_mapping_fips).convert(ga_counties, level="state")
+    results = ClarityDetailXMLConverter("GA", county_lookup=ga_county_mapping_fips).convert(
+        ga_counties,
+        level="state"
+    )
 
     assert len(results) == 2
     assert "2020-11-03_GA_G_P" in results
@@ -53,7 +91,10 @@ def test_georgia_state_formatting_basic(ga_counties, ga_county_mapping_fips):
 
 
 def test_georgia_county_formatting_basic(ga_counties, ga_county_mapping_fips):
-    results = ClarityDetailXMLConverter("GA", county_lookup=ga_county_mapping_fips).convert(ga_counties, level="county")
+    results = ClarityDetailXMLConverter("GA", county_lookup=ga_county_mapping_fips).convert(
+        ga_counties,
+        level="county"
+    )
 
     assert len(results["2020-11-03_GA_G_P"]["subunits"]) == 159
     # County-level counts
@@ -65,7 +106,10 @@ def test_georgia_county_formatting_basic(ga_counties, ga_county_mapping_fips):
 
 
 def test_georgia_county_formatting_alternate_county_mapping(ga_counties, ga_county_mapping_alternate):
-    results = ClarityDetailXMLConverter("GA", county_lookup=ga_county_mapping_alternate).convert(ga_counties, level="county")
+    results = ClarityDetailXMLConverter("GA", county_lookup=ga_county_mapping_alternate).convert(
+        ga_counties,
+        level="county"
+    )
 
     assert len(results) == 2
     catoosa_county = results["2020-11-03_GA_G_P"]["subunits"]["22"]

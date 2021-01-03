@@ -33,6 +33,10 @@ STRING_LIST = StringListParamType()
     'settings',
     'results'
 ]))
+@click.option('--voteCompletionMode', 'voteCompletionMode', default='percentReporting', type=click.Choice([
+    'percentReporting',
+    'voteTypes'
+]))
 @click.option('--style', default='default', type=click.Choice([
     'default',
     'raw'

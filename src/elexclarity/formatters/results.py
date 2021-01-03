@@ -10,6 +10,7 @@ class ClarityDetailXMLConverter(ClarityConverter):
     """
     A class to convert Clarity XML into our expected data format.
     """
+    NUM_VOTE_TYPES = 4
 
     def aggregate_choice_vote_types(self, choice, level):
         """
@@ -73,19 +74,42 @@ class ClarityDetailXMLConverter(ClarityConverter):
 
         return subunits
 
-    def format_subunits(self, choices, level):
+    def get_vote_totals_by_vote_types(self, choices, level):
+        subunit_vote_types = {}
+        clarity_level = level.capitalize()
+
+        for choice in choices:
+            for vote_type in get_list(choice.get("VoteType", [])):
+                vote_type_subunits = vote_type.get(clarity_level, [])
+                for vote_type_subunit in get_list(vote_type_subunits):
+                    subunit_id = self.get_precinct_id(vote_type_subunit["name"])
+                    subunit_vote_types.setdefault(subunit_id, defaultdict(lambda: 0))
+                    subunit_vote_types[subunit_id][vote_type["name"]] += int(vote_type_subunit["votes"])
+
+        return subunit_vote_types
+
+    def _get_valid_contest_choices(self, contest):
+        return list(filter(lambda choice: choice.get("text"), get_list(contest["Choice"])))
+
+    def format_subunits(self, choices, level, subunit_fully_reporting_statuses=None):
         """
         Takes a list of `Choice` objects from Clarity and aggregates/transforms
         them into a the format our data importer expects.
         """
         subunit_results = {}
-        for choice in filter(lambda choice: choice.get("text"), choices):
+
+        for choice in choices:
             choice_votes_by_subunit = self.aggregate_choice_vote_types(choice, level)
             for subunit_id, subunit_choice_votes in choice_votes_by_subunit.items():
                 subunit_results.setdefault(subunit_id, {"id": subunit_id, "counts": defaultdict(lambda: 0)})
                 choice_id = self.get_choice_id(choice.get("text"))
                 subunit_results[subunit_id]["counts"][choice_id] += subunit_choice_votes
 
+        if subunit_fully_reporting_statuses:
+            for subunit_id, subunit_result in subunit_results.items():
+                is_subunit_fully_reporting = subunit_fully_reporting_statuses.get(subunit_id, False)
+                subunit_result["precinctsReportingPct"] = 100 if is_subunit_fully_reporting else 0
+                subunit_result["expectedVotes"] = sum(subunit_results[subunit_id]["counts"].values()) if is_subunit_fully_reporting else 0
         return subunit_results
 
     def format_top_level_counts(self, choices):
@@ -101,7 +125,58 @@ class ClarityDetailXMLConverter(ClarityConverter):
 
         return counts
 
-    def format_race(self, contest, election_date, election_type, timestamp=None, level=None, county_id=None, **kwargs):
+    def _get_precinct_fully_reporting_statuses_via_percent_reporting(self, election):
+        """
+        Constructs a mapping from precinct IDs to boolean flags representing
+        whether or not the given precinct is fully reporting. This method does so by looking
+        at the VoterTurnout from the ElectionResults tag in the precinct details xml
+        and checking if ``percentReporting`` is 4. This means (we think) that all 4 vote
+        types (early/absentee/day of in person/provisional) have been reported for the
+        given precinct.
+        """
+        subunit_fully_reporting_statuses = {}
+        precincts = get_list(election["VoterTurnout"]["Precincts"]["Precinct"])
+        for precinct in precincts:
+            subunit_id = self.get_precinct_id(precinct["name"])
+            is_precinct_fully_reporting = (precinct.get("percentReporting") == str(self.NUM_VOTE_TYPES))
+            subunit_fully_reporting_statuses[subunit_id] = is_precinct_fully_reporting
+
+        return subunit_fully_reporting_statuses
+
+    def _get_precinct_fully_reporting_statuses_via_vote_types(self, contest):
+        """
+        Constructs a mapping from precinct IDs to boolean flags representing
+        whether or not the given precinct is fully reporting. This method does so by looking
+        at the VoterTurnout from the ElectionResults tag in the precinct details xml
+        and checking if ``percentReporting`` is 4. This means (we think) that all 4 vote
+        types (early/absentee/day of in person/provisional) have been reported for the
+        given precinct.
+        """
+        choices = self._get_valid_contest_choices(contest)
+        subunit_fully_reporting_statuses = {}
+
+        vote_types_by_subunit = self.get_vote_totals_by_vote_types(choices, "precinct")
+        for subunit_id, vote_type_totals in vote_types_by_subunit.items():
+            is_precinct_fully_reporting = True
+            for vote_type, vote_total in vote_type_totals.items():
+                if vote_total == 0 and vote_type not in ["Provisional Votes"]:
+                    is_precinct_fully_reporting = False
+
+            subunit_fully_reporting_statuses[subunit_id] = is_precinct_fully_reporting
+        return subunit_fully_reporting_statuses
+
+    def format_race(
+        self,
+        contest,
+        election_date,
+        election_type,
+        timestamp=None,
+        level=None,
+        county_id=None,
+        subunit_fully_reporting_statuses=None,
+        vote_completion_mode=None,
+        **kwargs
+    ):
         """
         Transforms a Clarity `Contest` object into our expected race result format.
         """
@@ -137,11 +212,16 @@ class ClarityDetailXMLConverter(ClarityConverter):
         if timestamp:
             result["lastUpdated"] = timestamp
         if level in ["precinct", "county"]:
-            result["subunits"] = self.format_subunits(choices, level)
+            choices = self._get_valid_contest_choices(contest)
+            # if we're using vote completion mode "voteTypes", we look at the number of votes for each vote type
+            # for each contest so we have to construct the reporting statuses mapping here
+            if subunit_fully_reporting_statuses is None and level == "precinct" and vote_completion_mode == "voteTypes":
+                subunit_fully_reporting_statuses = self._get_precinct_fully_reporting_statuses_via_vote_types(contest)
+            result["subunits"] = self.format_subunits(choices, level, subunit_fully_reporting_statuses)
 
         return result
 
-    def convert(self, data, level="precinct", **kwargs):
+    def convert(self, data, level="precinct", vote_completion_mode="percentReporting", office_id=None, **kwargs):
         """
         Transforms a Clarity `ElectionResult` object into our expected format.
         """
@@ -156,8 +236,12 @@ class ClarityDetailXMLConverter(ClarityConverter):
         election_type = self.get_race_type(dictified_data["ElectionName"])
         timestamp = self.format_last_updated(dictified_data["Timestamp"])
 
-
-        officeID = kwargs.get("officeID", ())
+        if level == "precinct" and vote_completion_mode == "percentReporting":
+            # the default method of determining vote completion is to use the VoterTurnout
+            # fields at the ElectionResult level in the precinct detail XML files
+            subunit_fully_reporting_statuses = self._get_precinct_fully_reporting_statuses_via_percent_reporting(dictified_data)
+        else:
+            subunit_fully_reporting_statuses = None
 
         for contest in get_list(dictified_data.get("Contest")):
             race_result = self.format_race(
@@ -167,11 +251,13 @@ class ClarityDetailXMLConverter(ClarityConverter):
                 level=level,
                 county_id=county_id,
                 timestamp=timestamp,
+                vote_completion_mode=vote_completion_mode,
+                subunit_fully_reporting_statuses=subunit_fully_reporting_statuses,
                 **kwargs
             )
 
-            office = race_result.get('office')
-            if not officeID or office in officeID:
+            race_office = race_result.get('office')
+            if not office_id or race_office in office_id:
                 result[race_result["id"]] = race_result
 
         return result
