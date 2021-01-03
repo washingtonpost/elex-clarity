@@ -1,5 +1,4 @@
 from collections import defaultdict
-from slugify import slugify
 import xmltodict
 
 from elexclarity.formatters.base import ClarityConverter
@@ -75,6 +74,10 @@ class ClarityDetailXMLConverter(ClarityConverter):
         return subunits
 
     def get_vote_totals_by_vote_types(self, choices, level):
+        """
+        Creates a mapping from subunit IDs to the total number of votes in
+        for that vote type across all choices.
+        """
         subunit_vote_types = {}
         clarity_level = level.capitalize()
 
@@ -213,8 +216,9 @@ class ClarityDetailXMLConverter(ClarityConverter):
             result["lastUpdated"] = timestamp
         if level in ["precinct", "county"]:
             choices = self._get_valid_contest_choices(contest)
-            # if we're using vote completion mode "voteTypes", we look at the number of votes for each vote type
-            # for each contest so we have to construct the reporting statuses mapping here
+            # if we're using vote completion mode "voteTypes", we look at the number of votes
+            # for each vote type for each contest so we have to construct the reporting
+            # statuses mapping here
             if subunit_fully_reporting_statuses is None and level == "precinct" and vote_completion_mode == "voteTypes":
                 subunit_fully_reporting_statuses = self._get_precinct_fully_reporting_statuses_via_vote_types(contest)
             result["subunits"] = self.format_subunits(choices, level, subunit_fully_reporting_statuses)
