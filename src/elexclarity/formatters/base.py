@@ -10,9 +10,9 @@ class ClarityConverter(object):
         self.county_lookup = county_lookup
 
     def get_race_type(self, election_name):
-        if "General" in election_name:
+        if "General" or "Runoff" in election_name:
             return "G"
-        raise Exception("Unknown election type")
+        raise Exception(f"Unknown election type: {election_name}")
 
     def get_race_office(self, contest_name):
         return STATE_OFFICE_ID_MAPS[self.state_postal].get(contest_name, slugify(contest_name, separator="_"))
