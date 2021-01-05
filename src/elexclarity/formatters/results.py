@@ -112,7 +112,8 @@ class ClarityDetailXMLConverter(ClarityConverter):
             for subunit_id, subunit_result in subunit_results.items():
                 is_subunit_fully_reporting = subunit_fully_reporting_statuses.get(subunit_id, False)
                 subunit_result["precinctsReportingPct"] = 100 if is_subunit_fully_reporting else 0
-                subunit_result["expectedVotes"] = sum(subunit_results[subunit_id]["counts"].values()) if is_subunit_fully_reporting else 0
+                if is_subunit_fully_reporting:
+                    subunit_result["expectedVotes"] = sum(subunit_results[subunit_id]["counts"].values())
         return subunit_results
 
     def format_top_level_counts(self, choices):
@@ -150,10 +151,8 @@ class ClarityDetailXMLConverter(ClarityConverter):
         """
         Constructs a mapping from precinct IDs to boolean flags representing
         whether or not the given precinct is fully reporting. This method does so by looking
-        at the VoterTurnout from the ElectionResults tag in the precinct details xml
-        and checking if ``percentReporting`` is 4. This means (we think) that all 4 vote
-        types (early/absentee/day of in person/provisional) have been reported for the
-        given precinct.
+        at the various vote types for each precinct and checking that some votes are
+        in for each of those types (except provisional votes).
         """
         choices = self._get_valid_contest_choices(contest)
         subunit_fully_reporting_statuses = {}

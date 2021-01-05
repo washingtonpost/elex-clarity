@@ -51,7 +51,7 @@ def test_georgia_precinct_formatting_vote_types_completion_mode(atkinson_precinc
     # Willacoochee precinct
     willacoochee = results["2020-11-03_GA_G_P_13003"]["subunits"]["willacoochee"]
     assert willacoochee["precinctsReportingPct"] == 0
-    assert willacoochee["expectedVotes"] == 0
+    assert willacoochee.get("expectedVotes") is None
 
 
 def test_georgia_precinct_formatting_race_name_mapping(gwinnett_precincts, ga_county_mapping_fips):
