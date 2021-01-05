@@ -6,9 +6,9 @@ from setuptools import find_packages, setup
 INSTALL_REQUIRES = (
     'click<8',
     'requests<3',
+    'python-dateutil',
     'python-slugify',
-    'xmltodict',
-    'elex-static-data'
+    'xmltodict'
 )
 NEEDS_DOCS = 'build_sphinx' in sys.argv
 NEEDS_PYTEST = {'pytest', 'test', 'ptr'}.intersection(sys.argv)
@@ -40,7 +40,7 @@ with open(os.path.join(THIS_FILE_DIR, 'README.rst'), encoding='utf-8') as f:
     LONG_DESCRIPTION = f.read()
 
 # The full version, including alpha/beta/rc tags
-RELEASE = '0.0.1'
+RELEASE = '0.0.2'
 # The short X.Y version
 VERSION = '.'.join(RELEASE.split('.')[:2])
 

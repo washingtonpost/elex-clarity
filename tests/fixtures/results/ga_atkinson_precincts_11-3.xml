@@ -31,7 +31,7 @@
             <VoteType name="Election Day Votes" votes="716">
                 <Precinct name="Pearson County" votes="235" />
                 <Precinct name="Axson" votes="194" />
-                <Precinct name="Willacoochee" votes="224" />
+                <Precinct name="Willacoochee" votes="0" />
                 <Precinct name="Pearson City" votes="63" />
             </VoteType>
             <VoteType name="Advanced Voting Votes" votes="1419">
@@ -57,7 +57,7 @@
             <VoteType name="Election Day Votes" votes="250">
                 <Precinct name="Pearson County" votes="32" />
                 <Precinct name="Axson" votes="25" />
-                <Precinct name="Willacoochee" votes="117" />
+                <Precinct name="Willacoochee" votes="0" />
                 <Precinct name="Pearson City" votes="76" />
             </VoteType>
             <VoteType name="Advanced Voting Votes" votes="445">
@@ -83,7 +83,7 @@
             <VoteType name="Election Day Votes" votes="14">
                 <Precinct name="Pearson County" votes="5" />
                 <Precinct name="Axson" votes="1" />
-                <Precinct name="Willacoochee" votes="4" />
+                <Precinct name="Willacoochee" votes="0" />
                 <Precinct name="Pearson City" votes="4" />
             </VoteType>
             <VoteType name="Advanced Voting Votes" votes="13">

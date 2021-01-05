@@ -1,15 +1,11 @@
 import logging
-import requests
-from collections import namedtuple
-import zipfile
 from io import BytesIO
+import zipfile
+import requests
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
 
 LOG = logging.getLogger(__name__)
-
-
-CountyIdentifier = namedtuple('CountyIdentifier', ['id', 'name', 'version', 'last_updated'])
 
 
 class ElectionsClient(object):
@@ -92,29 +88,9 @@ class ElectionsClient(object):
         resp = self.make_request(f"{statepostal}/{electionid}/{current_ver}/json/en/electionsettings.json", **kwargs)
         return resp.json()
 
-    def get_counties(self, electionid, statepostal, **kwargs):
-        """
-        :param electionid: the election ID
-        :type electionid: str
-        :keyword statepostal: the state(s) to query
-        :type statepostal: str or tuple(str)
-
-        :param kwargs: other keyword args passed to underlying requests call
-        :return: the response json
-        :rtype: str
-
-        """
-        summary = self.get_settings(electionid, statepostal)
-        raw_counties = summary.get("settings", {}).get("electiondetails", {}).get("participatingcounties")
-        counties = []
-        for raw_county in raw_counties:
-            name, _id, version, last_updated = raw_county.split("|")[0:4]
-            counties.append(CountyIdentifier(_id, name, version, last_updated))
-        return counties
-
     # https://results.enr.clarityelections.com//GA//105369/270988/reports/detailxml.zip
-    def get_county_results(self, statepostal, county, **kwargs):
-        return self.get_detail_xml(f"{statepostal}/{county.name}/{county.id}/{county.version}")
+    def get_county_results(self, statepostal, county_name, county_id, county_version, **kwargs):
+        return self.get_detail_xml(f"{statepostal}/{county_name}/{county_id}/{county_version}")
 
     def get_state_results(self, electionid, statepostal, version, **kwargs):
         return self.get_detail_xml(f"{statepostal}/{electionid}/{version}")
@@ -123,8 +99,11 @@ class ElectionsClient(object):
         if level == "precinct":
             results = []
             # Bad bad bad; do not use in production! This will request _many_ files
-            for county in self.get_counties(electionid, statepostal):
-                results.append(self.get_county_results(statepostal, county, **kwargs))
+            election_settings = self.get_settings(electionid, statepostal)
+            raw_counties = election_settings.get("settings", {}).get("electiondetails", {}).get("participatingcounties")
+            for raw_county in raw_counties:
+                name, clarity_id, version, _ = raw_county.split("|")[0:4]
+                results.append(self.get_county_results(statepostal, name, clarity_id, version, **kwargs))
             return results
         elif level == "state" or level == "county":
             current_ver = self.get_current_version(electionid, statepostal, **kwargs)

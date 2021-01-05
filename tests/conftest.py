@@ -25,11 +25,11 @@ def setup_logging():
 
 @pytest.fixture(scope='session')
 def get_fixture():
-    def _get_fixture(filename, load=True):
+    def _get_fixture(filename, load=False):
         fileobj = open(os.path.join(FIXTURE_DIR, filename))
         if load:
             return json.load(fileobj)
-        return fileobj
+        return fileobj.read()
     return _get_fixture
 
 
@@ -59,6 +59,46 @@ def recorder(requests_session):
 
 
 @pytest.fixture(scope='session')
-def ga_2020_summary(recorder, ap_client):
-    with recorder.use_cassette('ga_2020_summary'):
-        return ap_client.get_summary(105369, 'GA')
+def ga_2020_summary(recorder, api_client):
+    with recorder.use_cassette('results/GA_2020_summary'):
+        return api_client.get_summary(105369, 'GA')
+
+
+@pytest.fixture
+def bacon_precincts(get_fixture):
+    return get_fixture("results/ga_bacon_precincts_11-3.xml")
+
+
+@pytest.fixture
+def atkinson_precincts(get_fixture):
+    return get_fixture("results/ga_atkinson_precincts_11-3.xml")
+
+
+@pytest.fixture
+def gwinnett_precincts(get_fixture):
+    return get_fixture("results/ga_gwinnett_precincts_11-3.xml")
+
+
+@pytest.fixture
+def ga_counties(get_fixture):
+    return get_fixture("results/ga_counties_11-3.xml")
+
+
+@pytest.fixture
+def wv_counties(get_fixture):
+    return get_fixture("results/wv_counties_11-3.xml")
+
+
+@pytest.fixture
+def ga_county_mapping_fips(get_fixture):
+    return get_fixture("mappings/GA_county_fips.json", load=True)
+
+
+@pytest.fixture
+def ga_county_mapping_alternate(get_fixture):
+    return get_fixture("mappings/GA_county_alternate.json", load=True)
+
+
+@pytest.fixture
+def ga_county_settings(get_fixture):
+    return get_fixture("settings/GA_2020.json", load=True)
