@@ -112,6 +112,11 @@ Other parameters
      - object
      - N
      - -- 
+   * - voteCompletionMode
+     - the method that should be used to determine whether a precinct is fully reporting 
+     - string
+     - N
+     - percentReporting
    * - filename
      - the path to read results from (if you don't want to ping a Clarity site)
      - string
@@ -136,6 +141,7 @@ Retrieving + formatting results:
 
 * ``elexclarity 105369 GA --level=precinct --countyMapping='{"Worth": "13321"}'``
 * ``elexclarity 105369 GA --level=precinct``
+* ``elexclarity 105369 GA --level=precinct --voteCompletionMode=voteTypes``
 * ``elexclarity 105369 GA --level=county``
 * ``elexclarity 106210 WV --level=county --countyMapping='<mapping json>'``
 * ``elexclarity 105369 WV --level=state``

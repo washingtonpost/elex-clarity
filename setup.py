@@ -40,7 +40,7 @@ with open(os.path.join(THIS_FILE_DIR, 'README.rst'), encoding='utf-8') as f:
     LONG_DESCRIPTION = f.read()
 
 # The full version, including alpha/beta/rc tags
-RELEASE = '0.0.1-beta.1'
+RELEASE = '0.0.1-beta.2'
 # The short X.Y version
 VERSION = '.'.join(RELEASE.split('.')[:2])
 
