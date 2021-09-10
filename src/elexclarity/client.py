@@ -59,7 +59,7 @@ class ElectionsClient(object):
         if countyname:
             url_subdirectory += f"{countyname}/{electionid}"
         else:
-            url_subdirectory += electionid
+            url_subdirectory += str(electionid)
         return url_subdirectory
 
     def get_current_version(self, electionid, statepostal, countyname):
@@ -68,7 +68,7 @@ class ElectionsClient(object):
         current_ver_response = self.make_request(current_ver_url)
         return current_ver_response.text
 
-    def get_summary(self, electionid, statepostal, countyname):
+    def get_summary(self, electionid, statepostal, countyname, **kwargs):
         current_ver = self.get_current_version(electionid, statepostal, countyname)
         url_subdirectory = self._get_url_subdirectories(electionid, statepostal, countyname)
         summary_url = f"{url_subdirectory}/{current_ver}/json/en/summary.json"
