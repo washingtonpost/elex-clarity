@@ -124,7 +124,6 @@ class ElectionsClient(object):
             current_ver = self.get_current_version(electionid, statepostal, countyname)
             return self.get_state_results(electionid, statepostal, countyname, current_ver, **kwargs)
         elif level == "precinct" and countyname:
-            import pdb; pdb.set_trace()
             current_ver = self.get_current_version(electionid, statepostal, countyname)
             return self.get_state_results(electionid, statepostal, countyname, current_ver, **kwargs)
         return None

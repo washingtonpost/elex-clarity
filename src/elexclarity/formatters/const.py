@@ -12,5 +12,9 @@ STATE_OFFICE_ID_MAPS = {
     "WV": {
         'PRESIDENT': 'P',
         'U.S. SENATOR': 'S'
+    },
+    "CA": {
+        "Recall Gavin Newsom": 'I 8808',
+        "Office of the Governor Successor to Recal": 'G recall choice'
     }
 }
