@@ -102,6 +102,11 @@ Other parameters
      - one of [precinct, county, state]
      - N
      - county
+   * - countyName
+     - Name of county to get results from if counties have their own pages
+     - string
+     - N
+     - --
    * - officeID
      - what office ID(s) should be returned?
      - a comma separated list of office IDs
@@ -132,6 +137,7 @@ Retrieving raw data:
 * ``elexclarity 105369 GA --outputType=summary --style=raw``
 * ``elexclarity 105369 GA --outputType=settings --style=raw``
 * ``elexclarity 105369 GA --level=precinct --style=raw``
+* ``elexclarity 106043 CA --countyName Santa_Clara --level=precinct
 
 Retrieving + formatting settings (for presidential races):
 
