@@ -12,5 +12,7 @@ STATE_OFFICE_ID_MAPS = {
     "WV": {
         'PRESIDENT': 'P',
         'U.S. SENATOR': 'S'
+    },
+    "CA": {
     }
 }
