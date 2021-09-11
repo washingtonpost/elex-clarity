@@ -1,5 +1,3 @@
-from typing import NoReturn
-
 
 def test_get_summary_basic(recorder, api_client):
     with recorder.use_cassette('results/GA_2020_summary'):
