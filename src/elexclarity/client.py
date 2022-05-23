@@ -118,7 +118,10 @@ class ElectionsClient(object):
             raw_counties = election_settings.get("settings", {}).get("electiondetails", {}).get("participatingcounties")
             for raw_county in raw_counties:
                 name, clarity_id, version, _ = raw_county.split("|")[0:4]
-                results.append(self.get_county_results(statepostal, name, clarity_id, version, **kwargs))
+                try:
+                    results.append(self.get_county_results(statepostal, name, clarity_id, version, **kwargs))
+                except requests.exceptions.HTTPError:
+                    LOG.debug(f"Failed to get results for {name}")
             return results
         elif (level == "state" or level == "county") and not countyname:
             current_ver = self.get_current_version(electionid, statepostal, countyname)
