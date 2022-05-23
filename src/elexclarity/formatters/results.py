@@ -246,7 +246,7 @@ class ClarityDetailXMLConverter(ClarityConverter):
             subunit_fully_reporting_statuses = None
 
         for contest in get_list(dictified_data.get("Contest")):
-            election_type = self.get_race_type(dictified_data["ElectionName"], contest)
+            election_type = self.get_race_type(dictified_data["ElectionName"], contest=contest)
             race_result = self.format_race(
                 contest,
                 election_date,

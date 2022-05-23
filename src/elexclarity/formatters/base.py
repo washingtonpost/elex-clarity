@@ -9,9 +9,11 @@ class ClarityConverter(object):
         self.state_postal = statepostal
         self.county_lookup = county_lookup
 
-    def get_race_type(self, election_name, contest):
-        contest_name = contest['text']
+    def get_race_type(self, election_name, *, contest={}):
+        contest_name = contest.get('text', '')
         lookup = STATE_RACE_TYPE_MAPS.get(self.state_postal, {})
+        if contest_name in lookup:
+            return lookup[contest_name]
         for key, value in lookup.items():
             if key in election_name or key in contest_name:
                 return value
