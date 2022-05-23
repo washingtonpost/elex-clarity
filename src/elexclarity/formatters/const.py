@@ -16,3 +16,11 @@ STATE_OFFICE_ID_MAPS = {
     "CA": {
     }
 }
+
+STATE_RACE_TYPE_MAPS = {
+    "GA": {
+        ' - Rep': 'R',
+        ' - Dem': 'D',
+        'Primary': 'P'
+    }
+}

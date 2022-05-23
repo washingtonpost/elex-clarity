@@ -236,7 +236,6 @@ class ClarityDetailXMLConverter(ClarityConverter):
         else:
             county_id = None
         election_date = self.format_date(dictified_data["ElectionDate"])
-        election_type = self.get_race_type(dictified_data["ElectionName"])
         timestamp = self.format_last_updated(dictified_data["Timestamp"])
 
         if level == "precinct" and vote_completion_mode == "percentReporting":
@@ -247,6 +246,7 @@ class ClarityDetailXMLConverter(ClarityConverter):
             subunit_fully_reporting_statuses = None
 
         for contest in get_list(dictified_data.get("Contest")):
+            election_type = self.get_race_type(dictified_data["ElectionName"], contest)
             race_result = self.format_race(
                 contest,
                 election_date,
