@@ -8,6 +8,19 @@ STATE_OFFICE_ID_MAPS = {
         'US Senate (Loeffler) - Special/Senado de los EE.UU. (Loeffler) - Especial': 'S2',
         'US Senate (Perdue)': 'S',
         'US Senate (Perdue)/Senado de los EE.UU. (Perdue)': 'S',
+        # 2022 primaries
+        'US Senate - Rep': 'S',
+        'REP - US Senate': 'S',
+        'DEM - US Senate': 'S',
+        'US Senate - Dem': 'S',
+        'Governor - Rep': 'G',
+        'REP - Governor': 'G',
+        'DEM - Governor': 'G',
+        'Governor - Dem': 'G',
+        'Secretary of State - Rep': 'R',
+        'REP - Secretary of State': 'R',
+        'DEM - Secretary of State': 'R',
+        'Secretary of State - Dem': 'R'
     },
     "WV": {
         'PRESIDENT': 'P',
