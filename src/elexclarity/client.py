@@ -119,8 +119,8 @@ class ElectionsClient(object):
             success = 0
             failure = 0
             for raw_county in raw_counties:
+                name, clarity_id, _, _ = raw_county.split("|")[0:4]
                 try:
-                    name, clarity_id, _, _ = raw_county.split("|")[0:4]
                     current_ver = self.get_current_version(clarity_id, statepostal, name)
                     results.append(self.get_county_results(statepostal, name, clarity_id, current_ver, **kwargs))
                     success += 1
