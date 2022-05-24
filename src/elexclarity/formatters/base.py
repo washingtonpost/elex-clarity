@@ -1,7 +1,7 @@
 from slugify import slugify
 from dateutil import parser, tz
 
-from elexclarity.formatters.const import STATE_OFFICE_ID_MAPS
+from elexclarity.formatters.const import STATE_OFFICE_ID_MAPS, STATE_RACE_TYPE_MAPS
 
 
 class ClarityConverter(object):
@@ -9,7 +9,14 @@ class ClarityConverter(object):
         self.state_postal = statepostal
         self.county_lookup = county_lookup
 
-    def get_race_type(self, election_name):
+    def get_race_type(self, election_name, *, contest={}):
+        contest_name = contest.get('text', '')
+        lookup = STATE_RACE_TYPE_MAPS.get(self.state_postal, {})
+        if contest_name in lookup:
+            return lookup[contest_name]
+        for key, value in lookup.items():
+            if key in election_name or key in contest_name:
+                return value
         if "General" or "Runoff" in election_name:
             return "G"
         raise Exception(f"Unknown election type: {election_name}")
