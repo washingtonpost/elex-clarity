@@ -74,7 +74,7 @@ All CLI commands require a Clarity election ID and state postal code. For exampl
 
 ``elexclarity 105369 GA``
 
-The election ID can be found by navigating to the election in question in whichever results site you're viewing. For example, for Georgia, the Secretary of State's website links to `election results <https://sos.ga.gov/index.php/Elections/current_and_past_elections_results>`_. Looking at the 2020-current results will lead to ``https://results.enr.clarityelections.com/GA/105369/web.264614/#/summary``, which contains the election ID right after the state postal code.
+The election ID can be found by navigating to the election in question in whichever results site you're viewing. For example, for Georgia, the Secretary of State's website links to `election results <https://sos.ga.gov/page/georgia-election-results>`_. Following the `Current Election Results` link you get to a clarity page with many election results pages. Looking at the 2020-current results will lead to ``https://results.enr.clarityelections.com/GA/105369/web.264614/#/summary``, which contains the election ID right after the state postal code.
 
 Other parameters
 ~~~~~~~~~~~~~~~~
