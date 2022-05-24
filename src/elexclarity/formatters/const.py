@@ -20,10 +20,16 @@ STATE_OFFICE_ID_MAPS = {
 STATE_RACE_TYPE_MAPS = {
     "GA": {
         'US Senate - Rep': 'R',
+        'REP - US Senate': 'R',
+        'DEM - US Senate': 'D',
         'US Senate - Dem': 'D',
         'Governor - Rep': 'R',
+        'REP - Governor': 'R',
+        'DEM - Governor': 'D',
         'Governor - Dem': 'D',
         'Secretary of State - Rep': 'R',
+        'REP - Secretary of State': 'R',
+        'DEM - Secretary of State': 'D',
         'Secretary of State - Dem': 'D',
         'Primary': 'P'
     }
