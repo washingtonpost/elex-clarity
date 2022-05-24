@@ -125,9 +125,13 @@ class ElectionsClient(object):
                     results.append(self.get_county_results(statepostal, name, clarity_id, current_ver, **kwargs))
                     success += 1
                 except requests.exceptions.HTTPError:
-                    name, clarity_id, version, _ = raw_county.split("|")[0:4]
-                    results.append(self.get_county_results(statepostal, name, clarity_id, version, **kwargs))
-                    success += 1
+                    try:
+                        name, clarity_id, version, _ = raw_county.split("|")[0:4]
+                        results.append(self.get_county_results(statepostal, name, clarity_id, version, **kwargs))
+                        success += 1
+                    except requests.exceptions.HTTPError:
+                        failure += 1
+                        LOG.info(f"Failed to get results for {name}")
                 except:
                     failure += 1
                     LOG.info(f"Failed to get results for {name}")
