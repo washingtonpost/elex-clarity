@@ -116,9 +116,23 @@ class ElectionsClient(object):
             # Bad bad bad; do not use in production! This will request _many_ files
             election_settings = self.get_settings(electionid, statepostal, countyname)
             raw_counties = election_settings.get("settings", {}).get("electiondetails", {}).get("participatingcounties")
+            success = 0
+            failure = 0
             for raw_county in raw_counties:
-                name, clarity_id, version, _ = raw_county.split("|")[0:4]
-                results.append(self.get_county_results(statepostal, name, clarity_id, version, **kwargs))
+                try:
+                    name, clarity_id, _, _ = raw_county.split("|")[0:4]
+                    current_ver = self.get_current_version(clarity_id, statepostal, name)
+                    results.append(self.get_county_results(statepostal, name, clarity_id, current_ver, **kwargs))
+                    success += 1
+                except requests.exceptions.HTTPError:
+                    name, clarity_id, version, _ = raw_county.split("|")[0:4]
+                    results.append(self.get_county_results(statepostal, name, clarity_id, version, **kwargs))
+                    success += 1
+                except:
+                    failure += 1
+                    LOG.info(f"Failed to get results for {name}")
+            LOG.info("Number of successes: ", success)
+            LOG.info("Number of failures: ", failure)
             return results
         elif (level == "state" or level == "county") and not countyname:
             current_ver = self.get_current_version(electionid, statepostal, countyname)

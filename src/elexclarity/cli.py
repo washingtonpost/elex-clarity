@@ -1,10 +1,10 @@
 import os
 import json
 import click
+import logging
 
 from elexclarity.client import ElectionsClient
 from elexclarity.convert import convert
-
 
 class StringListParamType(click.ParamType):
     name = "stringlist"
@@ -76,4 +76,6 @@ def cli(electionid, statepostal, filename=None, countyMapping={}, outputType="re
         countyMapping = json.loads(countyMapping)
 
     result = convert(result, statepostal, outputType=outputType, countyMapping=countyMapping, **kwargs)
+    print("Total length: ", len(result))
+
     print(json.dumps(result, indent=2))
