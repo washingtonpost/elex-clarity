@@ -28,8 +28,8 @@ class ClarityConverter(object):
     def get_choice_id(cls, name):
         return slugify(name, separator="_")
 
-    def get_precinct_id(self, name):
-        return slugify(name, separator="_")
+    def get_precinct_id(self, name, county_id=None):
+        return "_".join(filter(None,[county_id, slugify(name, separator='-')]))
 
     def get_county_id(self, name):
         """
