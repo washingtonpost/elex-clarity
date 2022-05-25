@@ -20,7 +20,13 @@ STATE_OFFICE_ID_MAPS = {
         'Secretary of State - Rep': 'R',
         'REP - Secretary of State': 'R',
         'DEM - Secretary of State': 'R',
-        'Secretary of State - Dem': 'R'
+        'Secretary of State - Dem': 'R',
+        "US Senate/ Senado de los EE.UU. - Rep": 'S',
+        'US Senate/ Senado de los EE.UU. - Dem': 'S',
+        'Governor/Gobernador - Rep': 'G',
+        'Governor/Gobernador - Dem': 'G',
+        'Secretary of State/ Secretario de Estado - Rep': 'R',
+        'Secretary of State/ Secretario de Estado - Dem': 'R'
     },
     "WV": {
         'PRESIDENT': 'P',
@@ -44,6 +50,12 @@ STATE_RACE_TYPE_MAPS = {
         'REP - Secretary of State': 'R',
         'DEM - Secretary of State': 'D',
         'Secretary of State - Dem': 'D',
-        'Primary': 'P'
+        'Primary': 'P',
+        "US Senate/ Senado de los EE.UU. - Rep": 'R',
+        'US Senate/ Senado de los EE.UU. - Dem': 'D',
+        'Governor/Gobernador - Rep': 'R',
+        'Governor/Gobernador - Dem': 'D',
+        'Secretary of State/ Secretario de Estado - Rep': 'R',
+        'Secretary of State/ Secretario de Estado - Dem': 'D'
     }
 }
