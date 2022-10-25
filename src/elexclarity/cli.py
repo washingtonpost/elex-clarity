@@ -15,7 +15,7 @@ class StringListParamType(click.ParamType):
         return value.split(",")
 
 
-BASE_URL = os.environ.get('CLARITY_API_BASE_URL', 'https://results.enr.clarityelections.com/')
+BASE_URL = os.environ.get('CLARITY_API_BASE_URL', 'https://results.enr.clarityelections.com')
 STRING_LIST = StringListParamType()
 
 
