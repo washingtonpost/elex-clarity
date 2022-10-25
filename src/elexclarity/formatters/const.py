@@ -33,6 +33,12 @@ STATE_OFFICE_ID_MAPS = {
         'U.S. SENATOR': 'S'
     },
     "CA": {
+    },
+    "IA": {
+        "United States Senator": "S",
+        "United States Representative": "H",
+        "Governor": "G",
+        "Secretary of State": "R"
     }
 }
 
