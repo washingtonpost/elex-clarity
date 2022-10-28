@@ -21,11 +21,14 @@ class ElectionsClient(object):
             timeout=5,
             session=None,
             retry_params={},
+            # faking a user-agent because Clarity is giving us forbidden errors otherwise
+            user_agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36",
             **kwargs):
 
         if session is None:
             session = requests.Session()
             session.headers.update({'Accept-Encoding': 'gzip'})
+            session.headers.update({"User-Agent": user_agent})
 
         retry_params = {"total": 3, "status_forcelist": (502, 504, 429, 499), "backoff_factor": 0.2, **retry_params}
         adapter = HTTPAdapter(max_retries=Retry(**retry_params))
