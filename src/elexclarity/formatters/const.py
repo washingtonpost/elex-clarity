@@ -1,38 +1,55 @@
+# mapping a partial contest names to IDs
+# these get slugified and partially matched in order
+# against slugified contest names
 STATE_OFFICE_ID_MAPS = {
     "GA": {
-        # Name cleanup for the 2020 Presidential election
+        'US President': 'P',
         'President of the United States': 'P',
-        'President of the United States/Presidentede los Estados Unidos': 'P',
-        'US Senate (Loeffler) - Special Election': 'S2',
         'US Senate (Loeffler) - Special': 'S2',
-        'US Senate (Loeffler) - Special/Senado de los EE.UU. (Loeffler) - Especial': 'S2',
-        'US Senate (Perdue)': 'S',
-        'US Senate (Perdue)/Senado de los EE.UU. (Perdue)': 'S',
-        # 2022 primaries
-        'US Senate - Rep': 'S',
-        'REP - US Senate': 'S',
-        'DEM - US Senate': 'S',
-        'US Senate - Dem': 'S',
-        'Governor - Rep': 'G',
-        'REP - Governor': 'G',
-        'DEM - Governor': 'G',
-        'Governor - Dem': 'G',
-        'Secretary of State - Rep': 'R',
-        'REP - Secretary of State': 'R',
-        'DEM - Secretary of State': 'R',
-        'Secretary of State - Dem': 'R',
-        "US Senate/ Senado de los EE.UU. - Rep": 'S',
-        'US Senate/ Senado de los EE.UU. - Dem': 'S',
-        'Governor/Gobernador - Rep': 'G',
-        'Governor/Gobernador - Dem': 'G',
-        'Secretary of State/ Secretario de Estado - Rep': 'R',
-        'Secretary of State/ Secretario de Estado - Dem': 'R'
+        'US Senat': 'S', # covers both US Senate and U.S. Senator
+        "United States Senat": "S",  # covers both US Senate and U.S. Senator
+        "United States House": "H",
+        'US Congress': 'H',
+        'US House': 'H',
+        'United States Congress': 'H',
+        "United States Rep": "H",
+        'US Rep': 'H',
+        'Governor': 'G',
+        'Secretary of State': 'R'
     },
     "WV": {
         'PRESIDENT': 'P',
         'U.S. SENATOR': 'S'
     },
     "CA": {
+    },
+    "IA": {
+        'US President': 'P',
+        'President of the United States': 'P',
+        'US Senat': 'S', # covers both US Senate and U.S. Senator
+        "United States Senat": "S",  # covers both US Senate and U.S. Senator
+        "United States House": "H",
+        'US Congress': 'H',
+        'US House': 'H',
+        'United States Congress': 'H',
+        "United States Rep": "H",
+        'US Rep': 'H',
+        'Governor': 'G',
+        'Secretary of State': 'R'
+    },
+    "AR": {
+        'US President': 'P',
+        'President of the United States': 'P',
+        'US Senat': 'S', # covers both US Senate and U.S. Senator
+        "United States Senat": "S",  # covers both US Senate and U.S. Senator
+        "United States House": "H",
+        'US Congress': 'H',
+        'US House': 'H',
+        'United States Congress': 'H',
+        "United States Rep": "H",
+        'US Rep': 'H',
+        'Governor': 'G',
+        'Secretary of State': 'R'
     }
 }
 

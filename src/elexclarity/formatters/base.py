@@ -22,7 +22,16 @@ class ClarityConverter(object):
         raise Exception(f"Unknown election type: {election_name}")
 
     def get_race_office(self, contest_name):
-        return STATE_OFFICE_ID_MAPS[self.state_postal].get(contest_name, slugify(contest_name, separator="_"))
+        office_id_maps = STATE_OFFICE_ID_MAPS[self.state_postal]
+
+        contest_slug = slugify(contest_name, separator="_")
+
+        for name, id in office_id_maps.items():
+            slug = slugify(name, separator="_")
+            if slug in contest_slug:
+                return id
+
+        return contest_slug
 
     @classmethod
     def get_choice_id(cls, name):
