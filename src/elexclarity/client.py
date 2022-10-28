@@ -21,7 +21,8 @@ class ElectionsClient(object):
             timeout=5,
             session=None,
             retry_params={},
-            user_agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36"
+            # faking a user-agent because Clarity is giving us forbidden errors otherwise
+            user_agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36",
             **kwargs):
 
         if session is None:
