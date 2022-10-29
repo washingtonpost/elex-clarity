@@ -24,10 +24,10 @@ class ClarityConverter(object):
     def get_race_office(self, contest_name):
         office_id_maps = STATE_OFFICE_ID_MAPS[self.state_postal]
 
-        contest_slug = slugify(contest_name, separator="_")
+        contest_slug = slugify(contest_name, separator="_", replacements=[['.','']])
 
         for name, id in office_id_maps.items():
-            slug = slugify(name, separator="_")
+            slug = slugify(name, separator="_", replacements=[['.','']])
             if slug in contest_slug:
                 return id
 
