@@ -57,23 +57,23 @@ class ElectionsClient(object):
         response.raise_for_status()
         return response
 
-    def _get_url_subdirectories(self, electionid, statepostal, countyname):
+    def _get_url_subdirectories(self, electionid, statepostal, county_name):
         url_subdirectory = f"{statepostal}/"
-        if countyname:
-            url_subdirectory += f"{countyname}/{electionid}"
+        if county_name:
+            url_subdirectory += f"{county_name}/{electionid}"
         else:
             url_subdirectory += str(electionid)
         return url_subdirectory
 
-    def get_current_version(self, electionid, statepostal, countyname):
-        url_subdirectory = self._get_url_subdirectories(electionid, statepostal, countyname)
+    def get_current_version(self, electionid, statepostal, county_name, **kwargs):
+        url_subdirectory = self._get_url_subdirectories(electionid, statepostal, county_name)
         current_ver_url = f"{url_subdirectory}/current_ver.txt"
         current_ver_response = self.make_request(current_ver_url)
         return current_ver_response.text
 
-    def get_summary(self, electionid, statepostal, countyname, **kwargs):
-        current_ver = self.get_current_version(electionid, statepostal, countyname)
-        url_subdirectory = self._get_url_subdirectories(electionid, statepostal, countyname)
+    def get_summary(self, electionid, statepostal, county_name, **kwargs):
+        current_ver = self.get_current_version(electionid, statepostal, county_name)
+        url_subdirectory = self._get_url_subdirectories(electionid, statepostal, county_name)
         summary_url = f"{url_subdirectory}/{current_ver}/json/en/summary.json"
         resp = self.make_request(summary_url, **kwargs)
         return resp.json()
@@ -86,7 +86,7 @@ class ElectionsClient(object):
             with _zipfile.open(name) as myfile:
                 return myfile.read()
 
-    def get_settings(self, electionid, statepostal, countyname, **kwargs):
+    def get_settings(self, electionid, statepostal, county_name, **kwargs):
         """
         :param electionid: the election ID
         :type electionid: str
@@ -98,8 +98,8 @@ class ElectionsClient(object):
         :rtype: str
 
         """
-        current_ver = self.get_current_version(electionid, statepostal, countyname)
-        url_subdirectory = self._get_url_subdirectories(electionid, statepostal, countyname)
+        current_ver = self.get_current_version(electionid, statepostal, county_name)
+        url_subdirectory = self._get_url_subdirectories(electionid, statepostal, county_name)
         settings_url = f"{url_subdirectory}/{current_ver}/json/en/electionsettings.json"
         resp = self.make_request(settings_url, **kwargs)
         return resp.json()
@@ -108,16 +108,16 @@ class ElectionsClient(object):
     def get_county_results(self, statepostal, county_name, county_id, county_version, **kwargs):
         return self.get_detail_xml(f"{statepostal}/{county_name}/{county_id}/{county_version}")
 
-    def get_state_results(self, electionid, statepostal, countyname, version, **kwargs):
-        url_subdirectory = self._get_url_subdirectories(electionid, statepostal, countyname)
+    def get_state_results(self, electionid, statepostal, county_name, version, **kwargs):
+        url_subdirectory = self._get_url_subdirectories(electionid, statepostal, county_name)
         results_url = f"{url_subdirectory}/{version}"
         return self.get_detail_xml(results_url)
 
-    def get_results(self, electionid, statepostal, countyname, level, **kwargs):
-        if level == "precinct" and not countyname:
+    def get_results(self, electionid, statepostal, county_name, level, **kwargs):
+        if level == "precinct" and not county_name:
             results = []
             # Bad bad bad; do not use in production! This will request _many_ files
-            election_settings = self.get_settings(electionid, statepostal, countyname)
+            election_settings = self.get_settings(electionid, statepostal, county_name)
             raw_counties = election_settings.get("settings", {}).get("electiondetails", {}).get("participatingcounties")
             success = 0
             failure = 0
@@ -141,10 +141,10 @@ class ElectionsClient(object):
             LOG.info("Number of successes: ", success)
             LOG.info("Number of failures: ", failure)
             return results
-        elif (level == "state" or level == "county") and not countyname:
-            current_ver = self.get_current_version(electionid, statepostal, countyname)
-            return self.get_state_results(electionid, statepostal, countyname, current_ver, **kwargs)
-        elif level == "precinct" and countyname:
-            current_ver = self.get_current_version(electionid, statepostal, countyname)
-            return self.get_state_results(electionid, statepostal, countyname, current_ver, **kwargs)
+        elif (level == "state" or level == "county") and not county_name:
+            current_ver = self.get_current_version(electionid, statepostal, county_name)
+            return self.get_state_results(electionid, statepostal, county_name, current_ver, **kwargs)
+        elif level == "precinct" and county_name:
+            current_ver = self.get_current_version(electionid, statepostal, county_name)
+            return self.get_state_results(electionid, statepostal, county_name, current_ver, **kwargs)
         return None
