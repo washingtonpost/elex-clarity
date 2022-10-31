@@ -1,3 +1,4 @@
+import re
 from slugify import slugify
 from dateutil import parser, tz
 
@@ -26,12 +27,20 @@ class ClarityConverter(object):
 
         contest_slug = slugify(contest_name, separator="_", replacements=[['.','']])
 
+        office_id = contest_slug
+
         for name, id in office_id_maps.items():
             slug = slugify(name, separator="_", replacements=[['.','']])
             if slug in contest_slug:
-                return id
+                office_id = id
+                break # stop at first match
 
-        return contest_slug
+        if office_id == "H" and "district" in contest_slug:
+            district_match = re.search(r"district_([0-9]+)", contest_slug)
+            if district_match:
+                office_id += f"_{int(district_match.group(1))}"
+
+        return office_id
 
     @classmethod
     def get_choice_id(cls, name):

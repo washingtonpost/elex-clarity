@@ -260,7 +260,7 @@ class ClarityDetailXMLConverter(ClarityConverter):
             )
 
             race_office = race_result.get('office')
-            if not office_id or race_office in office_id:
+            if not office_id or race_office[0] in office_id:
                 result[race_result["id"]] = race_result
 
         return result

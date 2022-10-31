@@ -1,4 +1,5 @@
 from elexclarity.formatters.results import ClarityDetailXMLConverter
+from elexclarity.formatters.base import ClarityConverter
 
 
 def test_georgia_precinct_formatting_basic(atkinson_precincts, ga_county_mapping_fips):
@@ -131,3 +132,14 @@ def test_county_formatting_no_county_mapping(wv_counties):
     assert marshall_county["counts"]["joseph_r_biden"] == 3455
     assert marshall_county["counts"]["jo_jorgensen"] == 143
     assert marshall_county["counts"]["howie_hawkins"] == 47
+
+def test_georgia_get_race_office():
+    converter = ClarityConverter(statepostal="GA")
+
+    assert converter.get_race_office("U.S. House Representative") == "H"
+    assert converter.get_race_office("U.S. House Representative District 01") == "H_1"
+    assert converter.get_race_office("U.S. House Representative District 10") == "H_10"
+    assert converter.get_race_office("US Senate") == "S"
+    assert converter.get_race_office("United States Senator") == "S"
+    assert converter.get_race_office("U.S. Senate Loeffler Special") == "S2"
+    assert converter.get_race_office("US President and Vice President") == "P"
