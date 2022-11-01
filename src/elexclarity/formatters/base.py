@@ -4,6 +4,16 @@ from dateutil import parser, tz
 
 from elexclarity.formatters.const import STATE_OFFICE_ID_MAPS, STATE_RACE_TYPE_MAPS
 
+US_TIMEZONES = {
+    "PST": tz.gettz("US/Pacific"),
+    "PDT": tz.gettz("US/Pacific"),
+    "MST": tz.gettz("US/Mountain"),
+    "MDT": tz.gettz("US/Mountain"),
+    "CST": tz.gettz("US/Central"),
+    "CDT": tz.gettz("US/Central"),
+    "EST": tz.gettz("US/Eastern"),
+    "EDT": tz.gettz("US/Eastern"),
+}
 
 class ClarityConverter(object):
     def __init__(self, statepostal, county_lookup=None, **kwargs):
@@ -63,9 +73,8 @@ class ClarityConverter(object):
 
     @classmethod
     def get_timestamp(cls, input_timestamp):
-        # convert the timestamp and make sure we're in EST
-        est = tz.gettz("America/New_York")
-        return parser.parse(input_timestamp, tzinfos={"EST": est}).astimezone(tz.gettz("UTC"))
+        # convert the timestamp
+        return parser.parse(input_timestamp, tzinfos=US_TIMEZONES).astimezone(tz.gettz("UTC"))
 
     @classmethod
     def format_last_updated(cls, input_timestamp):
