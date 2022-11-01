@@ -57,7 +57,9 @@ class ClarityConverter(object):
         slug = slugify(name, separator="_")
         if not self.county_lookup:  # No mapping provided
             return slug
-        return self.county_lookup[name]
+        return self.county_lookup.get(
+            name, self.county_lookup.get(name.replace("_", " "), slug)
+        )
 
     @classmethod
     def get_timestamp(cls, input_timestamp):
