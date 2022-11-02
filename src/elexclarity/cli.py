@@ -1,10 +1,12 @@
 import os
 import json
 import click
+import logging
 
 from elexclarity.client import ElectionsClient
 from elexclarity.convert import convert
 
+LOG = logging.getLogger(__name__)
 
 class StringListParamType(click.ParamType):
     name = "stringlist"
@@ -13,13 +15,14 @@ class StringListParamType(click.ParamType):
         return value.split(",")
 
 
-BASE_URL = os.environ.get('CLARITY_API_BASE_URL', 'https://results.enr.clarityelections.com/')
+BASE_URL = os.environ.get('CLARITY_API_BASE_URL', 'https://results.enr.clarityelections.com')
 STRING_LIST = StringListParamType()
 
 
 @click.command()
 @click.argument('electionID', type=click.INT)
 @click.argument('statePostal', type=click.STRING)
+@click.option('--countyName', 'county_name', type=click.STRING, help="If county specific clarity page")
 @click.option('--filename', type=click.Path(exists=True), help='Specify data file instead of making HTTP request')
 @click.option('--countyMapping', 'countyMapping', default={}, help='Specify county mapping')
 @click.option('--officeID', 'officeID', help='The office ID(s) to process', type=STRING_LIST)
@@ -75,4 +78,6 @@ def cli(electionid, statepostal, filename=None, countyMapping={}, outputType="re
         countyMapping = json.loads(countyMapping)
 
     result = convert(result, statepostal, outputType=outputType, countyMapping=countyMapping, **kwargs)
+    LOG.debug("Total length: ", len(result))
+
     print(json.dumps(result, indent=2))

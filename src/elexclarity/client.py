@@ -21,11 +21,14 @@ class ElectionsClient(object):
             timeout=5,
             session=None,
             retry_params={},
+            # faking a user-agent because Clarity is giving us forbidden errors otherwise
+            user_agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36",
             **kwargs):
 
         if session is None:
             session = requests.Session()
             session.headers.update({'Accept-Encoding': 'gzip'})
+            session.headers.update({"User-Agent": user_agent})
 
         retry_params = {"total": 3, "status_forcelist": (502, 504, 429, 499), "backoff_factor": 0.2, **retry_params}
         adapter = HTTPAdapter(max_retries=Retry(**retry_params))
@@ -54,14 +57,25 @@ class ElectionsClient(object):
         response.raise_for_status()
         return response
 
-    def get_current_version(self, electionid, statepostal, **kwargs):
-        current_ver_url = f"{statepostal}/{electionid}/current_ver.txt"
+    def _get_url_subdirectories(self, electionid, statepostal, county_name):
+        url_subdirectory = f"{statepostal}/"
+        if county_name:
+            url_subdirectory += f"{county_name}/{electionid}"
+        else:
+            url_subdirectory += str(electionid)
+        return url_subdirectory
+
+    def get_current_version(self, electionid, statepostal, county_name, **kwargs):
+        url_subdirectory = self._get_url_subdirectories(electionid, statepostal, county_name)
+        current_ver_url = f"{url_subdirectory}/current_ver.txt"
         current_ver_response = self.make_request(current_ver_url)
         return current_ver_response.text
 
-    def get_summary(self, electionid, statepostal, **kwargs):
-        current_ver = self.get_current_version(electionid, statepostal, **kwargs)
-        resp = self.make_request(f"{statepostal}/{electionid}/{current_ver}/json/en/summary.json", **kwargs)
+    def get_summary(self, electionid, statepostal, county_name, **kwargs):
+        current_ver = self.get_current_version(electionid, statepostal, county_name)
+        url_subdirectory = self._get_url_subdirectories(electionid, statepostal, county_name)
+        summary_url = f"{url_subdirectory}/{current_ver}/json/en/summary.json"
+        resp = self.make_request(summary_url, **kwargs)
         return resp.json()
 
     def get_detail_xml(self, route):
@@ -72,7 +86,7 @@ class ElectionsClient(object):
             with _zipfile.open(name) as myfile:
                 return myfile.read()
 
-    def get_settings(self, electionid, statepostal, **kwargs):
+    def get_settings(self, electionid, statepostal, county_name, **kwargs):
         """
         :param electionid: the election ID
         :type electionid: str
@@ -84,28 +98,53 @@ class ElectionsClient(object):
         :rtype: str
 
         """
-        current_ver = self.get_current_version(electionid, statepostal, **kwargs)
-        resp = self.make_request(f"{statepostal}/{electionid}/{current_ver}/json/en/electionsettings.json", **kwargs)
+        current_ver = self.get_current_version(electionid, statepostal, county_name)
+        url_subdirectory = self._get_url_subdirectories(electionid, statepostal, county_name)
+        settings_url = f"{url_subdirectory}/{current_ver}/json/en/electionsettings.json"
+        resp = self.make_request(settings_url, **kwargs)
         return resp.json()
 
     # https://results.enr.clarityelections.com//GA//105369/270988/reports/detailxml.zip
     def get_county_results(self, statepostal, county_name, county_id, county_version, **kwargs):
         return self.get_detail_xml(f"{statepostal}/{county_name}/{county_id}/{county_version}")
 
-    def get_state_results(self, electionid, statepostal, version, **kwargs):
-        return self.get_detail_xml(f"{statepostal}/{electionid}/{version}")
+    def get_state_results(self, electionid, statepostal, county_name, version, **kwargs):
+        url_subdirectory = self._get_url_subdirectories(electionid, statepostal, county_name)
+        results_url = f"{url_subdirectory}/{version}"
+        return self.get_detail_xml(results_url)
 
-    def get_results(self, electionid, statepostal, level, **kwargs):
-        if level == "precinct":
+    def get_results(self, electionid, statepostal, county_name, level, **kwargs):
+        if level == "precinct" and not county_name:
             results = []
             # Bad bad bad; do not use in production! This will request _many_ files
-            election_settings = self.get_settings(electionid, statepostal)
+            election_settings = self.get_settings(electionid, statepostal, county_name)
             raw_counties = election_settings.get("settings", {}).get("electiondetails", {}).get("participatingcounties")
+            success = 0
+            failure = 0
             for raw_county in raw_counties:
-                name, clarity_id, version, _ = raw_county.split("|")[0:4]
-                results.append(self.get_county_results(statepostal, name, clarity_id, version, **kwargs))
+                name, clarity_id, _, _ = raw_county.split("|")[0:4]
+                try:
+                    current_ver = self.get_current_version(clarity_id, statepostal, name)
+                    results.append(self.get_county_results(statepostal, name, clarity_id, current_ver, **kwargs))
+                    success += 1
+                except requests.exceptions.HTTPError:
+                    try:
+                        name, clarity_id, version, _ = raw_county.split("|")[0:4]
+                        results.append(self.get_county_results(statepostal, name, clarity_id, version, **kwargs))
+                        success += 1
+                    except requests.exceptions.HTTPError:
+                        failure += 1
+                        LOG.info(f"Failed to get results for {name}")
+                except:
+                    failure += 1
+                    LOG.info(f"Failed to get results for {name}")
+            LOG.info("Number of successes: ", success)
+            LOG.info("Number of failures: ", failure)
             return results
-        elif level == "state" or level == "county":
-            current_ver = self.get_current_version(electionid, statepostal, **kwargs)
-            return self.get_state_results(electionid, statepostal, current_ver, **kwargs)
+        elif (level == "state" or level == "county") and not county_name:
+            current_ver = self.get_current_version(electionid, statepostal, county_name)
+            return self.get_state_results(electionid, statepostal, county_name, current_ver, **kwargs)
+        elif level == "precinct" and county_name:
+            current_ver = self.get_current_version(electionid, statepostal, county_name)
+            return self.get_state_results(electionid, statepostal, county_name, current_ver, **kwargs)
         return None
