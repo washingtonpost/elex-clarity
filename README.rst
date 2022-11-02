@@ -137,7 +137,7 @@ Retrieving raw data:
 * ``elexclarity 105369 GA --outputType=summary --style=raw``
 * ``elexclarity 105369 GA --outputType=settings --style=raw``
 * ``elexclarity 105369 GA --level=precinct --style=raw``
-* ``elexclarity 106043 CA --countyName Santa_Clara --level=precinct
+* ``elexclarity 106043 CA --countyName Santa_Clara --level=precinct``
 
 Retrieving + formatting settings (for presidential races):
 
