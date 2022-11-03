@@ -1,5 +1,24 @@
 # Changelog
 
+## [0.0.3] - 2022-11-01
+
+- [#16] Add ability to get xml for county pages
+- [#21] Try two methods to get counties
+- [#18] Lookup race types, including for GA partisan primaries
+- [#17] Add GA primaries office names
+- [#19] Get current version for each county when requesting precinct files
+- [#23] Add more exception handling for client
+- [#20] Add `county_id` to precinct IDs, use dash to slugify precinct names
+- [#22] Update README.rst
+- [#24] Add more offices to GA 2022 primaries
+- [#25] Remove extraneous slash from Clarity base URL
+- [#27] Fake the user agent
+- [#28] Partially match office IDs for AR, GA, IA
+- [#29] Add district number to U.S. house office ID
+- [#30] Change client args to work with importer
+- [#31] Fall back when looking up county
+- [#32] Correctly handle non-EST timezones
+
 ## [0.0.2] - 2021-01-04
 
 - [#6] Adds a timestamp to the race settings JSON output
