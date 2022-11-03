@@ -20,7 +20,7 @@ def test_georgia_precinct_formatting_basic(atkinson_precincts, ga_county_mapping
     assert counts["jo_jorgensen_lib"] == 30
 
     # Pearson City precinct
-    pearson = results["2020-11-03_GA_G_P_13003"]["subunits"]["13003_pearson-city"]
+    pearson = results["2020-11-03_GA_G_P_13003"]["subunits"]["pearson-city"]
     assert pearson["precinctsReportingPct"] == 100
     assert pearson["expectedVotes"] == 564
     assert pearson["counts"]["donald_j_trump_i_rep"] == 229
@@ -28,7 +28,7 @@ def test_georgia_precinct_formatting_basic(atkinson_precincts, ga_county_mapping
     assert pearson["counts"]["jo_jorgensen_lib"] == 6
 
     # Willacoochee precinct
-    willacoochee = results["2020-11-03_GA_G_P_13003"]["subunits"]["13003_willacoochee"]
+    willacoochee = results["2020-11-03_GA_G_P_13003"]["subunits"]["willacoochee"]
     assert willacoochee["precinctsReportingPct"] == 100
     assert willacoochee["expectedVotes"] == 522
     assert willacoochee["counts"]["donald_j_trump_i_rep"] == 342
@@ -45,12 +45,12 @@ def test_georgia_precinct_formatting_vote_types_completion_mode(atkinson_precinc
     )
 
     # Pearson City precinct
-    pearson = results["2020-11-03_GA_G_P_13003"]["subunits"]["13003_pearson-city"]
+    pearson = results["2020-11-03_GA_G_P_13003"]["subunits"]["pearson-city"]
     assert pearson["precinctsReportingPct"] == 100
     assert pearson["expectedVotes"] == 564
 
     # Willacoochee precinct
-    willacoochee = results["2020-11-03_GA_G_P_13003"]["subunits"]["13003_willacoochee"]
+    willacoochee = results["2020-11-03_GA_G_P_13003"]["subunits"]["willacoochee"]
     assert willacoochee["precinctsReportingPct"] == 0
     assert willacoochee.get("expectedVotes") is None
 
