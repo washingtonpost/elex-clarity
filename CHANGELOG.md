@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.0.4] - 2022-11-04
+
+- [#36] Remove county ID from precinct ID
+
 ## [0.0.3] - 2022-11-01
 
 - [#16] Add ability to get xml for county pages
