@@ -200,7 +200,7 @@ class ClarityDetailXMLConverter(ClarityConverter):
             election_type,
             office
         ]
-        if level == "precinct":
+        if level == "precinct" and not kwargs.get("omit_locality_from_race_id"):
             id_parts.append(county_id)
         race_id = "_".join(id_parts)
 
