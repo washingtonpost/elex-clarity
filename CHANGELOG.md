@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.0.5] - 2022-11-04
+
+- [#39] Remove locality from race ID, add it back to subunit ID
+
 ## [0.0.4] - 2022-11-04
 
 - [#36] Remove county ID from precinct ID
