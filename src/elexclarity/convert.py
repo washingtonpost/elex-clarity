@@ -53,6 +53,9 @@ def convert(
                 data,
                 vote_completion_mode=vote_completion_mode,
                 office_id=office_id,
+                omit_locality_from_race_id=kwargs.get(
+                    "omit_locality_from_race_id", True
+                ),
                 **kwargs
             )
 

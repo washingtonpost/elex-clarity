@@ -57,7 +57,7 @@ class ClarityConverter(object):
         return slugify(name, separator="_")
 
     def get_precinct_id(self, name, county_id=None):
-        return slugify(name, separator="-")
+        return "_".join(filter(None,[county_id, slugify(name, separator='-')]))
 
     def get_county_id(self, name):
         """
