@@ -16,9 +16,10 @@ US_TIMEZONES = {
 }
 
 class ClarityConverter(object):
-    def __init__(self, statepostal, county_lookup=None, **kwargs):
+    def __init__(self, statepostal, county_lookup=None, candidate_lookup=None, **kwargs):
         self.state_postal = statepostal
         self.county_lookup = county_lookup
+        self.candidate_lookup = candidate_lookup
 
     def get_race_type(self, election_name, *, contest={}):
         contest_name = contest.get('text', '')
