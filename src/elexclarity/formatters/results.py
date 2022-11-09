@@ -106,6 +106,8 @@ class ClarityDetailXMLConverter(ClarityConverter):
             for subunit_id, subunit_choice_votes in choice_votes_by_subunit.items():
                 subunit_results.setdefault(subunit_id, {"id": subunit_id, "counts": defaultdict(lambda: 0)})
                 choice_id = self.get_choice_id(choice.get("text"))
+                if self.candidate_lookup:
+                    choice_id = self.candidate_lookup.get(choice_id, choice_id)
                 subunit_results[subunit_id]["counts"][choice_id] += subunit_choice_votes
 
         if subunit_fully_reporting_statuses:
@@ -125,6 +127,8 @@ class ClarityDetailXMLConverter(ClarityConverter):
 
         for choice in choices:
             choice_id = self.get_choice_id(choice.get("text"))
+            if self.candidate_lookup:
+                choice_id = self.candidate_lookup.get(choice_id, choice_id)
             counts[choice_id] = int(choice["totalVotes"])
 
         return counts

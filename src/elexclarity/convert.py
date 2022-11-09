@@ -8,6 +8,7 @@ def convert(
     outputType="results",
     style="default",
     countyMapping=None,
+    candidateMapping=None,
     officeID=None,
     voteCompletionMode=None,
     **kwargs
@@ -26,7 +27,7 @@ def convert(
         return data
 
     if outputType == "settings":
-        return ClaritySettingsConverter(statepostal, county_lookup=countyMapping).convert(
+        return ClaritySettingsConverter(statepostal, county_lookup=countyMapping, candidate_lookup=candidateMapping).convert(
             data,
             office_id=office_id,
             **kwargs
@@ -35,7 +36,8 @@ def convert(
     if outputType == "results":
         converter = ClarityDetailXMLConverter(
             statepostal,
-            county_lookup=countyMapping
+            county_lookup=countyMapping,
+            candidate_lookup=candidateMapping
         )
 
         if isinstance(data, list):
