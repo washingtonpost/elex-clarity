@@ -25,6 +25,7 @@ STRING_LIST = StringListParamType()
 @click.option('--countyName', 'county_name', type=click.STRING, help="If county specific clarity page")
 @click.option('--filename', type=click.Path(exists=True), help='Specify data file instead of making HTTP request')
 @click.option('--countyMapping', 'countyMapping', default={}, help='Specify county mapping')
+@click.option('--candidateMapping', 'candidateMapping', default={}, help='Specify candidate mapping')
 @click.option('--officeID', 'officeID', help='The office ID(s) to process', type=STRING_LIST)
 @click.option('--level', help='Specify the subunit type/reporting level for results', default='county', type=click.Choice([
     'county',
@@ -44,7 +45,7 @@ STRING_LIST = StringListParamType()
     'default',
     'raw'
 ]))
-def cli(electionid, statepostal, filename=None, countyMapping={}, outputType="results", **kwargs):
+def cli(electionid, statepostal, filename=None, countyMapping={}, candidateMapping={}, outputType="results", **kwargs):
     """
     This tool accepts an election ID (e.g. 105369) and a state postal code (e.g. GA)
     and the options below and outputs formatted elections data. If a filename is provided,
@@ -77,7 +78,10 @@ def cli(electionid, statepostal, filename=None, countyMapping={}, outputType="re
     if isinstance(countyMapping, str):
         countyMapping = json.loads(countyMapping)
 
-    result = convert(result, statepostal, outputType=outputType, countyMapping=countyMapping, **kwargs)
+    if isinstance(candidateMapping, str):
+        candidateMapping = json.loads(candidateMapping)
+
+    result = convert(result, statepostal, outputType=outputType, countyMapping=countyMapping, candidateMapping=candidateMapping, **kwargs)
     LOG.debug("Total length: ", len(result))
 
     print(json.dumps(result, indent=2))
