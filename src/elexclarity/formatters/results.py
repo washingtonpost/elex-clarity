@@ -94,7 +94,7 @@ class ClarityDetailXMLConverter(ClarityConverter):
     def _get_valid_contest_choices(self, contest):
         return list(filter(lambda choice: choice.get("text"), get_list(contest["Choice"])))
 
-    def format_subunits(self, choices, level, subunit_fully_reporting_statuses=None, *, county_id=None):
+    def format_subunits(self, choices, level, subunit_fully_reporting_statuses=None, *, county_id=None, race_id=None):
         """
         Takes a list of `Choice` objects from Clarity and aggregates/transforms
         them into a the format our data importer expects.
@@ -105,9 +105,7 @@ class ClarityDetailXMLConverter(ClarityConverter):
             choice_votes_by_subunit = self.aggregate_choice_vote_types(choice, level, county_id=county_id)
             for subunit_id, subunit_choice_votes in choice_votes_by_subunit.items():
                 subunit_results.setdefault(subunit_id, {"id": subunit_id, "counts": defaultdict(lambda: 0)})
-                choice_id = self.get_choice_id(choice.get("text"))
-                if self.candidate_lookup:
-                    choice_id = self.candidate_lookup.get(choice_id, choice_id)
+                choice_id = self.get_choice_id(choice.get("text"), choice.get("party"), race_id=race_id)
                 subunit_results[subunit_id]["counts"][choice_id] += subunit_choice_votes
 
         if subunit_fully_reporting_statuses:
@@ -118,7 +116,7 @@ class ClarityDetailXMLConverter(ClarityConverter):
                     subunit_result["expectedVotes"] = sum(subunit_results[subunit_id]["counts"].values())
         return subunit_results
 
-    def format_top_level_counts(self, choices):
+    def format_top_level_counts(self, choices, race_id=None):
         """
         Aggregates the total votes for a candidate from the
         Clarity `Choice` objects.
@@ -126,9 +124,7 @@ class ClarityDetailXMLConverter(ClarityConverter):
         counts = {}
 
         for choice in choices:
-            choice_id = self.get_choice_id(choice.get("text"))
-            if self.candidate_lookup:
-                choice_id = self.candidate_lookup.get(choice_id, choice_id)
+            choice_id = self.get_choice_id(choice.get("text"), choice.get("party"), race_id=race_id)
             counts[choice_id] = int(choice["totalVotes"])
 
         return counts
@@ -212,7 +208,7 @@ class ClarityDetailXMLConverter(ClarityConverter):
             "id": race_id,
             "source": "clarity",
             "precinctsReportingPct": precincts_reporting_pct,
-            "counts": self.format_top_level_counts(choices),
+            "counts": self.format_top_level_counts(choices, race_id=race_id),
             "office": office
         }
         if timestamp:
@@ -224,7 +220,7 @@ class ClarityDetailXMLConverter(ClarityConverter):
             # statuses mapping here
             if subunit_fully_reporting_statuses is None and level == "precinct" and vote_completion_mode == "voteTypes":
                 subunit_fully_reporting_statuses = self._get_precinct_fully_reporting_statuses_via_vote_types(contest, county_id=county_id)
-            result["subunits"] = self.format_subunits(choices, level, subunit_fully_reporting_statuses, county_id=county_id)
+            result["subunits"] = self.format_subunits(choices, level, subunit_fully_reporting_statuses, county_id=county_id, race_id=race_id)
 
         return result
 

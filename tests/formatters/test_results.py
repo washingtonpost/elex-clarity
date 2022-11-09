@@ -15,25 +15,25 @@ def test_georgia_precinct_formatting_basic(atkinson_precincts, ga_county_mapping
 
     # Top level counts for this county
     counts = results["2020-11-03_GA_G_P_13003"]["counts"]
-    assert counts["donald_j_trump_i_rep"] == 2300
-    assert counts["joseph_r_biden_dem"] == 825
-    assert counts["jo_jorgensen_lib"] == 30
+    assert counts["2020-11-03_GA_G_P_13003_donald_j_trump_i_rep"] == 2300
+    assert counts["2020-11-03_GA_G_P_13003_joseph_r_biden_dem"] == 825
+    assert counts["2020-11-03_GA_G_P_13003_jo_jorgensen_lib"] == 30
 
     # Pearson City precinct
     pearson = results["2020-11-03_GA_G_P_13003"]["subunits"]["13003_pearson-city"]
     assert pearson["precinctsReportingPct"] == 100
     assert pearson["expectedVotes"] == 564
-    assert pearson["counts"]["donald_j_trump_i_rep"] == 229
-    assert pearson["counts"]["joseph_r_biden_dem"] == 329
-    assert pearson["counts"]["jo_jorgensen_lib"] == 6
+    assert pearson["counts"]["2020-11-03_GA_G_P_13003_donald_j_trump_i_rep"] == 229
+    assert pearson["counts"]["2020-11-03_GA_G_P_13003_joseph_r_biden_dem"] == 329
+    assert pearson["counts"]["2020-11-03_GA_G_P_13003_jo_jorgensen_lib"] == 6
 
     # Willacoochee precinct
     willacoochee = results["2020-11-03_GA_G_P_13003"]["subunits"]["13003_willacoochee"]
     assert willacoochee["precinctsReportingPct"] == 100
     assert willacoochee["expectedVotes"] == 522
-    assert willacoochee["counts"]["donald_j_trump_i_rep"] == 342
-    assert willacoochee["counts"]["joseph_r_biden_dem"] == 174
-    assert willacoochee["counts"]["jo_jorgensen_lib"] == 6
+    assert willacoochee["counts"]["2020-11-03_GA_G_P_13003_donald_j_trump_i_rep"] == 342
+    assert willacoochee["counts"]["2020-11-03_GA_G_P_13003_joseph_r_biden_dem"] == 174
+    assert willacoochee["counts"]["2020-11-03_GA_G_P_13003_jo_jorgensen_lib"] == 6
 
 
 def test_georgia_precinct_formatting_vote_types_completion_mode(atkinson_precincts, ga_county_mapping_fips):
@@ -86,9 +86,9 @@ def test_georgia_state_formatting_basic(ga_counties, ga_county_mapping_fips):
     assert results["2020-11-03_GA_G_P"]["precinctsReportingPct"] == 100
     assert results["2020-11-03_GA_G_P"]["lastUpdated"] == "2020-11-20T20:37:06Z"
     counts = results["2020-11-03_GA_G_P"]["counts"]
-    assert counts["donald_j_trump_i_rep"] == 2461837
-    assert counts["joseph_r_biden_dem"] == 2474507
-    assert counts["jo_jorgensen_lib"] == 62138
+    assert counts["2020-11-03_GA_G_P_donald_j_trump_i_rep"] == 2461837
+    assert counts["2020-11-03_GA_G_P_joseph_r_biden_dem"] == 2474507
+    assert counts["2020-11-03_GA_G_P_jo_jorgensen_lib"] == 62138
 
 
 def test_georgia_county_formatting_basic(ga_counties, ga_county_mapping_fips):
@@ -101,9 +101,9 @@ def test_georgia_county_formatting_basic(ga_counties, ga_county_mapping_fips):
     # County-level counts
     wilcox_county = results["2020-11-03_GA_G_P"]["subunits"]["13315"]
     assert wilcox_county["id"] == "13315"
-    assert wilcox_county["counts"]["donald_j_trump_i_rep"] == 2403
-    assert wilcox_county["counts"]["joseph_r_biden_dem"] == 862
-    assert wilcox_county["counts"]["jo_jorgensen_lib"] == 16
+    assert wilcox_county["counts"]["2020-11-03_GA_G_P_donald_j_trump_i_rep"] == 2403
+    assert wilcox_county["counts"]["2020-11-03_GA_G_P_joseph_r_biden_dem"] == 862
+    assert wilcox_county["counts"]["2020-11-03_GA_G_P_jo_jorgensen_lib"] == 16
 
 
 def test_georgia_county_formatting_alternate_county_mapping(ga_counties, ga_county_mapping_alternate):
@@ -116,9 +116,9 @@ def test_georgia_county_formatting_alternate_county_mapping(ga_counties, ga_coun
     catoosa_county = results["2020-11-03_GA_G_P"]["subunits"]["22"]
     assert catoosa_county["id"] == "22"
     assert len(catoosa_county["counts"].keys()) == 3
-    assert catoosa_county["counts"]["donald_j_trump_i_rep"] == 25167
-    assert catoosa_county["counts"]["joseph_r_biden_dem"] == 6932
-    assert catoosa_county["counts"]["jo_jorgensen_lib"] == 494
+    assert catoosa_county["counts"]["2020-11-03_GA_G_P_donald_j_trump_i_rep"] == 25167
+    assert catoosa_county["counts"]["2020-11-03_GA_G_P_joseph_r_biden_dem"] == 6932
+    assert catoosa_county["counts"]["2020-11-03_GA_G_P_jo_jorgensen_lib"] == 494
 
 
 def test_county_formatting_no_county_mapping(wv_counties):
@@ -126,12 +126,13 @@ def test_county_formatting_no_county_mapping(wv_counties):
 
     assert len(results) == 2
     marshall_county = results["2020-11-03_WV_G_P"]["subunits"]["marshall"]
+    print(marshall_county)
     assert marshall_county["id"] == "marshall"
     assert len(marshall_county["counts"].keys()) == 4
-    assert marshall_county["counts"]["donald_j_trump"] == 10435
-    assert marshall_county["counts"]["joseph_r_biden"] == 3455
-    assert marshall_county["counts"]["jo_jorgensen"] == 143
-    assert marshall_county["counts"]["howie_hawkins"] == 47
+    assert marshall_county["counts"]["2020-11-03_WV_G_P_GOP_donald_j_trump"] == 10435
+    assert marshall_county["counts"]["2020-11-03_WV_G_P_DEM_joseph_r_biden"] == 3455
+    assert marshall_county["counts"]["2020-11-03_WV_G_P_LBN_jo_jorgensen"] == 143
+    assert marshall_county["counts"]["2020-11-03_WV_G_P_MTN_howie_hawkins"] == 47
 
 def test_georgia_get_race_office():
     converter = ClarityConverter(statepostal="GA")
