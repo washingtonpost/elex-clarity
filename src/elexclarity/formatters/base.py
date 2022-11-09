@@ -56,6 +56,8 @@ class ClarityConverter(object):
     def get_choice_id(self, name, party=None, race_id=None):
         if party and party == "REP":
             party = "GOP"
+        if party and party == "NP":
+            party = None
         choice_id = "_".join(filter(None, [race_id, party, slugify(name, separator="_")]))
         if self.candidate_lookup:
             choice_id = self.candidate_lookup.get(choice_id, choice_id)
