@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.0.6] - 2022-11-08
+
+- [#41] feat: add candidate mapping
+
 ## [0.0.5] - 2022-11-04
 
 - [#39] Remove locality from race ID, add it back to subunit ID
