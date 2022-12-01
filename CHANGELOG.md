@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.0.7] - 2022-11-08
+
+- [#46] feat: add race ID and party to candidate ID
+
 ## [0.0.6] - 2022-11-08
 
 - [#41] feat: add candidate mapping
