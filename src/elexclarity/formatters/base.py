@@ -2,7 +2,11 @@ import re
 from slugify import slugify
 from dateutil import parser, tz
 
-from elexclarity.formatters.const import STATE_OFFICE_ID_MAPS, STATE_RACE_TYPE_MAPS
+from elexclarity.formatters.const import (
+    STATE_OFFICE_ID_MAPS,
+    STATE_RACE_TYPE_MAPS,
+    STATE_VOTE_TYPE_MAPS,
+)
 
 US_TIMEZONES = {
     "PST": tz.gettz("US/Pacific"),
@@ -65,6 +69,11 @@ class ClarityConverter(object):
 
     def get_precinct_id(self, name, county_id=None):
         return "_".join(filter(None,[county_id, slugify(name, separator='-')]))
+
+    def get_vote_type_id(self, name):
+        id = slugify(name, separator='-').replace("-votes", "")
+        id = STATE_VOTE_TYPE_MAPS.get(self.state_postal,{}).get(id, id)
+        return id
 
     def get_county_id(self, name):
         """
