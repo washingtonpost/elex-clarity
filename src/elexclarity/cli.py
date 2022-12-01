@@ -39,7 +39,8 @@ STRING_LIST = StringListParamType()
 ]))
 @click.option('--voteCompletionMode', 'voteCompletionMode', default='percentReporting', type=click.Choice([
     'percentReporting',
-    'voteTypes'
+    'voteTypes',
+    'combined'
 ]))
 @click.option('--style', default='default', type=click.Choice([
     'default',

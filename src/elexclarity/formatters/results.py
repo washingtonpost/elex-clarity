@@ -147,7 +147,7 @@ class ClarityDetailXMLConverter(ClarityConverter):
 
         return subunit_fully_reporting_statuses
 
-    def _get_precinct_fully_reporting_statuses_via_vote_types(self, contest, *, county_id=None):
+    def _get_precinct_fully_reporting_statuses_via_vote_types(self, contest, *, county_id=None, subunit_fully_reporting_statuses={}):
         """
         Constructs a mapping from precinct IDs to boolean flags representing
         whether or not the given precinct is fully reporting. This method does so by looking
@@ -155,11 +155,10 @@ class ClarityDetailXMLConverter(ClarityConverter):
         in for each of those types (except provisional votes).
         """
         choices = self._get_valid_contest_choices(contest)
-        subunit_fully_reporting_statuses = {}
 
         vote_types_by_subunit = self.get_vote_totals_by_vote_types(choices, "precinct", county_id=county_id)
         for subunit_id, vote_type_totals in vote_types_by_subunit.items():
-            is_precinct_fully_reporting = True
+            is_precinct_fully_reporting = subunit_fully_reporting_statuses.get(subunit_id, True)
             for vote_type, vote_total in vote_type_totals.items():
                 if vote_total == 0 and vote_type not in ["Provisional Votes"]:
                     is_precinct_fully_reporting = False
@@ -175,7 +174,7 @@ class ClarityDetailXMLConverter(ClarityConverter):
         timestamp=None,
         level=None,
         county_id=None,
-        subunit_fully_reporting_statuses=None,
+        subunit_fully_reporting_statuses={},
         vote_completion_mode=None,
         **kwargs
     ):
@@ -218,8 +217,12 @@ class ClarityDetailXMLConverter(ClarityConverter):
             # if we're using vote completion mode "voteTypes", we look at the number of votes
             # for each vote type for each contest so we have to construct the reporting
             # statuses mapping here
-            if subunit_fully_reporting_statuses is None and level == "precinct" and vote_completion_mode == "voteTypes":
-                subunit_fully_reporting_statuses = self._get_precinct_fully_reporting_statuses_via_vote_types(contest, county_id=county_id)
+            if level == "precinct" and vote_completion_mode in ["voteTypes", "combined"]:
+                subunit_fully_reporting_statuses = self._get_precinct_fully_reporting_statuses_via_vote_types(
+                    contest,
+                    county_id=county_id,
+                    subunit_fully_reporting_statuses=subunit_fully_reporting_statuses,
+                )
             result["subunits"] = self.format_subunits(choices, level, subunit_fully_reporting_statuses, county_id=county_id, race_id=race_id)
 
         return result
@@ -238,7 +241,7 @@ class ClarityDetailXMLConverter(ClarityConverter):
         election_date = self.format_date(dictified_data["ElectionDate"])
         timestamp = self.format_last_updated(dictified_data["Timestamp"])
 
-        if level == "precinct" and vote_completion_mode == "percentReporting":
+        if level == "precinct" and vote_completion_mode in ["percentReporting", "combined"]:
             # the default method of determining vote completion is to use the VoterTurnout
             # fields at the ElectionResult level in the precinct detail XML files
             subunit_fully_reporting_statuses = self._get_precinct_fully_reporting_statuses_via_percent_reporting(dictified_data, county_id=county_id)
