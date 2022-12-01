@@ -246,7 +246,7 @@ class ClarityDetailXMLConverter(ClarityConverter):
             # fields at the ElectionResult level in the precinct detail XML files
             subunit_fully_reporting_statuses = self._get_precinct_fully_reporting_statuses_via_percent_reporting(dictified_data, county_id=county_id)
         else:
-            subunit_fully_reporting_statuses = None
+            subunit_fully_reporting_statuses = {}
 
         for contest in get_list(dictified_data.get("Contest")):
             election_type = self.get_race_type(dictified_data["ElectionName"], contest=contest)
