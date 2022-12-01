@@ -76,3 +76,10 @@ STATE_RACE_TYPE_MAPS = {
         'Secretary of State/ Secretario de Estado - Dem': 'D'
     }
 }
+
+STATE_VOTE_TYPE_MAPS = {
+    "AR": {
+        "early-vote-north": "early-vote",
+        "early-vote-south": "early-vote"
+    }
+}

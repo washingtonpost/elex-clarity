@@ -14,7 +14,7 @@ class ClarityDetailXMLConverter(ClarityConverter):
     def aggregate_choice_vote_types(self, choice, level, *, county_id=None):
         """
         Takes a Clarity `Choice` object and aggregates all the different
-        kinds of votes into one total per subunit.
+        kinds of votes into one dict per subunit.
 
         For example, a precinct level file will have an entry like this:
 
@@ -58,7 +58,7 @@ class ClarityDetailXMLConverter(ClarityConverter):
         So we have to convert our level into the XML tag name and then aggregate
         the vote types accordingly.
         """
-        subunits = defaultdict(lambda: 0)
+        subunits = defaultdict(lambda: defaultdict(lambda: 0))
         clarity_level = level.capitalize()
 
         for vote_type in get_list(choice.get("VoteType", [])):
@@ -69,7 +69,8 @@ class ClarityDetailXMLConverter(ClarityConverter):
                 else:
                     subunit_id = self.get_county_id(vote_type_subunit["name"])
 
-                subunits[subunit_id] += int(vote_type_subunit["votes"])
+                vote_type_id = self.get_vote_type_id(vote_type["name"])
+                subunits[subunit_id][vote_type_id] += int(vote_type_subunit["votes"])
 
         return subunits
 
@@ -104,9 +105,18 @@ class ClarityDetailXMLConverter(ClarityConverter):
         for choice in choices:
             choice_votes_by_subunit = self.aggregate_choice_vote_types(choice, level, county_id=county_id)
             for subunit_id, subunit_choice_votes in choice_votes_by_subunit.items():
-                subunit_results.setdefault(subunit_id, {"id": subunit_id, "counts": defaultdict(lambda: 0)})
+                subunit_results.setdefault(
+                    subunit_id,
+                    {
+                        "id": subunit_id,
+                        "counts": defaultdict(lambda: 0),
+                        "voteTypes": defaultdict(lambda: defaultdict(lambda: 0)),
+                    },
+                )
                 choice_id = self.get_choice_id(choice.get("text"), choice.get("party"), race_id=race_id)
-                subunit_results[subunit_id]["counts"][choice_id] += subunit_choice_votes
+                for vote_type, votes in subunit_choice_votes.items():
+                    subunit_results[subunit_id]["counts"][choice_id] += votes
+                    subunit_results[subunit_id]["voteTypes"][vote_type][choice_id] += votes
 
         if subunit_fully_reporting_statuses:
             for subunit_id, subunit_result in subunit_results.items():
