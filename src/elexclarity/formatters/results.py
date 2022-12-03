@@ -96,14 +96,15 @@ class ClarityDetailXMLConverter(ClarityConverter):
         return list(filter(lambda choice: choice.get("text"), get_list(contest["Choice"])))
 
     def _get_precinct_reporting_pct(self, subunit_id, contest={}, subunit_fully_reporting_statuses={}, precincts_reporting_pct_override={}):
-        county_id = subunit_id.split("_")[0]
-        if precincts_reporting_pct_override.get(county_id) is not None:
-            return int(precincts_reporting_pct_override.get(county_id))
+        if subunit_id:
+            county_id = subunit_id.split("_")[0]
+            if precincts_reporting_pct_override.get(county_id) is not None:
+                return round(float(precincts_reporting_pct_override.get(county_id)))
 
         # Available fields vary in Clarity data
         precincts_reporting_pct = contest.get("precinctsReportingPercent")
         if precincts_reporting_pct:
-            precincts_reporting_pct = int(precincts_reporting_pct)
+            precincts_reporting_pct = round(float(precincts_reporting_pct))
         elif contest.get("precinctsReported") and contest.get("precinctsReporting"):
             precincts_reported = int(contest.get("precinctsReported"))
             precincts_reporting = int(contest.get("precinctsReporting"))
