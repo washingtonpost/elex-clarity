@@ -42,12 +42,11 @@ STRING_LIST = StringListParamType()
     'voteTypes',
     'combined'
 ]))
-@click.option('--precinctsReportingPct', 'precinctsReportingPct', default={}, help='Sets a reporting percent for all units in a specific county')
 @click.option('--style', default='default', type=click.Choice([
     'default',
     'raw'
 ]))
-def cli(electionid, statepostal, filename=None, countyMapping={}, candidateMapping={}, precinctsReportingPct={}, outputType="results", **kwargs):
+def cli(electionid, statepostal, filename=None, countyMapping={}, candidateMapping={}, outputType="results", **kwargs):
     """
     This tool accepts an election ID (e.g. 105369) and a state postal code (e.g. GA)
     and the options below and outputs formatted elections data. If a filename is provided,
@@ -83,19 +82,7 @@ def cli(electionid, statepostal, filename=None, countyMapping={}, candidateMappi
     if isinstance(candidateMapping, str):
         candidateMapping = json.loads(candidateMapping)
 
-    if isinstance(precinctsReportingPct, str):
-        precinctsReportingPct = json.loads(precinctsReportingPct)
-
-
-    result = convert(
-        result,
-        statepostal,
-        outputType=outputType,
-        countyMapping=countyMapping,
-        candidateMapping=candidateMapping,
-        precincts_reporting_pct=precinctsReportingPct,
-        **kwargs
-    )
+    result = convert(result, statepostal, outputType=outputType, countyMapping=countyMapping, candidateMapping=candidateMapping, **kwargs)
     LOG.debug("Total length: ", len(result))
 
     print(json.dumps(result, indent=2))
