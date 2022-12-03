@@ -95,7 +95,25 @@ class ClarityDetailXMLConverter(ClarityConverter):
     def _get_valid_contest_choices(self, contest):
         return list(filter(lambda choice: choice.get("text"), get_list(contest["Choice"])))
 
-    def format_subunits(self, choices, level, subunit_fully_reporting_statuses=None, *, county_id=None, race_id=None):
+    def _get_precinct_reporting_pct(self, subunit_id, contest={}, subunit_fully_reporting_statuses={}, precincts_reporting_pct_override={}):
+        county_id = subunit_id.split("_")[0]
+        if precincts_reporting_pct_override.get(county_id) is not None:
+            return int(precincts_reporting_pct_override.get(county_id))
+
+        # Available fields vary in Clarity data
+        precincts_reporting_pct = contest.get("precinctsReportingPercent")
+        if precincts_reporting_pct:
+            precincts_reporting_pct = int(precincts_reporting_pct)
+        elif contest.get("precinctsReported") and contest.get("precinctsReporting"):
+            precincts_reported = int(contest.get("precinctsReported"))
+            precincts_reporting = int(contest.get("precinctsReporting"))
+            precincts_reporting_pct = (precincts_reported/precincts_reporting)*100
+        else:
+            precincts_reporting_pct = 100 if subunit_fully_reporting_statuses.get(subunit_id) else 0
+
+        return precincts_reporting_pct
+
+    def format_subunits(self, choices, level, subunit_fully_reporting_statuses=None, *, county_id=None, race_id=None, precincts_reporting_pct_override={}, **kwargs):
         """
         Takes a list of `Choice` objects from Clarity and aggregates/transforms
         them into a the format our data importer expects.
@@ -118,12 +136,16 @@ class ClarityDetailXMLConverter(ClarityConverter):
                     subunit_results[subunit_id]["counts"][choice_id] += votes
                     subunit_results[subunit_id]["voteTypes"][vote_type][choice_id] += votes
 
-        if subunit_fully_reporting_statuses:
-            for subunit_id, subunit_result in subunit_results.items():
-                is_subunit_fully_reporting = subunit_fully_reporting_statuses.get(subunit_id, False)
-                subunit_result["precinctsReportingPct"] = 100 if is_subunit_fully_reporting else 0
-                if is_subunit_fully_reporting:
-                    subunit_result["expectedVotes"] = sum(subunit_results[subunit_id]["counts"].values())
+        for subunit_id, subunit_result in subunit_results.items():
+            precincts_reporting_pct = self._get_precinct_reporting_pct(
+                subunit_id,
+                subunit_fully_reporting_statuses=subunit_fully_reporting_statuses,
+                precincts_reporting_pct_override=precincts_reporting_pct_override,
+            )
+            subunit_result["precinctsReportingPct"] = precincts_reporting_pct
+            if precincts_reporting_pct == 100:
+                subunit_result["expectedVotes"] = sum(subunit_results[subunit_id]["counts"].values())
+
         return subunit_results
 
     def format_top_level_counts(self, choices, race_id=None):
@@ -185,21 +207,13 @@ class ClarityDetailXMLConverter(ClarityConverter):
         level=None,
         county_id=None,
         subunit_fully_reporting_statuses={},
+        precincts_reporting_pct={},
         vote_completion_mode=None,
         **kwargs
     ):
         """
         Transforms a Clarity `Contest` object into our expected race result format.
         """
-        # Available fields vary in Clarity data
-        precincts_reporting_pct = contest.get("precinctsReportingPercent")
-        if precincts_reporting_pct:
-            precincts_reporting_pct = float(precincts_reporting_pct)
-        else:
-            precincts_reported = int(contest.get("precinctsReported"))
-            precincts_reporting = int(contest.get("precinctsReporting"))
-            precincts_reporting_pct = (precincts_reported/precincts_reporting)*100
-
         choices = get_list(contest["Choice"])
         contest_name = contest["text"]
         office = self.get_race_office(contest_name)
@@ -216,7 +230,11 @@ class ClarityDetailXMLConverter(ClarityConverter):
         result = {
             "id": race_id,
             "source": "clarity",
-            "precinctsReportingPct": precincts_reporting_pct,
+            "precinctsReportingPct": self._get_precinct_reporting_pct(
+                county_id,
+                contest=contest,
+                precincts_reporting_pct_override=precincts_reporting_pct,
+            ),
             "counts": self.format_top_level_counts(choices, race_id=race_id),
             "office": office
         }
@@ -233,7 +251,15 @@ class ClarityDetailXMLConverter(ClarityConverter):
                     county_id=county_id,
                     subunit_fully_reporting_statuses=subunit_fully_reporting_statuses,
                 )
-            result["subunits"] = self.format_subunits(choices, level, subunit_fully_reporting_statuses, county_id=county_id, race_id=race_id)
+            result["subunits"] = self.format_subunits(
+                choices,
+                level,
+                subunit_fully_reporting_statuses,
+                county_id=county_id,
+                race_id=race_id,
+                precincts_reporting_pct_override=precincts_reporting_pct,
+                **kwargs
+            )
 
         return result
 
