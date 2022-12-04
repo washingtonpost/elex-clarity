@@ -248,7 +248,7 @@ class ClarityDetailXMLConverter(ClarityConverter):
             county_id = self.get_county_id(region)
         else:
             county_id = None
-        election_date = self.format_date(dictified_data["ElectionDate"])
+        election_date = kwargs.get("date", self.format_date(dictified_data["ElectionDate"]))
         timestamp = self.format_last_updated(dictified_data["Timestamp"])
 
         if level == "precinct" and vote_completion_mode in ["percentReporting", "combined"]:
