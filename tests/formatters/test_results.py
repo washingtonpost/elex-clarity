@@ -35,6 +35,14 @@ def test_georgia_precinct_formatting_basic(atkinson_precincts, ga_county_mapping
     assert willacoochee["counts"]["2020-11-03_GA_G_P_13003_joseph_r_biden_dem"] == 174
     assert willacoochee["counts"]["2020-11-03_GA_G_P_13003_jo_jorgensen_lib"] == 6
 
+def test_formatting_date_override(atkinson_precincts, ga_county_mapping_fips):
+    results = ClarityDetailXMLConverter("GA", county_lookup=ga_county_mapping_fips).convert(
+        atkinson_precincts,
+        level="precinct",
+        date="2022-12-06"
+    )
+
+    assert "2022-12-06_GA_G_P_13003" in results
 
 def test_georgia_precinct_formatting_vote_types_completion_mode(atkinson_precincts, ga_county_mapping_fips):
     results = ClarityDetailXMLConverter("GA", county_lookup=ga_county_mapping_fips).convert(
