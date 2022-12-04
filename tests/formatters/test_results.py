@@ -81,7 +81,7 @@ def test_georgia_precinct_formatting_reporting_pct_override(gwinnett_precincts, 
     results = ClarityDetailXMLConverter("GA").convert(
         gwinnett_precincts,
         level="precinct",
-        precincts_reporting_pct={
+        precincts_reporting_pct_override={
             "gwinnett": 0
         }
     )
@@ -92,7 +92,7 @@ def test_georgia_precinct_formatting_reporting_pct_override(gwinnett_precincts, 
     results = ClarityDetailXMLConverter("GA", county_lookup=ga_county_mapping_fips).convert(
         gwinnett_precincts,
         level="precinct",
-        precincts_reporting_pct={
+        precincts_reporting_pct_override={
             "13135": 100
         }
     )

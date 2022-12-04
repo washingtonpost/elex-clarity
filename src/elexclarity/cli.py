@@ -93,7 +93,7 @@ def cli(electionid, statepostal, filename=None, countyMapping={}, candidateMappi
         outputType=outputType,
         countyMapping=countyMapping,
         candidateMapping=candidateMapping,
-        precincts_reporting_pct=precinctsReportingPct,
+        precinctsReportingPct=precinctsReportingPct,
         **kwargs
     )
     LOG.debug("Total length: ", len(result))

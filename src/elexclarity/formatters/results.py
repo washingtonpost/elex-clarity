@@ -209,7 +209,7 @@ class ClarityDetailXMLConverter(ClarityConverter):
         level=None,
         county_id=None,
         subunit_fully_reporting_statuses={},
-        precincts_reporting_pct={},
+        precincts_reporting_pct_override={},
         vote_completion_mode=None,
         **kwargs
     ):
@@ -235,7 +235,7 @@ class ClarityDetailXMLConverter(ClarityConverter):
             "precinctsReportingPct": self._get_precinct_reporting_pct(
                 county_id,
                 contest=contest,
-                precincts_reporting_pct_override=precincts_reporting_pct,
+                precincts_reporting_pct_override=precincts_reporting_pct_override,
             ),
             "counts": self.format_top_level_counts(choices, race_id=race_id),
             "office": office
@@ -259,13 +259,13 @@ class ClarityDetailXMLConverter(ClarityConverter):
                 subunit_fully_reporting_statuses,
                 county_id=county_id,
                 race_id=race_id,
-                precincts_reporting_pct_override=precincts_reporting_pct,
+                precincts_reporting_pct_override=precincts_reporting_pct_override,
                 **kwargs
             )
 
         return result
 
-    def convert(self, data, level="precinct", vote_completion_mode="percentReporting", office_id=None, **kwargs):
+    def convert(self, data, level="precinct", vote_completion_mode="percentReporting", precincts_reporting_pct_override={}, office_id=None, **kwargs):
         """
         Transforms a Clarity `ElectionResult` object into our expected format.
         """
@@ -296,6 +296,7 @@ class ClarityDetailXMLConverter(ClarityConverter):
                 county_id=county_id,
                 timestamp=timestamp,
                 vote_completion_mode=vote_completion_mode,
+                precincts_reporting_pct_override=precincts_reporting_pct_override,
                 subunit_fully_reporting_statuses=subunit_fully_reporting_statuses,
                 **kwargs
             )

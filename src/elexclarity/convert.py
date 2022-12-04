@@ -11,6 +11,7 @@ def convert(
     candidateMapping=None,
     officeID=None,
     voteCompletionMode=None,
+    precinctsReportingPct={},
     **kwargs
 ):
     """
@@ -19,6 +20,7 @@ def convert(
 
     office_id = officeID
     vote_completion_mode = voteCompletionMode
+    precincts_reporting_pct_override = precinctsReportingPct
 
     if office_id and isinstance(office_id, str):
         office_id = office_id.split(",")
@@ -46,6 +48,7 @@ def convert(
                 results.update(converter.convert(
                     sub_result,
                     vote_completion_mode=vote_completion_mode,
+                    precincts_reporting_pct_override=precincts_reporting_pct_override,
                     office_id=office_id,
                     **kwargs
                 ))
@@ -54,6 +57,7 @@ def convert(
             return converter.convert(
                 data,
                 vote_completion_mode=vote_completion_mode,
+                precincts_reporting_pct_override=precincts_reporting_pct_override,
                 office_id=office_id,
                 omit_locality_from_race_id=kwargs.get(
                     "omit_locality_from_race_id", True
