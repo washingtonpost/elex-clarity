@@ -50,6 +50,20 @@ STATE_OFFICE_ID_MAPS = {
         'US Rep': 'H',
         'Governor': 'G',
         'Secretary of State': 'R'
+    },
+    "SC": {
+        'US President': 'P',
+        'President of the United States': 'P',
+        'US Senat': 'S', # covers both US Senate and U.S. Senator
+        "United States Senat": "S",  # covers both US Senate and U.S. Senator
+        "United States House": "H",
+        'US Congress': 'H',
+        'US House': 'H',
+        'United States Congress': 'H',
+        "United States Rep": "H",
+        'US Rep': 'H',
+        'Governor': 'G',
+        'Secretary of State': 'R'
     }
 }
 
