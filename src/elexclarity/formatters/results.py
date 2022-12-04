@@ -108,7 +108,7 @@ class ClarityDetailXMLConverter(ClarityConverter):
         elif contest.get("precinctsReported") and contest.get("precinctsReporting"):
             precincts_reported = int(contest.get("precinctsReported"))
             precincts_reporting = int(contest.get("precinctsReporting"))
-            precincts_reporting_pct = (precincts_reported/precincts_reporting)*100
+            precincts_reporting_pct = round((precincts_reported/precincts_reporting)*100)
         else:
             precincts_reporting_pct = 100 if subunit_fully_reporting_statuses.get(subunit_id) else 0
 
