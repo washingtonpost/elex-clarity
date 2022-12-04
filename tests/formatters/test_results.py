@@ -73,6 +73,34 @@ def test_georgia_precinct_formatting_race_name_mapping(gwinnett_precincts, ga_co
     assert "2020-11-03_GA_G_S_13135" in results
 
 
+def test_georgia_precinct_formatting_reporting_pct_override(gwinnett_precincts, ga_county_mapping_fips):
+    '''
+    Gwinnett has some special contest names so this test makes sure that those get mapped
+    to the right office IDs
+    '''
+    results = ClarityDetailXMLConverter("GA").convert(
+        gwinnett_precincts,
+        level="precinct",
+        precincts_reporting_pct_override={
+            "gwinnett": 0
+        }
+    )
+
+    assert results["2020-11-03_GA_G_P_gwinnett"]["precinctsReportingPct"] == 0
+    assert results["2020-11-03_GA_G_P_gwinnett"]["subunits"]["gwinnett_dacula"]["precinctsReportingPct"] == 0
+
+    results = ClarityDetailXMLConverter("GA", county_lookup=ga_county_mapping_fips).convert(
+        gwinnett_precincts,
+        level="precinct",
+        precincts_reporting_pct_override={
+            "13135": 100
+        }
+    )
+
+    assert results["2020-11-03_GA_G_P_13135"]["precinctsReportingPct"] == 100
+    assert results["2020-11-03_GA_G_P_13135"]["subunits"]["13135_dacula"]["precinctsReportingPct"] == 100
+
+
 def test_georgia_state_formatting_basic(ga_counties, ga_county_mapping_fips):
     results = ClarityDetailXMLConverter("GA", county_lookup=ga_county_mapping_fips).convert(
         ga_counties,
