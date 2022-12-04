@@ -114,7 +114,7 @@ class ClarityDetailXMLConverter(ClarityConverter):
 
         return precincts_reporting_pct
 
-    def format_subunits(self, choices, level, subunit_fully_reporting_statuses=None, *, county_id=None, race_id=None, precincts_reporting_pct_override={}, **kwargs):
+    def format_subunits(self, choices, level, subunit_fully_reporting_statuses={}, *, county_id=None, race_id=None, precincts_reporting_pct_override={}, **kwargs):
         """
         Takes a list of `Choice` objects from Clarity and aggregates/transforms
         them into a the format our data importer expects.
@@ -137,15 +137,16 @@ class ClarityDetailXMLConverter(ClarityConverter):
                     subunit_results[subunit_id]["counts"][choice_id] += votes
                     subunit_results[subunit_id]["voteTypes"][vote_type][choice_id] += votes
 
-        for subunit_id, subunit_result in subunit_results.items():
-            precincts_reporting_pct = self._get_precinct_reporting_pct(
-                subunit_id,
-                subunit_fully_reporting_statuses=subunit_fully_reporting_statuses,
-                precincts_reporting_pct_override=precincts_reporting_pct_override,
-            )
-            subunit_result["precinctsReportingPct"] = precincts_reporting_pct
-            if precincts_reporting_pct == 100:
-                subunit_result["expectedVotes"] = sum(subunit_results[subunit_id]["counts"].values())
+        if len(subunit_fully_reporting_statuses) or len(precincts_reporting_pct_override):
+            for subunit_id, subunit_result in subunit_results.items():
+                precincts_reporting_pct = self._get_precinct_reporting_pct(
+                    subunit_id,
+                    subunit_fully_reporting_statuses=subunit_fully_reporting_statuses,
+                    precincts_reporting_pct_override=precincts_reporting_pct_override,
+                )
+                subunit_result["precinctsReportingPct"] = precincts_reporting_pct
+                if precincts_reporting_pct == 100:
+                    subunit_result["expectedVotes"] = sum(subunit_results[subunit_id]["counts"].values())
 
         return subunit_results
 
