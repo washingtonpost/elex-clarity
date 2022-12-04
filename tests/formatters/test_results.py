@@ -1,5 +1,6 @@
 from elexclarity.formatters.results import ClarityDetailXMLConverter
 from elexclarity.formatters.base import ClarityConverter
+from elexclarity.formatters.const import ReportingStatuses
 
 
 def test_georgia_precinct_formatting_basic(atkinson_precincts, ga_county_mapping_fips):
@@ -55,11 +56,13 @@ def test_georgia_precinct_formatting_vote_types_completion_mode(atkinson_precinc
     # Pearson City precinct
     pearson = results["2020-11-03_GA_G_P_13003"]["subunits"]["13003_pearson-city"]
     assert pearson["precinctsReportingPct"] == 100
+    assert pearson["reportingStatus"] == ReportingStatuses.REPORTING
     assert pearson["expectedVotes"] == 564
 
     # Willacoochee precinct
     willacoochee = results["2020-11-03_GA_G_P_13003"]["subunits"]["13003_willacoochee"]
     assert willacoochee["precinctsReportingPct"] == 0
+    assert willacoochee["reportingStatus"] == ReportingStatuses.NOT_REPORTING
     assert willacoochee.get("expectedVotes") is None
 
 

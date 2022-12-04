@@ -4,6 +4,7 @@ import xmltodict
 from elexclarity.formatters.base import ClarityConverter
 from elexclarity.utils import get_list
 
+from elexclarity.formatters.const import ReportingStatuses
 
 class ClarityDetailXMLConverter(ClarityConverter):
     """
@@ -145,6 +146,13 @@ class ClarityDetailXMLConverter(ClarityConverter):
                     precincts_reporting_pct_override=precincts_reporting_pct_override,
                 )
                 subunit_result["precinctsReportingPct"] = precincts_reporting_pct
+                # reportingStatus deliberately ignores precincts_reporting_pct override
+                # so we can monitor the status independent of the override
+                subunit_result["reportingStatus"] = (
+                    ReportingStatuses.REPORTING
+                    if subunit_fully_reporting_statuses.get(subunit_id)
+                    else ReportingStatuses.NOT_REPORTING
+                )
                 if precincts_reporting_pct == 100:
                     subunit_result["expectedVotes"] = sum(subunit_results[subunit_id]["counts"].values())
 

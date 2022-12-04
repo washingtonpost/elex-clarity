@@ -1,3 +1,5 @@
+from enum import Enum
+
 # mapping a partial contest names to IDs
 # these get slugified and partially matched in order
 # against slugified contest names
@@ -97,3 +99,9 @@ STATE_VOTE_TYPE_MAPS = {
         "early-vote-south": "early-vote"
     }
 }
+
+class ReportingStatuses(str, Enum):
+    # Race not yet reporting
+    NOT_REPORTING = "NOT_REPORTING"
+    # Votes are reporting
+    REPORTING = "REPORTING"
