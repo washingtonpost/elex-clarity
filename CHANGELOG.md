@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.0.8] - 2022-12-04
+
+- [#49] feat: add count by vote type to subunits
+- [#50] feat: add combined vote completion method
+- [#51] feat(sc): add offices mappings
+- [#52] feat: add precincts reporting percent override
+- [#53] feat: add election date override
+- [#54] feat: add reporting status flag for subunits
+
 ## [0.0.7] - 2022-11-08
 
 - [#46] feat: add race ID and party to candidate ID
