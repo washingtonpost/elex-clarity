@@ -1,3 +1,5 @@
+from enum import Enum
+
 # mapping a partial contest names to IDs
 # these get slugified and partially matched in order
 # against slugified contest names
@@ -50,6 +52,20 @@ STATE_OFFICE_ID_MAPS = {
         'US Rep': 'H',
         'Governor': 'G',
         'Secretary of State': 'R'
+    },
+    "SC": {
+        'US President': 'P',
+        'President of the United States': 'P',
+        'US Senat': 'S', # covers both US Senate and U.S. Senator
+        "United States Senat": "S",  # covers both US Senate and U.S. Senator
+        "United States House": "H",
+        'US Congress': 'H',
+        'US House': 'H',
+        'United States Congress': 'H',
+        "United States Rep": "H",
+        'US Rep': 'H',
+        'Governor': 'G',
+        'Secretary of State': 'R'
     }
 }
 
@@ -76,3 +92,16 @@ STATE_RACE_TYPE_MAPS = {
         'Secretary of State/ Secretario de Estado - Dem': 'D'
     }
 }
+
+STATE_VOTE_TYPE_MAPS = {
+    "AR": {
+        "early-vote-north": "early-vote",
+        "early-vote-south": "early-vote"
+    }
+}
+
+class ReportingStatuses(str, Enum):
+    # Race not yet reporting
+    NOT_REPORTING = "NOT_REPORTING"
+    # Votes are reporting
+    REPORTING = "REPORTING"

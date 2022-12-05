@@ -122,6 +122,11 @@ Other parameters
      - string
      - N
      - percentReporting
+   * - precinctsReportingPct
+     - a county-level override for the precincts reprting percent that applies to all subunits, given as a mapping between county IDs and percents (does not change the value of the reportingStatus field)
+     - object
+     - N
+     - --
    * - filename
      - the path to read results from (if you don't want to ping a Clarity site)
      - string
