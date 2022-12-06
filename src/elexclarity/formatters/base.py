@@ -68,7 +68,25 @@ class ClarityConverter(object):
         return choice_id
 
     def get_precinct_id(self, name, county_id=None):
-        return "_".join(filter(None,[county_id, slugify(name, separator='-')]))
+        slug = slugify(name, separator="-")
+        if county_id.lower() == "gwinnett" or county_id == "13135":
+            slug = re.sub(r"^[0-9]+-", "", slug)
+        if county_id.lower() == "chatham" or county_id == "13051":
+            if slug in [
+                "3-14c-oglethorpe-charter-academy",
+                "5-06c-seed-church",
+                "6-10c-georgetown-elementary",
+                "6-11c-coastal-ga-botanical-gardens",
+                "7-08c-bloomingdale-comm-ctr",
+                "7-09c-compassion-christian-henderson",
+            ]:
+                slug = f"{slug}-savannah"
+            if slug in [
+                "7-13c-southside-fire-trng-ctr",
+                "8-03c-silk-hope-baptist-church",
+            ]:
+                slug = f"{slug}-garden-city"
+        return "_".join(filter(None, [county_id, slug]))
 
     def get_vote_type_id(self, name):
         id = slugify(name, separator='-').replace("-votes", "")
