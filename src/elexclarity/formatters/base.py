@@ -68,6 +68,8 @@ class ClarityConverter(object):
         return choice_id
 
     def get_precinct_id(self, name, county_id=None):
+        if county_id.lower() == "gwinnett" or county_id == "13135":
+            name = re.sub(r'^[0-9]+ ', '', name)
         return "_".join(filter(None,[county_id, slugify(name, separator='-')]))
 
     def get_vote_type_id(self, name):
