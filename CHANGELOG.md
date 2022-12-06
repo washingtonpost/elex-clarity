@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.0.9] - 2022-12-06
+
+- [#57] feat: clean GA precinct IDs
+
 ## [0.0.8] - 2022-12-04
 
 - [#49] feat: add count by vote type to subunits
